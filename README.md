@@ -50,10 +50,11 @@ Sin repetir la fase caotica de "buscar links, comparar versiones y adivinar comp
 ## Estado Actual
 
 ### Actualización Mañana (20/04/2026)
-- **Hito de Porteo**: 21 addons de Slimefun han sido portados exitosamente a **Purpur 1.20.6** con Java 21 y Slimefun RC-37.
-- **Addons Listos**: `ColoredEnderChests`, `DyedBackpacks`, `DynaTech`, `EcoPower`, `ElectricSpawners`, `ExoticGarden`, `ExtraGear`, `ExtraUtils`, `FluffyMachines`, `GlobalWarming`, `HotbarPets`, `InfinityExpansion`, `PrivateStorage`, `SFCalc`, `SFMobDrops`, `SimpleUtils`, `SlimefunLuckyBlocks`, `SlimefunOreChunks`, `SlimyRepair`, `SlimyTreeTaps`, `SoulJars`.
-- **En Construcción (Batch 1)**: `SlimeChem` (refactorización de paquetes antiguos) y `SoundMuffler` (conflicto de ProtocolLib).
-- **Expansión iniciada (Batch 2)**: Clonación y preparación de 11 repositorios adicionales de la Wiki (Networks, Galactifun, SlimeTinker, etc.).
+- **Hito de Porteo**: 22 addons de Slimefun han sido portados exitosamente a **Purpur 1.20.6** con Java 21 y Slimefun RC-37.
+- **Addons Listos**: `ColoredEnderChests`, `DyedBackpacks`, `DynaTech`, `EcoPower`, `ElectricSpawners`, `ExoticGarden`, `ExtraGear`, `ExtraUtils`, `FluffyMachines`, `GlobalWarming`, `HotbarPets`, `InfinityExpansion` (incluye fix dupe #126), `PrivateStorage`, `SFCalc`, `SFMobDrops`, `SimpleUtils`, `SlimefunLuckyBlocks`, `SlimefunOreChunks`, `SlimyRepair`, `SlimyTreeTaps`, `SoulJars`, `SimpleMaterialGenerators`.
+- **En Construcción (Batch 1)**: `SlimeChem` (traducción inicial lograda, pero refactorización API atómica pendiente) y `SoundMuffler`.
+- **Expansión (Batch 2)**: Varios proyectos pendientes de refactor manual grave por `dough` fallido u otras colisiones API (Cultivation, LiteXpansion, SlimeTinker, etc).
+- **Suspensión Temporal**: El fork `Networks_Better_Compatibility` (Chagui68) fue clonado e integrado con parches base 1.20.6 (Java 21, Paper, fix particles), pero está pendiente de la reconstrucción final de su `pom.xml` para compilar.
 
 ---
 
