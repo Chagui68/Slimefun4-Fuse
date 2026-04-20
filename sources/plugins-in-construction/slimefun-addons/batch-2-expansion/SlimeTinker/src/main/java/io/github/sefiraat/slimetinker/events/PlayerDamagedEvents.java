@@ -130,11 +130,11 @@ public final class PlayerDamagedEvents {
                 p.setHealth(1);
                 friend.setDamageMod(0);
                 Particle.DustOptions dustOptions = new Particle.DustOptions(Color.fromRGB(20, 20, 20), 2);
-                p.getWorld().spawnParticle(Particle.REDSTONE, p.getLocation(), 30, 3, 3, 3, 1, dustOptions);
+                p.getWorld().spawnParticle(Particle.DUST, p.getLocation(), 30, 3, 3, 3, 1, dustOptions);
                 Particle.DustOptions dustOptions2 = new Particle.DustOptions(Color.fromRGB(1, 1, 1), 2);
-                p.getWorld().spawnParticle(Particle.REDSTONE, p.getLocation(), 30, 3, 3, 3, 1, dustOptions2);
+                p.getWorld().spawnParticle(Particle.DUST, p.getLocation(), 30, 3, 3, 3, 1, dustOptions2);
                 Particle.DustOptions dustOptions3 = new Particle.DustOptions(Color.fromRGB(40, 40, 40), 2);
-                p.getWorld().spawnParticle(Particle.REDSTONE, p.getLocation(), 30, 3, 3, 3, 1, dustOptions3);
+                p.getWorld().spawnParticle(Particle.DUST, p.getLocation(), 30, 3, 3, 3, 1, dustOptions3);
                 p.sendMessage(ThemeUtils.WARNING + "Protective has saved you from death. It's now on cooldown - take care!");
                 ItemUtils.setCooldown(i, "PROTECTIVE", 1200000);
             } else {
@@ -622,16 +622,16 @@ public final class PlayerDamagedEvents {
         if (GeneralUtils.testChance(1, 5)) {
             Player p = friend.getPlayer();
             PotionEffect speed = p.hasPotionEffect(PotionEffectType.SPEED) ? p.getPotionEffect(PotionEffectType.SPEED) : null;
-            PotionEffect haste = p.hasPotionEffect(PotionEffectType.FAST_DIGGING) ? p.getPotionEffect(PotionEffectType.FAST_DIGGING) : null;
+            PotionEffect haste = p.hasPotionEffect(PotionEffectType.HASTE) ? p.getPotionEffect(PotionEffectType.HASTE) : null;
             if (speed == null) {
                 p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 200, 0));
             } else {
                 p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 200, Math.min(speed.getAmplifier() + 1, 9)));
             }
             if (haste == null) {
-                p.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 200, 1));
+                p.addPotionEffect(new PotionEffect(PotionEffectType.HASTE, 200, 1));
             } else {
-                p.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 200, Math.min(haste.getAmplifier() + 2, 19)));
+                p.addPotionEffect(new PotionEffect(PotionEffectType.HASTE, 200, Math.min(haste.getAmplifier() + 2, 19)));
             }
         }
     }

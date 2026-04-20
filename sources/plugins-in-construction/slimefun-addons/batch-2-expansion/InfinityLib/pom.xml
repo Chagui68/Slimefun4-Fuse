@@ -5,8 +5,8 @@
     
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.mooy1</groupId>
-    <artifactId>InfinityLib</artifactId>
-    <version>1.3.10</version>
+            <artifactId>InfinityLib</artifactId>
+            <version>1.3.10</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -135,7 +135,8 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                3.6.0
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.6.0</version>
 
                 <configuration>
                     <relocations>

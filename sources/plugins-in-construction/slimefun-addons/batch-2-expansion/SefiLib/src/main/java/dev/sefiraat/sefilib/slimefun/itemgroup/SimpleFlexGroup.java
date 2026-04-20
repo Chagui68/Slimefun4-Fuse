@@ -1,6 +1,6 @@
 package dev.sefiraat.sefilib.slimefun.itemgroup;
 
-import io.github.bakedlibs.dough.chat.ChatInput;
+import dev.sefiraat.sefilib.dough.chat.ChatInput;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.groups.FlexItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.player.PlayerProfile;

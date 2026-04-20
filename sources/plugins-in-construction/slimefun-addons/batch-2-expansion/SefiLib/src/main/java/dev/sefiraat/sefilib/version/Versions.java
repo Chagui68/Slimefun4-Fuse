@@ -1,6 +1,6 @@
 package dev.sefiraat.sefilib.version;
 
-import io.github.bakedlibs.dough.versions.SemanticVersion;
+import dev.sefiraat.sefilib.dough.versions.SemanticVersion;
 
 public class Versions {
 

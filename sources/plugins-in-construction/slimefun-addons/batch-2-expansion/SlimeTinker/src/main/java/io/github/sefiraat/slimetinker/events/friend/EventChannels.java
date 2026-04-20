@@ -27,7 +27,7 @@ public final class EventChannels {
         for (Map.Entry<PotionEffectType, Integer> entry : friend.getPotionEffects().entrySet()) {
             boolean resetHealth = false;
             double health = 0;
-            if (entry.getKey() == PotionEffectType.HEALTH_BOOST) {
+            if (entry.getKey() == PotionEffectType.INSTANT_HEALTHTH_BOOST) {
                 resetHealth = true;
                 health = p.getHealth();
             }
@@ -53,7 +53,7 @@ public final class EventChannels {
      * @return int for number of bonus ticks required
      */
     private static int getBonusTicks(PotionEffectType potionEffectType) {
-        if (potionEffectType.equals(PotionEffectType.CONFUSION)) {
+        if (potionEffectType.equals(PotionEffectType.NAUSEA)) {
             return 70;
         } else if (potionEffectType.equals(PotionEffectType.NIGHT_VISION)) {
             return 210;

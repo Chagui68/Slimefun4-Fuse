@@ -130,7 +130,7 @@ public class ItemValues {
         add(100, Material.ELYTRA);
         add(200, Material.TOTEM_OF_UNDYING);
 
-        add(30, Material.TURTLE_HELMET, Material.TURTLE_EGG, Material.SCUTE);
+        add(30, Material.TURTLE_HELMET, Material.TURTLE_EGG, Material.TURTLE_SCUTE);
 
         add(40, Material.IRON_HORSE_ARMOR, Material.DIAMOND_HORSE_ARMOR);
         add(30, Material.LEATHER_HORSE_ARMOR, Material.LEAD, Material.SADDLE, Material.NAME_TAG);
@@ -261,9 +261,9 @@ public class ItemValues {
         overrides.put("SEGGANESSON", 50L);
         overrides.put("OSMIUM", 45L);
 
-        enchants.put(Enchantment.DAMAGE_ALL, 40L);
+        enchants.put(Enchantment.SHARPNESS, 40L);
         enchants.put(Enchantment.CHANNELING, 40L);
-        enchants.put(Enchantment.DURABILITY, 32L);
+        enchants.put(Enchantment.UNBREAKING, 32L);
         enchants.put(Enchantment.LOYALTY, 40L);
         enchants.put(Enchantment.MENDING, 40L);
         enchants.put(Enchantment.PROTECTION_ENVIRONMENTAL, 32L);

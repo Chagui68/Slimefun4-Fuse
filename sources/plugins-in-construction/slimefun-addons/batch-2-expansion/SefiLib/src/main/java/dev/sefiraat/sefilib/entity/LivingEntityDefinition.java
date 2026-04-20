@@ -2,7 +2,7 @@ package dev.sefiraat.sefilib.entity;
 
 import com.google.common.collect.Sets;
 import dev.sefiraat.sefilib.version.Versions;
-import io.github.bakedlibs.dough.versions.SemanticVersion;
+import dev.sefiraat.sefilib.dough.versions.SemanticVersion;
 import org.bukkit.entity.EntityType;
 
 import javax.annotation.Nullable;

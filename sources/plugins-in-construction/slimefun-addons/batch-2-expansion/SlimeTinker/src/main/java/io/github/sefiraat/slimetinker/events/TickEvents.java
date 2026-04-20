@@ -80,13 +80,13 @@ public final class TickEvents {
             double x = ThreadLocalRandom.current().nextDouble(-2.5, 2.6);
             double y = ThreadLocalRandom.current().nextDouble(-2.5, 2.6);
             double z = ThreadLocalRandom.current().nextDouble(-2.5, 2.6);
-            location.getWorld().spawnParticle(Particle.REDSTONE, location.clone().add(x, y, z), 1, green);
+            location.getWorld().spawnParticle(Particle.DUST, location.clone().add(x, y, z), 1, green);
         }
         for (int i = 0; i <= 5; i++) {
             double x = ThreadLocalRandom.current().nextDouble(-2.5, 2.6);
             double y = ThreadLocalRandom.current().nextDouble(-2.5, 2.6);
             double z = ThreadLocalRandom.current().nextDouble(-2.5, 2.6);
-            location.getWorld().spawnParticle(Particle.REDSTONE, location.clone().add(x, y, z), 1, red);
+            location.getWorld().spawnParticle(Particle.DUST, location.clone().add(x, y, z), 1, red);
         }
         increaseEffect(PotionEffectType.SATURATION, friend.getPotionEffects(), 2);
     }
@@ -123,7 +123,7 @@ public final class TickEvents {
     }
 
     public static void headBillon(EventFriend friend) {
-        increaseEffect(PotionEffectType.FAST_DIGGING, friend.getPotionEffects());
+        increaseEffect(PotionEffectType.HASTE, friend.getPotionEffects());
     }
 
     public static void headGold(EventFriend friend) {
@@ -152,7 +152,7 @@ public final class TickEvents {
     }
 
     public static void rodLead(EventFriend friend) {
-        increaseEffect(PotionEffectType.HEALTH_BOOST, friend.getPotionEffects(), 3);
+        increaseEffect(PotionEffectType.INSTANT_HEALTHTH_BOOST, friend.getPotionEffects(), 3);
         increaseEffect(PotionEffectType.HUNGER, friend.getPotionEffects());
     }
 
@@ -188,11 +188,11 @@ public final class TickEvents {
     }
 
     public static void rodIron(EventFriend friend) {
-        increaseEffect(PotionEffectType.INCREASE_DAMAGE, friend.getPotionEffects());
+        increaseEffect(PotionEffectType.STRENGTH, friend.getPotionEffects());
     }
 
     public static void headAlubronze(EventFriend friend) {
-        increaseEffect(PotionEffectType.INCREASE_DAMAGE, friend.getPotionEffects());
+        increaseEffect(PotionEffectType.STRENGTH, friend.getPotionEffects());
     }
 
     public static void rodSilver(EventFriend friend) {
@@ -214,12 +214,12 @@ public final class TickEvents {
     }
 
     public static void rodCorbronze(EventFriend friend) {
-        increaseEffect(PotionEffectType.CONFUSION, friend.getPotionEffects());
+        increaseEffect(PotionEffectType.NAUSEA, friend.getPotionEffects());
     }
 
     public static void headDuralium(EventFriend friend) {
         if (ItemUtils.isTinkersBroken(friend.getTool())) {
-            increaseEffect(PotionEffectType.SLOW_DIGGING, friend.getPotionEffects());
+            increaseEffect(PotionEffectType.MINING_FATIGUE, friend.getPotionEffects());
         }
     }
 
@@ -232,11 +232,11 @@ public final class TickEvents {
     }
 
     public static void headMetal(EventFriend friend) {
-        increaseEffect(PotionEffectType.FAST_DIGGING, friend.getPotionEffects(), 2);
+        increaseEffect(PotionEffectType.HASTE, friend.getPotionEffects(), 2);
     }
 
     public static void headMythril(EventFriend friend) {
-        increaseEffect(PotionEffectType.FAST_DIGGING, friend.getPotionEffects(), 2);
+        increaseEffect(PotionEffectType.HASTE, friend.getPotionEffects(), 2);
         increaseEffect(PotionEffectType.SPEED, friend.getPotionEffects());
     }
 
@@ -249,7 +249,7 @@ public final class TickEvents {
     }
 
     public static void rodSingLead(EventFriend friend) {
-        increaseEffect(PotionEffectType.HEALTH_BOOST, friend.getPotionEffects(), 2);
+        increaseEffect(PotionEffectType.INSTANT_HEALTHTH_BOOST, friend.getPotionEffects(), 2);
     }
 
     public static void rodSingMagnesium(EventFriend friend) {
@@ -281,7 +281,7 @@ public final class TickEvents {
     }
 
     public static void rodSingIron(EventFriend friend) {
-        increaseEffect(PotionEffectType.INCREASE_DAMAGE, friend.getPotionEffects(), 2);
+        increaseEffect(PotionEffectType.STRENGTH, friend.getPotionEffects(), 2);
     }
 
     public static void rodMythril(EventFriend friend) {
@@ -344,7 +344,7 @@ public final class TickEvents {
     }
 
     public static void headOsmiumSuperalloy(EventFriend friend) {
-        increaseEffect(PotionEffectType.SLOW_DIGGING, friend.getPotionEffects());
+        increaseEffect(PotionEffectType.MINING_FATIGUE, friend.getPotionEffects());
     }
 
     public static void rodStarDust(EventFriend friend) {
@@ -450,7 +450,7 @@ public final class TickEvents {
 
     public static void plateDamSteel(EventFriend friend) {
         friend.setCompounding(friend.getCompounding() + 1);
-        increaseEffect(PotionEffectType.HEALTH_BOOST, friend.getPotionEffects(), friend.getCompounding());
+        increaseEffect(PotionEffectType.INSTANT_HEALTHTH_BOOST, friend.getPotionEffects(), friend.getCompounding());
     }
 
     public static void gambesonCrimsonRoots(EventFriend friend) {
@@ -556,7 +556,7 @@ public final class TickEvents {
     }
 
     public static void linksSteel(EventFriend friend) {
-        increaseEffect(PotionEffectType.HEALTH_BOOST, friend.getPotionEffects());
+        increaseEffect(PotionEffectType.INSTANT_HEALTHTH_BOOST, friend.getPotionEffects());
     }
 
     public static void plateCorBronze(EventFriend friend) {
@@ -574,7 +574,7 @@ public final class TickEvents {
         if (environment == World.Environment.NETHER) {
             increaseEffect(PotionEffectType.SPEED, friend.getPotionEffects(), 2);
         } else if (environment == World.Environment.THE_END) {
-            increaseEffect(PotionEffectType.SLOW, friend.getPotionEffects());
+            increaseEffect(PotionEffectType.SLOWNESS, friend.getPotionEffects());
         }
     }
 
@@ -724,7 +724,7 @@ public final class TickEvents {
     }
 
     public static void plateOsmium(EventFriend friend) {
-        increaseEffect(PotionEffectType.SLOW, friend.getPotionEffects());
+        increaseEffect(PotionEffectType.SLOWNESS, friend.getPotionEffects());
     }
 
     public static void plateUnpatentabilum(EventFriend friend) {

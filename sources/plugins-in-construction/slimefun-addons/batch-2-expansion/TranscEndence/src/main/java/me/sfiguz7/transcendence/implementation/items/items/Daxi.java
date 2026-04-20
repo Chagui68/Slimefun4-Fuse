@@ -128,7 +128,7 @@ public class Daxi extends SlimefunItem {
                     float yRand = (random.nextFloat() - 0.5F) * 3.2F;
                     float zRand = (random.nextFloat() - 0.5F) * 3.2F;
 
-                    p.getWorld().spawnParticle(Particle.REDSTONE,
+                    p.getWorld().spawnParticle(Particle.DUST,
                         l.getX() + (double) xRand,
                         l.getY() + 2.0D + (double) yRand,
                         l.getZ() + (double) zRand,
@@ -172,7 +172,7 @@ public class Daxi extends SlimefunItem {
             new ItemStack[] {TEItems.ZOT_UP_2, TEItems.ZOT_UP_2, TEItems.ZOT_UP_2, TEItems.ZOT_UP_2},
             new ItemStack[] {TEItems.ZOT_UP, TEItems.ZOT_UP, TEItems.ZOT_UP, TEItems.ZOT_UP},
             new Color[] {Color.RED, Color.RED, Color.FUCHSIA, Color.FUCHSIA},
-            PotionEffectType.INCREASE_DAMAGE,
+            PotionEffectType.STRENGTH,
             CONFIG.getInt("daxi-effects.strength-level"),
             CONFIG.getString("options.daxi-message-strength")
         ),
@@ -188,7 +188,7 @@ public class Daxi extends SlimefunItem {
             new ItemStack[] {TEItems.ZOT_LEFT_2, TEItems.ZOT_LEFT_2, TEItems.ZOT_LEFT_2, TEItems.ZOT_LEFT_2},
             new ItemStack[] {TEItems.ZOT_LEFT, TEItems.ZOT_LEFT, TEItems.ZOT_LEFT, TEItems.ZOT_LEFT},
             new Color[] {Color.LIME, Color.LIME, Color.GREEN, Color.GREEN},
-            PotionEffectType.DAMAGE_RESISTANCE,
+            PotionEffectType.RESISTANCE,
             CONFIG.getInt("daxi-effects.fortitude-level"),
             CONFIG.getString("options.daxi-message-fortitude")
         ),

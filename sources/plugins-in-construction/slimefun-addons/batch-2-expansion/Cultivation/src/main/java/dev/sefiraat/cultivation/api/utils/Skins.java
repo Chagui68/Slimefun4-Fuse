@@ -1,7 +1,7 @@
 package dev.sefiraat.cultivation.api.utils;
 
-import io.github.bakedlibs.dough.skins.PlayerHead;
-import io.github.bakedlibs.dough.skins.PlayerSkin;
+import dev.sefiraat.sefilib.dough.skins.PlayerHead;
+import dev.sefiraat.sefilib.dough.skins.PlayerSkin;
 import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;

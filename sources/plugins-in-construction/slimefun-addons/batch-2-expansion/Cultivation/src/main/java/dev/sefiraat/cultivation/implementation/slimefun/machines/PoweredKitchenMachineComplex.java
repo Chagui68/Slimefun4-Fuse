@@ -4,7 +4,7 @@ import dev.sefiraat.cultivation.api.slimefun.items.produce.ByProduct;
 import dev.sefiraat.cultivation.implementation.slimefun.items.Machines;
 import dev.sefiraat.sefilib.entity.display.DisplayGroup;
 import dev.sefiraat.sefilib.string.Theme;
-import io.github.bakedlibs.dough.items.CustomItemStack;
+import dev.sefiraat.sefilib.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;

@@ -3,7 +3,7 @@ package io.github.addoncommunity.slimechem.lists;
 import io.github.addoncommunity.slimechem.SlimeChem;
 import io.github.thebusybiscuit.slimefun4.utils.HeadTexture;
 import lombok.experimental.UtilityClass;
-import io.github.thebusybiscuit.slimefun4.Lists.RecipeType;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems.RecipeType;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;

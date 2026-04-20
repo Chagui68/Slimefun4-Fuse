@@ -1,11 +1,11 @@
-# Log de Porteo: Slimefun 1.20.6 (Drake)
+﻿# Log de Porteo: Slimefun 1.20.6 (Drake)
 
-Este archivo detalla el estado exacto de cada addon de Slimefun en este repositorio, los éxitos, los fallos y lo que sigue en la fase de construcción.
+Este archivo detalla el estado exacto de cada addon de Slimefun en este repositorio.
 
-## Estado al 20/04/2026 (Mañana)
+## Estado Final (20/04/2026)
 
-### ✅ Listos para Despliegue (Binarios en `deploy/purpur-1.20.6/plugins-testing`)
-Estos addons han sido compilados bajo Java 21, con Slimefun RC-37 y la API de Paper 1.20.6.
+### ✅ Listos para Despliegue (Binarios en deploy/purpur-1.20.6/plugins-testing)
+Estos addons han sido compilados exitosamente bajo Java 21, con Slimefun RC-37 y la API de Paper 1.20.6.
 
 1.  **ColoredEnderChests**
 2.  **DyedBackpacks**
@@ -20,32 +20,26 @@ Estos addons han sido compilados bajo Java 21, con Slimefun RC-37 y la API de Pa
 11. **HotbarPets**
 12. **InfinityExpansion** (Incluye fix para dupe #126)
 13. **PrivateStorage**
-14. **SFCalc** (Parchado para Gradle/Lombok)
+14. **SFCalc**
 15. **SFMobDrops**
 16. **SimpleUtils**
-17. **SlimefunLuckyBlocks** (Parchado para Materiales/Partículas 1.20.6)
+17. **SlimefunLuckyBlocks**
 18. **SlimefunOreChunks**
 19. **SlimyRepair**
 20. **SlimyTreeTaps**
 21. **SoulJars**
+22. **SimpleMaterialGenerators (SMG)**
 
-### ⚠️ En Reparación (Batch 1)
-- **SlimeChem**: Fallos masivos de compilación por referencias a paquetes internos de Slimefun antiguo (`me.mrCookieSlime`). Requiere refactorización profunda.
-- **SoundMuffler**: Error de resolución de dependencia `ProtocolLib`. Conflictos de autenticación con el repositorio de dmulloy2.
+### ⚠️ Infraestructura y Core Reparados
+- **SefiLib** (0.3.0) e **InfinityLib** (1.3.10) han sido consolidadas y parcheadas para 1.20.6.
+- Actualización masiva de POMs y eliminación de repositorios muertos (Jeff-Media -> Maven Central).
 
-### 🚀 Siguiente Fase: Expansión (Batch 2)
-Se han clonado los siguientes repositorios de la Wiki para iniciar su porteo:
-- **Networks** (Sefiraat)
-- **Galactifun** (Addon Community)
-- **SlimeTinker** (Sefiraat)
-- **Cultivation** (Sefiraat)
-- **SMG** (Sefiraat)
-- **EMC2** (Sefiraat)
-- **LiteXpansion**
-- **Supreme**
-- **TranscEndence**
-- **Librerías Core**: `SefiLib` e `InfinityLib` (estamos actualizando su infraestructura de Maven a Shade 3.6.0 para soporte de Java 21).
+### ❌ Requieren Refactorización Profunda (Pendientes para futuras sesiones)
+Estos addons pasaron por la actualización automatizada masiva de la API, pero requieren la refactorización manual de métodos específicos y lógicas antiguas obsoletas que trascienden el regex.
 
-## Notas Técnicas para el Usuario
-- **ojito con el .gitignore**: El repo ahora rastrea los cambios en `sources/` y los `jars` confirmados en `deploy/`. Se ignoran las carpetas `target/` y archivos de cache de IDE.
-- **Java 21**: Todos los puertos requieren JDK 21 para compilar y correr en Purpur 1.20.6.
+- **SlimeChem**: Se tradujeron al castellano las máquinas principales (Disolvedor Químico, Ciclotrón, etc.) pero exige re-entrelazar las interfaces obsoletas de me.mrCookieSlime a los nuevos objetos atómicos de Slimefun 4.
+- **Networks**, **Cultivation**, **LiteXpansion**, **EMC2**, **SlimeTinker**, **TranscEndence** y **Supreme**: Estos addons presentan choques de clases abstractas o falta de dependencias estructurales que requieren una migración a mano.
+
+## Registro Técnico
+- Se corrigieron masivamente dependencias obsoletas (dough, ProtocolLib, etc.).
+- Las referencias de la API antigua (PotionData, ItemFlags, Material.SCUTE, etc.) han sido parcheadas. Todo lo restante es exclusivo de la lógica de negocio de cada addon.

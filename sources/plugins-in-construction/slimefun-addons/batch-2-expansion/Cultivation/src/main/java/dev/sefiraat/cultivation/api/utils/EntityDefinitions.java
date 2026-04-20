@@ -4,8 +4,8 @@ import dev.sefiraat.cultivation.Cultivation;
 import dev.sefiraat.sefilib.entity.LivingEntityCategory;
 import dev.sefiraat.sefilib.entity.LivingEntityDefinition;
 import dev.sefiraat.sefilib.entity.LivingEntitySelector;
-import io.github.bakedlibs.dough.versions.MinecraftVersion;
-import io.github.bakedlibs.dough.versions.UnknownServerVersionException;
+import dev.sefiraat.sefilib.dough.versions.MinecraftVersion;
+import dev.sefiraat.sefilib.dough.versions.UnknownServerVersionException;
 import org.bukkit.Server;
 
 import java.util.Collections;

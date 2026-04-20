@@ -6,7 +6,7 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
 import io.github.thebusybiscuit.slimefun4.core.handlers.EntityInteractHandler;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import lombok.Getter;
-import io.github.thebusybiscuit.slimefun4.Lists.RecipeType;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems.RecipeType;
 import io.github.thebusybiscuit.slimefun4.api.items.Category;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.inventory.ItemUtils;

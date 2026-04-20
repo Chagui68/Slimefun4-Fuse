@@ -4,7 +4,7 @@ import io.github.addoncommunity.slimechem.implementation.attributes.Ingredient;
 import io.github.thebusybiscuit.slimefun4.core.attributes.Radioactive;
 import io.github.thebusybiscuit.slimefun4.core.attributes.Radioactivity;
 import lombok.Getter;
-import io.github.thebusybiscuit.slimefun4.Lists.RecipeType;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems.RecipeType;
 import io.github.thebusybiscuit.slimefun4.api.items.Category;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem.SlimefunItem;
 import org.bukkit.inventory.ItemStack;

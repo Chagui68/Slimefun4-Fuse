@@ -7,7 +7,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import lombok.Data;
 import io.github.thebusybiscuit.slimefun4.api.Config;
-import io.github.thebusybiscuit.slimefun4.Lists.RecipeType;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems.RecipeType;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.BlockStorage;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;

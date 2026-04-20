@@ -2,7 +2,7 @@ package io.github.sefiraat.networks.slimefun.network;
 
 import dev.sefiraat.sefilib.misc.ParticleUtils;
 import dev.sefiraat.sefilib.world.LocationUtils;
-import io.github.bakedlibs.dough.blocks.BlockPosition;
+import dev.sefiraat.sefilib.dough.blocks.BlockPosition;
 import io.github.sefiraat.networks.NetworkStorage;
 import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.network.NodeDefinition;

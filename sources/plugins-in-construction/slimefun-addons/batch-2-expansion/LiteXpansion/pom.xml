@@ -25,7 +25,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.spigotmc</groupId>
+            <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.20.6-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
@@ -91,7 +91,8 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                3.13.0
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
                 <configuration>
                     <source>21</source>
                     <target>21</target>
@@ -100,7 +101,8 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                3.6.0
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.6.0</version>
                 <executions>
                     <execution>
                         <goals>
