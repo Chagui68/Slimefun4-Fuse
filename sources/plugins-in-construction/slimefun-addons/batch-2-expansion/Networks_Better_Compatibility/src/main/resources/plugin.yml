@@ -1,0 +1,36 @@
+name: Networks
+author: Sefiraat, Chagui68
+description: No idea yet
+main: io.github.sefiraat.networks.Networks
+website: https://github.com/Chagui68/Networks_Better_Compatibility
+version: ${project.version}
+api-version: 1.20
+depend:
+  - Slimefun
+softdepend:
+  - InfinityExpansion
+  - Netheopoiesis
+  - InfinityExpansion2
+  - Supreme
+  - Cultivation
+  - GeneticChickengineering
+  - DynaTech
+  - SlimyTreeTaps
+  - ElectricSpawners
+  - ExtraTools
+  - TranscEndence
+  - FluffyMachines
+  - FoxyMachines
+  - GlobalWarming
+  - SlimefunWarfare
+  - Liquid
+  - AlchimiaVitae
+  - FNAmplifications
+  - ElementManipulation
+  - SlimeHUD
+  - WildChests
+  - WeaponsAddon
+commands:
+  networks:
+    description: /networks
+    usage: /networks <sub>

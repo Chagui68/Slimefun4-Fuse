@@ -43,3 +43,8 @@ Estos addons pasaron por la actualización automatizada masiva de la API, pero r
 ## Registro Técnico
 - Se corrigieron masivamente dependencias obsoletas (dough, ProtocolLib, etc.).
 - Las referencias de la API antigua (PotionData, ItemFlags, Material.SCUTE, etc.) han sido parcheadas. Todo lo restante es exclusivo de la lógica de negocio de cada addon.
+
+
+## Suspensión Temporal (Networks_Better_Compatibility)
+- Se clonó y se aplicó la migración inicial de API 1.20.6 al fork de Chagui68.
+- Presenta errores en el pom.xml similares a los del proyecto base (plugins sin artifactId). Pendiente de fix manual en la próxima sesión.
