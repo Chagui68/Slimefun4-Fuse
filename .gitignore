@@ -1,0 +1,17 @@
+# IDE
+.idea/
+.vscode/
+
+# Java / Maven build garbage
+**/target/
+**/dependency-reduced-pom.xml
+
+# Runtime junk
+**/logs/
+**/cache/
+**/tmp/
+**/temp/
+
+# OS files
+Thumbs.db
+Desktop.ini

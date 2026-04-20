@@ -1,0 +1,8 @@
+name: ElectricSpawners
+version: ${project.version}
+author: TheBusyBiscuit
+depend: [Slimefun]
+
+api-version: 1.13
+
+main: io.github.thebusybiscuit.electricspawners.ElectricSpawners
