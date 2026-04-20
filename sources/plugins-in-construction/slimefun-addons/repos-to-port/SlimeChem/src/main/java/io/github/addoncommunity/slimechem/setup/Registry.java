@@ -21,9 +21,9 @@ import io.github.addoncommunity.slimechem.implementation.subatomic.Nucleon;
 import io.github.addoncommunity.slimechem.lists.Items;
 import io.github.addoncommunity.slimechem.lists.RecipeTypes;
 import lombok.Getter;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+import io.github.thebusybiscuit.slimefun4.Lists.RecipeType;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 

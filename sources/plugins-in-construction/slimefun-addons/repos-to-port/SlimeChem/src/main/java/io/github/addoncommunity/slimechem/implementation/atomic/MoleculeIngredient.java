@@ -3,7 +3,7 @@ package io.github.addoncommunity.slimechem.implementation.atomic;
 import io.github.addoncommunity.slimechem.implementation.atomic.isotopes.Isotope;
 import io.github.addoncommunity.slimechem.implementation.attributes.Ingredient;
 import lombok.Getter;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;

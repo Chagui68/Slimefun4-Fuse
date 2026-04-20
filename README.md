@@ -49,14 +49,16 @@ Sin repetir la fase caotica de "buscar links, comparar versiones y adivinar comp
 
 ## Estado Actual
 
+### Actualización Mañana (20/04/2026)
+- **Hito de Porteo**: 21 addons de Slimefun han sido portados exitosamente a **Purpur 1.20.6** con Java 21 y Slimefun RC-37.
+- **Addons Listos**: `ColoredEnderChests`, `DyedBackpacks`, `DynaTech`, `EcoPower`, `ElectricSpawners`, `ExoticGarden`, `ExtraGear`, `ExtraUtils`, `FluffyMachines`, `GlobalWarming`, `HotbarPets`, `InfinityExpansion`, `PrivateStorage`, `SFCalc`, `SFMobDrops`, `SimpleUtils`, `SlimefunLuckyBlocks`, `SlimefunOreChunks`, `SlimyRepair`, `SlimyTreeTaps`, `SoulJars`.
+- **En Construcción (Batch 1)**: `SlimeChem` (refactorización de paquetes antiguos) y `SoundMuffler` (conflicto de ProtocolLib).
+- **Expansión iniciada (Batch 2)**: Clonación y preparación de 11 repositorios adicionales de la Wiki (Networks, Galactifun, SlimeTinker, etc.).
+
+---
+
 - `Slimefun 1.20.6` ya esta portado y compilado.
 - Hay una base funcional de plugins generales para empezar un server `Purpur 1.20.6`.
-- Ya existe una coleccion separada de addons `Slimefun`:
-  - listos sin modificar
-  - portados localmente
-  - en construccion
-- `InfinityExpansion` ya tiene parche local para el dupe del storage reportado en el issue `#126`.
-- `SlimefunWarfare` queda fuera por riesgo operativo hasta revisar protecciones y bypasses.
 
 ## Flujo Recomendado
 

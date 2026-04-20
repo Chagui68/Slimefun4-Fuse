@@ -12,12 +12,7 @@
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-        </repository>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io/</url>
-        </repository>
-              <repository>
+        </repository><repository>
                       <id>dmulloy2-repo</id>
                       <url>https://repo.dmulloy2.net/nexus/repository/public/</url>
               </repository>
@@ -25,19 +20,23 @@
             <id>bstats-repo</id>
             <url>https://repo.codemc.org/repository/maven-public</url>
         </repository>
-      </repositories>
+          <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.16.4-R0.1-SNAPSHOT</version>
+            <version>1.20.6-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.TheBusyBiscuit</groupId>
+            <groupId>com.github.Slimefun</groupId>
             <artifactId>Slimefun4</artifactId>
-            <version>RC-17</version>
+            <version>RC-37</version>
             <scope>provided</scope>
             <exclusions>
                 <exclusion>
@@ -57,9 +56,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.dmulloy2</groupId>
+            <groupId>com.comphenix.protocol</groupId>
             <artifactId>ProtocolLib</artifactId>
-            <version>7bac4ec634</version>
+            <version>5.1.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -88,7 +87,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>3.13.0</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -97,7 +96,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>2.3</version>
+                <version>3.5.2</version>
                 <executions>
                     <execution>
                         <goals>

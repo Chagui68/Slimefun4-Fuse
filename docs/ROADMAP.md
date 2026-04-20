@@ -13,16 +13,10 @@ Completar una libreria util de plugins para `Purpur 1.20.6` que permita montar u
   - portados localmente
   - en construccion
 - base general actual con:
-  - `LuckPerms`
-  - `Vault`
-  - `EssentialsX`
-  - `PlaceholderAPI`
-  - `TAB`
-  - `DeluxeMenus`
-  - `ProtectionStones`
-  - `WorldGuard`
-  - `CoreProtect`
-  - `FastAsyncWorldEdit`
+  - `LuckPerms`, `Vault`, `EssentialsX`, `PlaceholderAPI`, `TAB`, `DeluxeMenus`, `ProtectionStones`, `WorldGuard`, `CoreProtect`, `FastAsyncWorldEdit`
+- Directorios para configuraciones (`configs-base`)
+- Test Environment (`plugins-testing`)
+- Documentacion de addons prohibidos (`addons-rechazados.md`) y convención de nombres (`NAMING-CONVENTION.md`)
 
 ## Falta Consolidar
 
@@ -31,7 +25,6 @@ Completar una libreria util de plugins para `Purpur 1.20.6` que permita montar u
 - clasificar plugins por:
   - seguros para publico
   - utiles pero delicados
-  - descartados por abuso, dupe o bypass de protecciones
 - preparar packs de configuracion base:
   - tablist
   - scoreboard
@@ -45,10 +38,7 @@ Completar una libreria util de plugins para `Purpur 1.20.6` que permita montar u
 - seguir portando addons medianos y pesados de `Slimefun`
 - revisar exploits adicionales en addons complejos
 - probar en runtime real los jars portados mas sensibles
-- documentar que addons quedan fuera por riesgo
 
 ## Pendientes Operativos
 
-- crear una carpeta de configuraciones iniciales reutilizables
-- dejar una convencion de nombres para jars confirmados
-- separar mejor los plugins solo de prueba de los plugins que van directo a produccion
+- probar la estabilidad de las configuraciones base en runtime

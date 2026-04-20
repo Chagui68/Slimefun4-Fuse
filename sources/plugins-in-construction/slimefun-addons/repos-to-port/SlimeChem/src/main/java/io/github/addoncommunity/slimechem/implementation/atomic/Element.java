@@ -11,7 +11,7 @@ import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import org.bukkit.Material;
 
 import javax.annotation.Nonnull;

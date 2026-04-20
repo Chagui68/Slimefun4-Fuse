@@ -2,7 +2,7 @@ package io.github.addoncommunity.slimechem.utils;
 
 import io.github.addoncommunity.slimechem.SlimeChem;
 import lombok.Data;
-import org.apache.commons.lang.WordUtils;
+import org.apache.commons.lang3.WordUtils;
 
 import javax.annotation.Nonnull;
 import java.io.ByteArrayOutputStream;

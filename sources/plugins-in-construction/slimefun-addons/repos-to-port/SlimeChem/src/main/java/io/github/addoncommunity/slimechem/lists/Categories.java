@@ -2,8 +2,8 @@ package io.github.addoncommunity.slimechem.lists;
 
 
 import io.github.addoncommunity.slimechem.SlimeChem;
-import me.mrCookieSlime.Slimefun.Objects.Category;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+import io.github.thebusybiscuit.slimefun4.api.items.Category;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 

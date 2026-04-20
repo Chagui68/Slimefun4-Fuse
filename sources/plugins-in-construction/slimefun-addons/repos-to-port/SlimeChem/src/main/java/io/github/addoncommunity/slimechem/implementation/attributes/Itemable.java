@@ -1,6 +1,6 @@
 package io.github.addoncommunity.slimechem.implementation.attributes;
 
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 
 import javax.annotation.Nonnull;
 

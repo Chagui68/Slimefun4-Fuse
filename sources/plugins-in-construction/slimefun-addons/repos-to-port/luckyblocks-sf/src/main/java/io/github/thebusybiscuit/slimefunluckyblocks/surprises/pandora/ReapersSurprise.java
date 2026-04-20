@@ -25,10 +25,10 @@ public final class ReapersSurprise implements Surprise {
 
     public ReapersSurprise() {
         hoe = new CustomItemStack(Material.GOLDEN_HOE, "&e&lLucky Hoe");
-        hoe.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 10);
-        hoe.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 10);
+        hoe.addUnsafeEnchantment(Enchantment.SHARPNESS, 10);
+        hoe.addUnsafeEnchantment(Enchantment.LOOTING, 10);
         hoe.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 5);
-        hoe.addUnsafeEnchantment(Enchantment.DURABILITY, 10);
+        hoe.addUnsafeEnchantment(Enchantment.UNBREAKING, 10);
     }
 
     @Override
@@ -51,7 +51,7 @@ public final class ReapersSurprise implements Surprise {
             zombie.setCanPickupItems(false);
 
             zombie.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 999999999, 255));
-            zombie.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 999999999, 1));
+            zombie.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH, 999999999, 1));
             zombie.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 999999999, 1));
         }
     }

@@ -1,43 +1,117 @@
-# Catalogo Base de Addons Slimefun
+# Auditoría General de Addons de Slimefun
 
-Base tomada de:
+Este reporte clasifica todos los addons actuales mencionados en la [Wiki Oficial de Slimefun](https://github.com/Slimefun/Slimefun4/wiki/Addons) en relación a su estado operativo en `DrakesVanillaSlimefun+`.
 
-- Wiki oficial: `https://github.com/Slimefun/Slimefun4/wiki/Addons`
-- Organizacion comunitaria: `https://github.com/Slimefun-Addon-Community`
+## 🟩 Listos para Subir al Servidor (Plugins Confirmados)
+Estos `jars` ya están en el stack inicial (`deploy/purpur-1.20.6/plugins-confirmed/...`) o parcheados localmente, garantizados para `Purpur 1.20.6`.
 
-## Addons oficiales destacados
+**Oficiales:**
+- ColoredEnderChests
+- DyedBackpacks
+- EcoPower
+- ElectricSpawners
+- ExtraGear
+- ExtraHeads
+- HardcoreSlimefun
+- HotbarPets
+- LiteXpansion
+- MobCapturer
+- PrivateStorage
+- SFMobDrops
+- SlimefunOreChunks
+- SoulJars
 
-| Nombre | Source | Releases |
-| --- | --- | --- |
-| ExoticGarden | https://github.com/Slimefun-Addon-Community/ExoticGarden | https://github.com/Slimefun-Addon-Community/ExoticGarden/releases |
-| ColoredEnderChests | https://github.com/Slimefun-Addon-Community/ColoredEnderChests | https://github.com/Slimefun-Addon-Community/ColoredEnderChests/releases |
-| LuckyBlocks | https://github.com/Slimefun-Addon-Community/luckyblocks | https://github.com/Slimefun-Addon-Community/luckyblocks/releases |
-| HotbarPets | https://github.com/Slimefun-Addon-Community/HotbarPets | https://github.com/Slimefun-Addon-Community/HotbarPets/releases |
-| SoulJars | https://github.com/Slimefun-Addon-Community/SoulJars | https://github.com/Slimefun-Addon-Community/SoulJars/releases |
-| Galactifun | https://github.com/Slimefun-Addon-Community/Galactifun | https://github.com/Slimefun-Addon-Community/Galactifun/releases |
+**Comunitarios:**
+- AdvancedTech
+- Cultivation
+- DynaTech
+- Galactifun
+- InfinityExpansion _(Parche local para dupe issue #126)_
+- Networks
 
-## Addons comunitarios utiles para revisar
+---
 
-| Nombre | Source | Releases |
-| --- | --- | --- |
-| AdvancedTech | https://github.com/Slimefun-Addon-Community/AdvancedTech | https://github.com/Slimefun-Addon-Community/AdvancedTech/releases |
-| MobCapturer | https://github.com/Slimefun-Addon-Community/MobCapturer | https://github.com/Slimefun-Addon-Community/MobCapturer/releases |
-| ExtraHeads | https://github.com/Slimefun-Addon-Community/ExtraHeads | https://github.com/Slimefun-Addon-Community/ExtraHeads/releases |
-| SlimyTreeTaps | https://github.com/Slimefun-Addon-Community/SlimyTreeTaps | https://github.com/Slimefun-Addon-Community/SlimyTreeTaps/releases |
-| ElectricSpawners | https://github.com/Slimefun-Addon-Community/ElectricSpawners | https://github.com/Slimefun-Addon-Community/ElectricSpawners/releases |
-| EcoPower | https://github.com/Slimefun-Addon-Community/EcoPower | https://github.com/Slimefun-Addon-Community/EcoPower/releases |
-| DyedBackpacks | https://github.com/Slimefun-Addon-Community/DyedBackpacks | https://github.com/Slimefun-Addon-Community/DyedBackpacks/releases |
-| PrivateStorage | https://github.com/Slimefun-Addon-Community/PrivateStorage | https://github.com/Slimefun-Addon-Community/PrivateStorage/releases |
-| LiteXpansion | https://github.com/Slimefun-Addon-Community/LiteXpansion | https://github.com/Slimefun-Addon-Community/LiteXpansion/releases |
-| DynaTech | https://github.com/Slimefun-Addon-Community/DynaTech | https://github.com/Slimefun-Addon-Community/DynaTech/releases |
-| HardcoreSlimefun | https://github.com/Slimefun-Addon-Community/HardcoreSlimefun | https://github.com/Slimefun-Addon-Community/HardcoreSlimefun/releases |
-| ExtraUtils | https://github.com/Slimefun-Addon-Community/ExtraUtils | https://github.com/Slimefun-Addon-Community/ExtraUtils/releases |
-| SlimeChem | https://github.com/Slimefun-Addon-Community/SlimeChem | https://github.com/Slimefun-Addon-Community/SlimeChem/releases |
+## 🟨 Pendientes / En Construcción (En la fila de espera)
+Los repositorios de estos addons se encuentran descargados en `sources/plugins-in-construction/slimefun-addons/repos-to-port` y aguardan un fix manual, parcheo o verificación de compatibilidad.
 
-## Estado local
+**Oficiales:**
+- ExoticGarden
+- luckyblocks-sf
+- SlimyTreeTaps
 
-Jars ya presentes en esta carpeta:
+**Comunitarios:**
+- FluffyMachines
+- GlobalWarming
+- SFCalc
+- SimpleUtils
+- SlimeChem
+- SlimyRepair
+- SoundMuffler
 
-- `CoreProtect-CE-23.1.jar`
-- `Cultivation.v2.5.jar`
-- `Networks.v1.6.jar`
+---
+
+## ⬛ Lista Negra (Descartados / Uso Peligroso)
+Estos repositorios se encuentran formalmente descartados por inestabilidad, bypass de protecciones, dupes conocidos o rendimiento perjudicial. **No irán a producción.**
+
+- **SlimefunWarfare:** Riesgo permanente de bypass de claims y abusos con explosivos, armas y daño colateral.
+- **EMCTech:** Ingresado a la lista negra (sugerido por la política operativa y técnica).
+
+_Nota: Estos están documentados a fondo en `addons-rechazados.md`._
+
+---
+
+## ⬜ Faltan / No están en nuestro radar
+Esta es la lista restante de addons comunitarios que existen en la Wiki pero no están priorizados todavía. Se recomienda auditarlos uno por uno antes de tomar la decisión de portarlos, ya que muchos pueden estar sin mantenimiento.
+
+**Comunitarios (Requieren auditoría si se van a usar):**
+- AlchimiaVitae
+- Better-Nuclear-Generator
+- Bump
+- CompressionCraft
+- CrystamaeHistoria
+- CustomItemGenerators
+- DankTech2
+- Dracfun
+- DyeBench
+- Element-Manipulation
+- ExtraTools
+- FastMachines
+- FlowerPower
+- FoxyMachines
+- FN-FAL's Amplifications
+- Gastronomicon
+- GeneticChickengineering-Reborn
+- HeadLimiter
+- IDreamOfEasy
+- Liquid
+- Magic-8-Ball
+- MapJammers
+- MiniBlocks
+- MissileWarfare
+- MoreResearches
+- Netheopoiesis
+- PotionExpansion
+- Quaptics
+- RelicsOfCthonia
+- RykenSlimeCustomizer-EN
+- SaneCrafting
+- SfBetterChests
+- SfChunkInfo
+- Simple-Storage
+- SlimeCustomizer
+- SlimeFrame
+- SlimeHUD
+- SlimeTinker
+- SlimeVision
+- SlimefunAdvancements
+- SlimefunTranslation
+- SmallSpace
+- SMG
+- SpiritsUnchained
+- Supreme
+- TranscEndence
+- UltimateGenerators2
+- VillagerTrade
+- VillagerUtil
+- Wildernether
+- WorldEditSlimefun

@@ -5,9 +5,9 @@ import io.github.addoncommunity.slimechem.implementation.atomic.MoleculeIngredie
 import io.github.addoncommunity.slimechem.lists.Categories;
 import io.github.addoncommunity.slimechem.lists.Items;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.Lists.RecipeType;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;

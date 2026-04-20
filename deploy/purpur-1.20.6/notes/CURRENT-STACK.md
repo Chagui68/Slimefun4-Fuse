@@ -55,7 +55,14 @@ Ubicacion: `deploy/purpur-1.20.6/plugins-confirmed/slimefun-ported`
 - `SlimefunOreChunks`
 - `SoulJars`
 
-## Nota de Seguridad
+## Plugins en Pruebas (Test Environment)
 
+Ubicacion: `deploy/purpur-1.20.6/plugins-testing`
+
+Aquí se colocan los plugins u addons que no están garantizados para el survival principal y están bajo evaluación o debug en el build lab.
+
+## Nota de Seguridad y Operacion
+
+- Todo jar debe seguir la `NAMING-CONVENTION.md`.
 - `InfinityExpansion` incluye parche local para el dupe de storages del issue `#126`.
-- `SlimefunWarfare` sigue fuera de la libreria confirmada por riesgo de bypass o abuso hasta que se audite mejor.
+- `SlimefunWarfare` y `EMCTech` quedan estrictamente prohibidos y no deben colocarse ni siquiera en la carpeta confirmed. Ver `addons-rechazados.md`.
