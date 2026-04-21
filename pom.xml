@@ -25,45 +25,45 @@
 
     <modules>
         <!-- Librería Base -->
-        <module>sources/plugins-in-construction/slimefun-addons/dough-core</module>
+        <module>sources/dough-core</module>
 
         <!-- Batch 1: Repos to Port -->
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/ColoredEnderChests</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/DyedBackpacks</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/DynaTech</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/EcoPower</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/ElectricSpawners</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/ExoticGarden</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/ExtraGear</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/ExtraUtils</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/FluffyMachines</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/GlobalWarming</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/HotbarPets</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/InfinityExpansion</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/luckyblocks-sf</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/PrivateStorage</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/SFCalc</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/SFMobDrops</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/SimpleUtils</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/SlimeChem</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/SlimefunOreChunks</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/SlimyRepair</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/SlimyTreeTaps</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/SoulJars</module>
-        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/SoundMuffler</module>
+        <module>sources/repos-to-port/ColoredEnderChests</module>
+        <module>sources/repos-to-port/DyedBackpacks</module>
+        <module>sources/repos-to-port/DynaTech</module>
+        <module>sources/repos-to-port/EcoPower</module>
+        <module>sources/repos-to-port/ElectricSpawners</module>
+        <module>sources/repos-to-port/ExoticGarden</module>
+        <module>sources/repos-to-port/ExtraGear</module>
+        <module>sources/repos-to-port/ExtraUtils</module>
+        <module>sources/repos-to-port/FluffyMachines</module>
+        <module>sources/repos-to-port/GlobalWarming</module>
+        <module>sources/repos-to-port/HotbarPets</module>
+        <module>sources/repos-to-port/InfinityExpansion</module>
+        <module>sources/repos-to-port/luckyblocks-sf</module>
+        <module>sources/repos-to-port/PrivateStorage</module>
+        <module>sources/repos-to-port/SFCalc</module>
+        <module>sources/repos-to-port/SFMobDrops</module>
+        <module>sources/repos-to-port/SimpleUtils</module>
+        <module>sources/repos-to-port/SlimeChem</module>
+        <module>sources/repos-to-port/SlimefunOreChunks</module>
+        <module>sources/repos-to-port/SlimyRepair</module>
+        <module>sources/repos-to-port/SlimyTreeTaps</module>
+        <module>sources/repos-to-port/SoulJars</module>
+        <module>sources/repos-to-port/SoundMuffler</module>
 
         <!-- Batch 2: Expansion -->
-        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/Cultivation</module>
-        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/EMC2</module>
-        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/Galactifun</module>
-        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/InfinityLib</module>
-        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/LiteXpansion</module>
-        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/Networks</module>
-        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/SefiLib</module>
-        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/SlimeTinker</module>
-        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/SMG</module>
-        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/Supreme</module>
-        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/TranscEndence</module>
+        <module>sources/batch-2-expansion/Cultivation</module>
+        <module>sources/batch-2-expansion/EMC2</module>
+        <module>sources/batch-2-expansion/Galactifun</module>
+        <module>sources/batch-2-expansion/InfinityLib</module>
+        <module>sources/batch-2-expansion/LiteXpansion</module>
+        <module>sources/batch-2-expansion/Networks</module>
+        <module>sources/batch-2-expansion/SefiLib</module>
+        <module>sources/batch-2-expansion/SlimeTinker</module>
+        <module>sources/batch-2-expansion/SMG</module>
+        <module>sources/batch-2-expansion/Supreme</module>
+        <module>sources/batch-2-expansion/TranscEndence</module>
     </modules>
 
     <dependencyManagement>

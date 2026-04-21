@@ -15,3 +15,6 @@
 # OS files
 Thumbs.db
 Desktop.ini
+
+# Binarios / JARs (Excluidos por seguridad y licencias)
+**/*.jar
