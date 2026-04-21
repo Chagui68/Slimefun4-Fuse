@@ -23,21 +23,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.github.Slimefun</groupId>
-            <artifactId>Slimefun4</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.github.thebusybiscuit</groupId>
-                    <artifactId>cscorelib2</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        
-        <!-- Dependencias de Slimefun Addons -->
-        <dependency>
-            <groupId>com.github.thebusybiscuit</groupId>
-            <artifactId>exoticgarden</artifactId>
-            <version>a2c4b6d</version>
+            <groupId>dev.drake</groupId>
+            <artifactId>Slimefun</artifactId>
+            <version>5.0-Drake-1.21.1</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -76,6 +64,12 @@
             <version>73e76ac</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>io.github.thebusybiscuit</groupId>
+            <artifactId>ExoticGarden</artifactId>
+            <version>UNOFFICIAL</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -100,10 +94,7 @@
                             <shadedPattern>me.profelements.dynatech.extrautils</shadedPattern>
                         </relocation>
                         <!-- Relocalización hacia nuestro nuevo Dough Core -->
-                        <relocation>
-                            <pattern>dev.drake.dough</pattern>
-                            <shadedPattern>me.profelements.dynatech.dough</shadedPattern>
-                        </relocation>
+                        
                     </relocations>
                 </configuration>
                 <executions>

@@ -10,8 +10,8 @@ import io.github.thebusybiscuit.mobcapturer.listeners.PelletListener;
 import io.github.thebusybiscuit.mobcapturer.setup.Registry;
 import io.github.thebusybiscuit.mobcapturer.setup.Setup;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.BlobBuildUpdater;
+import dev.drake.dough.config.Config;
+import dev.drake.dough.updater.BlobBuildUpdater;
 
 /**
  * MobCapturer Slimefun addon

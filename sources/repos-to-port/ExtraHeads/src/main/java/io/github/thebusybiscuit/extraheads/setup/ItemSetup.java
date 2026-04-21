@@ -7,7 +7,7 @@ import org.bukkit.entity.EntityType;
 import io.github.thebusybiscuit.extraheads.ExtraHeads;
 import io.github.thebusybiscuit.extraheads.items.MobHead;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import dev.drake.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
 
 import net.guizhanss.guizhanlib.minecraft.utils.MinecraftVersionUtil;

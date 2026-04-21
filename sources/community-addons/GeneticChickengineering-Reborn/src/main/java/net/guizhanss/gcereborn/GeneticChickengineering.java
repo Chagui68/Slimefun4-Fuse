@@ -11,7 +11,7 @@ import com.google.common.base.Preconditions;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.Plugin;
 
-import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.BlobBuildUpdater;
+import dev.drake.dough.updater.BlobBuildUpdater;
 import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
 
 import net.guizhanss.gcereborn.core.commands.GCECommand;

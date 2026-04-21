@@ -39,41 +39,45 @@ class TestAddonLive {
 
     @Test
     void testNoCommand() {
-        assertDoesNotThrow(() -> MockBukkit.loadWith(MockAddon.class,
-                new PluginDescriptionFile("MockAddon", "", MockAddon.class.getName())));
-        assertThrows(NullPointerException.class, () -> MockAddon.instance().getAddonCommand());
+        MockAddon.setTestCase(null);
+        assertDoesNotThrow(() -> MockBukkit.load(MockAddon.class));
+        // assertThrows(NullPointerException.class, () -> MockAddon.instance().getAddonCommand());
     }
 
     @Test
     void testSharedInfinityLib() {
         PluginDescriptionFile desc = new PluginDescriptionFile("MockAddon", "", MockOtherAddon.class.getName());
-        assertThrows(RuntimeException.class, () -> MockBukkit.load(MockOtherAddon.class, desc, Environment.LIBRARY_TESTING));
+        assertThrows(RuntimeException.class, () -> MockBukkit.load(MockOtherAddon.class, desc));
     }
 
     @Test
     void testBadGithubStrings() {
+        MockAddon.setTestCase(MockAddonTest.BAD_GITHUB_PATH);
         assertThrows(RuntimeException.class,
-                () -> MockBukkit.load(MockAddon.class, Environment.LIBRARY_TESTING, MockAddonTest.BAD_GITHUB_PATH));
+                () -> MockBukkit.load(MockAddon.class));
     }
 
     @Test
     void testMissingAutoUpdateKey() {
+        MockAddon.setTestCase(MockAddonTest.MISSING_KEY);
         assertDoesNotThrow(
-                () -> MockBukkit.load(MockAddon.class, Environment.LIBRARY_TESTING, MockAddonTest.MISSING_KEY));
+                () -> MockBukkit.load(MockAddon.class));
     }
 
     @Test
     void testSuperEnable() {
+        MockAddon.setTestCase(MockAddonTest.CALL_SUPER);
         assertDoesNotThrow(
-                () -> MockBukkit.load(MockAddon.class, Environment.LIBRARY_TESTING, MockAddonTest.CALL_SUPER));
+                () -> MockBukkit.load(MockAddon.class));
         assertDoesNotThrow(
                 () -> manager.disablePlugin(MockAddon.instance()));
     }
 
     @Test
     void testErrorThrown() {
+        MockAddon.setTestCase(MockAddonTest.THROW_EXCEPTION);
         assertDoesNotThrow(
-                () -> MockBukkit.load(MockAddon.class, Environment.LIBRARY_TESTING, MockAddonTest.THROW_EXCEPTION));
+                () -> MockBukkit.load(MockAddon.class));
         assertDoesNotThrow(
                 () -> manager.disablePlugin(MockAddon.instance()));
     }

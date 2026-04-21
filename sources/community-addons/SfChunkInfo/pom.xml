@@ -13,7 +13,7 @@
 
     <description>Scan the amount of Slimefun blocks in a chunk</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -110,10 +110,10 @@
             <scope>compile</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.github.Slimefun</groupId>
-            <artifactId>Slimefun4</artifactId>
-            <version>e42700dc98</version>
+                <dependency>
+            <groupId>dev.drake</groupId>
+            <artifactId>Slimefun</artifactId>
+            <version>5.0-Drake-1.21.1</version>
             <scope>provided</scope>
         </dependency>
 
@@ -139,3 +139,4 @@
         </dependency>
     </dependencies>
 </project>
+

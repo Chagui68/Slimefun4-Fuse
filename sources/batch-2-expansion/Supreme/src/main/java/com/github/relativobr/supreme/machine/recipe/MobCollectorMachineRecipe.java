@@ -5,7 +5,7 @@ import static com.github.relativobr.supreme.Supreme.getSupremeOptions;
 import com.github.relativobr.supreme.Supreme;
 import com.github.relativobr.supreme.util.SupremeOptions;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import dev.drake.dough.items.CustomItemStack;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;

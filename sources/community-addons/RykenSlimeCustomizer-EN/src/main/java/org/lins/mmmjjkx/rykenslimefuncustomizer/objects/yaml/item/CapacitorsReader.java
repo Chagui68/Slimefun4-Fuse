@@ -4,7 +4,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.items.electric.Capacitor;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.collections.Pair;
+import dev.drake.dough.collections.Pair;
 import java.util.List;
 import java.util.Objects;
 import org.bukkit.configuration.ConfigurationSection;

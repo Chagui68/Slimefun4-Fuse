@@ -12,47 +12,52 @@ import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
 public class MockAddon extends AbstractAddon {
 
-    private final MockAddonTest test;
+    private static MockAddonTest testCase;
 
-    public MockAddon(JavaPluginLoader loader, PluginDescriptionFile description, File dataFolder, File file) {
-        this(loader, description, dataFolder, file, Environment.LIBRARY_TESTING, null);
+    public static void setTestCase(MockAddonTest test) {
+        testCase = test;
     }
 
-    public MockAddon(JavaPluginLoader loader, PluginDescriptionFile description, File dataFolder, File file,
-                     Environment environment, @Nullable MockAddonTest test) {
+    public MockAddon() {
+        super("Mooy1", "InfinityLib", 
+                testCase == MockAddonTest.BAD_GITHUB_PATH ? "[!#$" : "master",
+                testCase == MockAddonTest.MISSING_KEY ? "missing" : "auto-update");
+        MockBukkit.load(Slimefun.class);
+    }
+
+    public MockAddon(JavaPluginLoader loader, PluginDescriptionFile description, File dataFolder, File file) {
         super(loader, description, dataFolder, file, "Mooy1", "InfinityLib",
-                test == MockAddonTest.BAD_GITHUB_PATH ? "[!#$" : "master",
-                test == MockAddonTest.MISSING_KEY ? "missing" : "auto-update", environment);
-        this.test = test;
+                testCase == MockAddonTest.BAD_GITHUB_PATH ? "[!#$" : "master",
+                testCase == MockAddonTest.MISSING_KEY ? "missing" : "auto-update", Environment.LIBRARY_TESTING);
         MockBukkit.load(Slimefun.class);
     }
 
     @Override
     protected void load() {
-        if (test == MockAddonTest.THROW_EXCEPTION) {
+        if (testCase == MockAddonTest.THROW_EXCEPTION) {
             throw new RuntimeException();
         }
-        else if (test == MockAddonTest.CALL_SUPER) {
+        else if (testCase == MockAddonTest.CALL_SUPER) {
             super.onLoad();
         }
     }
 
     @Override
     protected void enable() {
-        if (test == MockAddonTest.THROW_EXCEPTION) {
+        if (testCase == MockAddonTest.THROW_EXCEPTION) {
             throw new RuntimeException();
         }
-        else if (test == MockAddonTest.CALL_SUPER) {
+        else if (testCase == MockAddonTest.CALL_SUPER) {
             super.onEnable();
         }
     }
 
     @Override
     protected void disable() {
-        if (test == MockAddonTest.THROW_EXCEPTION) {
+        if (testCase == MockAddonTest.THROW_EXCEPTION) {
             throw new RuntimeException();
         }
-        else if (test == MockAddonTest.CALL_SUPER) {
+        else if (testCase == MockAddonTest.CALL_SUPER) {
             super.onDisable();
         }
     }

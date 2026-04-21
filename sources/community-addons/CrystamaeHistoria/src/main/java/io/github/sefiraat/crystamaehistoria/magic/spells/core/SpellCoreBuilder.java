@@ -1,7 +1,7 @@
 package io.github.sefiraat.crystamaehistoria.magic.spells.core;
 
 import io.github.sefiraat.crystamaehistoria.magic.CastInformation;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.collections.Pair;
+import dev.drake.dough.collections.Pair;
 import lombok.Getter;
 import org.bukkit.potion.PotionEffectType;
 

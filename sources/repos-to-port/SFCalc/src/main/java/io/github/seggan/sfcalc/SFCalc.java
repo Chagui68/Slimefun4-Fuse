@@ -3,7 +3,7 @@ package io.github.seggan.sfcalc;
 import io.github.seggan.errorreporter.ErrorReporter;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.BlobBuildUpdater;
+import dev.drake.dough.updater.BlobBuildUpdater;
 import lombok.Getter;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.event.Listener;

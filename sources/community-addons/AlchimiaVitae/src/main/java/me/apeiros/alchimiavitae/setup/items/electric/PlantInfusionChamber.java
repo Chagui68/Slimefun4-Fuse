@@ -54,7 +54,7 @@ public class PlantInfusionChamber extends AContainer implements RecipeDisplayIte
     // {{{ Other
     @Override
     public ItemStack getProgressBar() {
-        return new ItemStack(Material.GRASS);
+        return new ItemStack(Material.SHORT_GRASS);
     }
 
     @Nonnull

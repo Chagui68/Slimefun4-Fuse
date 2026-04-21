@@ -22,10 +22,10 @@ import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import io.github.bakedlibs.dough.common.CommonPatterns;
-import io.github.bakedlibs.dough.items.ItemMetaSnapshot;
-import io.github.bakedlibs.dough.skins.PlayerHead;
-import io.github.bakedlibs.dough.skins.PlayerSkin;
+import dev.drake.dough.common.CommonPatterns;
+import dev.drake.dough.items.ItemMetaSnapshot;
+import dev.drake.dough.skins.PlayerHead;
+import dev.drake.dough.skins.PlayerSkin;
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.api.exceptions.PrematureCodeException;
 import io.github.thebusybiscuit.slimefun4.api.exceptions.WrongItemStackException;
@@ -50,7 +50,8 @@ public class SlimefunItemStack extends ItemStack {
     private String texture = null;
 
     public SlimefunItemStack(@Nonnull String id, @Nonnull ItemStack item) {
-        super(item);
+        super(item.getType(), item.getAmount());
+        this.setItemMeta(item.getItemMeta().clone());
 
         Validate.notNull(id, "The Item id must never be null!");
         Validate.isTrue(id.equals(id.toUpperCase(Locale.ROOT)), "Slimefun Item Ids must be uppercase! (e.g. 'MY_ITEM_ID')");
@@ -306,7 +307,7 @@ public class SlimefunItemStack extends ItemStack {
     }
 
     @Override
-    public ItemStack clone() {
+    public @Nonnull SlimefunItemStack clone() {
         return new SlimefunItemStack(id, this);
     }
 

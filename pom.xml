@@ -24,8 +24,9 @@
     </properties>
 
     <modules>
-        <!-- Librería Base -->
+        <!-- Librería Base y Core -->
         <module>sources/dough-core</module>
+        <module>sources/slimefun-core/Slimefun4-src</module>
 
         <!-- Batch 1: Repos to Port -->
         <module>sources/repos-to-port/ColoredEnderChests</module>
@@ -38,6 +39,7 @@
         <module>sources/repos-to-port/ExtraUtils</module>
         <module>sources/repos-to-port/FluffyMachines</module>
         <module>sources/repos-to-port/GlobalWarming</module>
+        <module>sources/repos-to-port/HardcoreSlimefun</module>
         <module>sources/repos-to-port/HotbarPets</module>
         <module>sources/repos-to-port/InfinityExpansion</module>
         <module>sources/repos-to-port/luckyblocks-sf</module>
@@ -52,10 +54,11 @@
         <module>sources/repos-to-port/SoulJars</module>
         <module>sources/repos-to-port/SoundMuffler</module>
 
-        <!-- Batch 2 & Expansion -->
+        <!-- Batch 2 & Expansion Libraries -->
+        <module>sources/batch-2-expansion/SefiLib</module>
+        <module>sources/batch-2-expansion/InfinityLib</module>
         <module>sources/batch-2-expansion/Cultivation</module>
         <module>sources/batch-2-expansion/EMC2</module>
-        <module>sources/batch-2-expansion/Galactifun</module>
         <module>sources/batch-2-expansion/LiteXpansion</module>
         <module>sources/batch-2-expansion/Networks</module>
         <module>sources/batch-2-expansion/Networks_Better_Compatibility</module>
@@ -70,7 +73,6 @@
         <module>sources/community-addons/DankTech2</module>
         <module>sources/community-addons/Element-Manipulation</module>
         <module>sources/community-addons/ExtraTools</module>
-        <module>sources/community-addons/FastMachines</module>
         <module>sources/community-addons/FlowerPower</module>
         <module>sources/community-addons/FN-FAL-s-Amplifications</module>
         <module>sources/community-addons/FoxyMachines</module>
@@ -116,6 +118,40 @@
                 <artifactId>dough-core</artifactId>
                 <version>${dough.version}</version>
             </dependency>
+
+            <!-- Common Libs -->
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>jsr305</artifactId>
+                <version>3.0.2</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.34</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>findbugs-annotations</artifactId>
+                <version>3.0.1</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- Test Dependencies -->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>5.11.0</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.github.seeseemelk</groupId>
+                <artifactId>MockBukkit-v1.21</artifactId>
+                <version>3.133.2</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -140,6 +176,26 @@
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>enginehub-repo</id>
+            <url>https://maven.enginehub.org/repo/</url>
+        </repository>
+        <repository>
+            <id>playpro-repo</id>
+            <url>https://maven.playpro.com/</url>
+        </repository>
+        <repository>
+            <id>codemc-repo</id>
+            <url>https://repo.codemc.io/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>dmulloy2-repo</id>
+            <url>https://repo.dmulloy2.net/repository/public/</url>
+        </repository>
+        <repository>
+            <id>placeholderapi</id>
+            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
         </repository>
     </repositories>
 </project>

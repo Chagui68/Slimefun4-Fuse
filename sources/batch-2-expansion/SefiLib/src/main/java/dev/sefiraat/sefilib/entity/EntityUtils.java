@@ -1,7 +1,7 @@
 package dev.sefiraat.sefilib.entity;
 
 import dev.sefiraat.sefilib.protections.Protections;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
+import dev.drake.dough.protection.Interaction;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.attribute.Attribute;

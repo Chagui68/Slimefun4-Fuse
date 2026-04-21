@@ -21,8 +21,8 @@ import dev.sefiraat.sefilib.entity.display.DisplayInteractable;
 import dev.sefiraat.sefilib.misc.ParticleUtils;
 import dev.sefiraat.sefilib.string.Theme;
 import dev.sefiraat.sefilib.world.LocationUtils;
-import dev.sefiraat.sefilib.dough.data.persistent.PersistentDataAPI;
-import dev.sefiraat.sefilib.dough.skins.PlayerHead;
+import dev.drake.dough.data.persistent.PersistentDataAPI;
+import dev.drake.dough.skins.PlayerHead;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
@@ -260,7 +260,7 @@ public abstract class CultivationPlant extends CultivationFloraItem<CultivationP
     }
 
     protected void breedSuccess(@Nonnull Location location) {
-        ParticleUtils.displayParticleRandomly(LocationUtils.centre(location), Particle.SLIME, 0.5, 4);
+        ParticleUtils.displayParticleRandomly(LocationUtils.centre(location), Particle.HAPPY_VILLAGER, 0.5, 4);
     }
 
     /**

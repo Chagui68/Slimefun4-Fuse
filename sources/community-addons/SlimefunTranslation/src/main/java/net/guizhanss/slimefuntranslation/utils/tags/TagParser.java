@@ -25,7 +25,7 @@ import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Tag;
 
-import io.github.thebusybiscuit.slimefun4.libraries.dough.common.CommonPatterns;
+import dev.drake.dough.common.CommonPatterns;
 
 import net.guizhanss.slimefuntranslation.SlimefunTranslation;
 import net.guizhanss.slimefuntranslation.api.exceptions.TagMisconfigurationException;

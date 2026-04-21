@@ -6,7 +6,7 @@ import java.util.Map;
 import org.bukkit.entity.EntityType;
 
 import io.github.thebusybiscuit.mobcapturer.items.MobEgg;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
+import dev.drake.dough.config.Config;
 
 import lombok.Getter;
 

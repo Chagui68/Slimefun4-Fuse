@@ -4,7 +4,7 @@ import com.google.common.collect.Sets;
 
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
+import dev.drake.dough.protection.Interaction;
 
 import ne.fnfal113.fnamplifications.utils.Utils;
 

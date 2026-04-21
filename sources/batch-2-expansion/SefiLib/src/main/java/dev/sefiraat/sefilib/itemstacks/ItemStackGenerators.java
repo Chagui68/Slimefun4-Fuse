@@ -1,6 +1,6 @@
 package dev.sefiraat.sefilib.itemstacks;
 
-import io.github.thebusybiscuit.slimefun4.libraries.dough.collections.Pair;
+import dev.drake.dough.collections.Pair;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;

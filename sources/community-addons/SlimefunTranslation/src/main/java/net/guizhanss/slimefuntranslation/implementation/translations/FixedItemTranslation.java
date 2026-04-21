@@ -12,7 +12,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.collections.Pair;
+import dev.drake.dough.collections.Pair;
 
 import net.guizhanss.slimefuntranslation.api.config.TranslationConditions;
 import net.guizhanss.slimefuntranslation.api.translation.ItemTranslation;

@@ -16,8 +16,8 @@ import javax.annotation.Nullable;
 
 import org.bukkit.Bukkit;
 
-import io.github.bakedlibs.dough.skins.PlayerSkin;
-import io.github.bakedlibs.dough.skins.UUIDLookup;
+import dev.drake.dough.skins.PlayerSkin;
+import dev.drake.dough.skins.UUIDLookup;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
 /**

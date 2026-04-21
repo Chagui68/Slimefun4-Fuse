@@ -6,12 +6,12 @@ import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
 
-import io.github.bakedlibs.dough.updater.BlobBuildUpdater;
+import dev.drake.dough.updater.BlobBuildUpdater;
 import org.bukkit.plugin.Plugin;
 
-import io.github.bakedlibs.dough.config.Config;
-import io.github.bakedlibs.dough.updater.PluginUpdater;
-import io.github.bakedlibs.dough.versions.PrefixedVersion;
+import dev.drake.dough.config.Config;
+import dev.drake.dough.updater.PluginUpdater;
+import dev.drake.dough.versions.PrefixedVersion;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunBranch;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 

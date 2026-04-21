@@ -10,8 +10,8 @@ import io.github.mooy1.infinitylib.core.MockAddon;
 
 public final class MockOtherAddon extends MockAddon {
 
-    public MockOtherAddon(JavaPluginLoader loader, PluginDescriptionFile description, File dataFolder, File file, Environment environment) {
-        super(loader, description, dataFolder, file, environment, null);
+    public MockOtherAddon(JavaPluginLoader loader, PluginDescriptionFile description, File dataFolder, File file) {
+        super(loader, description, dataFolder, file);
     }
 
     @Override

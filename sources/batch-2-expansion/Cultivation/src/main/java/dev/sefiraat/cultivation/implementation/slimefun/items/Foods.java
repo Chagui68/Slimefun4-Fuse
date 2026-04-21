@@ -7,7 +7,7 @@ import dev.sefiraat.cultivation.implementation.slimefun.CultivationStacks;
 import dev.sefiraat.sefilib.misc.Chance;
 import dev.sefiraat.sefilib.misc.ParticleUtils;
 import dev.sefiraat.sefilib.world.LocationUtils;
-import dev.sefiraat.sefilib.dough.collections.Pair;
+import dev.drake.dough.collections.Pair;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -184,7 +184,7 @@ public final class Foods {
         player -> simplePlayerEffect(
             player,
             20,
-            new Pair<>(PotionEffectType.JUMP, 1),
+            new Pair<>(PotionEffectType.JUMP_BOOST, 1),
             new Pair<>(PotionEffectType.SATURATION, 0)
         )
     ).buildRegister(Cultivation.getInstance());
@@ -349,7 +349,7 @@ public final class Foods {
             player,
             8,
             new Pair<>(PotionEffectType.REGENERATION, 0),
-            new Pair<>(PotionEffectType.INSTANT_HEALTHTH_BOOST, 4)
+            new Pair<>(PotionEffectType.HEALTH_BOOST, 4)
         )
     ).buildRegister(Cultivation.getInstance());
 
@@ -366,7 +366,7 @@ public final class Foods {
                 player,
                 0,
                 new Pair<>(PotionEffectType.WITHER, 1),
-                new Pair<>(PotionEffectType.INSTANT_HEALTHTH_BOOST, 19)
+                new Pair<>(PotionEffectType.HEALTH_BOOST, 19)
             );
             simplePlayerEffect(player, 999);
         }
@@ -475,7 +475,7 @@ public final class Foods {
             12,
             new Pair<>(PotionEffectType.SPEED, 0),
             new Pair<>(PotionEffectType.HASTE, 0),
-            new Pair<>(PotionEffectType.JUMP, 0)
+            new Pair<>(PotionEffectType.JUMP_BOOST, 0)
         )
     ).buildRegister(Cultivation.getInstance());
 
@@ -565,7 +565,7 @@ public final class Foods {
             null, Ingredients.PASTA.getItem(), null,
             null, null, null
         },
-        player -> simplePlayerEffect(player, 0, new Pair<>(PotionEffectType.INSTANT_HEALTHTH_BOOST, 0))
+        player -> simplePlayerEffect(player, 0, new Pair<>(PotionEffectType.HEALTH_BOOST, 0))
     ).buildRegister(Cultivation.getInstance());
 
     public static final Food RAMEN_CHICKEN = new Food(
@@ -576,7 +576,7 @@ public final class Foods {
             null, Ingredients.PASTA.getItem(), null,
             null, null, null
         },
-        player -> simplePlayerEffect(player, 0, new Pair<>(PotionEffectType.INSTANT_HEALTHTH_BOOST, 0))
+        player -> simplePlayerEffect(player, 0, new Pair<>(PotionEffectType.HEALTH_BOOST, 0))
     ).buildRegister(Cultivation.getInstance());
 
     public static final Food RAMEN_SEAFOOD = new Food(
@@ -587,7 +587,7 @@ public final class Foods {
             null, Ingredients.PASTA.getItem(), null,
             null, null, null
         },
-        player -> simplePlayerEffect(player, 0, new Pair<>(PotionEffectType.INSTANT_HEALTHTH_BOOST, 0))
+        player -> simplePlayerEffect(player, 0, new Pair<>(PotionEffectType.HEALTH_BOOST, 0))
     ).buildRegister(Cultivation.getInstance());
 
     public static final Food RAMEN_BEEF_HEARTY = new Food(
@@ -602,7 +602,7 @@ public final class Foods {
             simplePlayerEffect(
                 player,
                 999,
-                new Pair<>(PotionEffectType.INSTANT_HEALTHTH_BOOST, 1),
+                new Pair<>(PotionEffectType.HEALTH_BOOST, 1),
                 new Pair<>(PotionEffectType.SPEED, 0)
             )
     ).buildRegister(Cultivation.getInstance());
@@ -619,7 +619,7 @@ public final class Foods {
             simplePlayerEffect(
                 player,
                 999,
-                new Pair<>(PotionEffectType.INSTANT_HEALTHTH_BOOST, 1),
+                new Pair<>(PotionEffectType.HEALTH_BOOST, 1),
                 new Pair<>(PotionEffectType.SPEED, 0)
             )
     ).buildRegister(Cultivation.getInstance());
@@ -636,7 +636,7 @@ public final class Foods {
             simplePlayerEffect(
                 player,
                 999,
-                new Pair<>(PotionEffectType.INSTANT_HEALTHTH_BOOST, 1),
+                new Pair<>(PotionEffectType.HEALTH_BOOST, 1),
                 new Pair<>(PotionEffectType.SPEED, 0)
             )
     ).buildRegister(Cultivation.getInstance());
@@ -677,7 +677,7 @@ public final class Foods {
             null, Ingredients.CREAM_CHEESE.getItem(), null,
             null, null, null
         },
-        player -> simplePlayerEffect(player, 10, new Pair<>(PotionEffectType.INSTANT_HEALTHTH_BOOST, 0))
+        player -> simplePlayerEffect(player, 10, new Pair<>(PotionEffectType.HEALTH_BOOST, 0))
     ).buildRegister(Cultivation.getInstance());
 
     public static final Food MEATLOAF = new Food(
@@ -689,7 +689,7 @@ public final class Foods {
             SlimefunItems.SALT, Products.ONION.getChoppedItem(), Ingredients.MUSTARD.getItem()
         },
         player -> simplePlayerEffect(player, 999,
-                                     new Pair<>(PotionEffectType.INSTANT_HEALTHTH_BOOST, 3),
+                                     new Pair<>(PotionEffectType.HEALTH_BOOST, 3),
                                      new Pair<>(PotionEffectType.RESISTANCE, 2),
                                      new Pair<>(PotionEffectType.HASTE, 1),
                                      new Pair<>(PotionEffectType.SLOWNESS, 1)

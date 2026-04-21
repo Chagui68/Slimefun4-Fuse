@@ -20,8 +20,8 @@ Hemos unificado **+85 repositorios** en un Mono-Repo estratégico para la migrac
 ## ⚡ Estado del Núcleo (SF4 Core)
 > [!CAUTION]
 > **Componente**: `sources/slimefun-core/Slimefun4-src`
-> **Estado**: ⚠️ **PENDIENTE DE ADAPTACIÓN (Target 1.20.6)**
-> El núcleo es la pieza más compleja y la base de todo el ecosistema. Su adaptación a los *Data Components* de la 1.21.11 es el requisito previo para que los addons tengan una base estable.
+> **Estado**: ⚠️ **MIGRADO PARCIALMENTE (Target 1.21.1)**
+> Se ha establecido el Framework de Drake como base. El núcleo ya permite la compilación de addons dependientes mediante el uso de `dough-core` unificado.
 
 ---
 
@@ -31,15 +31,17 @@ Esta tabla clasifica los componentes según el esfuerzo técnico estimado para s
 
 | Nivel de Dificultad | Componentes Representativos | Estado de Porteo |
 | :--- | :--- | :--- |
-| **Nivel 1: Easy** (Items/Recetas) | ExoticGarden, SoulJars, ExtraGear, SFCalc, SMG | ✅ Pilotos Listos |
-| **Nivel 2: Medium** (Máquinas/GUIs) | DynaTech, ElectricSpawners, Networks, SlimeChem | ✅ Pilotos Listos |
-| **Nivel 3: Hard** (Deep Logic/NMS) | **Slimefun4 Core**, InfinityExpansion, Galactifun | ⚠️ En Investigación |
-| **Nivel 4: Riesgo / Legacy** | Addons antiguos de la comunidad (ExtraTools, etc.) | ⏳ Pendiente |
+| **Nivel 1: Easy** (Items/Recetas) | ExoticGarden, SoulJars, ExtraGear, EMC2 | ✅ EMC2 Listo |
+| **Nivel 2: Medium** (Máquinas/GUIs) | LiteXpansion, Networks, SlimeChem | ✅ LiteXpansion & Networks Listos |
+| **Nivel 3: Hard** (Deep Logic/NMS) | **Slimefun4 Core**, SlimeTinker, InfinityExpansion | 🛠️ SlimeTinker en Progreso |
+| **Nivel 4: Riesgo / Legacy** | Addons antiguos (ExtraTools, etc.) | ⏳ Pendiente |
 
-### 🛠️ Plugins Faltantes por Completar
-- [ ] **ExtraHeads**: Repositorio oficial pendiente de integración final.
-- [ ] **MobCapturer**: Requiere refactor de metadatos de entidades.
-- [ ] **HardcoreSlimefun**: Pendiente de revisión de compatibilidad con bloques.
+### ✅ Logros del Checkpoint actual
+- [x] **Dough-Core (1.3.1-DRAKE)**: Unificación total de librerías.
+- [x] **Networks**: Resolución de bucle de dependencias y migración de encantamientos 1.21.1.
+- [x] **LiteXpansion**: Eliminación de hacks de reflexión para compatibilidad total con Java 21.
+- [x] **EMC2**: Integración exitosa en el reactor.
+- [ ] **SlimeTinker**: Pendiente de corrección de constantes de pociones y entidades.
 
 ---
 

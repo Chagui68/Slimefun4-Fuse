@@ -1,6 +1,6 @@
 package dev.sefiraat.sefilib.version;
 
-import dev.sefiraat.sefilib.dough.versions.SemanticVersion;
+import dev.drake.dough.versions.SemanticVersion;
 
 public class Versions {
 

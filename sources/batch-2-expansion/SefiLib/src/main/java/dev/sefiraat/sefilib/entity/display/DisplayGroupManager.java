@@ -3,7 +3,7 @@ package dev.sefiraat.sefilib.entity.display;
 import com.google.common.base.Preconditions;
 import dev.sefiraat.sefilib.protections.Protections;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
+import dev.drake.dough.protection.Interaction;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import org.bukkit.Bukkit;
 import org.bukkit.block.Block;

@@ -1,7 +1,7 @@
 package dev.sefiraat.sefilib.entity;
 
 import dev.sefiraat.sefilib.version.Versions;
-import dev.sefiraat.sefilib.dough.versions.SemanticVersion;
+import dev.drake.dough.versions.SemanticVersion;
 
 import java.util.Collections;
 import java.util.HashSet;

@@ -1,6 +1,6 @@
 package com.xmooncorp.magic8ball.core;
 
-import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
+import dev.drake.dough.config.Config;
 
 import javax.annotation.Nonnull;
 import java.util.Arrays;

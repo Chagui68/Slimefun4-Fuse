@@ -31,7 +31,7 @@ import io.github.thebusybiscuit.slimefun4.api.exceptions.BiomeMapException;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.researches.Research;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
+import dev.drake.dough.config.Config;
 import io.github.thebusybiscuit.slimefun4.utils.biomes.BiomeMap;
 
 import me.poma123.globalwarming.api.biomes.BiomeTemperature;

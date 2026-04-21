@@ -21,14 +21,10 @@
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.github.Slimefun</groupId>
-            <artifactId>Slimefun4</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.32</version>
+                <dependency>
+            <groupId>dev.drake</groupId>
+            <artifactId>Slimefun</artifactId>
+            <version>5.0-Drake-1.21.1</version>
             <scope>provided</scope>
         </dependency>
 
@@ -42,10 +38,10 @@
             <version>3.0.2</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
+                        <dependency>
             <groupId>io.github.mooy1</groupId>
             <artifactId>InfinityLib</artifactId>
-            <version>62e7d30</version>
+            <version>1.3.10</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -80,10 +76,7 @@
                             <pattern>org.bstats</pattern>
                             <shadedPattern>io.github.addoncommunity.slimechem.bstats</shadedPattern>
                         </relocation>
-                        <relocation>
-                            <pattern>dev.drake.dough</pattern>
-                            <shadedPattern>io.github.addoncommunity.slimechem.dough</shadedPattern>
-                        </relocation>
+                        
                     </relocations>
                 </configuration>
                 <executions>
@@ -98,3 +91,4 @@
         </plugins>
     </build>
 </project>
+

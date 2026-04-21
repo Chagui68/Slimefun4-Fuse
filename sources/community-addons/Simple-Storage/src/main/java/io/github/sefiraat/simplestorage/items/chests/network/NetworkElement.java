@@ -2,8 +2,8 @@ package io.github.sefiraat.simplestorage.items.chests.network;
 
 import io.github.sefiraat.simplestorage.items.Skulls;
 import io.github.sefiraat.simplestorage.utils.Theme;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.skins.PlayerHead;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.skins.PlayerSkin;
+import dev.drake.dough.skins.PlayerHead;
+import dev.drake.dough.skins.PlayerSkin;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Material;

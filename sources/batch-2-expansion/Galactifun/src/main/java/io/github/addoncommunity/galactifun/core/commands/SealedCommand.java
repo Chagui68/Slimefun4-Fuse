@@ -14,7 +14,7 @@ import org.bukkit.entity.Player;
 
 import io.github.addoncommunity.galactifun.util.Util;
 import io.github.mooy1.infinitylib.commands.SubCommand;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.blocks.BlockPosition;
+import dev.drake.dough.blocks.BlockPosition;
 
 public final class SealedCommand extends SubCommand {
 

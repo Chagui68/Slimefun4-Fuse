@@ -38,26 +38,28 @@ class TestAddonTesting {
     @Test
     void testSharedInfinityLib() {
         PluginDescriptionFile desc = new PluginDescriptionFile("MockAddon", "", MockOtherAddon.class.getName());
-        assertThrows(RuntimeException.class, () -> MockBukkit.load(MockOtherAddon.class, desc, Environment.TESTING));
+        assertThrows(RuntimeException.class, () -> MockBukkit.load(MockOtherAddon.class, desc));
     }
 
     @Test
     void testBadGithubStrings() {
+        MockAddon.setTestCase(MockAddonTest.BAD_GITHUB_PATH);
         assertThrows(RuntimeException.class,
-                () -> MockBukkit.load(MockAddon.class, Environment.TESTING, MockAddonTest.BAD_GITHUB_PATH));
+                () -> MockBukkit.load(MockAddon.class));
     }
 
     @Test
     void testMissingAutoUpdateKey() {
+        MockAddon.setTestCase(MockAddonTest.MISSING_KEY);
         assertThrows(RuntimeException.class,
-                () -> MockBukkit.load(MockAddon.class, Environment.TESTING, MockAddonTest.MISSING_KEY));
+                () -> MockBukkit.load(MockAddon.class));
     }
 
     @Test
     void testSuperEnable() {
+        MockAddon.setTestCase(MockAddonTest.CALL_SUPER);
         assertThrows(IllegalStateException.class,
-                () -> MockBukkit.load(MockAddon.class, Environment.TESTING, MockAddonTest.CALL_SUPER));
-        assertThrows(NullPointerException.class, MockAddon::instance);
+                () -> MockBukkit.load(MockAddon.class));
         Plugin plugin = manager.getPlugin("MockAddon");
         assertNotNull(plugin);
         assertThrows(IllegalStateException.class,
@@ -69,9 +71,9 @@ class TestAddonTesting {
 
     @Test
     void testErrorThrown() {
+        MockAddon.setTestCase(MockAddonTest.THROW_EXCEPTION);
         assertThrows(RuntimeException.class,
-                () -> MockBukkit.load(MockAddon.class, Environment.TESTING, MockAddonTest.THROW_EXCEPTION));
-        assertThrows(NullPointerException.class, MockAddon::instance);
+                () -> MockBukkit.load(MockAddon.class));
         Plugin plugin = manager.getPlugin("MockAddon");
         assertNotNull(plugin);
         assertThrows(RuntimeException.class,

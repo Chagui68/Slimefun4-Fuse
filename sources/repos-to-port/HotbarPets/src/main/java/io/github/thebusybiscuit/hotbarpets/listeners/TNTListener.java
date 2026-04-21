@@ -18,7 +18,7 @@ import org.bukkit.event.entity.EntityExplodeEvent;
 
 import io.github.thebusybiscuit.hotbarpets.HotbarPets;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
+import dev.drake.dough.protection.Interaction;
 
 public class TNTListener implements Listener {
 

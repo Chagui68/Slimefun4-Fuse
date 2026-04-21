@@ -17,7 +17,7 @@ import io.github.thebusybiscuit.slimefun4.api.inventory.BlockMenu;
 import io.github.thebusybiscuit.slimefun4.api.inventory.BlockMenuPreset;
 import io.github.thebusybiscuit.slimefun4.api.inventory.DirtyChestMenu;
 import io.github.thebusybiscuit.slimefun4.api.item_transport.ItemTransportFlow;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.collections.RandomizedSet;
+import dev.drake.dough.collections.RandomizedSet;
 import org.bukkit.Material;
 import org.bukkit.Tag;
 import org.bukkit.block.Block;

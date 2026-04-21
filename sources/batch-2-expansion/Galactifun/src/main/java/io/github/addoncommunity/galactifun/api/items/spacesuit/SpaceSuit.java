@@ -22,7 +22,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.ProtectionType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.ProtectiveArmor;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.common.ChatColors;
+import dev.drake.dough.common.ChatColors;
 
 @ParametersAreNonnullByDefault
 public class SpaceSuit extends SlimefunItem implements ProtectiveArmor {

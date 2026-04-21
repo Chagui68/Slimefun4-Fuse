@@ -14,7 +14,7 @@
     <description>Adds different kind of in-game items from machines, utilities to pvp related items! Take part on exploring FN's offering!</description>
     
     <properties>
-        <java.version>17</java.version>
+        <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     
@@ -111,10 +111,10 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.github.Slimefun</groupId>
-            <artifactId>Slimefun4</artifactId>
-            <version>e02a0f61d1</version>
+                <dependency>
+            <groupId>dev.drake</groupId>
+            <artifactId>Slimefun</artifactId>
+            <version>5.0-Drake-1.21.1</version>
             <scope>provided</scope>
         </dependency>
 

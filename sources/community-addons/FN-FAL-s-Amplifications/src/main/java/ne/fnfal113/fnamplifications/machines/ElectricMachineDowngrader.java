@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.operations.CraftingOperation;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import dev.drake.dough.items.CustomItemStack;
 
 import ne.fnfal113.fnamplifications.machines.abstracts.CMachine;
 import ne.fnfal113.fnamplifications.FNAmplifications;

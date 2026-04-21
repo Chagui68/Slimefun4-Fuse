@@ -9,8 +9,8 @@ import io.github.thebusybiscuit.extraheads.listeners.HeadListener;
 import io.github.thebusybiscuit.extraheads.setup.ItemSetup;
 import io.github.thebusybiscuit.extraheads.setup.Registry;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.BlobBuildUpdater;
+import dev.drake.dough.config.Config;
+import dev.drake.dough.updater.BlobBuildUpdater;
 
 import lombok.Getter;
 

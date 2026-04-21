@@ -29,36 +29,10 @@
         </dependency>
 
         <!-- Slimefun 4 -->
-        <dependency>
-            <groupId>com.github.Slimefun</groupId>
-            <artifactId>Slimefun4</artifactId>
-        </dependency>
-
-        <!-- bStats -->
-        <dependency>
-            <groupId>org.bstats</groupId>
-            <artifactId>bstats-bukkit</artifactId>
-            <version>3.0.2</version>
-        </dependency>
-
-        <!-- ErrorReporter -->
-        <dependency>
-            <groupId>com.github.seggan</groupId>
-            <artifactId>ErrorReporter-Java</artifactId>
-            <version>1.1.0</version>
-        </dependency>
-
-        <!-- Annotations -->
-        <dependency>
-            <groupId>com.google.code.findbugs</groupId>
-            <artifactId>jsr305</artifactId>
-        </dependency>
-
-        <!-- Lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.32</version>
+                <dependency>
+            <groupId>dev.drake</groupId>
+            <artifactId>Slimefun</artifactId>
+            <version>5.0-Drake-1.21.1</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -93,3 +67,4 @@
         </plugins>
     </build>
 </project>
+

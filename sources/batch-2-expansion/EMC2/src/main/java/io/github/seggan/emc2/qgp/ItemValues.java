@@ -150,7 +150,7 @@ public class ItemValues {
         add(3, Tag.LEAVES);
         add(5, "POTTED");
         add(4, Material.FLOWER_POT);
-        add(5, Material.KELP, Material.FERN, Material.CACTUS, Material.SUGAR_CANE, Material.GRASS,
+        add(5, Material.KELP, Material.FERN, Material.CACTUS, Material.SUGAR_CANE, Material.SHORT_GRASS,
             Material.TALL_GRASS, Material.LARGE_FERN, Material.WHEAT, Material.SEAGRASS, Material.TALL_SEAGRASS,
             Material.SEA_PICKLE, Material.NETHER_SPROUTS, Material.DEAD_BUSH, Material.LILY_PAD);
         add(3, "COOKED");
@@ -199,7 +199,7 @@ public class ItemValues {
         add(8, "PISTON");
         add(10, Material.BELL, Material.HOPPER, Material.TNT);
         add(27, Material.REDSTONE_BLOCK, Material.JUKEBOX);
-        add(20, Tag.ITEMS_MUSIC_DISCS);
+        add(20, Tag.ITEMS_CREEPER_DROP_MUSIC_DISCS);
 
         add(8, "MINECART");
         add(6, "RAIL");
@@ -266,7 +266,7 @@ public class ItemValues {
         enchants.put(Enchantment.UNBREAKING, 32L);
         enchants.put(Enchantment.LOYALTY, 40L);
         enchants.put(Enchantment.MENDING, 40L);
-        enchants.put(Enchantment.PROTECTION_ENVIRONMENTAL, 32L);
+        enchants.put(Enchantment.PROTECTION, 32L);
         enchants.put(Enchantment.SILK_TOUCH, 40L);
     }
 

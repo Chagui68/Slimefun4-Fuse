@@ -14,8 +14,8 @@ import org.bukkit.event.Listener;
 import io.github.thebusybiscuit.mobcapturer.MobCapturer;
 import io.github.thebusybiscuit.mobcapturer.events.MobCaptureEvent;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
+import dev.drake.dough.config.Config;
+import dev.drake.dough.protection.Interaction;
 
 /**
  * Listener for mob capturing.

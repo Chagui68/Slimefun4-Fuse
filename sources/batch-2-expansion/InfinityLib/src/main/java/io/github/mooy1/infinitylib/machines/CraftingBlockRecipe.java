@@ -7,8 +7,8 @@ import org.bukkit.inventory.ItemStack;
 
 import io.github.mooy1.infinitylib.common.StackUtils;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.ItemStackSnapshot;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.ItemUtils;
+import dev.drake.dough.items.ItemStackSnapshot;
+import dev.drake.dough.items.ItemUtils;
 
 @Getter
 public final class CraftingBlockRecipe {

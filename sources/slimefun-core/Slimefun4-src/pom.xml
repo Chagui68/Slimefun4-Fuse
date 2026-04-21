@@ -4,12 +4,15 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.slimefun</groupId>
-    <artifactId>Slimefun</artifactId>
+    <parent>
+        <groupId>dev.drake</groupId>
+        <artifactId>drakes-slimefun-labs</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
 
-    <!-- Our default version will be UNOFFICIAL, this will prevent auto updates -->
-    <!-- from overriding our local test file -->
-    <version>4.9-Drake-1.20.6</version>
+    <artifactId>Slimefun</artifactId>
+    <version>5.0-Drake-1.21.1</version>
     <inceptionYear>2013</inceptionYear>
     <packaging>jar</packaging>
 
@@ -18,26 +21,14 @@
     <url>https://github.com/Slimefun/Slimefun4</url>
 
     <properties>
-        <!-- UTF-8 is our standard encoding for source files -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <!-- Target Java 16 -->
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
-        <!-- Run tests using java 21 -->
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <maven.compiler.testSource>21</maven.compiler.testSource>
         <maven.compiler.testTarget>21</maven.compiler.testTarget>
 
-        <!-- Spigot properties -->
-        <spigot.version>1.20.6</spigot.version>
+        <spigot.version>1.21.1</spigot.version>
         <spigot.javadocs>https://hub.spigotmc.org/javadocs/spigot/</spigot.javadocs>
-
-        <!-- Default settings for sonarcloud.io -->
-        <sonar.projectKey>Slimefun_Slimefun4</sonar.projectKey>
-        <sonar.organization>slimefun</sonar.organization>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.log.level>DEBUG</sonar.log.level>
-        <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     </properties>
 
     <issueManagement>
@@ -194,15 +185,11 @@
                 <!-- Dependency shading -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>3.6.0</version>
 
                 <configuration>
                     <!-- Relocate these to avoid clashes and conflicts -->
                     <relocations>
-                        <relocation>
-                            <pattern>io.github.bakedlibs.dough</pattern>
-                            <shadedPattern>io.github.thebusybiscuit.slimefun4.libraries.dough</shadedPattern>
-                        </relocation>
                         <relocation>
                             <pattern>io.papermc.lib</pattern>
                             <shadedPattern>io.github.thebusybiscuit.slimefun4.libraries.paperlib</shadedPattern>
@@ -355,9 +342,9 @@
 
         <!-- Shaded packages -->
         <dependency>
-            <groupId>com.github.baked-libs.dough</groupId>
-            <artifactId>dough-api</artifactId>
-            <version>f8ff25187d</version>
+            <groupId>dev.drake.dough</groupId>
+            <artifactId>dough-core</artifactId>
+            <version>1.3.1-DRAKE</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -386,26 +373,10 @@
             <scope>test</scope>
         </dependency>
         <!-- This needs to be before Spigot because MockBukkit will fail otherwise. -->
-        <dependency>
+                        <dependency>
             <groupId>com.github.seeseemelk</groupId>
             <artifactId>MockBukkit-v1.21</artifactId>
             <version>3.133.2</version>
-            <scope>test</scope>
-
-            <exclusions>
-                <exclusion>
-                    <!-- We use javax.annotation instead. Excluding this -->
-                    <!-- prevents us from using inconsistent annotations -->
-                    <groupId>org.jetbrains</groupId>
-                    <artifactId>annotations</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- Override Spigot with Paper tests as a CommandMap ctor which MockBukkit uses only exists on Paper but not in Spigot -->
-        <dependency>
-            <groupId>io.papermc.paper</groupId>
-            <artifactId>paper-api</artifactId>
-            <version>1.20.6-R0.1-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
 
@@ -516,23 +487,10 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>${spigot.version}-R0.1-SNAPSHOT</version>
+            <groupId>io.papermc.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>1.21.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.mojang</groupId>
-            <artifactId>authlib</artifactId>
-            <version>6.0.52</version>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <!-- We don't need any of the dependencies -->
-                    <groupId>*</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
     </dependencies>
 </project>

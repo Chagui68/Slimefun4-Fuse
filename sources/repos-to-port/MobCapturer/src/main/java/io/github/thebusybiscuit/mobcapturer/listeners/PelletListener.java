@@ -21,7 +21,7 @@ import io.github.thebusybiscuit.mobcapturer.MobCapturer;
 import io.github.thebusybiscuit.mobcapturer.events.MobCaptureEvent;
 import io.github.thebusybiscuit.mobcapturer.items.MobEgg;
 import io.github.thebusybiscuit.mobcapturer.setup.Keys;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
+import dev.drake.dough.config.Config;
 
 /**
  * Listener for pellet hit.

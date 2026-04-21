@@ -39,10 +39,7 @@
                             <shadedPattern>dev.sefiraat.sefilib.bstats</shadedPattern>
                         </relocation>
                         <!-- Relocalización hacia nuestro nuevo Dough Core -->
-                        <relocation>
-                            <pattern>dev.drake.dough</pattern>
-                            <shadedPattern>dev.sefiraat.sefilib.dough</shadedPattern>
-                        </relocation>
+                        
                     </relocations>
                     <filters>
                         <filter>
@@ -71,22 +68,15 @@
             <artifactId>paper-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.github.Slimefun</groupId>
-            <artifactId>Slimefun4</artifactId>
+            <groupId>dev.drake</groupId>
+            <artifactId>Slimefun</artifactId>
+            <version>5.0-Drake-1.21.1</version>
+            <scope>provided</scope>
         </dependency>
-        
-        <!-- Nuestra versión consolidada de Dough -->
         <dependency>
             <groupId>dev.drake.dough</groupId>
             <artifactId>dough-core</artifactId>
             <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.code.findbugs</groupId>
-            <artifactId>annotations</artifactId>
-            <version>3.0.1u2</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.bstats</groupId>

@@ -23,7 +23,7 @@ import io.github.addoncommunity.slimechem.lists.RecipeTypes;
 import lombok.Getter;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems.RecipeType;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import dev.drake.dough.items.CustomItemStack;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
