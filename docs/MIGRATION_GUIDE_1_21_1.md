@@ -58,4 +58,32 @@ Actualmente tenemos integrados en el workspace:
 > La Wiki de Slimefun lista +80 addons. Aún faltan aproximadamente 40 repositorios que no están presentes en este workspace. Se pueden añadir clonando sus ramas master/v4 a la carpeta `community-addons`.
 
 ---
-*Documentación generada por Antigravity para el equipo de DrakesCraft-Labs.*
+
+## 📅 Hoja de Ruta Detallada (Lo que falta)
+
+A pesar de los grandes avances del Día 1, el ecosistema es masivo. Aquí está el desglose de lo que falta por hacer:
+
+### 1. Finalización de Módulos Críticos (Batch-2)
+- [ ] **SlimeTinker**: Finalizar la compilación tras corregir las constantes de pociones. Verificar que los eventos de daño no crasheen.
+- [ ] **SMG (Simple Material Generators)**: Actualizar POM y verificar constantes de materiales.
+- [ ] **CrystamaeHistoria**: Migrar lógica de partículas y encantamientos.
+- [ ] **TranscEndence**: Revisar compatibilidad con el nuevo sistema de teletransporte de la 1.21.
+- [ ] **Supreme**: Integración básica y corrección de advertencias.
+
+### 2. Procesamiento Masivo de Addons
+- [ ] **Repos-to-port (26 repos)**: Módulos como `ExoticGarden`, `DynaTech` (v2), `ElectricSpawners` y `SoulJars` requieren una revisión individual de `pom.xml` para apuntar al nuevo `dough-core`.
+- [ ] **Community-addons (~47 repos)**: Esta es la tarea más larga. Se deben procesar uno por uno buscando:
+    - Imports obsoletos.
+    - Uso de `org.bukkit.enchantments.Enchantment` (cambiar `LUCK` -> `LUCK_OF_THE_SEA`, etc).
+    - Métodos de NMS o Reflection (sustituir por API de Paper).
+
+### 3. Verificación de Lógica de Datos (Components)
+- [ ] **PersistentDataAPI**: Auditar el manejo de metadatos en items. La 1.21 cambió los items a "Data Components", lo que puede afectar a cómo Slimefun guarda los IDs de los items.
+- [ ] **Androides y Filtros**: Validar que los inventarios de los androides persistan correctamente tras el cambio de formato de NBT a Components.
+
+### 4. Pruebas en Vivo (Runtime)
+- [ ] Instalar el `Slimefun4-src` (Core) en un servidor de pruebas 1.21.1.
+- [ ] Comprobar que la `SlimefunGuide` se abre y los items se pueden craftear sin errores en consola.
+
+---
+*Manual generado para el equipo de DrakesCraft-Labs.*
