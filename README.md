@@ -1,83 +1,77 @@
-# Drakes Plugin Library
+# 🐉 DrakesCraft-Labs: Slimefun Ecosystem
+### *The Ultimate 1.21.11 Migration & Tech Independence Framework*
 
-Base privada de trabajo para armar una libreria real de plugins para `Purpur 1.20.6`.
+<div align="center">
 
-La idea de este repo no es solo portar `Slimefun`, sino tener un lugar unico donde:
+![Version](https://img.shields.io/badge/Minecraft-1.21.11-green?style=for-the-badge&logo=minecraft)
+![Java](https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=openjdk)
+![Build](https://img.shields.io/badge/Build-Maven-red?style=for-the-badge&logo=apachemaven)
+![License](https://img.shields.io/badge/License-GPL--3.0-blue?style=for-the-badge)
 
-- guardamos los `jars` confirmados que de verdad van al servidor
-- mantenemos los repos y ports que siguen en construccion
-- conservamos auditorias, notas de compatibilidad y decisiones de seguridad
-- evitamos volver a buscar en decenas de paginas los mismos plugins cada vez que levantamos un server nuevo
+**Drake Framework** es la respuesta definitiva para un ecosistema de Slimefun moderno, eficiente e independiente. 
+Estamos reconstruyendo más de 35 addons desde sus cimientos para abrazar el paradigma de la versión 1.21.11.
 
-## Mision
+[Explorar Código](/sources) • [Checklist de Migración](MIGRATION_CHECKLIST.md) • [Arquitectura](ARCHITECTURE.md)
 
-Llegar a un punto donde podamos:
-
-1. entrar a una carpeta de despliegue
-2. tomar los plugins exactos para `Purpur 1.20.6`
-3. subirlos al servidor
-4. empezar a configurar gameplay, menas, Slimefun, permisos, tab, scoreboards y menus
-
-Sin repetir la fase caotica de "buscar links, comparar versiones y adivinar compatibilidades" cada vez.
-
-## Estructura
-
-- `deploy/purpur-1.20.6`
-  Paquete operativo actual para servidor.
-- `deploy/purpur-1.20.6/plugins-confirmed/server-base`
-  Plugins base ya confirmados para la linea principal del server.
-- `deploy/purpur-1.20.6/plugins-confirmed/slimefun-upstream-ready`
-  Addons de Slimefun que ya sirven sin port local.
-- `deploy/purpur-1.20.6/plugins-confirmed/slimefun-ported`
-  Addons portados o parchados localmente para `1.20.6`.
-- `deploy/purpur-1.20.6/server-core`
-  Jar del servidor y piezas base del runtime.
-- `sources/slimefun-core/Slimefun4-src`
-  Codigo fuente del port principal de `Slimefun`.
-- `sources/plugins-in-construction/slimefun-addons/repos-to-port`
-  Repos oficiales o forks de addons en revision, fix o port.
-- `builds/compiled-jars`
-  Artefactos compilados desde fuente local.
-- `catalog/slimefun/audit`
-  Catalogos, auditorias y clasificacion de compatibilidad.
-- `docs`
-  Documentacion general, roadmap y decisiones.
-- `scripts/slimefun`
-  Scripts para compilar, auditar y descargar piezas del ecosistema Slimefun.
-- `lab`
-  Espacio de pruebas locales.
-
-## Estado Actual
-
-### Actualización Mañana (20/04/2026)
-- **Hito de Porteo**: 22 addons de Slimefun han sido portados exitosamente a **Purpur 1.20.6** con Java 21 y Slimefun RC-37.
-- **Addons Listos**: `ColoredEnderChests`, `DyedBackpacks`, `DynaTech`, `EcoPower`, `ElectricSpawners`, `ExoticGarden`, `ExtraGear`, `ExtraUtils`, `FluffyMachines`, `GlobalWarming`, `HotbarPets`, `InfinityExpansion` (incluye fix dupe #126), `PrivateStorage`, `SFCalc`, `SFMobDrops`, `SimpleUtils`, `SlimefunLuckyBlocks`, `SlimefunOreChunks`, `SlimyRepair`, `SlimyTreeTaps`, `SoulJars`, `SimpleMaterialGenerators`.
-- **En Construcción (Batch 1)**: `SlimeChem` (traducción inicial lograda, pero refactorización API atómica pendiente) y `SoundMuffler`.
-- **Expansión (Batch 2)**: Varios proyectos pendientes de refactor manual grave por `dough` fallido u otras colisiones API (Cultivation, LiteXpansion, SlimeTinker, etc).
-- **Suspensión Temporal**: El fork `Networks_Better_Compatibility` (Chagui68) fue clonado e integrado con parches base 1.20.6 (Java 21, Paper, fix particles), pero está pendiente de la reconstrucción final de su `pom.xml` para compilar.
+</div>
 
 ---
 
-- `Slimefun 1.20.6` ya esta portado y compilado.
-- Hay una base funcional de plugins generales para empezar un server `Purpur 1.20.6`.
+## ⚡ La Visión "Drake"
+Dejar atrás el "caos de los ports individuales". Hemos unificado todo en un **Mono-Repo Multi-módulo** para garantizar que cada addon hable el mismo idioma técnico. No más parches rápidos; esto es ingeniería avanzada para servidores de alto rendimiento.
 
-## Flujo Recomendado
+## 🏗️ Pilares de la Arquitectura
+| Componente | Descripción |
+| :-- | :-- |
+| **`dough-core`** | Nuestra versión "nativizada" de Dough. Purgada de NMS, relocalizada a `dev.drake.dough` y optimizada para Java 21 y Data Components. |
+| **`Version Bridge`** | Abstracción total entre el antiguo NBT/PDC y los nuevos componentes de ítem de la 1.21. |
+| **`Latin-First`** | Localización integral a Español Latino integrada en el ciclo de vida del build. |
 
-1. Revisar [deploy/purpur-1.20.6/notes/CURRENT-STACK.md](deploy/purpur-1.20.6/notes/CURRENT-STACK.md)
-2. Tomar los jars desde `deploy/purpur-1.20.6/plugins-confirmed`
-3. Si falta algo, revisar `docs/ROADMAP.md`
-4. Si un addon requiere port o fix, trabajar desde `sources/plugins-in-construction`
-5. Copiar salidas nuevas a `builds/compiled-jars` y luego a `deploy`
+## 📂 Organización del Proyecto
+```bash
+/
+├── sources/               # El Corazón: Dough-Core y todos los Addons
+│   ├── dough-core/        # Nuestra librería base unificada
+│   ├── repos-to-port/     # Batch 1: Prioridad de migración inmediata
+│   └── batch-2-expansion/ # Batch 2: Expansión y lógica compleja
+├── deploy/                # El Laboratorio: Entornos de prueba aislados
+│   ├── purpur-1.21.11/    # Target actual de despliegue
+│   └── purpur-1.20.6/     # Herencia estable con configuraciones
+├── scripts/               # La Fábrica: Automatización de builds y JARs
+└── docs/                  # El Cerebro: Documentación y Roadmaps
+```
 
-## Scripts Utiles
+## 🚀 Estado del Dashboard
+> [!IMPORTANT]
+> **Rama Actual**: `1.21-latin`
+> 
+> Estamos en la fase de **Refactorización Masiva**. Hemos completado la base arquitectónica y los 5 plugins piloto.
 
-- Compilar el port principal:
-  `powershell -ExecutionPolicy Bypass -File .\scripts\slimefun\build-drake-1.20.6.ps1`
-- Auditar addons de Slimefun:
-  `powershell -ExecutionPolicy Bypass -File .\scripts\slimefun\auditar-y-descargar-addons-1.20.6.ps1`
-- Descargar un addon por release:
-  `powershell -ExecutionPolicy Bypass -File .\scripts\slimefun\descargar-addon-github.ps1 -Nombre ExoticGarden`
+- [x] **Consolidación de Núcleo**: `dough-core` 100% funcional.
+- [x] **Estandarización Maven**: Parent POM configurado para todo el ecosistema.
+- [/] **Porteo de Addons**: 
+    - `[x]` SefiLib, InfinityLib, DynaTech.
+    - `[x]` Networks, SFCalc, SlimeChem.
+    - `[ ]` +30 Addons en proceso de refactorización de imports.
 
-## Nota
+## 🛠️ Guía de Inicio Rápido
+Para el equipo de desarrollo:
+1. Asegúrate de tener **Java 21** instalado.
+2. Clona este repositorio en la rama `1.21-latin`.
+3. Compila el ecosistema completo:
+   ```powershell
+   mvn clean package
+   ```
+4. Recoge tus JARs en `sources/**/target/`.
 
-Este repo es una base viva de operacion. Algunas piezas estan listas para entrar al servidor y otras siguen en revision, hardening o port. La libreria todavia no esta completa y todavia faltan plugins generales fuera del ecosistema Slimefun, pero ahora ya existe una estructura para crecer sin volver al desorden.
+---
+
+## 🤖 Handover Context (AI-Ready)
+Este repositorio está diseñado para ser co-creado con IA. 
+- Si eres un nuevo desarrollador o una IA asistente, lee **[IA_INSTRUCTIONS.md](IA_INSTRUCTIONS.md)** antes de empezar.
+- Consulta el **[MIGRATION_CHECKLIST.md](MIGRATION_CHECKLIST.md)** para tu siguiente ticket de trabajo.
+
+---
+<div align="center">
+Desarrollado con ❤️ por <b>DrakesCraft-Labs</b>
+</div>
