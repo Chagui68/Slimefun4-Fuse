@@ -52,18 +52,38 @@
         <module>sources/repos-to-port/SoulJars</module>
         <module>sources/repos-to-port/SoundMuffler</module>
 
-        <!-- Batch 2: Expansion -->
+        <!-- Batch 2 & Expansion -->
         <module>sources/batch-2-expansion/Cultivation</module>
         <module>sources/batch-2-expansion/EMC2</module>
         <module>sources/batch-2-expansion/Galactifun</module>
-        <module>sources/batch-2-expansion/InfinityLib</module>
         <module>sources/batch-2-expansion/LiteXpansion</module>
         <module>sources/batch-2-expansion/Networks</module>
-        <module>sources/batch-2-expansion/SefiLib</module>
+        <module>sources/batch-2-expansion/Networks_Better_Compatibility</module>
         <module>sources/batch-2-expansion/SlimeTinker</module>
         <module>sources/batch-2-expansion/SMG</module>
         <module>sources/batch-2-expansion/Supreme</module>
         <module>sources/batch-2-expansion/TranscEndence</module>
+
+        <!-- Community Archive -->
+        <module>sources/community-addons/AlchimiaVitae</module>
+        <module>sources/community-addons/CrystamaeHistoria</module>
+        <module>sources/community-addons/DankTech2</module>
+        <module>sources/community-addons/Element-Manipulation</module>
+        <module>sources/community-addons/ExtraTools</module>
+        <module>sources/community-addons/FastMachines</module>
+        <module>sources/community-addons/FlowerPower</module>
+        <module>sources/community-addons/FN-FAL-s-Amplifications</module>
+        <module>sources/community-addons/FoxyMachines</module>
+        <module>sources/community-addons/GeneticChickengineering-Reborn</module>
+        <module>sources/community-addons/Liquid</module>
+        <module>sources/community-addons/Magic-8-Ball</module>
+        <module>sources/community-addons/MissileWarfare</module>
+        <module>sources/community-addons/PotionExpansion</module>
+        <module>sources/community-addons/RykenSlimeCustomizer-EN</module>
+        <module>sources/community-addons/SfChunkInfo</module>
+        <module>sources/community-addons/Simple-Storage</module>
+        <module>sources/community-addons/SlimeCustomizer</module>
+        <module>sources/community-addons/VillagerUtil</module>
     </modules>
 
     <dependencyManagement>

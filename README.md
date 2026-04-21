@@ -9,7 +9,7 @@
 ![License](https://img.shields.io/badge/License-GPL--3.0-blue?style=for-the-badge)
 
 **Drake Framework** es la respuesta definitiva para un ecosistema de Slimefun moderno, eficiente e independiente. 
-Estamos reconstruyendo más de 35 addons desde sus cimientos para abrazar el paradigma de la versión 1.21.11.
+Hemos unificado **+85 repositorios** en un Mono-Repo estratégico para la migración total a la 1.21.11.
 
 [Explorar Código](/sources) • [Checklist de Migración](MIGRATION_CHECKLIST.md) • [Arquitectura](ARCHITECTURE.md)
 
@@ -17,59 +17,58 @@ Estamos reconstruyendo más de 35 addons desde sus cimientos para abrazar el par
 
 ---
 
-## ⚡ La Visión "Drake"
-Dejar atrás el "caos de los ports individuales". Hemos unificado todo en un **Mono-Repo Multi-módulo** para garantizar que cada addon hable el mismo idioma técnico. No más parches rápidos; esto es ingeniería avanzada para servidores de alto rendimiento.
+## ⚡ Estado del Núcleo (SF4 Core)
+> [!CAUTION]
+> **Componente**: `sources/slimefun-core/Slimefun4-src`
+> **Estado**: ⚠️ **PENDIENTE DE ADAPTACIÓN (Target 1.20.6)**
+> El núcleo es la pieza más compleja. Adaptarlo a los *Data Components* de la 1.21.11 es el requisito previo para que el Bridge sea 100% funcional en todos los addons.
+
+---
+
+## 📊 Dashboard de Complejidad (Porting 1.21.11)
+
+| Nivel de Dificultad | Addons Representativos | Estado de Porteo |
+| :--- | :--- | :--- |
+| **Nivel 1: Easy** (Items/Recetas) | ExoticGarden, SoulJars, ExtraGear, SFCalc, SMG | ✅ Pilotos Listos |
+| **Nivel 2: Medium** (Máquinas/GUIs) | DynaTech, ElectricSpawners, Networks, SlimeChem | ✅ Pilotos Listos |
+| **Nivel 3: Hard** (Deep Logic/NMS) | **Slimefun4 Core**, InfinityExpansion, Galactifun | ⚠️ En Investigación |
+| **Nivel 4: Legacy Risk** (Código Antiguo) | ExtraTools, PotionExpansion, MissileWarfare | ⏳ Pendiente |
+
+---
 
 ## 🏗️ Pilares de la Arquitectura
 | Componente | Descripción |
 | :-- | :-- |
-| **`dough-core`** | Nuestra versión "nativizada" de Dough. Purgada de NMS, relocalizada a `dev.drake.dough` y optimizada para Java 21 y Data Components. |
-| **`Version Bridge`** | Abstracción total entre el antiguo NBT/PDC y los nuevos componentes de ítem de la 1.21. |
-| **`Latin-First`** | Localización integral a Español Latino integrada en el ciclo de vida del build. |
+| **`dough-core`** | Versión nativizada para 1.21.11. Unifica 13 módulos en uno solo (`dev.drake.dough`). |
+| **`Version Bridge`** | Abstracción total entre el antiguo NBT/PDC y los nuevos componentes de ítem. |
+| **`Multi-Module Maven`** | Organización centralizada de dependencias y versiones para +85 módulos. |
 
 ## 📂 Organización del Proyecto
 ```bash
 /
-├── sources/               # El Corazón: Dough-Core y todos los Addons
-│   ├── dough-core/        # Nuestra librería base unificada
-│   ├── repos-to-port/     # Batch 1: Prioridad de migración inmediata
-│   └── batch-2-expansion/ # Batch 2: Expansión y lógica compleja
-├── deploy/                # El Laboratorio: Entornos de prueba aislados
-│   ├── purpur-1.21.11/    # Target actual de despliegue
-│   └── purpur-1.20.6/     # Herencia estable con configuraciones
-├── scripts/               # La Fábrica: Automatización de builds y JARs
-└── docs/                  # El Cerebro: Documentación y Roadmaps
+├── sources/               # Central de Código Fuente
+│   ├── dough-core/        # Librería base Drake Framework
+│   ├── slimefun-core/     # Slimefun4 Original (Core a portar)
+│   ├── repos-to-port/     # Batch 1: Addons Oficiales / Alta Prioridad
+│   ├── batch-2-expansion/ # Batch 2: Addons de Expansión
+│   └── community-addons/  # Archivo masivo de la comunidad (Wiki Full)
+├── deploy/                # Entornos de prueba aislados
+├── scripts/               # Automatización y Herramientas
+└── docs/                  # Inteligencia y Roadmaps
 ```
 
-## 🚀 Estado del Dashboard
-> [!IMPORTANT]
-> **Rama Actual**: `1.21-latin`
-> 
-> Estamos en la fase de **Refactorización Masiva**. Hemos completado la base arquitectónica y los 5 plugins piloto.
-
-- [x] **Consolidación de Núcleo**: `dough-core` 100% funcional.
-- [x] **Estandarización Maven**: Parent POM configurado para todo el ecosistema.
-- [/] **Porteo de Addons**: 
-    - `[x]` SefiLib, InfinityLib, DynaTech.
-    - `[x]` Networks, SFCalc, SlimeChem.
-    - `[ ]` +30 Addons en proceso de refactorización de imports.
-
 ## 🛠️ Guía de Inicio Rápido
-Para el equipo de desarrollo:
 1. Asegúrate de tener **Java 21** instalado.
-2. Clona este repositorio en la rama `1.21-latin`.
-3. Compila el ecosistema completo:
+2. Compila el ecosistema completo (los que ya están vinculados):
    ```powershell
    mvn clean package
    ```
-4. Recoge tus JARs en `sources/**/target/`.
 
 ---
 
 ## 🤖 Handover Context (AI-Ready)
-Este repositorio está diseñado para ser co-creado con IA. 
-- Si eres un nuevo desarrollador o una IA asistente, lee **[IA_INSTRUCTIONS.md](IA_INSTRUCTIONS.md)** antes de empezar.
-- Consulta el **[MIGRATION_CHECKLIST.md](MIGRATION_CHECKLIST.md)** para tu siguiente ticket de trabajo.
+- Consulta **[IA_INSTRUCTIONS.md](IA_INSTRUCTIONS.md)** para entender las reglas de oro (No NMS, Inmutabilidad).
+- Revisa el **[MIGRATION_CHECKLIST.md](MIGRATION_CHECKLIST.md)** para tomar tu siguiente tarea según dificultad.
 
 ---
 <div align="center">
