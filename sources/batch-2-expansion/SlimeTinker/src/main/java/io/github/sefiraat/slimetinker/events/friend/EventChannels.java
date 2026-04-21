@@ -27,7 +27,7 @@ public final class EventChannels {
         for (Map.Entry<PotionEffectType, Integer> entry : friend.getPotionEffects().entrySet()) {
             boolean resetHealth = false;
             double health = 0;
-            if (entry.getKey() == PotionEffectType.INSTANT_HEALTHTH_BOOST) {
+            if (entry.getKey() == PotionEffectType.HEALTH_BOOST) {
                 resetHealth = true;
                 health = p.getHealth();
             }

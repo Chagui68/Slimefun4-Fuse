@@ -393,7 +393,7 @@ public final class PlayerDamagedEvents {
             friend.setCancelEvent(true);
             LivingEntity l = (LivingEntity) friend.getDamagingEntity();
             l.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 100, 1));
-            l.getWorld().spawnParticle(Particle.FIREWORKS_SPARK, l.getLocation(), 3, 0.2, 0.2, 0.2);
+            l.getWorld().spawnParticle(Particle.FIREWORK, l.getLocation(), 3, 0.2, 0.2, 0.2);
             l.damage(friend.getInitialDamage(), friend.getPlayer());
         }
     }
