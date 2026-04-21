@@ -1,0 +1,92 @@
+options:
+  # Whether or not to automatically update
+  auto-update: true
+
+  # Options for Infusions
+  infusions:
+    # Enable or disable specific Infusions (true = enabled, false = disabled)
+    infusion-destructivecrits: true
+    infusion-phantomcrits: true
+    infusion-trueaim: true
+    infusion-forceful: true
+    infusion-volatile: true
+    infusion-healing: true
+    infusion-autoreplant: true
+    infusion-totemstorage: true
+    infusion-knockback: true
+
+  # Options for transmutations
+  transmutations:
+    # Enable or disable specific transmutations (true = enabled, false = disabled)
+    reinforced-transmutation: true
+    hardened-transmutation: true
+    steel-transmutation: true
+    damascus-transmutation: true
+    compressed-carbon-transmutation: true
+    # Whether or not the display items in the Slimefun Guide should use the same
+    # custom model data as the real Slimefun items that will be crafted
+    use-same-custommodeldata: true
+
+  # Options for potions
+  potions:
+    # Options for the Benevolent Brew potion
+    benevolent-brew:
+      # Effect configurations
+      # NOTE: To set the duration of the potions in seconds, multiply the amount of seconds by 20 and put that value in
+      resistance:
+        # How many game ticks (there are 20 game ticks in a second) the effect should last
+        ticks: 6000
+        # The level of the effect (resistance 5 and above will make players completely immune to damage)
+        level: 1
+      haste:
+        # How many game ticks (there are 20 game ticks in a second) the effect should last
+        ticks: 6000
+        # The level of the effect
+        level: 2
+      regen:
+        # How many game ticks (there are 20 game ticks in a second) the effect should last
+        ticks: 6000
+        # The level of the effect
+        level: 2
+      speed:
+        # How many game ticks (there are 20 game ticks in a second) the effect should last
+        ticks: 6000
+        # The level of the effect
+        level: 2
+      jump:
+        # How many game ticks (there are 20 game ticks in a second) the effect should last
+        ticks: 6000
+        # The level of the effect
+        level: 2
+
+      # How many half hearts of absorption to grant upon consuming the potion (has to be in this format: 0.0, 1.0, etc.)
+      absorption-halfhearts: 0.0
+    # Options for the Malevolent Concoction splash potion
+    malevolent-concoction:
+      # Effect configurations
+      # NOTE: To set the duration of the potions in seconds, multiply the amount of seconds by 20 and put that value in
+      weakness:
+        # How many game ticks (there are 20 game ticks in a second) the effect should last
+        ticks: 6000
+        # The level of the effect
+        level: 3
+      slowness:
+        # How many game ticks (there are 20 game ticks in a second) the effect should last
+        ticks: 3000
+        # The level of the effect
+        level: 2
+      poison:
+        # How many game ticks (there are 20 game ticks in a second) the effect should last
+        ticks: 600
+        # The level of the effect
+        level: 2
+      blindness:
+        # How many game ticks (there are 20 game ticks in a second) the effect should last
+        ticks: 1200
+        # The level of the effect
+        level: 1
+      hunger:
+        # How many game ticks (there are 20 game ticks in a second) the effect should last
+        ticks: 600
+        # The level of the effect
+        level: 2

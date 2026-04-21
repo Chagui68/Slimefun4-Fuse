@@ -1,0 +1,8 @@
+id: example
+name: "example addon"
+depends: []
+pluginDepends: []
+version: "1.0"
+description: "RSC example addon"
+authors: ["mmmjjkx"]
+repo: "SlimefunReloadingProject/rsc-example-EN"

@@ -1,0 +1,96 @@
+package ne.fnfal113.fnamplifications.powergenerators.implementation;
+
+import java.util.List;
+
+import org.bukkit.Location;
+import org.bukkit.World;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+
+import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetProvider;
+import io.github.thebusybiscuit.slimefun4.core.handlers.BlockUseHandler;
+import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
+import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
+
+import ne.fnfal113.fnamplifications.FNAmplifications;
+import ne.fnfal113.fnamplifications.utils.Utils;
+
+public class CustomSolarGen extends SlimefunItem implements EnergyNetProvider {
+
+    private final int dayEnergy;
+    private final int nightEnergy;
+    private final int capacity;
+
+    public CustomSolarGen(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe, int dayEnergy, int nightEnergy, int capacity) {
+        super(itemGroup, item, recipeType, recipe);
+        this.dayEnergy = dayEnergy;
+        this.nightEnergy = nightEnergy;
+        this.capacity = capacity;
+
+        setConfigValues(dayEnergy, capacity);
+        setLore(this.getItem());
+    }
+
+    public void setLore(ItemStack itemStack){
+        ItemMeta meta = itemStack.getItemMeta();
+        List<String> lore = meta.getLore();
+        lore.add(Utils.colorTranslator(LoreBuilder.powerBuffer(FNAmplifications.getInstance().getConfigManager().getCustomConfig("solar-generator-settings").getInt(this.getId() + "." + "capacity"))));
+        lore.add(Utils.colorTranslator(LoreBuilder.powerPerSecond(FNAmplifications.getInstance().getConfigManager().getCustomConfig("solar-generator-settings").getInt(this.getId() + "." + "dayEnergy"))));
+        meta.setLore(lore);
+        itemStack.setItemMeta(meta);
+    }
+
+    public void setConfigValues(int dayEnergy, int capacity) {
+        FNAmplifications.getInstance().getConfigManager().initializeConfig(this.getId(),"dayEnergy", dayEnergy, "solar-generator-settings");
+        FNAmplifications.getInstance().getConfigManager().initializeConfig(this.getId(), "capacity", capacity, "solar-generator-settings");
+    }
+
+    public int getDayEnergy() {
+        return FNAmplifications.getInstance().getConfigManager().getCustomConfig("solar-generator-settings").getInt(this.getId() + "." + "dayEnergy");
+    }
+
+    public int getCapacity() {
+        return FNAmplifications.getInstance().getConfigManager().getCustomConfig("solar-generator-settings").getInt(this.getId() + "." + "capacity");
+    }
+
+    public int getNightEnergy() {
+        return 0;
+    }
+
+    public final boolean isChargeable() {
+        return true;
+    }
+
+    public int getGeneratedOutput(Location l, Config data) {
+        World world = l.getWorld();
+
+        if (world.getEnvironment() != World.Environment.NORMAL) {
+            return 0;
+        } else {
+            boolean isDaytime = this.isDaytime(world);
+            if (!isDaytime && this.getNightEnergy() < 1) {
+                return 0;
+            } else if (world.isChunkLoaded(l.getBlockX() >> 4, l.getBlockZ() >> 4) && l.getBlock().getLightFromSky() >= 15) {
+                return isDaytime ? this.getDayEnergy() : this.getNightEnergy();
+            } else {
+                return 0;
+            }
+        }
+    }
+
+    private boolean isDaytime(World world) {
+        long time = world.getTime();
+        return !world.hasStorm() && !world.isThundering() && (time < 12300L || time > 23850L);
+    }
+
+    public void preRegister() {
+        super.preRegister();
+        BlockUseHandler handler = PlayerRightClickEvent::cancel;
+        this.addItemHandler(handler);
+    }
+}

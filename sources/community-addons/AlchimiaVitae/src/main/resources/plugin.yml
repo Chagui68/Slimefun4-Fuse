@@ -1,0 +1,8 @@
+name: AlchimiaVitae
+author: Apeiros-46B
+description: Slimefun addon that adds alchemy, herbalism, and a little magic
+main: me.apeiros.alchimiavitae.AlchimiaVitae
+version: ${project.version}
+api-version: 1.17
+depend:
+- Slimefun

@@ -1,0 +1,18 @@
+name: SfChunkInfo
+version: ${project.version}
+main: me.fnfal113.sfchunkinfo.SfChunkInfo
+api-version: 1.14
+authors: [ FN_FAL113 ]
+description: Scan the amount of Slimefun blocks in a chunk
+depend: [Slimefun]
+commands:
+  sfchunkinfo:
+    description: Scan chunk for amount of slimefun machines
+    usage: /<command>
+  permissions:
+    sfchunkinfo.scan:
+      description: Scan the amount of Slimefun blocks on the command sender's chunk location
+      default: op
+    sfchunkinfo.scan.others:
+      description: Scan the amount of Slimefun blocks on the target player chunk location
+      default: op

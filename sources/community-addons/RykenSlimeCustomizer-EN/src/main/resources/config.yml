@@ -1,0 +1,18 @@
+# Whether to save the example configuration file
+saveExample: true
+# Whether to enable debug mode, if plugin doesn't have exceptions, you can set it to false.
+debug: false
+# Addon update settings
+update:
+  # Whether to download addon's pre-release versions（They may not be stable）
+  pre-releases: false
+  # Automatic update addons in server startup
+  auto: true
+  # list of blocked addons that should not be updated automatically.
+  # please use the addon id, not the name!
+  blocks:
+    - ""
+# download the dependencies
+repositories:
+  - https://maven.aliyun.com/repository/public
+  - https://repo1.maven.org/maven2

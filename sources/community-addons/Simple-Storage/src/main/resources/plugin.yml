@@ -1,0 +1,11 @@
+name: SimpleStorage
+author: Sefiraat
+description: An addon that gives a suite of new storage options.
+main: io.github.sefiraat.simplestorage.SimpleStorage
+website: https://github.com/Sefiraat/Simple-Storage
+version: ${project.version}
+api-version: 1.16
+depend:
+  - Slimefun
+loadbefore:
+  - SlimeCustomizer
