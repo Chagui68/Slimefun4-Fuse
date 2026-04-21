@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dev.drake</groupId>
+    <artifactId>drakes-slimefun-labs</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>DrakesCraft-Labs</name>
+    <description>Ecosistema unificado de Slimefun Addons para 1.21.11</description>
+
+    <properties>
+        <java.version>21</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        
+        <paper.version>1.21.1-R0.1-SNAPSHOT</paper.version>
+        <slimefun.version>RC-37</slimefun.version>
+        <dough.version>1.3.1-DRAKE</dough.version>
+    </properties>
+
+    <modules>
+        <!-- Librería Base -->
+        <module>sources/plugins-in-construction/slimefun-addons/dough-core</module>
+
+        <!-- Batch 1: Repos to Port -->
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/ColoredEnderChests</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/DyedBackpacks</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/DynaTech</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/EcoPower</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/ElectricSpawners</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/ExoticGarden</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/ExtraGear</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/ExtraUtils</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/FluffyMachines</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/GlobalWarming</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/HotbarPets</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/InfinityExpansion</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/luckyblocks-sf</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/PrivateStorage</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/SFCalc</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/SFMobDrops</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/SimpleUtils</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/SlimeChem</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/SlimefunOreChunks</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/SlimyRepair</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/SlimyTreeTaps</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/SoulJars</module>
+        <module>sources/plugins-in-construction/slimefun-addons/repos-to-port/SoundMuffler</module>
+
+        <!-- Batch 2: Expansion -->
+        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/Cultivation</module>
+        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/EMC2</module>
+        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/Galactifun</module>
+        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/InfinityLib</module>
+        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/LiteXpansion</module>
+        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/Networks</module>
+        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/SefiLib</module>
+        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/SlimeTinker</module>
+        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/SMG</module>
+        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/Supreme</module>
+        <module>sources/plugins-in-construction/slimefun-addons/batch-2-expansion/TranscEndence</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Paper API -->
+            <dependency>
+                <groupId>io.papermc.paper</groupId>
+                <artifactId>paper-api</artifactId>
+                <version>${paper.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- Slimefun 4 -->
+            <dependency>
+                <groupId>com.github.Slimefun</groupId>
+                <artifactId>Slimefun4</artifactId>
+                <version>${slimefun.version}</version>
+                <scope>provided</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>io.github.baked-libs</groupId>
+                        <artifactId>dough-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- Nuestro Dough-Core (Unificado) -->
+            <dependency>
+                <groupId>dev.drake.dough</groupId>
+                <artifactId>dough-core</artifactId>
+                <version>${dough.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>${java.version}</release>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>papermc</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+</project>
