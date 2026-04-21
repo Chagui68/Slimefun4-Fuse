@@ -21,18 +21,25 @@ Hemos unificado **+85 repositorios** en un Mono-Repo estratégico para la migrac
 > [!CAUTION]
 > **Componente**: `sources/slimefun-core/Slimefun4-src`
 > **Estado**: ⚠️ **PENDIENTE DE ADAPTACIÓN (Target 1.20.6)**
-> El núcleo es la pieza más compleja. Adaptarlo a los *Data Components* de la 1.21.11 es el requisito previo para que el Bridge sea 100% funcional en todos los addons.
+> El núcleo es la pieza más compleja y la base de todo el ecosistema. Su adaptación a los *Data Components* de la 1.21.11 es el requisito previo para que los addons tengan una base estable.
 
 ---
 
 ## 📊 Dashboard de Complejidad (Porting 1.21.11)
 
-| Nivel de Dificultad | Addons Representativos | Estado de Porteo |
+Esta tabla clasifica los componentes según el esfuerzo técnico estimado para su migración exitosa.
+
+| Nivel de Dificultad | Componentes Representativos | Estado de Porteo |
 | :--- | :--- | :--- |
 | **Nivel 1: Easy** (Items/Recetas) | ExoticGarden, SoulJars, ExtraGear, SFCalc, SMG | ✅ Pilotos Listos |
 | **Nivel 2: Medium** (Máquinas/GUIs) | DynaTech, ElectricSpawners, Networks, SlimeChem | ✅ Pilotos Listos |
 | **Nivel 3: Hard** (Deep Logic/NMS) | **Slimefun4 Core**, InfinityExpansion, Galactifun | ⚠️ En Investigación |
-| **Nivel 4: Legacy Risk** (Código Antiguo) | ExtraTools, PotionExpansion, MissileWarfare | ⏳ Pendiente |
+| **Nivel 4: Riesgo / Legacy** | Addons antiguos de la comunidad (ExtraTools, etc.) | ⏳ Pendiente |
+
+### 🛠️ Plugins Faltantes por Completar
+- [ ] **ExtraHeads**: Repositorio oficial pendiente de integración final.
+- [ ] **MobCapturer**: Requiere refactor de metadatos de entidades.
+- [ ] **HardcoreSlimefun**: Pendiente de revisión de compatibilidad con bloques.
 
 ---
 
@@ -56,19 +63,6 @@ Hemos unificado **+85 repositorios** en un Mono-Repo estratégico para la migrac
 ├── scripts/               # Automatización y Herramientas
 └── docs/                  # Inteligencia y Roadmaps
 ```
-
-## 🛠️ Guía de Inicio Rápido
-1. Asegúrate de tener **Java 21** instalado.
-2. Compila el ecosistema completo (los que ya están vinculados):
-   ```powershell
-   mvn clean package
-   ```
-
----
-
-## 🤖 Handover Context (AI-Ready)
-- Consulta **[IA_INSTRUCTIONS.md](IA_INSTRUCTIONS.md)** para entender las reglas de oro (No NMS, Inmutabilidad).
-- Revisa el **[MIGRATION_CHECKLIST.md](MIGRATION_CHECKLIST.md)** para tomar tu siguiente tarea según dificultad.
 
 ---
 <div align="center">
