@@ -12,7 +12,7 @@
 Este repo funciona como **laboratorio de migración**: un mono-repo estratégico para unificar versiones, dependencias, compatibilidad Paper y fixes repetidos antes de volver a separar addons.
 Hoy el reactor agrupa **53 módulos activos**: `Slimefun 6 Core`, `dough-core`, librerías base y addons del port masivo.
 
-[Explorar Código](/sources) • [Checklist de Migración](MIGRATION_CHECKLIST.md) • [Arquitectura](ARCHITECTURE.md) • [Dev Setup](docs/DEV_SETUP.md)
+[Explorar Código](/sources) • [Checklist de Migración](MIGRATION_CHECKLIST.md) • [Arquitectura](ARCHITECTURE.md) • [Dev Setup](docs/DEV_SETUP.md) • [Plantilla de Addon](docs/NEW_ADDON_TEMPLATE.md)
 
 </div>
 
