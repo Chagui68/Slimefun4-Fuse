@@ -1,0 +1,10 @@
+{
+    "pack": {
+        "pack_format": 16,
+        "min_format": 16,
+        "max_format": 84,
+	"supported_formats": [16,84],
+        "description": "§f1.19.4+ §aSlimefun               §d With GUI §f& §9Vanilla Models"
+    }
+}
+

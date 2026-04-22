@@ -1,0 +1,8 @@
+{
+	"credit": "Made by Racingsky",
+	"parent": "minecraft:block/template_lantern",
+	"textures": {
+		"particle": "block/exposed_copper_lantern",
+		"lantern": "block/exposed_copper_lantern"
+	}
+}

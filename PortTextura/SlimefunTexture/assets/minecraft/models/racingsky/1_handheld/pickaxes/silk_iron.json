@@ -1,0 +1,7 @@
+{
+	"parent": "item/handheld",
+	"author": "Racingsky",
+	"textures": {
+	"layer0": "racingsky:item/1_handheld/pickaxes/silk_iron"}
+
+}

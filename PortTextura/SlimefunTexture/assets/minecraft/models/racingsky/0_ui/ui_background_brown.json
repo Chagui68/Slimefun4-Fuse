@@ -1,0 +1,13 @@
+{
+	"credit": "Made by Racingsky",
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "racingsky:item/0_ui/ui_background_brown"
+	},
+	"display": {
+		"gui": {
+			"scale": [1.125, 1.125, 1]
+		}
+	},
+	"author": "Racingsky"
+}

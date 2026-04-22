@@ -1,0 +1,7 @@
+{
+	"parent": "item/generated",
+	"author": "Racingsky",
+	"textures": {
+		"layer0": "slimefun:item/christmas/christmas_fruit_cake"
+	}
+}

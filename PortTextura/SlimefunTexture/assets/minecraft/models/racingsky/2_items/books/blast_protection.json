@@ -1,0 +1,7 @@
+{
+	"parent": "item/generated",
+	"author": "Racingsky",
+	"textures": {
+	"layer0": "racingsky:item/2_items/books/blast_protection"}
+
+}

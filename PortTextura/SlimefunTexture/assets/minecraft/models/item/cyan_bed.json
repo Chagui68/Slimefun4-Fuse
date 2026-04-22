@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:item/generated",
+	"author": "Racingsky",
+	"textures": {
+		"layer0": "racingsky:item/2_items/beds/cyan_bed",
+		"particle": "block/oak_planks"}
+}

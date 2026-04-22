@@ -1,0 +1,7 @@
+{
+	"parent": "item/generated",
+	"author": "Racingsky",
+	"textures": {
+		"layer0": "slimefun:item/24_galactifun/galactifun/gas_canister_hydrocarbons"
+	}
+}
