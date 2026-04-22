@@ -159,7 +159,7 @@ public class GildedCollectionFlexGroup extends FlexItemGroup {
         return new CustomItemStack(
             Material.TARGET,
             ThemeType.MAIN.getColor() + "Gilding Statistics",
-            lore
+            lore.toArray(new String[0])
         );
     }
 }

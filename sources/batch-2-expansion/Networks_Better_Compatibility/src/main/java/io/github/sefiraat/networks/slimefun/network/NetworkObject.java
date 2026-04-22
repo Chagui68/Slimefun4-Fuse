@@ -13,8 +13,6 @@ import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.handlers.BlockBreakHandler;
 import io.github.thebusybiscuit.slimefun4.core.handlers.BlockPlaceHandler;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
-
-import lombok.Getter;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
@@ -35,9 +33,7 @@ import java.util.Set;
 
 public abstract class NetworkObject extends SlimefunItem implements AdminDebuggable {
 
-    @Getter
     private final NodeType nodeType;
-    @Getter
     private final List<Integer> slotsToDrop = new ArrayList<>();
 
     protected static final Set<BlockFace> CHECK_FACES = Set.of(
@@ -90,6 +86,14 @@ public abstract class NetworkObject extends SlimefunItem implements AdminDebugga
                         prePlace(playerRightClickEvent);
                     }
                 });
+    }
+
+    public NodeType getNodeType() {
+        return nodeType;
+    }
+
+    public List<Integer> getSlotsToDrop() {
+        return slotsToDrop;
     }
 
     protected void addToRegistry(@Nonnull Block block) {

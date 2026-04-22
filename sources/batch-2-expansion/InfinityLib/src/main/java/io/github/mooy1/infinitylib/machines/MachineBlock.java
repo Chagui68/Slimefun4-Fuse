@@ -9,8 +9,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import lombok.Setter;
-
 import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
 
@@ -26,13 +24,16 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 @ParametersAreNonnullByDefault
 public final class MachineBlock extends AbstractMachineBlock {
 
-    @Setter
     protected MachineLayout layout = MachineLayout.MACHINE_DEFAULT;
     private final List<MachineBlockRecipe> recipes = new ArrayList<>();
     private int ticksPerOutput = -1;
 
     public MachineBlock(ItemGroup category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, item, recipeType, recipe);
+    }
+
+    public void setLayout(MachineLayout layout) {
+        this.layout = layout;
     }
 
     @Nonnull

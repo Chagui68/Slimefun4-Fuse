@@ -2,14 +2,12 @@ package io.github.sefiraat.crystamaehistoria.magic.spells.core;
 
 import io.github.sefiraat.crystamaehistoria.magic.CastInformation;
 import dev.drake.dough.collections.Pair;
-import lombok.Getter;
 import org.bukkit.potion.PotionEffectType;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Map;
 import java.util.function.Consumer;
 
-@Getter
 public class SpellCore {
 
     private final double cooldownSeconds;
@@ -97,5 +95,46 @@ public class SpellCore {
         this.positiveEffectPairMap = spellCoreBuilder.getPositiveEffectPairMap();
         this.negativeEffectPairMap = spellCoreBuilder.getNegativeEffectPairMap();
     }
+
+    public double getCooldownSeconds() { return cooldownSeconds; }
+    public double getRange() { return range; }
+    public int getCrystaCost() { return crystaCost; }
+    public double getDamageAmount() { return damageAmount; }
+    public double getKnockbackAmount() { return knockbackAmount; }
+    public double getHealAmount() { return healAmount; }
+    public double getProjectileAoeRange() { return projectileAoeRange; }
+    public double getProjectileKnockbackAmount() { return projectileKnockbackAmount; }
+    public int getNumberOfTicks() { return numberOfTicks; }
+    public int getTickInterval() { return tickInterval; }
+    public boolean isCooldownDivided() { return cooldownDivided; }
+    public boolean isRangeMultiplied() { return rangeMultiplied; }
+    public boolean isCrystaMultiplied() { return crystaMultiplied; }
+    public boolean isDamageMultiplied() { return damageMultiplied; }
+    public boolean isKnockbackMultiplied() { return knockbackMultiplied; }
+    public boolean isHealMultiplied() { return healMultiplied; }
+    public boolean isProjectileAoeMultiplied() { return projectileAoeMultiplied; }
+    public boolean isProjectileKnockbackMultiplied() { return projectileKnockbackMultiplied; }
+    public boolean isNumberOfTicksMultiplied() { return numberOfTicksMultiplied; }
+    public boolean isTickIntervalMultiplied() { return tickIntervalMultiplied; }
+    public boolean isInstantCast() { return isInstantCast; }
+    public Consumer<CastInformation> getInstantCastEvent() { return instantCastEvent; }
+    public boolean isProjectileSpell() { return isProjectileSpell; }
+    public boolean isProjectileVsEntitySpell() { return isProjectileVsEntitySpell; }
+    public boolean isProjectileVsBlockSpell() { return isProjectileVsBlockSpell; }
+    public Consumer<CastInformation> getFireProjectileEvent() { return fireProjectileEvent; }
+    public Consumer<CastInformation> getBeforeProjectileHitEvent() { return beforeProjectileHitEvent; }
+    public Consumer<CastInformation> getProjectileHitEvent() { return projectileHitEvent; }
+    public Consumer<CastInformation> getProjectileHitBlockEvent() { return projectileHitBlockEvent; }
+    public Consumer<CastInformation> getAfterProjectileHitEvent() { return afterProjectileHitEvent; }
+    public boolean isTickingSpell() { return isTickingSpell; }
+    public Consumer<CastInformation> getTickEvent() { return tickEvent; }
+    public Consumer<CastInformation> getAfterAllTicksEvent() { return afterAllTicksEvent; }
+    public boolean isDamagingSpell() { return isDamagingSpell; }
+    public boolean isHealingSpell() { return isHealingSpell; }
+    public boolean isEffectingSpell() { return isEffectingSpell; }
+    public boolean isAmplificationMultiplied() { return amplificationMultiplied; }
+    public boolean isEffectDurationMultiplied() { return effectDurationMultiplied; }
+    public Map<PotionEffectType, Pair<Integer, Integer>> getPositiveEffectPairMap() { return positiveEffectPairMap; }
+    public Map<PotionEffectType, Pair<Integer, Integer>> getNegativeEffectPairMap() { return negativeEffectPairMap; }
 
 }

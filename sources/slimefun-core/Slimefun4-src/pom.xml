@@ -188,6 +188,7 @@
                 <version>3.6.0</version>
 
                 <configuration>
+                    <createDependencyReducedPom>false</createDependencyReducedPom>
                     <!-- Relocate these to avoid clashes and conflicts -->
                     <relocations>
                         <relocation>

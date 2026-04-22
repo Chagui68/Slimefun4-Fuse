@@ -238,7 +238,7 @@ public class StoryCollectionFlexGroup extends FlexItemGroup {
         return new CustomItemStack(
             Material.DEEPSLATE_BRICK_SLAB,
             ThemeType.MAIN.getColor() + "Chronicling Results",
-            lore
+            lore.toArray(new String[0])
         );
     }
 
@@ -247,7 +247,7 @@ public class StoryCollectionFlexGroup extends FlexItemGroup {
         return new CustomItemStack(
             definition.getMaterial(),
             ThemeType.MAIN.getColor() + definition.getUnique().getId(),
-            definition.getUnique().getStoryLore()
+            definition.getUnique().getStoryLore().toArray(new String[0])
         );
     }
 
@@ -290,7 +290,7 @@ public class StoryCollectionFlexGroup extends FlexItemGroup {
         return new CustomItemStack(
             Material.TARGET,
             ThemeType.MAIN.getColor() + "Item Statistics",
-            lore
+            lore.toArray(new String[0])
         );
     }
 
@@ -307,7 +307,7 @@ public class StoryCollectionFlexGroup extends FlexItemGroup {
         return new CustomItemStack(
             Material.TARGET,
             ThemeType.MAIN.getColor() + "Story Statistics",
-            lore
+            lore.toArray(new String[0])
         );
     }
 }

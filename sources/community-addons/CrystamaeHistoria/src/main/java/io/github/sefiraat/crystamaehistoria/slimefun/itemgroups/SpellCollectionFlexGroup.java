@@ -245,7 +245,7 @@ public class SpellCollectionFlexGroup extends FlexItemGroup {
         return new CustomItemStack(
             Material.CAULDRON,
             ThemeType.MAIN.getColor() + "Liquefaction Basin",
-            lore
+            lore.toArray(new String[0])
         );
     }
 
@@ -301,7 +301,7 @@ public class SpellCollectionFlexGroup extends FlexItemGroup {
         return new CustomItemStack(
             Material.MAP,
             ThemeType.MAIN.getColor() + "Spell Values",
-            lore
+            lore.toArray(new String[0])
         );
     }
 
@@ -352,7 +352,7 @@ public class SpellCollectionFlexGroup extends FlexItemGroup {
         return new CustomItemStack(
             Material.NAME_TAG,
             ThemeType.MAIN.getColor() + "Spell Cast Type(s)",
-            lore
+            lore.toArray(new String[0])
         );
     }
 
@@ -376,7 +376,7 @@ public class SpellCollectionFlexGroup extends FlexItemGroup {
         return new CustomItemStack(
             Material.TARGET,
             ThemeType.MAIN.getColor() + "Range",
-            lore
+            lore.toArray(new String[0])
         );
     }
 
@@ -400,7 +400,7 @@ public class SpellCollectionFlexGroup extends FlexItemGroup {
         return new CustomItemStack(
             Material.SLIME_BLOCK,
             ThemeType.MAIN.getColor() + "Knockback",
-            lore
+            lore.toArray(new String[0])
         );
     }
 
@@ -430,7 +430,7 @@ public class SpellCollectionFlexGroup extends FlexItemGroup {
         return new CustomItemStack(
             Material.FIRE_CHARGE,
             ThemeType.MAIN.getColor() + "Projectile Information",
-            lore
+            lore.toArray(new String[0])
         );
     }
 
@@ -497,7 +497,7 @@ public class SpellCollectionFlexGroup extends FlexItemGroup {
         return new CustomItemStack(
             Material.BREWING_STAND,
             ThemeType.MAIN.getColor() + "Effects",
-            lore
+            lore.toArray(new String[0])
         );
     }
 
@@ -514,7 +514,7 @@ public class SpellCollectionFlexGroup extends FlexItemGroup {
         return new CustomItemStack(
             Material.TARGET,
             ThemeType.MAIN.getColor() + "Spell Statistics",
-            lore
+            lore.toArray(new String[0])
         );
     }
 }

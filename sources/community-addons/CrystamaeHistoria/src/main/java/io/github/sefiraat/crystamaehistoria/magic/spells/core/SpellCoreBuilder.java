@@ -2,7 +2,6 @@ package io.github.sefiraat.crystamaehistoria.magic.spells.core;
 
 import io.github.sefiraat.crystamaehistoria.magic.CastInformation;
 import dev.drake.dough.collections.Pair;
-import lombok.Getter;
 import org.bukkit.potion.PotionEffectType;
 
 import javax.annotation.CheckReturnValue;
@@ -12,7 +11,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 
-@Getter
 public class SpellCoreBuilder {
 
     // All
@@ -232,4 +230,46 @@ public class SpellCoreBuilder {
     public SpellCore build() {
         return new SpellCore(this);
     }
+
+    public double getCooldownSeconds() { return cooldownSeconds; }
+    public double getRange() { return range; }
+    public int getCrystaCost() { return crystaCost; }
+    public boolean isCooldownDivided() { return cooldownDivided; }
+    public boolean isRangeMultiplied() { return rangeMultiplied; }
+    public boolean isCrystaMultiplied() { return crystaMultiplied; }
+    public Map<PotionEffectType, Pair<Integer, Integer>> getPositiveEffectPairMap() { return positiveEffectPairMap; }
+    public Map<PotionEffectType, Pair<Integer, Integer>> getNegativeEffectPairMap() { return negativeEffectPairMap; }
+    public int getParticleNumber() { return particleNumber; }
+    public boolean isInstantCast() { return isInstantCast; }
+    public Consumer<CastInformation> getInstantCastEvent() { return instantCastEvent; }
+    public boolean isProjectileSpell() { return isProjectileSpell; }
+    public boolean isProjectileVsEntitySpell() { return isProjectileVsEntitySpell; }
+    public boolean isProjectileVsBlockSpell() { return isProjectileVsBlockSpell; }
+    public double getProjectileAoeRange() { return projectileAoeRange; }
+    public double getProjectileKnockbackAmount() { return projectileKnockbackAmount; }
+    public boolean isProjectileAoeMultiplied() { return projectileAoeMultiplied; }
+    public boolean isProjectileKnockbackMultiplied() { return projectileKnockbackMultiplied; }
+    public Consumer<CastInformation> getFireProjectileEvent() { return fireProjectileEvent; }
+    public Consumer<CastInformation> getBeforeProjectileHitEvent() { return beforeProjectileHitEvent; }
+    public Consumer<CastInformation> getProjectileHitEvent() { return projectileHitEvent; }
+    public Consumer<CastInformation> getProjectileHitBlockEvent() { return projectileHitBlockEvent; }
+    public Consumer<CastInformation> getAfterProjectileHitEvent() { return afterProjectileHitEvent; }
+    public boolean isTickingSpell() { return isTickingSpell; }
+    public int getNumberOfTicks() { return numberOfTicks; }
+    public int getTickInterval() { return tickInterval; }
+    public boolean isNumberOfTicksMultiplied() { return numberOfTicksMultiplied; }
+    public boolean isTickIntervalMultiplied() { return tickIntervalMultiplied; }
+    public Consumer<CastInformation> getTickEvent() { return tickEvent; }
+    public Consumer<CastInformation> getAfterAllTicksEvent() { return afterAllTicksEvent; }
+    public boolean isDamagingSpell() { return isDamagingSpell; }
+    public double getDamageAmount() { return damageAmount; }
+    public boolean isDamageMultiplied() { return damageMultiplied; }
+    public double getKnockbackAmount() { return knockbackAmount; }
+    public boolean isKnockbackMultiplied() { return knockbackMultiplied; }
+    public boolean isHealingSpell() { return isHealingSpell; }
+    public double getHealAmount() { return healAmount; }
+    public boolean isHealMultiplied() { return healMultiplied; }
+    public boolean isEffectingSpell() { return isEffectingSpell; }
+    public boolean isAmplificationMultiplied() { return amplificationMultiplied; }
+    public boolean isEffectDurationMultiplied() { return effectDurationMultiplied; }
 }

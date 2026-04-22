@@ -1,7 +1,5 @@
 package io.github.sefiraat.crystamaehistoria.magic;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
@@ -15,47 +13,22 @@ import java.util.function.Consumer;
 
 public class CastInformation {
 
-    @Getter
     private final UUID caster;
-    @Getter
     private final int staveLevel;
-    @Getter
     private final Location castLocation;
-    @Getter
-    @Setter
     private SpellType spellType;
-    @Getter
-    @Setter
     private Location damageLocation;
-    @Getter
-    @Setter
     private LivingEntity mainTarget;
-    @Getter
-    @Setter
     private Block hitBlock;
-    @Getter
-    @Setter
     private Block targetedBlockOnCast;
-    @Getter
-    @Setter
     private BlockFace targetedBlockFaceOnCast;
-    @Getter
-    @Setter
     private Location projectileLocation;
-    @Getter
-    @Setter
     private int currentTick = 1;
-    @Setter
     private Consumer<CastInformation> beforeProjectileHitEvent;
-    @Setter
     private Consumer<CastInformation> projectileHitEvent;
-    @Setter
     private Consumer<CastInformation> afterProjectileHitEvent;
-    @Setter
     private Consumer<CastInformation> projectileHitBlockEvent;
-    @Setter
     private Consumer<CastInformation> tickEvent;
-    @Setter
     private Consumer<CastInformation> afterTicksEvent;
 
     @ParametersAreNonnullByDefault
@@ -69,6 +42,130 @@ public class CastInformation {
 
     public Player getCasterAsPlayer() {
         return Bukkit.getPlayer(this.caster);
+    }
+
+    public UUID getCaster() {
+        return caster;
+    }
+
+    public int getStaveLevel() {
+        return staveLevel;
+    }
+
+    public Location getCastLocation() {
+        return castLocation;
+    }
+
+    public SpellType getSpellType() {
+        return spellType;
+    }
+
+    public void setSpellType(SpellType spellType) {
+        this.spellType = spellType;
+    }
+
+    public Location getDamageLocation() {
+        return damageLocation;
+    }
+
+    public void setDamageLocation(Location damageLocation) {
+        this.damageLocation = damageLocation;
+    }
+
+    public LivingEntity getMainTarget() {
+        return mainTarget;
+    }
+
+    public void setMainTarget(LivingEntity mainTarget) {
+        this.mainTarget = mainTarget;
+    }
+
+    public Block getHitBlock() {
+        return hitBlock;
+    }
+
+    public void setHitBlock(Block hitBlock) {
+        this.hitBlock = hitBlock;
+    }
+
+    public Block getTargetedBlockOnCast() {
+        return targetedBlockOnCast;
+    }
+
+    public void setTargetedBlockOnCast(Block targetedBlockOnCast) {
+        this.targetedBlockOnCast = targetedBlockOnCast;
+    }
+
+    public BlockFace getTargetedBlockFaceOnCast() {
+        return targetedBlockFaceOnCast;
+    }
+
+    public void setTargetedBlockFaceOnCast(BlockFace targetedBlockFaceOnCast) {
+        this.targetedBlockFaceOnCast = targetedBlockFaceOnCast;
+    }
+
+    public Location getProjectileLocation() {
+        return projectileLocation;
+    }
+
+    public void setProjectileLocation(Location projectileLocation) {
+        this.projectileLocation = projectileLocation;
+    }
+
+    public int getCurrentTick() {
+        return currentTick;
+    }
+
+    public void setCurrentTick(int currentTick) {
+        this.currentTick = currentTick;
+    }
+
+    public Consumer<CastInformation> getBeforeProjectileHitEvent() {
+        return beforeProjectileHitEvent;
+    }
+
+    public void setBeforeProjectileHitEvent(Consumer<CastInformation> beforeProjectileHitEvent) {
+        this.beforeProjectileHitEvent = beforeProjectileHitEvent;
+    }
+
+    public Consumer<CastInformation> getProjectileHitEvent() {
+        return projectileHitEvent;
+    }
+
+    public void setProjectileHitEvent(Consumer<CastInformation> projectileHitEvent) {
+        this.projectileHitEvent = projectileHitEvent;
+    }
+
+    public Consumer<CastInformation> getAfterProjectileHitEvent() {
+        return afterProjectileHitEvent;
+    }
+
+    public void setAfterProjectileHitEvent(Consumer<CastInformation> afterProjectileHitEvent) {
+        this.afterProjectileHitEvent = afterProjectileHitEvent;
+    }
+
+    public Consumer<CastInformation> getProjectileHitBlockEvent() {
+        return projectileHitBlockEvent;
+    }
+
+    public void setProjectileHitBlockEvent(Consumer<CastInformation> projectileHitBlockEvent) {
+        this.projectileHitBlockEvent = projectileHitBlockEvent;
+    }
+
+    public Consumer<CastInformation> getTickEvent() {
+        return tickEvent;
+    }
+
+    public void setTickEvent(Consumer<CastInformation> tickEvent) {
+        this.tickEvent = tickEvent;
+    }
+
+    public Consumer<CastInformation> getAfterTicksEvent() {
+        return afterTicksEvent;
+    }
+
+    public void setAfterTicksEvent(Consumer<CastInformation> afterTicksEvent) {
+        this.afterTicksEvent = afterTicksEvent;
     }
 
     public void runPreAffectEvent() {

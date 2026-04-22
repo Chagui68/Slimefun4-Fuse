@@ -50,7 +50,7 @@ public class SupremeAttribute {
 
   public static SlimefunItemStack getMagic() {
     final SlimefunItemStack attributeMagic = SupremeAttribute.ATTRIBUTE_MAGIC;
-    attributeMagic.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, getSupremeOptions().isCustomBc() ? 10 : 20);
+    attributeMagic.addUnsafeEnchantment(Enchantment.PROTECTION, getSupremeOptions().isCustomBc() ? 10 : 20);
     attributeMagic.addUnsafeEnchantment(Enchantment.UNBREAKING, getSupremeOptions().isCustomBc() ? 10 : 20);
     attributeMagic.addUnsafeEnchantment(Enchantment.MENDING, getSupremeOptions().isCustomBc() ? 2 : 10);
     return attributeMagic;
@@ -58,9 +58,9 @@ public class SupremeAttribute {
 
   public static SlimefunItemStack getBomb() {
     final SlimefunItemStack attributeBomb = SupremeAttribute.ATTRIBUTE_BOMB;
-    attributeBomb.addUnsafeEnchantment(Enchantment.PROTECTION_EXPLOSIONS, getSupremeOptions().isCustomBc() ? 10 : 20);
-    attributeBomb.addUnsafeEnchantment(Enchantment.PROTECTION_FIRE, getSupremeOptions().isCustomBc() ? 10 : 20);
-    attributeBomb.addUnsafeEnchantment(Enchantment.PROTECTION_PROJECTILE, getSupremeOptions().isCustomBc() ? 10 : 20);
+    attributeBomb.addUnsafeEnchantment(Enchantment.BLAST_PROTECTION, getSupremeOptions().isCustomBc() ? 10 : 20);
+    attributeBomb.addUnsafeEnchantment(Enchantment.FIRE_PROTECTION, getSupremeOptions().isCustomBc() ? 10 : 20);
+    attributeBomb.addUnsafeEnchantment(Enchantment.PROJECTILE_PROTECTION, getSupremeOptions().isCustomBc() ? 10 : 20);
     attributeBomb.addUnsafeEnchantment(Enchantment.THORNS, getSupremeOptions().isCustomBc() ? 5 : 10);
     return attributeBomb;
   }

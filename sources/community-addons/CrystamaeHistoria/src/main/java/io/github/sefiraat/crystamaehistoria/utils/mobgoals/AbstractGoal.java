@@ -6,7 +6,6 @@ import com.destroystokyo.paper.entity.ai.GoalType;
 import io.github.sefiraat.crystamaehistoria.utils.Keys;
 import io.github.sefiraat.crystamaehistoria.utils.datatypes.DataTypeMethods;
 import io.github.sefiraat.crystamaehistoria.utils.datatypes.PersistentUUIDDataType;
-import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.OfflinePlayer;
@@ -26,15 +25,21 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class AbstractGoal<T extends Mob> implements Goal<T> {
 
-    @Getter
     protected final UUID owner;
-    @Getter
     protected T self;
     protected GoalKey<T> goalKey;
 
     protected AbstractGoal(UUID owningPlayer) {
         super();
         this.owner = owningPlayer;
+    }
+
+    public UUID getOwner() {
+        return owner;
+    }
+
+    public T getSelf() {
+        return self;
     }
 
     public void setSelf(T self) {
@@ -73,23 +78,14 @@ public abstract class AbstractGoal<T extends Mob> implements Goal<T> {
         }
 
         if (getTargetsEnemies()) {
-            final List<LivingEntity> entities = new ArrayList<>(
-                player.getWorld().getNearbyEntitiesByType(
-                    getTargetClass(),
-                    player.getLocation(),
-                    10,
-                    10,
-                    10,
-                    entity -> {
-                        final UUID testOwner = DataTypeMethods.getCustom(entity, Keys.PDC_IS_SPAWN_OWNER, PersistentUUIDDataType.TYPE);
-                        if (testOwner == null) {
-                            return true;
-                        } else {
-                            return !testOwner.equals(owner);
-                        }
-                    }
-                )
-            );
+            final List<LivingEntity> entities = new ArrayList<>(player.getWorld().getNearbyEntitiesByType(
+                LivingEntity.class,
+                player.getLocation(),
+                10,
+                10,
+                10,
+                entity -> getTargetClass().isInstance(entity) && isValidTarget(entity)
+            ));
 
             if (!entities.isEmpty()) {
                 LivingEntity random = entities.get(ThreadLocalRandom.current().nextInt(entities.size()));
@@ -147,6 +143,11 @@ public abstract class AbstractGoal<T extends Mob> implements Goal<T> {
 
     public void customActions(Player player) {
 
+    }
+
+    private boolean isValidTarget(LivingEntity entity) {
+        final UUID testOwner = DataTypeMethods.getCustom(entity, Keys.PDC_IS_SPAWN_OWNER, PersistentUUIDDataType.TYPE);
+        return testOwner == null || !testOwner.equals(owner);
     }
 
     @Override

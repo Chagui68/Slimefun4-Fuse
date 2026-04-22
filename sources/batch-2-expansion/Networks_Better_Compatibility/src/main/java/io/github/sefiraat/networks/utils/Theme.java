@@ -2,7 +2,6 @@ package io.github.sefiraat.networks.utils;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import dev.drake.dough.items.CustomItemStack;
-import lombok.Getter;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.Material;
@@ -14,7 +13,6 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
 public enum Theme {
     WARNING(ChatColor.YELLOW, "Warning"),
     ERROR(ChatColor.RED, "Error"),
@@ -33,7 +31,6 @@ public enum Theme {
     RECIPE_TYPE(ChatColor.of("#ffe89c"), "Recipe Type"),
     GUIDE(ChatColor.of("#444444"), "Guide");
 
-    @Getter
     protected static final Theme[] cachedValues = values();
     private final ChatColor color;
     private final String loreLine;
@@ -43,6 +40,18 @@ public enum Theme {
         this.color = color;
         this.loreLine = loreLine;
 
+    }
+
+    public static Theme[] getCachedValues() {
+        return cachedValues;
+    }
+
+    public ChatColor getColor() {
+        return color;
+    }
+
+    public String getLoreLine() {
+        return loreLine;
     }
 
     @Nonnull

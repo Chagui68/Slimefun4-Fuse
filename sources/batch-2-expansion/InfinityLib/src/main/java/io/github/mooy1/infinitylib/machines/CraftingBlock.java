@@ -7,8 +7,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import lombok.Setter;
-
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -31,12 +29,15 @@ public class CraftingBlock extends MenuBlock {
 
     public static final ItemStack CLICK_TO_CRAFT = new CustomItemStack(Material.LIME_STAINED_GLASS_PANE, "&aClick To Craft!");
 
-    @Setter
     protected MachineLayout layout = MachineLayout.CRAFTING_DEFAULT;
     private final List<CraftingBlockRecipe> recipes = new ArrayList<>();
 
     public CraftingBlock(ItemGroup category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, item, recipeType, recipe);
+    }
+
+    public void setLayout(MachineLayout layout) {
+        this.layout = layout;
     }
 
     protected void craft(Block b, BlockMenu menu, Player p) {

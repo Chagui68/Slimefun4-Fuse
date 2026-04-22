@@ -2,11 +2,6 @@ package io.github.mooy1.infinitylib.machines;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
 @ParametersAreNonnullByDefault
 public final class MachineLayout {
 
@@ -56,5 +51,59 @@ public final class MachineLayout {
     private int[] outputSlots;
     private int[] background;
     private int statusSlot;
+
+    public int[] inputBorder() {
+        return inputBorder;
+    }
+
+    public MachineLayout inputBorder(int[] inputBorder) {
+        this.inputBorder = inputBorder;
+        return this;
+    }
+
+    public int[] inputSlots() {
+        return inputSlots;
+    }
+
+    public MachineLayout inputSlots(int[] inputSlots) {
+        this.inputSlots = inputSlots;
+        return this;
+    }
+
+    public int[] outputBorder() {
+        return outputBorder;
+    }
+
+    public MachineLayout outputBorder(int[] outputBorder) {
+        this.outputBorder = outputBorder;
+        return this;
+    }
+
+    public int[] outputSlots() {
+        return outputSlots;
+    }
+
+    public MachineLayout outputSlots(int[] outputSlots) {
+        this.outputSlots = outputSlots;
+        return this;
+    }
+
+    public int[] background() {
+        return background;
+    }
+
+    public MachineLayout background(int[] background) {
+        this.background = background;
+        return this;
+    }
+
+    public int statusSlot() {
+        return statusSlot;
+    }
+
+    public MachineLayout statusSlot(int statusSlot) {
+        this.statusSlot = statusSlot;
+        return this;
+    }
 
 }

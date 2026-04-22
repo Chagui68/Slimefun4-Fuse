@@ -8,7 +8,6 @@ import io.github.sefiraat.crystamaehistoria.magic.spells.spellobjects.MagicSummo
 import io.github.sefiraat.crystamaehistoria.runnables.spells.SpellTickRunnable;
 import dev.drake.dough.blocks.BlockPosition;
 import dev.drake.dough.collections.Pair;
-import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -24,32 +23,33 @@ import java.util.UUID;
 
 public class SpellMemory {
 
-    @Getter
     private final Map<MagicProjectile, Pair<CastInformation, Long>> projectileMap = new HashMap<>();
-    @Getter
     private final Map<MagicFallingBlock, Pair<CastInformation, Long>> fallingBlockMap = new HashMap<>();
-    @Getter
     private final Map<UUID, Pair<CastInformation, Long>> strikeMap = new HashMap<>();
-    @Getter
     private final Map<SpellTickRunnable, Integer> tickingCastables = new HashMap<>();
-    @Getter
     private final Map<BlockPosition, Long> blocksToRemove = new HashMap<>();
-    @Getter
     private final Map<MagicSummon, Long> summonedEntities = new HashMap<>();
-    @Getter
     private final Map<UUID, Long> playersWithFlight = new HashMap<>();
-    @Getter
     private final Map<UUID, Long> playersWithFrozenTime = new HashMap<>();
-    @Getter
     private final Map<UUID, Long> playersWithFrozenWeather = new HashMap<>();
-    @Getter
     private final Map<UUID, Long> inhibitedEndermen = new HashMap<>();
-    @Getter
     private final Map<BoundingBox, Long> noSpawningAreas = new HashMap<>();
-    @Getter
     private final Map<DisplayItem, Long> displayItems = new HashMap<>();
-    @Getter
     private final Map<UUID, Location> sleepingBags = new HashMap<>();
+
+    public Map<MagicProjectile, Pair<CastInformation, Long>> getProjectileMap() { return projectileMap; }
+    public Map<MagicFallingBlock, Pair<CastInformation, Long>> getFallingBlockMap() { return fallingBlockMap; }
+    public Map<UUID, Pair<CastInformation, Long>> getStrikeMap() { return strikeMap; }
+    public Map<SpellTickRunnable, Integer> getTickingCastables() { return tickingCastables; }
+    public Map<BlockPosition, Long> getBlocksToRemove() { return blocksToRemove; }
+    public Map<MagicSummon, Long> getSummonedEntities() { return summonedEntities; }
+    public Map<UUID, Long> getPlayersWithFlight() { return playersWithFlight; }
+    public Map<UUID, Long> getPlayersWithFrozenTime() { return playersWithFrozenTime; }
+    public Map<UUID, Long> getPlayersWithFrozenWeather() { return playersWithFrozenWeather; }
+    public Map<UUID, Long> getInhibitedEndermen() { return inhibitedEndermen; }
+    public Map<BoundingBox, Long> getNoSpawningAreas() { return noSpawningAreas; }
+    public Map<DisplayItem, Long> getDisplayItems() { return displayItems; }
+    public Map<UUID, Location> getSleepingBags() { return sleepingBags; }
 
     public void clearAll() {
         // Cancels all outstanding spells being cast
