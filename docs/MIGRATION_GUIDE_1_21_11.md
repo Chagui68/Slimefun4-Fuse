@@ -68,7 +68,7 @@ Actualmente tenemos integrados en el workspace:
 > El workspace ya no usa las carpetas antiguas `Networks` y `Cultivation` para el reactor. Fueron reemplazadas por `Networks_Better_Compatibility` y `Cultivation_Updated`.
 
 > [!NOTE]
-> La Wiki de Slimefun lista más addons de los que hoy existen dentro del laboratorio. Esta guía se centra en el **estado real del workspace local**: `29` componentes ya confirmados y `24` módulos pendientes dentro del reactor actual.
+> La Wiki de Slimefun lista más addons de los que hoy existen dentro del laboratorio. Esta guía se centra en el **estado real del workspace local**: `30` componentes ya confirmados y `23` módulos pendientes dentro del reactor actual.
 
 ---
 
@@ -93,10 +93,11 @@ A pesar de los grandes avances del Día 1, el ecosistema es masivo. Aquí está 
 - [x] **SFCalc**: Build aislado validado; quedó confirmado como quick win sin tocar código ni dependencias.
 - [x] **Magic-8-Ball**: Build aislado validado; quedó confirmado como quick win sin cambios adicionales.
 - [x] **SfChunkInfo**: Build aislado validado; quedó confirmado como quick win sin tocar código.
+- [x] **VillagerUtil**: Build aislado validado; compila en `1.21.11` y hoy solo arrastra warnings deprecados de `PotionData`, sin bloqueo real.
 
 ### 2. Procesamiento Masivo de Addons
 - [ ] **Repos-to-port pendientes**: El frente activo ya no incluye `ExoticGarden`, `SoulJars`, `ExtraGear`, `ColoredEnderChests`, `DyedBackpacks` ni `InfinityExpansion`, porque ya forman parte del checkpoint confirmado. El trabajo sigue sobre módulos como `DynaTech`, `ElectricSpawners`, `SlimeChem`, `SoundMuffler` y compañía.
-- [ ] **Community-addons pendientes**: El siguiente tramo sigue siendo el más largo. Se deben procesar módulo por módulo buscando imports obsoletos, renombres de API Bukkit/Paper 1.21 y reemplazo de reflection/NMS por Paper cuando sea viable.
+- [ ] **Community-addons pendientes**: El siguiente tramo sigue siendo el más largo. `Element-Manipulation` ya no cuenta como quick win porque hoy cae por imports/clases ausentes de `adventure-platform-bukkit` y paquetes legacy de `dough`; el resto debe procesarse módulo por módulo buscando imports obsoletos, renombres de API Bukkit/Paper 1.21 y reemplazo de reflection/NMS por Paper cuando sea viable.
 
 ### 3. Verificación de Lógica de Datos (Components)
 - [ ] **PersistentDataAPI**: Auditar el manejo de metadatos en items. La 1.21 cambió los items a "Data Components", lo que puede afectar a cómo Slimefun guarda los IDs de los items.
@@ -109,7 +110,7 @@ A pesar de los grandes avances del Día 1, el ecosistema es masivo. Aquí está 
 ## 📍 Dónde quedó el proyecto
 - `README.md` y `MIGRATION_CHECKLIST.md` ya reflejan el conteo real del reactor.
 - Los forks activos de Chagui para `Networks` y `Cultivation` quedaron adoptados como variantes oficiales del laboratorio.
-- El siguiente trabajo ya no es "arreglar la base", sino seguir bajando la cola de los `24` módulos pendientes con compilación aislada vía `-pl`.
+- El siguiente trabajo ya no es "arreglar la base", sino seguir bajando la cola de los `23` módulos pendientes con compilación aislada vía `-pl`.
 
 ## 🤝 Créditos de Porting
 - **Chagui (`Chagui68`)**: sus forks `Networks_Better_Compatibility` y `Cultivation_Updated` quedaron adoptados como variantes activas dentro del workspace para estos addons.

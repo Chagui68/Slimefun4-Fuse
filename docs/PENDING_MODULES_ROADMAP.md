@@ -7,8 +7,8 @@ Hoja de ruta operativa para bajar la cola de modulos pendientes del branch `1.21
 Checkpoint actual del reactor:
 
 - `53` modulos activos
-- `29` componentes confirmados
-- `24` modulos pendientes
+- `30` componentes confirmados
+- `23` modulos pendientes
 
 Fuente de verdad del estado:
 
@@ -18,7 +18,7 @@ Fuente de verdad del estado:
 
 ## Objetivo Final
 
-Cerrar los `24` modulos restantes con evidencia real, no con estimaciones.
+Cerrar los `23` modulos restantes con evidencia real, no con estimaciones.
 
 Cada modulo debe terminar en uno de estos estados:
 
@@ -83,7 +83,6 @@ Un modulo cuenta como cerrado para este roadmap cuando:
 - `RykenSlimeCustomizer-EN`
 - `Simple-Storage`
 - `SlimeCustomizer`
-- `VillagerUtil`
 
 ## Orden Recomendado De Ataque
 
@@ -96,14 +95,12 @@ Meta: convertir varios pendientes en `LISTO` con cambios chicos de `pom.xml`, pa
 Orden sugerido:
 
 1. `Element-Manipulation`
-2. `VillagerUtil`
 
 Por que entran aca:
 
-- ya se ven relativamente alineados al parent
-- ya usan `dev.drake:Slimefun` y `dough-core`
-- no muestran de entrada dependencias externas especialmente toxicas
-- es probable que fallen por detalles chicos o incluso ya compilen
+- `VillagerUtil` ya salió de esta fase: quedó confirmado con build aislado en `1.21.11`
+- `Element-Manipulation` dejó de ser quick win puro: hoy cae por clases faltantes de `adventure-platform-bukkit` y paquetes legacy de `dough`
+- la fase sigue sirviendo para detectar rápido qué módulos eran validaciones baratas y cuáles ya pasaron a port real
 
 Resultado esperado de la fase:
 
@@ -223,10 +220,9 @@ Plantilla de trabajo por turno:
 
 Si hubiera que seguir hoy mismo, el orden recomendado seria:
 
-1. `Element-Manipulation`
-2. `VillagerUtil`
-3. `DynaTech`
-4. `SlimeChem`
+1. `DynaTech`
+2. `SlimeChem`
+3. `Element-Manipulation`
 
 ## Criterio Para Reordenar
 
