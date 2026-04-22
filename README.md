@@ -40,14 +40,14 @@ Esta tabla clasifica los componentes según el esfuerzo técnico estimado para s
 ### ✅ Logros del Checkpoint actual
 - [x] **Slimefun 6**: Salto generacional para soporte nativo de 1.21.11.
 - [x] **Dough-Core (1.3.1-DRAKE)**: Unificación total de librerías.
-- [x] **20 componentes confirmados**: `Slimefun 6 Core`, `dough-core` y 18 addons/librerías ya documentados como listos.
+- [x] **24 componentes confirmados**: `Slimefun 6 Core`, `dough-core` y 22 addons/librerías ya documentados como listos.
 - [x] **Forks activos de Chagui**: `Networks_Better_Compatibility` y `Cultivation_Updated` reemplazan a las variantes antiguas.
 - [x] **Batch técnico cerrado**: `SMG`, `Supreme`, `TranscEndence`, `CrystamaeHistoria`, `ExoticGarden` y otros módulos clave ya quedaron alineados al checkpoint actual.
 
 ### 📌 Estado real del tablero
 - `53` módulos activos en el reactor raíz.
-- `20` componentes confirmados para `1.21.11`.
-- `33` módulos aún pendientes de validación final, port o documentación.
+- `24` componentes confirmados para `1.21.11`.
+- `29` módulos aún pendientes de validación final, port o documentación.
 - La documentación prioriza **el estado real del workspace**, no el conteo histórico de la wiki pública.
 
 ### 🔧 Qué Hace El Reactor

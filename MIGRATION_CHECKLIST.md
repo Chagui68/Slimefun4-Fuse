@@ -19,7 +19,7 @@ El `pom.xml` raíz es el **reactor Maven** del workspace:
 - lista los módulos activos del port
 - permite compilar por addon sin perder una base común
 - hoy las variantes activas para esta parte del árbol son `Cultivation_Updated` y `Networks_Better_Compatibility`
-- actualmente el tablero real del reactor es: **53 módulos activos**, **20 componentes confirmados** y **33 módulos pendientes**
+- actualmente el tablero real del reactor es: **53 módulos activos**, **24 componentes confirmados** y **29 módulos pendientes**
 
 ## 2. Estado de Porteo (Dough-Core & Addons)
 
@@ -40,12 +40,16 @@ El `pom.xml` raíz es el **reactor Maven** del workspace:
 | **Supreme** | **[x] LISTO** | Compila en 1.21.11. |
 | **TranscEndence** | **[x] LISTO** | Compila en 1.21.11. |
 | **SMG** | **[x] LISTO** | Portado a 1.21.11. |
+| **PrivateStorage** | **[x] LISTO** | Alineado al reactor y compilando en 1.21.11. |
+| **ElectricSpawners** | **[x] LISTO** | Alineado al reactor y compilando en 1.21.11. |
+| **SFMobDrops** | **[x] LISTO** | Verificado con build aislado en 1.21.11. |
+| **GlobalWarming** | **[x] LISTO** | Verificado con build aislado en 1.21.11. |
 | **SoulJars** | **[x] LISTO** | Reactor heredado. |
 | **ExtraGear** | **[x] LISTO** | Reactor heredado. |
 | **ColoredEnderChests** | **[x] LISTO** | Reactor heredado. |
 | **DyedBackpacks** | **[x] LISTO** | Reactor heredado. |
 | **ExoticGarden** | **[x] LISTO** | Portado y documentado dentro del reactor 1.21.11. |
-| **+33 Módulos Pendientes** | [ ] Pendiente | Restantes del reactor actual que aún requieren validación final, port o documentación. |
+| **+29 Módulos Pendientes** | [ ] Pendiente | Restantes del reactor actual que aún requieren validación final, port o documentación. |
 
 
 ## 3. Logros del Proyecto (Drake Framework)
