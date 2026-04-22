@@ -66,7 +66,7 @@ public class CureWand extends SlimefunItem {
                 World w = zv.getWorld();
                 Location l = zv.getLocation();
                 w.playSound(l, Sound.ITEM_TOTEM_USE, 0.3F, 1F);
-                w.spawnParticle(Particle.TOTEM, l, 30);
+                w.spawnParticle(Particle.TOTEM_OF_UNDYING, l, 30);
 
                 // Cure zombie villager
                 zv.setConversionTime(1);

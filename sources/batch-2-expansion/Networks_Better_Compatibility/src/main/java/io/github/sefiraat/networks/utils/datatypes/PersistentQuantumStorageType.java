@@ -1,6 +1,7 @@
 package io.github.sefiraat.networks.utils.datatypes;
 
-import com.jeff_media.morepersistentdatatypes.DataType;
+import dev.sefiraat.sefilib.persistence.PersistenceTypes;
+import org.bukkit.persistence.PersistentDataType;
 import io.github.sefiraat.networks.network.stackcaches.CardInstance;
 import io.github.sefiraat.networks.network.stackcaches.QuantumCache;
 import io.github.sefiraat.networks.utils.Keys;
@@ -48,10 +49,10 @@ public class PersistentQuantumStorageType implements PersistentDataType<Persiste
             @Nonnull PersistentDataAdapterContext context) {
         final PersistentDataContainer container = context.newPersistentDataContainer();
 
-        container.set(ITEM, DataType.ITEM_STACK, complex.getItemStack());
-        container.set(AMOUNT, DataType.INTEGER, complex.getAmount());
-        container.set(MAX_AMOUNT, DataType.INTEGER, complex.getLimit());
-        container.set(VOID, DataType.BOOLEAN, complex.isVoidExcess());
+        container.set(ITEM, PersistenceTypes.ITEM_STACK, complex.getItemStack());
+        container.set(AMOUNT, PersistentDataType.INTEGER, complex.getAmount());
+        container.set(MAX_AMOUNT, PersistentDataType.INTEGER, complex.getLimit());
+        container.set(VOID, PersistentDataType.BOOLEAN, complex.isVoidExcess());
         return container;
     }
 
@@ -59,10 +60,10 @@ public class PersistentQuantumStorageType implements PersistentDataType<Persiste
     @Nonnull
     public QuantumCache fromPrimitive(@Nonnull PersistentDataContainer primitive,
             @Nonnull PersistentDataAdapterContext context) {
-        final ItemStack item = primitive.get(ITEM, DataType.ITEM_STACK);
-        final int amount = primitive.get(AMOUNT, DataType.INTEGER);
-        final int limit = primitive.get(MAX_AMOUNT, DataType.INTEGER);
-        final boolean voidExcess = primitive.get(VOID, DataType.BOOLEAN);
+        final ItemStack item = primitive.get(ITEM, PersistenceTypes.ITEM_STACK);
+        final int amount = primitive.get(AMOUNT, PersistentDataType.INTEGER);
+        final int limit = primitive.get(MAX_AMOUNT, PersistentDataType.INTEGER);
+        final boolean voidExcess = primitive.get(VOID, PersistentDataType.BOOLEAN);
 
         return new QuantumCache(item, amount, limit, voidExcess);
     }

@@ -1,3 +1,16 @@
+# TranscEndence - Slimefun 6 (Drake Framework Port)
+### *End Dimension expansion for 1.21.11*
+
+Este addon ha sido portado y optimizado como parte del ecosistema **Slimefun 6** dentro del **Drake Framework**.
+
+---
+
+## 🤝 Créditos y Autoría
+- **Autor Original**: [Sefiraat](https://github.com/Sefiraat)
+- **Port a 1.21.11**: [Pablo Elías](https://github.com/pabloelias) (DrakesCraft-Labs)
+
+---
+
 # TranscEndence
 An addon built as an entry to slimefun's addonjam-2020, aiming at showing some love to the barren voidy dimension full of tall dudes who hate standing in one place for too long.
 

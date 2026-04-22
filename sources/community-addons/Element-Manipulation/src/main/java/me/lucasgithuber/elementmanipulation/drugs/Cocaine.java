@@ -45,8 +45,8 @@ public class Cocaine extends SimpleSlimefunItem<ItemUseHandler> implements NotPl
             }
             p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, ElementManipulation.config().getInt(durationsPath + "night-vision") * 20, ElementManipulation.config().getInt(powersPath + "night-vision")-1, false, false, false));
             p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, ElementManipulation.config().getInt(durationsPath + "speed") * 20,  ElementManipulation.config().getInt(powersPath + "speed")-1, false, false, false));
-            p.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, ElementManipulation.config().getInt(durationsPath + "nausea") * 20,  ElementManipulation.config().getInt(powersPath + "nausea")-1, false, false, false));
-            p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, ElementManipulation.config().getInt(durationsPath + "strength") * 20,  ElementManipulation.config().getInt(powersPath + "strength")-1, false, false, false));
+            p.addPotionEffect(new PotionEffect(PotionEffectType.NAUSEA, ElementManipulation.config().getInt(durationsPath + "nausea") * 20,  ElementManipulation.config().getInt(powersPath + "nausea")-1, false, false, false));
+            p.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH, ElementManipulation.config().getInt(durationsPath + "strength") * 20,  ElementManipulation.config().getInt(powersPath + "strength")-1, false, false, false));
             p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, ElementManipulation.config().getInt(durationsPath + "regeneration") * 20,  ElementManipulation.config().getInt(powersPath + "regeneration")-1, false, false, false));
         };
     }

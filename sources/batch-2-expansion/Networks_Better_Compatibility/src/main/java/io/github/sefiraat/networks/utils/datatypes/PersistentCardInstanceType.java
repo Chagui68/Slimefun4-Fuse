@@ -1,6 +1,7 @@
 package io.github.sefiraat.networks.utils.datatypes;
 
-import com.jeff_media.morepersistentdatatypes.DataType;
+import dev.sefiraat.sefilib.persistence.PersistenceTypes;
+import org.bukkit.persistence.PersistentDataType;
 import io.github.sefiraat.networks.network.stackcaches.CardInstance;
 import io.github.sefiraat.networks.utils.Keys;
 import org.bukkit.NamespacedKey;
@@ -47,10 +48,10 @@ public class PersistentCardInstanceType implements PersistentDataType<Persistent
             @Nonnull PersistentDataAdapterContext context) {
         final PersistentDataContainer container = context.newPersistentDataContainer();
 
-        container.set(ITEM, DataType.ITEM_STACK, complex.getItemStack());
-        container.set(AMOUNT, DataType.INTEGER, complex.getAmount());
-        container.set(LIMIT, DataType.INTEGER, complex.getLimit());
-        container.set(UNSTACK, DataType.LONG, System.currentTimeMillis());
+        container.set(ITEM, PersistenceTypes.ITEM_STACK, complex.getItemStack());
+        container.set(AMOUNT, PersistentDataType.INTEGER, complex.getAmount());
+        container.set(LIMIT, PersistentDataType.INTEGER, complex.getLimit());
+        container.set(UNSTACK, PersistentDataType.LONG, System.currentTimeMillis());
         return container;
     }
 
@@ -58,9 +59,9 @@ public class PersistentCardInstanceType implements PersistentDataType<Persistent
     @Nonnull
     public CardInstance fromPrimitive(@Nonnull PersistentDataContainer primitive,
             @Nonnull PersistentDataAdapterContext context) {
-        final ItemStack item = primitive.get(ITEM, DataType.ITEM_STACK);
-        final int amount = primitive.get(AMOUNT, DataType.INTEGER);
-        final int limit = primitive.get(LIMIT, DataType.INTEGER);
+        final ItemStack item = primitive.get(ITEM, PersistenceTypes.ITEM_STACK);
+        final int amount = primitive.get(AMOUNT, PersistentDataType.INTEGER);
+        final int limit = primitive.get(LIMIT, PersistentDataType.INTEGER);
 
         return new CardInstance(item, amount, limit);
     }

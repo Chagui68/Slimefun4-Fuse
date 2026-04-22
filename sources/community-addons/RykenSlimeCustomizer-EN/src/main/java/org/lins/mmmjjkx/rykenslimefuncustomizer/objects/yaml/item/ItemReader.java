@@ -229,16 +229,16 @@ public class ItemReader extends YamlReader<SlimefunItem> {
                         if (split.length == 2) {
                             int min = Integer.parseInt(split[0]);
                             int max = Integer.parseInt(split[1]);
-                            DropFromBlock.addDrop(material, new DropFromBlock.Drop(sfis.item(), chance, addon, min, max));
+                            DropFromBlock.addDrop(material, new DropFromBlock.Drop(sfis.clone(), chance, addon, min, max));
                         } else {
                             ExceptionHandler.handleError("Found an error while loading item " + s + " in addon "
                                 + addon.getAddonId() + ": Invalid drop amount range '" + between
                                 + "'. The drop amount will use 1 instead.");
-                            DropFromBlock.addDrop(material, new DropFromBlock.Drop(sfis.item(), chance, addon));
+                            DropFromBlock.addDrop(material, new DropFromBlock.Drop(sfis.clone(), chance, addon));
                         }
                     }
                 } else {
-                    DropFromBlock.addDrop(material, new DropFromBlock.Drop(sfis.item(), chance, addon, amount, amount));
+                    DropFromBlock.addDrop(material, new DropFromBlock.Drop(sfis.clone(), chance, addon, amount, amount));
                 }
             } else {
                 ExceptionHandler.handleError("Found an error while loading item " + s + " in addon "
@@ -379,16 +379,16 @@ public class ItemReader extends YamlReader<SlimefunItem> {
                         if (split.length == 2) {
                             int min = Integer.parseInt(split[0]);
                             int max = Integer.parseInt(split[1]);
-                            DropFromBlock.addDrop(material, new DropFromBlock.Drop(original.item(), chance, addon, min, max));
+                            DropFromBlock.addDrop(material, new DropFromBlock.Drop(original.clone(), chance, addon, min, max));
                         } else {
                             ExceptionHandler.handleError("Found an error while loading item " + id + " in addon "
                                 + addon.getAddonId() + ": " + "Invalid drop amount range '" + between
                                 + "'. The drop amount will use 1 instead.");
-                            DropFromBlock.addDrop(material, new DropFromBlock.Drop(original.item(), chance, addon));
+                            DropFromBlock.addDrop(material, new DropFromBlock.Drop(original.clone(), chance, addon));
                         }
                     }
                 } else {
-                    DropFromBlock.addDrop(material, new DropFromBlock.Drop(original.item(), chance, addon, amount, amount));
+                    DropFromBlock.addDrop(material, new DropFromBlock.Drop(original.clone(), chance, addon, amount, amount));
                 }
             } else {
                 ExceptionHandler.handleError("Found an error while loading item " + id + " in addon "

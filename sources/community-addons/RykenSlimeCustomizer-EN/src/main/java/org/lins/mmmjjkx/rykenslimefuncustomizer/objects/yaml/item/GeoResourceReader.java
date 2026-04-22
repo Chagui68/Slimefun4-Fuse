@@ -106,16 +106,16 @@ public class GeoResourceReader extends YamlReader<GEOResource> {
                             if (split.length == 2) {
                                 int min = Integer.parseInt(split[0]);
                                 int max = Integer.parseInt(split[1]);
-                                DropFromBlock.addDrop(material, new DropFromBlock.Drop(sfis.item(), chance, addon, min, max));
+                                DropFromBlock.addDrop(material, new DropFromBlock.Drop(sfis.clone(), chance, addon, min, max));
                             } else {
                                 ExceptionHandler.handleError("Found an error while loading the geo resource " + s
                                         + " in addon " + addon.getAddonId()
                                         + ": Invalid drop amount range format! The amount will using 1 instead.");
-                                DropFromBlock.addDrop(material, new DropFromBlock.Drop(sfis.item(), chance, addon));
+                                DropFromBlock.addDrop(material, new DropFromBlock.Drop(sfis.clone(), chance, addon));
                             }
                         }
                     } else {
-                        DropFromBlock.addDrop(material, new DropFromBlock.Drop(sfis.item(), chance, addon, amount, amount));
+                        DropFromBlock.addDrop(material, new DropFromBlock.Drop(sfis.clone(), chance, addon, amount, amount));
                     }
                 } else {
                     ExceptionHandler.handleError("Failed to load natural resource " + s + " in addon " + addon.getAddonId() + ": Specified drop block material type " + dropMaterial + " does not exist!");
@@ -180,12 +180,10 @@ public class GeoResourceReader extends YamlReader<GEOResource> {
             public String getName() {
                 return name;
             }
-
             @NotNull @Override
             public ItemStack getItem() {
-                return item.item();
+                return item.clone();
             }
-
             @Override
             public boolean isObtainableFromGEOMiner() {
                 return obtainableFromGEOMiner;

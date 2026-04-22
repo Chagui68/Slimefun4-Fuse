@@ -1,3 +1,16 @@
+# SMG (Simple Material Generators) - Slimefun 6 (Drake Framework Port)
+### *Resource Generation for 1.21.11*
+
+Este addon ha sido portado y optimizado como parte del ecosistema **Slimefun 6** dentro del **Drake Framework**.
+
+---
+
+## 🤝 Créditos y Autoría
+- **Autor Original**: [Sefiraat](https://github.com/Sefiraat)
+- **Port a 1.21.11**: [Pablo Elías](https://github.com/pabloelias) (DrakesCraft-Labs)
+
+---
+
 # Info
 SimpleMaterialGenerators (SMG for short) is a Slimefun4 addon that helps aliviate some of the grind by providing simple generators that create simple materials.<br>
 

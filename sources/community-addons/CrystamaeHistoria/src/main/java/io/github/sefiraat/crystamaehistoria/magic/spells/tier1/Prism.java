@@ -27,7 +27,7 @@ public class Prism extends Spell {
             .addPositiveEffect(PotionEffectType.RESISTANCE, 1, 30)
             .addPositiveEffect(PotionEffectType.DOLPHINS_GRACE, 1, 30)
             .addPositiveEffect(PotionEffectType.HASTE, 1, 30)
-            .addPositiveEffect(PotionEffectType.HEALTH_BOOST, 1, 30)
+            .addPositiveEffect(PotionEffectType.INSTANT_HEALTH, 1, 30)
             .addPositiveEffect(PotionEffectType.HERO_OF_THE_VILLAGE, 1, 30)
             .addPositiveEffect(PotionEffectType.STRENGTH, 1, 30)
             .addPositiveEffect(PotionEffectType.INVISIBILITY, 1, 30)

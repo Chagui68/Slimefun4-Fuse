@@ -1,111 +1,41 @@
-# Drakes Slimefun 1.21.11 Port
+# 🐉 Slimefun 6 Core (Drake Framework)
+### *Natively Updated for Minecraft 1.21.11 & Java 21*
 
-Unofficial `Slimefun4` port for `Paper/Purpur 1.21.11`, published by `DrakesCraft-Labs`.
+Este es el núcleo de **Slimefun 6**, una evolución tecnológica diseñada para la independencia técnica y el alto rendimiento en la versión **1.21.11**.
 
-## What This Repository Is
+---
 
-This repository packages the `Slimefun4` core used by the `DrakesCraft-Labs` mono-repo for:
+## 🚀 Slimefun 6: ¿Qué ha cambiado?
+Esta versión marca un hito en el desarrollo de Slimefun bajo el **Drake Framework**:
 
-- `Paper 1.21.11`
-- `Purpur 1.21.11`
-- `Java 21`
+- **Soporte Paper 1.21.11 Nativo**: Eliminación de hacks NMS rotos en favor de APIs modernas de Paper.
+- **Dough-Core Integration**: Uso de la librería unificada de Drake para mayor estabilidad.
+- **Java 21**: Explotando las últimas características de la JVM.
+- **Unificación de Addons**: Diseñado como el motor central para el port masivo de más de 60 addons.
 
-The published jar is versioned as:
+---
 
-- `Slimefun v5.0-Drake-1.21.11.jar`
+## 🤝 Créditos y Reconocimientos
+Este proyecto es un derivado del trabajo monumental de la comunidad de Slimefun:
 
-This line is meant to be the canonical base for the Drakes ecosystem on `1.21.11`, aligned with the rest of the reactor and its addon migration effort.
+- **Proyecto Original**: [`Slimefun/Slimefun4`](https://github.com/Slimefun/Slimefun4)
+- **Autor Original**: **[TheBusyBiscuit](https://github.com/TheBusyBiscuit)**
+- **Equipo de Slimefun**: Walshy y más de 200 colaboradores.
+- **Slimefun 6 / Drake Port**: **[Pablo Elías](https://github.com/pabloelias)** (DrakesCraft-Labs)
 
-## Credits
+---
 
-This port would not exist without the original project and its contributors.
+## 🔧 Detalles Técnicos
+El jar publicado sigue la nomenclatura:
+- `Slimefun v6.0-Drake-1.21.11.jar`
 
-- Original project: [`Slimefun/Slimefun4`](https://github.com/Slimefun/Slimefun4)
-- Original authors and maintainers: `TheBusyBiscuit`, `Walshy`, and the wider `Slimefun` community
-- Upstream contributor base: 200+ contributors across the life of the project
-- Port packaging and publication: `DrakesCraft-Labs`
+### Cambios Clave:
+- Portado al reactor Maven de Drake.
+- Migración de hotspots de compatibilidad a APIs directas de Paper (Profiles, Heads, NBT).
+- Limpieza de dependencias obsoletas.
 
-This repository is a derivative publication built on top of the upstream GPL project. Credit for the plugin itself belongs first and foremost to the original Slimefun team and community.
+---
 
-## Technical Base
+## 📄 Licencia
+Este proyecto continúa bajo la licencia **GPL-3.0**, respetando el trabajo original de todos los contribuidores de Slimefun4.
 
-This port now tracks the Drakes mono-repo target of `1.21.11` and is wired into the shared parent POM plus the internal `dough-core` publication.
-
-The current strategy is:
-
-- use `Paper/Purpur 1.21.11`
-- keep Java at `21`
-- integrate against `dev.drake.dough:dough-core`
-- preserve upstream Slimefun behavior where possible while applying compatibility fixes required for modern Paper
-
-## What Was Changed
-
-The goal here is no longer a frozen `1.20.6` compatibility snapshot.
-
-- packaged a dedicated `1.21.11` release line
-- marked the build as `5.0-Drake-1.21.11`
-- aligned the module with the root reactor versioning
-- kept the test suite in place
-- migrated compatibility hotspots to direct Paper APIs where it reduces friction, such as head/profile handling
-
-## What This Port Is Not
-
-- It is not the official upstream repository.
-- It is not a full fork that aims to outpace upstream.
-- It is not a promise that every addon made for every Slimefun era will work unchanged.
-- It is not a legacy `1.20.6` compatibility line anymore.
-
-## Compatibility Notes
-
-Expected to work with:
-
-- `Paper 1.21.11`
-- `Purpur 1.21.11`
-- addons that are being migrated inside the Drakes mono-repo against the `5.0-Drake-1.21.11` core line
-
-Potential incompatibilities may still appear with:
-
-- addons depending on upstream branches or APIs that diverge from the Drakes reactor
-- addons with their own fragile NMS logic
-- addons that still assume pre-1.21 item/meta or attribute names
-
-More detailed notes live in [PORTING.md](PORTING.md).
-
-## Build
-
-Requirements:
-
-- `Java 21`
-- `Maven 3.9+`
-
-Build locally:
-
-```powershell
-.\build-release.ps1
-```
-
-Or directly:
-
-```powershell
-mvn clean package "-Dmaven.test.skip=true"
-```
-
-## Release
-
-GitHub release metadata should match the active Drakes core line:
-
-- `v5.0-Drake-1.21.11`
-- `Slimefun v5.0-Drake-1.21.11.jar`
-
-## Addons
-
-The upstream Slimefun ecosystem maintains addon references in its official wiki:
-
-- [`Slimefun/Slimefun4 Wiki - Addons`](https://github.com/Slimefun/Slimefun4/wiki/Addons)
-
-For local server preparation, this workspace also includes an `AddonsSlimefun` folder with a curated local catalog of addon source and release links.
-
-## License
-
-Upstream Slimefun is licensed under `GPL-3.0`.
-This repository remains a derivative publication of that GPL-licensed work.

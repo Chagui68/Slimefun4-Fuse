@@ -1,3 +1,16 @@
+# SlimeTinker - Slimefun 6 (Drake Framework Port)
+### *Tinker's Construct style Addon for 1.21.11*
+
+Este addon ha sido portado y optimizado como parte del ecosistema **Slimefun 6** dentro del **Drake Framework**.
+
+---
+
+## 🤝 Créditos y Autoría
+- **Autor Original**: [Sefiraat](https://github.com/Sefiraat)
+- **Port a 1.21.11**: [Pablo Elías](https://github.com/pabloelias) (DrakesCraft-Labs)
+
+---
+
 <p align="center">
 <img width="800" src="https://github.com/Sefiraat/SlimeTinker/blob/master/images/logo/logo.svg"><br><br>
 </p>

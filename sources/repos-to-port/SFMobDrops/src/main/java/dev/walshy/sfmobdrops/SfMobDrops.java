@@ -1,6 +1,6 @@
 package dev.walshy.sfmobdrops;
 
-import io.github.bakedlibs.dough.updater.BlobBuildUpdater;
+import dev.drake.dough.updater.BlobBuildUpdater;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.core.debug.Debug;
 

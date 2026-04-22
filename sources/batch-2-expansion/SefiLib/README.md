@@ -1,6 +1,15 @@
-<p align="center">
-<img width="250" src="https://user-images.githubusercontent.com/20646323/180951144-6d5ef791-8ec4-46fa-b1bf-9e710274f9aa.png">
-</p>
+# SefiLib - Slimefun 6 (Drake Framework Port)
+### *Base Library for 1.21.11 Expansion Addons*
+
+Este componente ha sido portado y optimizado como parte del ecosistema **Slimefun 6** dentro del **Drake Framework**.
+
+---
+
+## 🤝 Créditos y Autoría
+- **Autor Original**: [Sefiraat](https://github.com/Sefiraat)
+- **Port a 1.21.11**: [Pablo Elías](https://github.com/pabloelias) (DrakesCraft-Labs)
+
+---
 
 # SefiLib
 

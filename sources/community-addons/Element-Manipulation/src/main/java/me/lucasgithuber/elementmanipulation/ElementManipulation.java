@@ -11,7 +11,7 @@ import me.lucasgithuber.elementmanipulation.utils.Categories;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import net.kyori.adventure.text.minimessage.tag.standard.StandardTags;
-import org.bstats.bukkit.Metrics;
+
 
 
 public final class ElementManipulation extends AbstractAddon implements SlimefunAddon {
@@ -39,7 +39,7 @@ public final class ElementManipulation extends AbstractAddon implements Slimefun
         MiscItems.setup(this);
         //Drugs.setup(this);
         /*PortalCorners.setup(this);*/
-        new Metrics(this, 13718);
+        
     }
 
     @Override

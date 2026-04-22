@@ -2,7 +2,7 @@ package me.sfiguz7.extratools;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.api.researches.Research;
-import dev.drake.dough.updater.GitHubBuildsUpdater;
+
 import me.sfiguz7.extratools.implementation.machines.CobblestoneGenerator;
 import me.sfiguz7.extratools.implementation.machines.ConcreteFactory;
 import me.sfiguz7.extratools.implementation.machines.ElectricComposter;
@@ -11,7 +11,7 @@ import me.sfiguz7.extratools.implementation.machines.Pulverizer;
 import me.sfiguz7.extratools.implementation.machines.Vaporizer;
 import me.sfiguz7.extratools.implementation.tools.Hammer;
 import me.sfiguz7.extratools.lists.ETItems;
-import org.bstats.bukkit.Metrics;
+
 import org.bukkit.NamespacedKey;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -31,12 +31,9 @@ public class ExtraTools extends JavaPlugin implements SlimefunAddon {
             saveDefaultConfig();
         }
 
-        if (getConfig().getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV - ")) {
-            new GitHubBuildsUpdater(this, getFile(), "Sfiguz7/ExtraTools/master").start();
-        }
 
-        int bStatsId = 6945;
-        new Metrics(this, bStatsId);
+
+
 
 
         new Hammer().register(this);

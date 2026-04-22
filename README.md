@@ -1,4 +1,4 @@
-# 🐉 DrakesCraft-Labs: Slimefun Ecosystem
+# 🐉 Slimefun 6: Drake Framework Ecosystem
 ### *The Ultimate 1.21.11 Migration & Tech Independence Framework*
 
 <div align="center">
@@ -8,7 +8,7 @@
 ![Build](https://img.shields.io/badge/Build-Maven-red?style=for-the-badge&logo=apachemaven)
 ![License](https://img.shields.io/badge/License-GPL--3.0-blue?style=for-the-badge)
 
-**Drake Framework** es la respuesta definitiva para un ecosistema de Slimefun moderno, eficiente e independiente.
+**Slimefun 6 (Drake Framework)** es la respuesta definitiva para un ecosistema de Slimefun moderno, eficiente e independiente.
 Este repo funciona como **laboratorio de migración**: un mono-repo estratégico para unificar versiones, dependencias, compatibilidad Paper y fixes repetidos antes de volver a separar addons.
 
 [Explorar Código](/sources) • [Checklist de Migración](MIGRATION_CHECKLIST.md) • [Arquitectura](ARCHITECTURE.md) • [Dev Setup](docs/DEV_SETUP.md)
@@ -17,10 +17,10 @@ Este repo funciona como **laboratorio de migración**: un mono-repo estratégico
 
 ---
 
-## ⚡ Estado del Núcleo (SF4 Core)
+## ⚡ Estado del Núcleo (Slimefun 6 Core)
 > [!CAUTION]
 > **Componente**: `sources/slimefun-core/Slimefun4-src`
-> **Estado**: ⚠️ **MIGRADO PARCIALMENTE (Target 1.21.11)**
+> **Estado**: ✅ **MIGRADO A SLIMEFUN 6 (1.21.11)**
 > Se ha establecido el Framework de Drake como base. El núcleo ya permite la compilación de addons dependientes mediante el uso de `dough-core` unificado.
 
 ---
@@ -31,51 +31,38 @@ Esta tabla clasifica los componentes según el esfuerzo técnico estimado para s
 
 | Nivel de Dificultad | Componentes Representativos | Estado de Porteo |
 | :--- | :--- | :--- |
-| **Nivel 1: Easy** (Items/Recetas) | ExoticGarden, SoulJars, ExtraGear | ⏳ Pendiente |
-| **Nivel 2: Medium** (Máquinas/GUIs) | LiteXpansion, Networks_Better_Compatibility, SlimeChem | ✅ LiteXpansion y compatibilidad de Networks listas |
-| **Nivel 3: Hard** (Deep Logic/NMS) | **Slimefun4 Core**, SlimeTinker, InfinityExpansion | ✅ SlimeTinker compila en 1.21.11 |
+| **Nivel 1: Easy** | ExoticGarden, SoulJars, ExtraGear, AlchimiaVitae | ✅ Porteo completado |
+| **Nivel 2: Medium** | LiteXpansion, Networks_Better_Compatibility, CrystamaeHistoria | ✅ Porteo completado |
+| **Nivel 3: Hard** | **Slimefun 6 Core**, SlimeTinker, InfinityExpansion, DankTech2 | ✅ Porteo completado |
 | **Nivel 4: Riesgo / Legacy** | Addons antiguos (ExtraTools, etc.) | ⏳ Pendiente |
 
 ### ✅ Logros del Checkpoint actual
+- [x] **Slimefun 6**: Salto generacional para soporte nativo de 1.21.11.
 - [x] **Dough-Core (1.3.1-DRAKE)**: Unificación total de librerías.
-- [x] **Networks_Better_Compatibility**: Compila en 1.21.11 y reemplaza al `Networks` viejo dentro del workspace.
-- [x] **LiteXpansion**: Eliminación de hacks de reflexión para compatibilidad total con Java 21.
-- [x] **SlimeTinker**: Compilación restaurada en 1.21.11 con integración de `Networks` degradada a opcional.
-- [x] **Cultivation_Updated**: Compila en 1.21.11 y reemplaza al `Cultivation` viejo dentro del workspace.
-- [x] **Batch 2 Expansiones Completadas**: `SMG` (migración de PaperLib), `Supreme`, `TranscEndence` y `CrystamaeHistoria` conectados y compilando orgánicamente usando componentes actualizados.
+- [x] **Networks_Better_Compatibility**: Compila en 1.21.11 y reemplaza al `Networks` viejo.
+- [x] **Batch 3 Completado**: `AlchimiaVitae`, `CrystamaeHistoria` y `DankTech2` migrados exitosamente.
 
 ### 🔧 Qué Hace El Reactor
-- El `pom.xml` raíz no es “un plugin gigante”; es un **parent/reactor Maven**.
-- Centraliza `Java 21`, `Paper 1.21.11`, `Slimefun RC-37`, `dough-core` y librerías comunes para que los módulos no repitan lo mismo.
-- Declara qué carpetas del workspace participan en el build y en qué orden conviene resolver dependencias.
+- El `pom.xml` raíz centraliza `Java 21`, `Paper 1.21.11`, `Slimefun 6.0`, `dough-core` y librerías comunes.
 - Permite compilar por módulo con `-pl` sin perder una base común de versiones.
-- Su función principal es **coordinar** el port masivo, no reemplazar el destino final de tener repos separados.
+- Implementa **reflexión estratégica** para desacoplar APIs de terceros (mcMMO, etc.) y permitir compilación limpia.
 
-### 🤝 Créditos
-- **Chagui (`Chagui68`)**: referencia práctica y base adoptada para el port con sus forks `Networks_Better_Compatibility` y `Cultivation_Updated`, ahora integrados como reemplazo de las variantes antiguas.
-
----
-
-## 🏗️ Pilares de la Arquitectura
+### 🗺️ Pilares de la Arquitectura
 | Componente | Descripción |
 | :-- | :-- |
 | **`dough-core`** | Versión nativizada para 1.21.11. Unifica 13 módulos en uno solo (`dev.drake.dough`). |
 | **`Version Bridge`** | Abstracción total entre el antiguo NBT/PDC y los nuevos componentes de ítem. |
-| **`Multi-Module Maven Reactor`** | Parent POM que centraliza versiones, módulos y dependencias comunes para coordinar el porting masivo. |
+| **`Slimefun 6 Core`** | El motor de Slimefun modernizado para Paper 1.21.11. |
 
-## 📂 Organización del Proyecto
-```bash
-/
-├── sources/               # Central de Código Fuente
-│   ├── dough-core/        # Librería base Drake Framework
-│   ├── slimefun-core/     # Slimefun4 Original (Core a portar)
-│   ├── repos-to-port/     # Batch 1: Addons Oficiales / Alta Prioridad
-│   ├── batch-2-expansion/ # Batch 2: Addons de Expansión
-│   └── community-addons/  # Archivo masivo de la comunidad (Wiki Full)
-├── deploy/                # Entornos de prueba aislados
-├── scripts/               # Automatización y Herramientas
-└── docs/                  # Inteligencia y Roadmaps
-```
+### 🤝 Créditos y Autores
+Damos crédito a todos los visionarios detrás de este ecosistema:
+
+- **[TheBusyBiscuit](https://github.com/TheBusyBiscuit)**: Creador original de Slimefun.
+- **[Sefiraat](https://github.com/Sefiraat)**: Genio detrás de Networks, AlchimiaVitae, CrystamaeHistoria y las librerías de expansión.
+- **[Mooy1](https://github.com/Mooy1)**: Creador original de InfinityExpansion.
+- **[Sfiguz7](https://github.com/Sfiguz7)**: Creador original de DankTech2.
+- **[Chagui68](https://github.com/Chagui68)**: Aportes fundamentales en compatibilidad de redes y cultivos.
+- **[Pablo Elías](https://github.com/pabloelias)**: Arquitecto del **Drake Framework** y líder de la migración a **Slimefun 6**.
 
 ---
 <div align="center">

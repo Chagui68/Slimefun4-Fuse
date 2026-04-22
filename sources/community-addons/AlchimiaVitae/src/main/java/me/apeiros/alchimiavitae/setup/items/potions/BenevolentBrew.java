@@ -46,8 +46,8 @@ public class BenevolentBrew extends AbstractListenerPotion {
         w.playSound(l, Sound.ITEM_BOTTLE_EMPTY, 1, 1);
         w.playSound(l, Sound.ITEM_TOTEM_USE, 0.3F, 1);
         w.playSound(l, Sound.ENTITY_ILLUSIONER_CAST_SPELL, 0.5F, 1);
-        w.spawnParticle(Particle.BLOCK_CRACK, l, 200, 3, 3, 3, Material.EMERALD_BLOCK.createBlockData());
-        w.spawnParticle(Particle.TOTEM, l, 200, 1, 1, 1);
+        w.spawnParticle(Particle.BLOCK, l, 200, 3, 3, 3, Material.EMERALD_BLOCK.createBlockData());
+        w.spawnParticle(Particle.TOTEM_OF_UNDYING, l, 200, 1, 1, 1);
     }
     // }}}
 

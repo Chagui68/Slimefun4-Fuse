@@ -1,12 +1,18 @@
-# Alchimia Vitae
+# Alchimia Vitae - Slimefun 6 (Drake Framework Port)
+### *Migrado nativamente para Minecraft 1.21.11 & Java 21*
+
+Este addon ha sido portado y optimizado como parte del ecosistema **Slimefun 6** dentro del **Drake Framework**.
+
+---
+
+## 🤝 Créditos y Autoría
+- **Autor Original**: [Sefiraat](https://github.com/Sefiraat)
+- **Port a 1.21.11**: [Pablo Elías](https://github.com/pabloelias) (DrakesCraft-Labs)
+
+---
+
 Slimefun addon that adds some alchemy, herbalism and other mechanics to the game  
 (My entry to the [2021 Slimefun Addon Jam](https://github.com/Slimefun/Slimefun4/wiki/Addon-Jam-2021))
-
-**Requires Slimefun RC-28 or above, Minecraft 1.17 or above, and Java 16 or above!**
-
-Click below to download
-
-[![Build status](https://thebusybiscuit.github.io/builds/Apeiros-46B/AlchimiaVitae/master/badge.svg)](https://thebusybiscuit.github.io/builds/Apeiros-46B/AlchimiaVitae/master/)
 
 ## Features
 Check the Slimefun guide for more information

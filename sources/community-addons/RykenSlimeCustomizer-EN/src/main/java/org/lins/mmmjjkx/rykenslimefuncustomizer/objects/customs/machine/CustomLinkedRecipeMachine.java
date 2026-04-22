@@ -48,9 +48,9 @@ public class CustomLinkedRecipeMachine extends AContainer implements RecipeDispl
     private final int saveAmount;
 
     public static final ItemStack RECIPE_INPUT =
-            CustomItemStack.create(Material.GREEN_STAINED_GLASS_PANE, "&aMulti-Item Input", "", "&2> &aClick to view");
+            new CustomItemStack(Material.GREEN_STAINED_GLASS_PANE, "&aMulti-Item Input", "", "&2> &aClick to view");
     public static final ItemStack RECIPE_OUTPUT =
-            CustomItemStack.create(Material.GREEN_STAINED_GLASS_PANE, "&aMulti-Item Output", "", "&2> &aClick to view");
+            new CustomItemStack(Material.GREEN_STAINED_GLASS_PANE, "&aMulti-Item Output", "", "&2> &aClick to view");
 
     @Getter
     @Nullable private final CustomMenu menu;

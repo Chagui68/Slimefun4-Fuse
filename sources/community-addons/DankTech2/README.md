@@ -1,3 +1,17 @@
+# DankTech2 - Slimefun 6 (Drake Framework Port)
+### *Migrado nativamente para Minecraft 1.21.11 & Java 21*
+
+Este addon ha sido portado y optimizado como parte del ecosistema **Slimefun 6** dentro del **Drake Framework**.
+
+---
+
+## 🤝 Créditos y Autoría
+- **Autor Original**: [Sfiguz7](https://github.com/Sfiguz7)
+- **Mantenedor**: [Sefiraat](https://github.com/Sefiraat)
+- **Port a 1.21.11**: [Pablo Elías](https://github.com/pabloelias) (DrakesCraft-Labs)
+
+---
+
 # DankTech2
 <img src="https://github.com/Sefiraat/DankTech2/blob/master/images/logo/logo_large.png">
 

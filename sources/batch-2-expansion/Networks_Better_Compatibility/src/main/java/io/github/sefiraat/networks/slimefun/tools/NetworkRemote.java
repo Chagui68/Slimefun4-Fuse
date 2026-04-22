@@ -1,6 +1,7 @@
 package io.github.sefiraat.networks.slimefun.tools;
 
-import com.jeff_media.morepersistentdatatypes.DataType;
+import dev.sefiraat.sefilib.persistence.PersistenceTypes;
+import org.bukkit.persistence.PersistentDataType;
 import io.github.sefiraat.networks.slimefun.network.grid.NetworkGrid;
 import io.github.sefiraat.networks.utils.Keys;
 import io.github.sefiraat.networks.utils.Theme;
@@ -70,14 +71,14 @@ public class NetworkRemote extends SlimefunItem {
 
     public static void setGrid(@Nonnull ItemStack itemStack, @Nonnull Block block, @Nonnull Player player) {
         final ItemMeta itemMeta = itemStack.getItemMeta();
-        DataTypeMethods.setCustom(itemMeta, KEY, DataType.LOCATION, block.getLocation());
+        DataTypeMethods.setCustom(itemMeta, KEY, PersistenceTypes.LOCATION, block.getLocation());
         itemStack.setItemMeta(itemMeta);
         player.sendMessage(Theme.SUCCESS + "Grid has been bound to the remote.");
     }
 
     public static void tryOpenGrid(@Nonnull ItemStack itemStack, @Nonnull Player player, int range) {
         final ItemMeta itemMeta = itemStack.getItemMeta();
-        final Location location = DataTypeMethods.getCustom(itemMeta, KEY, DataType.LOCATION);
+        final Location location = DataTypeMethods.getCustom(itemMeta, KEY, PersistenceTypes.LOCATION);
 
         if (location != null) {
 

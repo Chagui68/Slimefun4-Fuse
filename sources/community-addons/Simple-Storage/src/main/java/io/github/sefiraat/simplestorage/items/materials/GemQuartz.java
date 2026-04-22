@@ -25,14 +25,10 @@ public final class GemQuartz extends AbstractGem {
     @Override
     public int getDefaultSupply(@Nonnull World.Environment environment, @Nonnull Biome biome) {
         if (environment == World.Environment.NORMAL) {
-            switch (biome) {
-                case FLOWER_FOREST:
-                    return 2;
-                case MUSHROOM_FIELDS:
-                case MUSHROOM_FIELD_SHORE:
-                    return 4;
-                default:
-                    return 0;
+            if (biome == Biome.FLOWER_FOREST) {
+                return 2;
+            } else if (biome == Biome.MUSHROOM_FIELDS) {
+                return 4;
             }
         }
         return 0;

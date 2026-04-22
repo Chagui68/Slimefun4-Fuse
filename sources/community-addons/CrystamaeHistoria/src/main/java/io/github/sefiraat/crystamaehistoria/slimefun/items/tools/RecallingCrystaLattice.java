@@ -1,9 +1,9 @@
 package io.github.sefiraat.crystamaehistoria.slimefun.items.tools;
 
-import com.jeff_media.morepersistentdatatypes.DataType;
 import io.github.sefiraat.crystamaehistoria.slimefun.items.gadgets.Waystone;
 import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
 import io.github.sefiraat.crystamaehistoria.utils.Keys;
+import io.github.sefiraat.crystamaehistoria.utils.datatypes.PersistentLocationDataType;
 import io.github.sefiraat.crystamaehistoria.utils.theme.ThemeType;
 import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
@@ -69,7 +69,7 @@ public class RecallingCrystaLattice extends SlimefunItem {
                 final ItemMeta itemMeta = itemStack.getItemMeta();
                 final PersistentDataContainer container = itemMeta.getPersistentDataContainer();
 
-                container.set(Keys.newKey("location"), DataType.LOCATION, location);
+                container.set(Keys.newKey("location"), PersistentLocationDataType.TYPE, location);
                 itemStack.setItemMeta(itemMeta);
                 player.sendMessage(
                     MessageFormat.format("{0}Type the name of this Waystone into chat.", ChatColor.LIGHT_PURPLE)
@@ -85,8 +85,8 @@ public class RecallingCrystaLattice extends SlimefunItem {
         final ItemMeta itemMeta = itemStack.getItemMeta();
         final PersistentDataContainer container = itemMeta.getPersistentDataContainer();
 
-        if (container.has(Keys.newKey("location"), DataType.LOCATION)) {
-            final Location location = container.get(Keys.newKey("location"), DataType.LOCATION);
+        if (container.has(Keys.newKey("location"), PersistentLocationDataType.TYPE)) {
+            final Location location = container.get(Keys.newKey("location"), PersistentLocationDataType.TYPE);
             final Block block = location.getBlock();
             final SlimefunItem slimefunItem = BlockStorage.check(block);
 

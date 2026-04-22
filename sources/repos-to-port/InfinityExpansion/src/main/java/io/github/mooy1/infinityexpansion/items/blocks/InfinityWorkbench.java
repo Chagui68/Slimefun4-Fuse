@@ -43,7 +43,7 @@ public final class InfinityWorkbench extends io.github.mooy1.infinitylib.machine
     public InfinityWorkbench(ItemGroup category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe, int energy) {
         super(category, item, type, recipe);
         addRecipesFrom(TYPE);
-        layout(new MachineLayout()
+        setLayout(new MachineLayout()
                 .inputSlots(INPUT_SLOTS)
                 .outputSlots(new int[] { 43 })
                 .statusSlot(16)
@@ -60,7 +60,7 @@ public final class InfinityWorkbench extends io.github.mooy1.infinitylib.machine
     }
 
     @Override
-    protected void setup(BlockMenuPreset preset) {
+    protected void setup(@Nonnull BlockMenuPreset preset) {
         super.setup(preset);
         preset.addItem(RECIPE_SLOT, new CustomItemStack(Material.BOOK, "&6Recipes"), ChestMenuUtils.getEmptyClickHandler());
     }

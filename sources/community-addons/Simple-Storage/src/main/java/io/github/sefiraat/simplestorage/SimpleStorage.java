@@ -9,7 +9,7 @@ import io.github.sefiraat.simplestorage.items.Machines;
 import io.github.sefiraat.simplestorage.items.Materials;
 import io.github.sefiraat.simplestorage.listeners.ManagerListeners;
 import io.github.sefiraat.simplestorage.runnables.ManagerRunnables;
-import org.bstats.bukkit.Metrics;
+
 
 import java.util.Random;
 
@@ -48,7 +48,7 @@ public class SimpleStorage extends AbstractAddon {
     @Override
     protected void enable() {
 
-        new Metrics(this,11622);
+
 
         instance = this;
 

@@ -295,7 +295,7 @@ public class SingleItemRecipeGuideListener implements Listener {
                 rawName = rawName.concat("(" + CommonUtils.formatSeconds(seconds) + "&e)");
             }
 
-            progressBar = CustomItemStack.create(progressBar, rawName);
+            progressBar = new CustomItemStack(progressBar, rawName);
 
             addItem(progressSlot, progressBar, (pl, s, is, action) -> false);
         }
@@ -418,7 +418,7 @@ public class SingleItemRecipeGuideListener implements Listener {
                     rawName = rawName.concat("(" + CommonUtils.formatSeconds(seconds) + "&e)");
                 }
 
-                progressBar = CustomItemStack.create(progressBar, rawName);
+                progressBar = new CustomItemStack(progressBar, rawName);
 
                 addItem(progressSlot, progressBar, (pl, s, is, action) -> false);
             }
@@ -594,7 +594,7 @@ public class SingleItemRecipeGuideListener implements Listener {
                 rawName = rawName.concat("(" + CommonUtils.formatSeconds(seconds) + "&e)");
             }
 
-            progressBar = CustomItemStack.create(progressBar, rawName);
+            progressBar = new CustomItemStack(progressBar, rawName);
 
             addItem(progressSlot, progressBar, (pl, s, is, action) -> false);
         }

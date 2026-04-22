@@ -25,7 +25,7 @@ public class RunnableHighlight extends BukkitRunnable {
         if (runs <= 0) {
              this.cancel();
         } else {
-            spawnParticleAlongLine(startLoc, endLoc, Particle.REDSTONE, 20, 2, 0, 0, 0, 0, dustOptions, true);
+            spawnParticleAlongLine(startLoc, endLoc, Particle.DUST, 20, 2, 0, 0, 0, 0, dustOptions, true);
             runs--;
         }
     }

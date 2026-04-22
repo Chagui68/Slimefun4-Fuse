@@ -1,6 +1,5 @@
 package io.github.sefiraat.crystamaehistoria.utils.datatypes;
 
-import com.jeff_media.morepersistentdatatypes.DataType;
 import io.github.sefiraat.crystamaehistoria.CrystamaeHistoria;
 import io.github.sefiraat.crystamaehistoria.stories.Story;
 import io.github.sefiraat.crystamaehistoria.stories.definition.StoryRarity;
@@ -57,7 +56,7 @@ public class PersistentStoryChunkDataType implements PersistentDataType<Persiste
             container.set(Keys.STORY_RARITY, PersistentDataType.INTEGER, story.getRarity().getId());
             container.set(Keys.RESOLUTION_STORY_LOCATION, PersistentDataType.LONG, story.getBlockPosition().getPosition());
             container.set(Keys.RESOLUTION_STORY_WORLD, PersistentUUIDDataType.TYPE, story.getBlockPosition().getWorld().getUID());
-            container.set(Keys.STORY_IS_GILDED, DataType.BOOLEAN, story.isGilded());
+            container.set(Keys.STORY_IS_GILDED, PersistentDataType.BOOLEAN, story.isGilded());
             containers[i] = container;
             i++;
         }
@@ -77,7 +76,7 @@ public class PersistentStoryChunkDataType implements PersistentDataType<Persiste
             final UUID worldUuid = container.get(Keys.RESOLUTION_STORY_WORLD, PersistentUUIDDataType.TYPE);
             final World world = Bukkit.getWorld(worldUuid);
             final BlockPosition position = new BlockPosition(world, locationLong);
-            final Boolean gilded = container.get(Keys.STORY_IS_GILDED, DataType.BOOLEAN);
+            final Boolean gilded = container.get(Keys.STORY_IS_GILDED, PersistentDataType.BOOLEAN);
             final Story story = CrystamaeHistoria.getStoriesManager().getStory(id, rarity).copy();
             story.setBlockPosition(position);
             story.setGilded(gilded != null && gilded);

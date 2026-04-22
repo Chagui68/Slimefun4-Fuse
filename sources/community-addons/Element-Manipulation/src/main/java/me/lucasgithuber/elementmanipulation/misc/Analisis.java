@@ -86,7 +86,7 @@ public final class Analisis {
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 
         PYRITE.setItemMeta(meta);
-        PYRITE.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        PYRITE.addUnsafeEnchantment(Enchantment.LUCK_OF_THE_SEA, 1);
     }
     public static final SlimefunItemStack PYRROTITE = new SlimefunItemStack(
         "EM_PYRROTITE",

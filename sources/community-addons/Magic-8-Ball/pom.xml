@@ -1,73 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>dev.drake</groupId>
+        <artifactId>drakes-slimefun-labs</artifactId>
+        <version>6</version>
+        <relativePath>../../../pom.xml</relativePath>
+    </parent>
+
     <groupId>com.xmooncorp</groupId>
     <artifactId>Magic8Ball</artifactId>
     <version>UNOFFICIAL</version>
 
     <properties>
-        <java.version>21</java.version>
-        <paper-spigot.version>1.20.6</paper-spigot.version>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <issueManagement>
-        <!-- Bug Tracker -->
-        <system>GitHub Issues</system>
-        <url>https://github.com/xMoonGames/Magic-8-Ball/issues</url>
-    </issueManagement>
-
-    <licenses>
-        <license>
-            <!-- License -->
-            <name>GNU General Public License v3.0</name>
-            <url>https://github.com/xMoonGames/Magic-8-Ball/blob/master/LICENSE</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <repositories>
-        <repository>
-            <id>paper-repo</id>
-            <url>https://repo.destroystokyo.com/repository/maven-public/</url>
-        </repository>
-
-        <repository>
-            <id>spigot-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-        </repository>
-
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-        </repository>
-    </repositories>
-
     <build>
-        <finalName>${project.name} v${project.version}</finalName>
+        <finalName>${project.name}-v${project.version}</finalName>
         <defaultGoal>clean package</defaultGoal>
-        <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
-
-        <plugins>
-            <plugin>
-                <!-- Compiler plugin -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.13.0</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                    <excludes>
-                        <exclude>**/package-info.java</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-        </plugins>
-
         <resources>
             <resource>
                 <directory>${basedir}/src/main/resources</directory>
@@ -76,31 +33,24 @@
                     <include>*</include>
                 </includes>
             </resource>
-            <resource>
-                <directory>${basedir}</directory>
-                <filtering>false</filtering>
-                <includes>
-                    <include>LICENSE</include>
-                </includes>
-            </resource>
         </resources>
-
     </build>
 
     <dependencies>
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.21.11-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
-
-                <dependency>
+        <dependency>
             <groupId>dev.drake</groupId>
             <artifactId>Slimefun</artifactId>
-            <version>5.0-Drake-1.21.11</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>dev.drake.dough</groupId>
+            <artifactId>dough-core</artifactId>
             <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
-

@@ -1,6 +1,6 @@
 package io.github.sefiraat.networks.slimefun.network;
 
-import com.bgsoftware.wildchests.api.WildChestsAPI;
+
 import io.github.sefiraat.networks.NetworkStorage;
 import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.network.NodeDefinition;
@@ -9,6 +9,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
+import dev.drake.dough.inventory.InvUtils;
 import dev.drake.dough.protection.Interaction;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
@@ -25,8 +26,6 @@ import org.bukkit.inventory.FurnaceInventory;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.PotionMeta;
-import org.bukkit.potion.PotionType;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -35,14 +34,14 @@ import java.util.UUID;
 public class NetworkVanillaGrabber extends NetworkDirectional {
 
     private static final int[] BACKGROUND_SLOTS = new int[]{
-        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 15, 16, 17, 18, 20, 22, 23, 24, 26, 27, 28, 30, 31, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44
+        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 20, 22, 23, 24, 26, 27, 28, 30, 31, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44
     };
-    private static final int OUTPUT_SLOT = 25;
+    private static final int INPUT_SLOT = 25;
     private static final int NORTH_SLOT = 11;
     private static final int SOUTH_SLOT = 29;
     private static final int EAST_SLOT = 21;
     private static final int WEST_SLOT = 19;
-    private static final int UP_SLOT = 14;
+    private static final int UP_SLOT = 25;
     private static final int DOWN_SLOT = 32;
 
     public NetworkVanillaGrabber(ItemGroup itemGroup,
@@ -50,8 +49,7 @@ public class NetworkVanillaGrabber extends NetworkDirectional {
                                  RecipeType recipeType,
                                  ItemStack[] recipe
     ) {
-        super(itemGroup, item, recipeType, recipe, NodeType.PUSHER);
-        this.getSlotsToDrop().add(OUTPUT_SLOT);
+        super(itemGroup, item, recipeType, recipe, NodeType.GRABBER);
     }
 
     @Override
@@ -63,13 +61,6 @@ public class NetworkVanillaGrabber extends NetworkDirectional {
     }
 
     private void tryGrabItem(@Nonnull BlockMenu blockMenu) {
-
-        final ItemStack itemInSlot = blockMenu.getItemInSlot(OUTPUT_SLOT);
-
-        if (itemInSlot != null && itemInSlot.getType() != Material.AIR) {
-            return;
-        }
-
         final NodeDefinition definition = NetworkStorage.getAllNetworkObjects().get(blockMenu.getLocation());
 
         if (definition == null || definition.getNode() == null) {
@@ -78,7 +69,7 @@ public class NetworkVanillaGrabber extends NetworkDirectional {
 
         final BlockFace direction = getCurrentDirection(blockMenu);
         final Block block = blockMenu.getBlock();
-        final Block targetBlock = block.getRelative(direction);
+        final Block targetBlock = blockMenu.getBlock().getRelative(direction);
         final UUID uuid = UUID.fromString(BlockStorage.getLocationInfo(block.getLocation(), OWNER_KEY));
         final OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(uuid);
 
@@ -92,55 +83,53 @@ public class NetworkVanillaGrabber extends NetworkDirectional {
             return;
         }
 
+        final Inventory inventory = holder.getInventory();
+        final ItemStack stack = blockMenu.getItemInSlot(INPUT_SLOT);
+
+        if (stack != null && stack.getType() != Material.AIR) {
+            return;
+        }
+
         boolean wildChests = Networks.getSupportedPluginManager().isWildChests();
-        boolean isChest = wildChests && WildChestsAPI.getChest(targetBlock.getLocation()) != null;
+        boolean isChest = wildChests && isWildChest(targetBlock);
 
         sendDebugMessage(block.getLocation(), "WildChests detected: " + wildChests);
         sendDebugMessage(block.getLocation(), "Block detected as chest: " + isChest);
 
-        if (wildChests && isChest) {
-            sendDebugMessage(block.getLocation(), "WildChest test failed, escaping");
-            return;
-        }
-
-        sendDebugMessage(block.getLocation(), "WildChest test passed.");
-        final Inventory inventory = holder.getInventory();
-
-        if (inventory instanceof FurnaceInventory furnaceInventory) {
-            final ItemStack furnaceInventoryResult = furnaceInventory.getResult();
-            final ItemStack furnaceInventoryFuel = furnaceInventory.getFuel();
-            grabItem(blockMenu, furnaceInventoryResult);
-
-            if (furnaceInventoryFuel != null && furnaceInventoryFuel.getType() == Material.BUCKET) {
-                grabItem(blockMenu, furnaceInventoryFuel);
+        if (inventory instanceof FurnaceInventory furnace) {
+            final ItemStack result = furnace.getResult();
+            if (result != null && result.getType() != Material.AIR) {
+                blockMenu.replaceExistingItem(INPUT_SLOT, result);
+                furnace.setResult(null);
             }
-
-        } else if (inventory instanceof BrewerInventory brewerInventory) {
+        } else if (inventory instanceof BrewerInventory brewer) {
             for (int i = 0; i < 3; i++) {
-                final ItemStack stack = brewerInventory.getContents()[i];
-                if (stack != null && stack.getType() == Material.POTION) {
-                    final PotionMeta potionMeta = (PotionMeta) stack.getItemMeta();
-                    if (potionMeta.getBasePotionData().getType() != PotionType.WATER) {
-                        grabItem(blockMenu, stack);
-                        return;
-                    }
-                }
-            }
-        } else {
-            for (ItemStack stack : inventory.getContents()) {
-                if (grabItem(blockMenu, stack)) {
+                final ItemStack fuel = brewer.getContents()[i];
+                if (fuel != null && fuel.getType() != Material.AIR) {
+                    blockMenu.replaceExistingItem(INPUT_SLOT, fuel);
+                    final ItemStack[] contents = brewer.getContents();
+                    contents[i] = null;
+                    brewer.setContents(contents);
                     return;
                 }
+            }
+        } else if (wildChests && isChest) {
+            sendDebugMessage(block.getLocation(), "WildChest test failed, escaping");
+        } else if (InvUtils.getFirstItem(inventory) != null) {
+            final ItemStack item = InvUtils.getFirstItem(inventory);
+            if (item != null) {
+                blockMenu.replaceExistingItem(INPUT_SLOT, item.clone());
+                item.setAmount(item.getAmount() - 1);
             }
         }
     }
 
-    private boolean grabItem(@Nonnull BlockMenu blockMenu, @Nullable ItemStack stack) {
-        if (stack != null && stack.getType() != Material.AIR) {
-            blockMenu.replaceExistingItem(OUTPUT_SLOT, stack.clone());
-            stack.setAmount(0);
-            return true;
-        } else {
+    private boolean isWildChest(Block block) {
+        try {
+            Class<?> apiClass = Class.forName("com.bgsoftware.wildchests.api.WildChestsAPI");
+            java.lang.reflect.Method getChestMethod = apiClass.getMethod("getChest", org.bukkit.Location.class);
+            return getChestMethod.invoke(null, block.getLocation()) != null;
+        } catch (Exception e) {
             return false;
         }
     }
@@ -182,17 +171,17 @@ public class NetworkVanillaGrabber extends NetworkDirectional {
     }
 
     @Override
+    public int[] getInputSlots() {
+        return new int[]{INPUT_SLOT};
+    }
+
+    @Override
     public boolean runSync() {
         return true;
     }
 
     @Override
-    public int[] getOutputSlots() {
-        return new int[]{OUTPUT_SLOT};
-    }
-
-    @Override
     protected Particle.DustOptions getDustOptions() {
-        return new Particle.DustOptions(Color.MAROON, 1);
+        return new Particle.DustOptions(Color.GRAY, 1);
     }
 }

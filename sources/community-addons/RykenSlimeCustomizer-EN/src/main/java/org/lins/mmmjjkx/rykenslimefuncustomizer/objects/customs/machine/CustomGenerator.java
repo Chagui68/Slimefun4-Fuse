@@ -151,8 +151,8 @@ public class CustomGenerator extends AGenerator implements MachineProcessHolder<
         ItemStackWrapper wrapper = ItemStackWrapper.wrap(item);
         return item.getType() == Material.LAVA_BUCKET
                 || item.getType() == Material.WATER_BUCKET
-                || SlimefunUtils.isItemSimilar(wrapper, SlimefunItems.FUEL_BUCKET.item(), true)
-                || SlimefunUtils.isItemSimilar(wrapper, SlimefunItems.OIL_BUCKET.item(), true);
+                || SlimefunUtils.isItemSimilar(wrapper, SlimefunItems.FUEL_BUCKET.clone(), true)
+                || SlimefunUtils.isItemSimilar(wrapper, SlimefunItems.OIL_BUCKET.clone(), true);
     }
 
     private MachineFuel findRecipe(BlockMenu menu, Map<Integer, Integer> found) {

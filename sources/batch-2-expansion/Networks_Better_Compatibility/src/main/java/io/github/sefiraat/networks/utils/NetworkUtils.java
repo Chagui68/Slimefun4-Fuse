@@ -1,6 +1,7 @@
 package io.github.sefiraat.networks.utils;
 
-import com.jeff_media.morepersistentdatatypes.DataType;
+import dev.sefiraat.sefilib.persistence.PersistenceTypes;
+import org.bukkit.persistence.PersistentDataType;
 
 import io.github.sefiraat.networks.NetworkStorage;
 import io.github.sefiraat.networks.network.NetworkNode;
@@ -37,8 +38,8 @@ public class NetworkUtils {
     public static void applyConfig(@Nonnull NetworkDirectional directional, @Nonnull ItemStack itemStack,
             @Nonnull BlockMenu blockMenu, @Nonnull Player player) {
         final ItemMeta itemMeta = itemStack.getItemMeta();
-        final ItemStack[] templateStacks = DataTypeMethods.getCustom(itemMeta, Keys.ITEM, DataType.ITEM_STACK_ARRAY);
-        final String string = DataTypeMethods.getCustom(itemMeta, Keys.FACE, DataType.STRING);
+        final ItemStack[] templateStacks = DataTypeMethods.getCustom(itemMeta, Keys.ITEM, PersistenceTypes.ITEM_STACK_ARRAY);
+        final String string = DataTypeMethods.getCustom(itemMeta, Keys.FACE, PersistentDataType.STRING);
 
         if (string == null) {
             player.sendMessage(Theme.ERROR + "Direction: " + Theme.PASSIVE + "Not supplied");

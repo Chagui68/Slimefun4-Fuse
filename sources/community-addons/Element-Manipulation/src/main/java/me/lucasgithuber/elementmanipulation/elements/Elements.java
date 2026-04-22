@@ -444,7 +444,7 @@ public class Elements {
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 
         BISMUTH.setItemMeta(meta);
-        BISMUTH.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        BISMUTH.addUnsafeEnchantment(Enchantment.LUCK_OF_THE_SEA, 1);
     }
     public static final SlimefunItemStack MOSCOVIUM = new SlimefunItemStack(
             "EM_MOSCOVIUM",

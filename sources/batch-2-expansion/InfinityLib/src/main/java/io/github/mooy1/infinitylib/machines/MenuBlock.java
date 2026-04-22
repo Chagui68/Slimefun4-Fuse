@@ -65,7 +65,7 @@ public abstract class MenuBlock extends SlimefunItem {
         new MenuBlockPreset(this);
     }
 
-    protected abstract void setup(BlockMenuPreset preset);
+    protected abstract void setup(@Nonnull BlockMenuPreset preset);
 
     @Nonnull
     protected final int[] getTransportSlots(DirtyChestMenu menu, ItemTransportFlow flow, ItemStack item) {

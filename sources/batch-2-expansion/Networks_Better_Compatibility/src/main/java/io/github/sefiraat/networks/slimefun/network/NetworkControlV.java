@@ -1,6 +1,6 @@
 package io.github.sefiraat.networks.slimefun.network;
 
-import com.gmail.nossr50.mcMMO;
+
 import dev.sefiraat.sefilib.misc.ParticleUtils;
 import dev.sefiraat.sefilib.world.LocationUtils;
 import dev.drake.dough.blocks.BlockPosition;
@@ -141,7 +141,7 @@ public class NetworkControlV extends NetworkDirectional {
         Bukkit.getScheduler().runTask(Networks.getInstance(), bukkitTask -> {
             targetBlock.setType(fetchedStack.getType(), true);
             if (SupportedPluginManager.getInstance().isMcMMO()) {
-                mcMMO.getPlaceStore().setTrue(targetBlock);
+                setMcMMOBlock(targetBlock);
             }
             ParticleUtils.displayParticleRandomly(
                 LocationUtils.centre(targetBlock.getLocation()),
@@ -150,6 +150,17 @@ public class NetworkControlV extends NetworkDirectional {
                 5
             );
         });
+    }
+
+    private void setMcMMOBlock(Block block) {
+        try {
+            Class<?> mcMMOClass = Class.forName("com.gmail.nossr50.mcMMO");
+            java.lang.reflect.Method getPlaceStoreMethod = mcMMOClass.getMethod("getPlaceStore");
+            Object placeStore = getPlaceStoreMethod.invoke(null);
+            java.lang.reflect.Method setTrueMethod = placeStore.getClass().getMethod("setTrue", org.bukkit.block.Block.class);
+            setTrueMethod.invoke(placeStore, block);
+        } catch (Exception ignored) {
+        }
     }
 
     @Nonnull

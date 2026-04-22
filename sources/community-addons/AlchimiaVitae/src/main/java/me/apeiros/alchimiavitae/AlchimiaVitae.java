@@ -25,7 +25,7 @@ public class AlchimiaVitae extends AbstractAddon {
         Setup.setup(this);
 
         // bStats
-        new Metrics(this, 15139);
+        
     }
 
     @Override

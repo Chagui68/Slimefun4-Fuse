@@ -1,13 +1,13 @@
-# Checklist de Migración: DrakesCraft-Labs 1.21.11
+# Checklist de Migración: DrakesCraft-Labs 1.21.11 (Slimefun 6 Edition)
 
-Este documento detalla el progreso del port masivo del ecosistema Slimefun a la versión **1.21.11 (Java 21)**.
+Este documento detalla el progreso del port masivo del ecosistema Slimefun a la versión **1.21.11 (Java 21)**, ahora bajo el paraguas técnico de **Slimefun 6**.
 
 ## 1. Dependencias Core (Estado de Migración)
 
 | Dependencia | Versión 1.21.1 | Estado |
 |-----------|-------------------------|--------|
 | Paper/Spigot API | 1.21.11-R0.1-SNAPSHOT | [x] **LISTO** |
-| Slimefun4 Core | 5.0-Drake-1.21.11 | [x] **READY** (Base POM adaptada) |
+| Slimefun 6 Core | 6.0-Drake-1.21.11 | [x] **READY** (Rebranding a Slimefun6) |
 | ProtocolLib | 5.3.0 (Build 720+) | [x] **LISTO** |
 | Vault | Standard 1.21 | [x] **LISTO** |
 
@@ -15,7 +15,7 @@ Este documento detalla el progreso del port masivo del ecosistema Slimefun a la 
 
 El `pom.xml` raíz es el **reactor Maven** del workspace:
 
-- define las versiones compartidas (`Java 21`, `Paper 1.21.11`, `Slimefun RC-37`, `dough-core`)
+- define las versiones compartidas (`Java 21`, `Paper 1.21.11`, `Slimefun 6.0`, `dough-core`)
 - lista los módulos activos del port
 - permite compilar por addon sin perder una base común
 - hoy las variantes activas para esta parte del árbol son `Cultivation_Updated` y `Networks_Better_Compatibility`
@@ -27,34 +27,43 @@ El `pom.xml` raíz es el **reactor Maven** del workspace:
 | **dough-core** | **[x] LISTO** | Versión `1.3.1-DRAKE`. NMS purgado y empaquetado. |
 | **SefiLib** | **[x] LISTO** | Compilado para 1.21.11. |
 | **InfinityLib** | **[x] LISTO** | Compilado para 1.21.11. |
-| **Networks_Better_Compatibility** | **[x] LISTO** | Compila en 1.21.11 y reemplaza al `Networks` antiguo en el reactor. |
-| **LiteXpansion** | **[x] LISTO** | Refactorizado: Eliminada reflexión de encantamientos (incompatible). |
-| **SlimeTinker** | **[x] LISTO** | Compila en 1.21.11. Integración con `Networks` quedó opcional para no bloquear el build. |
-| **Cultivation_Updated** | **[x] LISTO** | Compila en 1.21.11 y reemplaza al `Cultivation` antiguo en el reactor. |
-| **CrystamaeHistoria** | **[x] LISTO** | Portado a 1.21.11 (paquetes y persistencia adaptados). |
+| **Networks_Better_Compatibility** | **[x] LISTO** | Compila en 1.21.11 y reemplaza al `Networks` antiguo. |
+| **LiteXpansion** | **[x] LISTO** | Refactorizado para Java 21. |
+| **SlimeTinker** | **[x] LISTO** | Compila en 1.21.11. |
+| **Cultivation_Updated** | **[x] LISTO** | Compila en 1.21.11. |
+| **CrystamaeHistoria** | **[x] LISTO** | Portado a 1.21.11 (Fixes de encantamientos y reflexión). |
+| **AlchimiaVitae** | **[x] LISTO** | Portado a 1.21.11. |
+| **DankTech2** | **[x] LISTO** | Portado a 1.21.11 (Métricas deshabilitadas). |
+| **InfinityExpansion** | **[x] LISTO** | Portado a 1.21.11. |
 | **Supreme** | **[x] LISTO** | Compila en 1.21.11. |
 | **TranscEndence** | **[x] LISTO** | Compila en 1.21.11. |
-| **SMG (SimpleMaterialGenerators)** | **[x] LISTO** | Portado a 1.21.11. Dependencia de PaperLib purgada. |
-| **SoulJars** | **[x] LISTO** | Reactor heredado. dough-core y bstats centralizados. |
-| **ExtraGear** | **[x] LISTO** | Reactor heredado. dough-core y bstats centralizados. |
-| **ColoredEnderChests** | **[x] LISTO** | Reactor heredado. dough-core y bstats centralizados. |
-| **DyedBackpacks** | **[x] LISTO** | Reactor heredado. dough-core, bstats y commons-lang centralizados. |
-| **+52 Addons Restantes** | [ ] Pendiente | Clonados y listos para procesar uno a uno. |
+| **SMG** | **[x] LISTO** | Portado a 1.21.11. |
+| **SoulJars** | **[x] LISTO** | Reactor heredado. |
+| **ExtraGear** | **[x] LISTO** | Reactor heredado. |
+| **ColoredEnderChests** | **[x] LISTO** | Reactor heredado. |
+| **DyedBackpacks** | **[x] LISTO** | Reactor heredado. |
+| **+48 Addons Restantes** | [ ] Pendiente | Listos para procesar. |
 
 
-## 3. Logros del Día 1
+## 3. Logros del Proyecto (Drake Framework)
+- [x] **Slimefun 6 Rebranding**: Evolución tecnológica del core para 1.21.11.
 - [x] Unificación del reactor Maven (eliminados repositorios muertos).
 - [x] Solución al bloqueo de registro de encantamientos personalizados en 1.21.1.
 - [x] Mapeo completo de renombrados de constantes (Bukkit -> Paper 1.21).
-- [x] Creación de la `docs/MIGRATION_GUIDE_1_21_11.md`.
+- [x] Desacoplamiento de APIs externas (mcMMO, WildStacker, RoseStacker) mediante reflexión.
 
-## 4. Próximos Pasos (Día 3)
-1. Seguir con el resto de expansiones del Batch 2 (ej. `SefiLib` refactorización si falta).
-2. Hacer testing in-game en un servidor local 1.21.11 de los addons ya porteados (`SMG`, `Supreme`, `TranscEndence`, etc.).
-3. Mantener compilación aislada con `-pl` para no saturar el PC.
+## 4. Próximos Pasos
+1. Testing in-game de la suite Slimefun 6.
+2. Migración del resto de addons de la comunidad.
+3. Sincronización con el repositorio principal.
 
-## 5. Créditos de Referencia
-- **Chagui (`Chagui68`)** aportó las variantes adoptadas para `Networks_Better_Compatibility` y `Cultivation_Updated`, ahora usadas como reemplazo directo de los repos antiguos.
+## 5. Créditos y Autores
+- **TheBusyBiscuit**: Creador original de Slimefun.
+- **Sefiraat**: Autor/Mantenedor de Networks, AlchimiaVitae, CrystamaeHistoria, InfinityLib, etc.
+- **Mooy1**: Creador original de InfinityExpansion.
+- **Sfiguz7**: Creador original de DankTech2.
+- **Chagui68**: Aportes en Networks_Better_Compatibility y Cultivation_Updated.
+- **Pablo Elías**: Liderazgo del port a 1.21.11 y creación del Drake Framework.
 
 ---
-*Checklist actualizado al cierre de la sesión del 21/04/2026.*
+*Checklist actualizado al 22/04/2026 - Slimefun 6 Migration.*

@@ -193,7 +193,7 @@ public class FlowerPowerItemSetup {
     static {
         // Build vanilla potion types for recipes
         PotionMeta speedPotionMeta = (PotionMeta) speedPotion.getItemMeta();
-        speedPotionMeta.setBasePotionData(new PotionData(PotionType.SPEED, false, true));
+        speedPotionMeta.setBasePotionData(new PotionData(PotionType.SWIFTNESS, false, true));
         speedPotion.setItemMeta(speedPotionMeta);
 
         PotionMeta damagePotionMeta = (PotionMeta) damagePotion.getItemMeta();
@@ -201,7 +201,7 @@ public class FlowerPowerItemSetup {
         damagePotion.setItemMeta(damagePotionMeta);
 
         PotionMeta healthPotionMeta = (PotionMeta) healthPotion.getItemMeta();
-        healthPotionMeta.setBasePotionData(new PotionData(PotionType.INSTANT_HEAL, false, true));
+        healthPotionMeta.setBasePotionData(new PotionData(PotionType.HEALING, false, true));
         healthPotion.setItemMeta(healthPotionMeta);
 
         PotionMeta slownessPotionMeta = (PotionMeta) slownessPotion.getItemMeta();

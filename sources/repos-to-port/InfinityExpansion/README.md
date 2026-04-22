@@ -1,3 +1,17 @@
+# Infinity Expansion - Slimefun 6 (Drake Framework Port)
+### *The Ultimate Endgame for 1.21.11*
+
+Este addon ha sido portado y optimizado como parte del ecosistema **Slimefun 6** dentro del **Drake Framework**.
+
+---
+
+## 🤝 Créditos y Autoría
+- **Autor Original**: [Mooy1](https://github.com/Mooy1)
+- **Mantenedor**: [Sefiraat](https://github.com/Sefiraat)
+- **Port a 1.21.11**: [Pablo Elías](https://github.com/pabloelias) (DrakesCraft-Labs)
+
+---
+
 # Infinity Expansion
 
 InfinityExpansion is an addon to the plugin Slimefun which adds a bunch of new machines and resources. 

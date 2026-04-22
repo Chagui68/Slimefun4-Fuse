@@ -1,6 +1,6 @@
 package me.fnfal113.sfchunkinfo;
 
-import io.github.bakedlibs.dough.updater.BlobBuildUpdater;
+import dev.drake.dough.updater.BlobBuildUpdater;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import me.fnfal113.sfchunkinfo.commands.ScanChunk;
 import org.bstats.bukkit.Metrics;

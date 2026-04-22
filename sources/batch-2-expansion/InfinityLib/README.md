@@ -1,3 +1,16 @@
+# InfinityLib - Slimefun 6 (Drake Framework Port)
+### *A shaded library for 1.21.11 Expansion Addons*
+
+Este componente ha sido portado y optimizado como parte del ecosistema **Slimefun 6** dentro del **Drake Framework**.
+
+---
+
+## 🤝 Créditos y Autoría
+- **Autor Original**: [Mooy1](https://github.com/Mooy1)
+- **Port a 1.21.11**: [Pablo Elías](https://github.com/pabloelias) (DrakesCraft-Labs)
+
+---
+
 # InfinityLib
 A shaded library for Slimefun addons which adds a bunch of useful classes and utilities.
 

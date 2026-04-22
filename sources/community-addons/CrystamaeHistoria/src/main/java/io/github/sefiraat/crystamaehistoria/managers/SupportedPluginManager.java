@@ -1,9 +1,5 @@
 package io.github.sefiraat.crystamaehistoria.managers;
 
-import com.bgsoftware.wildstacker.api.WildStackerAPI;
-import com.gmail.nossr50.util.skills.CombatUtils;
-import dev.rosewood.rosestacker.api.RoseStackerAPI;
-import dev.rosewood.rosestacker.stack.StackedItem;
 import io.github.sefiraat.crystamaehistoria.CrystamaeHistoria;
 import io.github.thebusybiscuit.exoticgarden.items.BonemealableItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
@@ -18,6 +14,7 @@ import org.bukkit.entity.Item;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 
+import java.lang.reflect.Method;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -36,7 +33,7 @@ public class SupportedPluginManager {
     private boolean roseStacker;
     private boolean netheopoiesis;
 
-    private RoseStackerAPI roseStackerAPI;
+    private Object roseStackerAPI;
 
     public SupportedPluginManager() {
         instance = this;
@@ -53,7 +50,12 @@ public class SupportedPluginManager {
         this.wildStacker = Bukkit.getPluginManager().isPluginEnabled("WildStacker");
         this.roseStacker = Bukkit.getPluginManager().isPluginEnabled("RoseStacker");
         if (this.roseStacker) {
-            this.roseStackerAPI = RoseStackerAPI.getInstance();
+            try {
+                Class<?> apiClass = Class.forName("dev.rosewood.rosestacker.api.RoseStackerAPI");
+                this.roseStackerAPI = apiClass.getMethod("getInstance").invoke(null);
+            } catch (Exception e) {
+                this.roseStacker = false;
+            }
         }
     }
 
@@ -75,7 +77,14 @@ public class SupportedPluginManager {
 
     @ParametersAreNonnullByDefault
     public void markIgnoreDamage(LivingEntity livingEntity) {
-        if (mcMMO) CombatUtils.applyIgnoreDamageMetadata(livingEntity);
+        if (mcMMO) {
+            try {
+                Class<?> combatUtils = Class.forName("com.gmail.nossr50.util.skills.CombatUtils");
+                Method method = combatUtils.getMethod("applyIgnoreDamageMetadata", LivingEntity.class);
+                method.invoke(null, livingEntity);
+            } catch (Exception ignored) {
+            }
+        }
         if (slimeTinker) {
             PersistentDataAPI.setBoolean(livingEntity, IGNORE_DAMAGE_KEY, true);
         }
@@ -83,7 +92,14 @@ public class SupportedPluginManager {
 
     @ParametersAreNonnullByDefault
     public void clearIgnoreDamageMarker(LivingEntity livingEntity) {
-        if (mcMMO) CombatUtils.removeIgnoreDamageMetadata(livingEntity);
+        if (mcMMO) {
+            try {
+                Class<?> combatUtils = Class.forName("com.gmail.nossr50.util.skills.CombatUtils");
+                Method method = combatUtils.getMethod("removeIgnoreDamageMetadata", LivingEntity.class);
+                method.invoke(null, livingEntity);
+            } catch (Exception ignored) {
+            }
+        }
         if (slimeTinker) {
             PersistentDataAPI.remove(livingEntity, IGNORE_DAMAGE_KEY);
         }
@@ -117,10 +133,24 @@ public class SupportedPluginManager {
 
     public int getStackAmount(Item item) {
         if (wildStacker) {
-            return WildStackerAPI.getItemAmount(item);
-        } else if (roseStacker) {
-            StackedItem stackedItem = roseStackerAPI.getStackedItem(item);
-            return stackedItem == null ? item.getItemStack().getAmount() : stackedItem.getStackSize();
+            try {
+                Class<?> apiClass = Class.forName("com.bgsoftware.wildstacker.api.WildStackerAPI");
+                Method method = apiClass.getMethod("getItemAmount", Item.class);
+                return (int) method.invoke(null, item);
+            } catch (Exception e) {
+                return item.getItemStack().getAmount();
+            }
+        } else if (roseStacker && roseStackerAPI != null) {
+            try {
+                Method getStackedItem = roseStackerAPI.getClass().getMethod("getStackedItem", Item.class);
+                Object stackedItem = getStackedItem.invoke(roseStackerAPI, item);
+                if (stackedItem != null) {
+                    Method getStackSize = stackedItem.getClass().getMethod("getStackSize");
+                    return (int) getStackSize.invoke(stackedItem);
+                }
+            } catch (Exception ignored) {
+            }
+            return item.getItemStack().getAmount();
         } else {
             return item.getItemStack().getAmount();
         }
@@ -128,10 +158,26 @@ public class SupportedPluginManager {
 
     public void setStackAmount(Item item, int amount) {
         if (wildStacker) {
-            WildStackerAPI.getStackedItem(item).setStackAmount(amount, true);
-        } else if (roseStacker) {
-            StackedItem stackedItem = roseStackerAPI.getStackedItem(item);
-            stackedItem.setStackSize(amount);
+            try {
+                Class<?> apiClass = Class.forName("com.bgsoftware.wildstacker.api.WildStackerAPI");
+                Method method = apiClass.getMethod("getStackedItem", Item.class);
+                Object stackedItem = method.invoke(null, item);
+                if (stackedItem != null) {
+                    Method setStackAmount = stackedItem.getClass().getMethod("setStackAmount", int.class, boolean.class);
+                    setStackAmount.invoke(stackedItem, amount, true);
+                }
+            } catch (Exception ignored) {
+            }
+        } else if (roseStacker && roseStackerAPI != null) {
+            try {
+                Method getStackedItem = roseStackerAPI.getClass().getMethod("getStackedItem", Item.class);
+                Object stackedItem = getStackedItem.invoke(roseStackerAPI, item);
+                if (stackedItem != null) {
+                    Method setStackSize = stackedItem.getClass().getMethod("setStackSize", int.class);
+                    setStackSize.invoke(stackedItem, amount);
+                }
+            } catch (Exception ignored) {
+            }
         } else {
             item.getItemStack().setAmount(amount);
         }

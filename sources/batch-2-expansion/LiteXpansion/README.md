@@ -1,3 +1,16 @@
+# LiteXpansion - Slimefun 6 (Drake Framework Port)
+### *Industrial Craft 2 style Addon for 1.21.11*
+
+Este addon ha sido portado y optimizado como parte del ecosistema **Slimefun 6** dentro del **Drake Framework**.
+
+---
+
+## 🤝 Créditos y Autoría
+- **Autor Original**: [J3fftw1](https://github.com/J3fftw1)
+- **Port a 1.21.11**: [Pablo Elías](https://github.com/pabloelias) (DrakesCraft-Labs)
+
+---
+
 # LiteXpansion
 LiteXpansion is a Slimefun4 Addon that started with adding the use full items/machines from SlimeXpansion. This slowly is changing into an Industrial Craft 2 Addon.
 

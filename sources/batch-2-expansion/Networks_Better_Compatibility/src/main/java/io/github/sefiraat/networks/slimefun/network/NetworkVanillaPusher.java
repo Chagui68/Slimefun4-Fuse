@@ -1,6 +1,6 @@
 package io.github.sefiraat.networks.slimefun.network;
 
-import com.bgsoftware.wildchests.api.WildChestsAPI;
+
 import io.github.sefiraat.networks.NetworkStorage;
 import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.network.NodeDefinition;
@@ -92,7 +92,7 @@ public class NetworkVanillaPusher extends NetworkDirectional {
         }
 
         boolean wildChests = Networks.getSupportedPluginManager().isWildChests();
-        boolean isChest = wildChests && WildChestsAPI.getChest(targetBlock.getLocation()) != null;
+        boolean isChest = wildChests && isWildChest(targetBlock);
 
         sendDebugMessage(block.getLocation(), "WildChests detected: " + wildChests);
         sendDebugMessage(block.getLocation(), "Block detected as chest: " + isChest);
@@ -108,6 +108,16 @@ public class NetworkVanillaPusher extends NetworkDirectional {
             sendDebugMessage(block.getLocation(), "WildChest test passed.");
             holder.getInventory().addItem(stack);
             stack.setAmount(0);
+        }
+    }
+
+    private boolean isWildChest(Block block) {
+        try {
+            Class<?> apiClass = Class.forName("com.bgsoftware.wildchests.api.WildChestsAPI");
+            java.lang.reflect.Method getChestMethod = apiClass.getMethod("getChest", org.bukkit.Location.class);
+            return getChestMethod.invoke(null, block.getLocation()) != null;
+        } catch (Exception e) {
+            return false;
         }
     }
 

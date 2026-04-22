@@ -1,14 +1,24 @@
-# 🌱 Cultivation - Advanced Farming Addon for Slimefun
+# 🌱 Cultivation - Slimefun 6 (Drake Framework Port)
+### *Advanced Farming Solution for 1.21.11*
 
-[![Minecraft Version](https://img.shields.io/badge/Minecraft-1.20.6-brightgreen.svg)](https://www.spigotmc.org/)
-[![Slimefun](https://img.shields.io/badge/Slimefun4-RC--37-blue.svg)](https://github.com/Slimefun/Slimefun4)
+[![Minecraft Version](https://img.shields.io/badge/Minecraft-1.21.11-brightgreen.svg)](https://www.spigotmc.org/)
+[![Slimefun](https://img.shields.io/badge/Slimefun-6.0--Drake-blue.svg)](https://github.com/Slimefun/Slimefun4)
 [![Java Version](https://img.shields.io/badge/Java-21-orange.svg)](https://www.java.com/)
-
-A Slimefun4 addon that adds a plethora of magical and non-magical flora to Minecraft, featuring an advanced breeding system, custom trees, and a fully-featured kitchen system. Using Minecraft's Display Entities, plants and blocks are displayed like you've never seen before.
 
 ---
 
-## 🚀 Features
+## 🤝 Créditos y Autoría
+- **Autor Original**: [Sefiraat](https://github.com/Sefiraat)
+- **Mantenedor Base**: [Chagui68](https://github.com/Chagui68)
+- **Port a 1.21.11**: [Pablo Elías](https://github.com/pabloelias) (DrakesCraft-Labs)
+
+---
+
+> [!IMPORTANT]
+> Este es el port oficial del Drake Framework para **Slimefun 6**.
+> Hemos unificado el trabajo de compatibilidad previo de Chagui68 con las optimizaciones de nivel core del motor de Drake.
+
+---
 
 ### 🌾 Cultivation Plants
 - **90 unique plants** to discover through breeding

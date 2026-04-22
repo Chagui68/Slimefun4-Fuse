@@ -4,6 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<parent>
+		<groupId>dev.drake</groupId>
+		<artifactId>drakes-slimefun-labs</artifactId>
+		<version>6</version>
+		<relativePath>../../../pom.xml</relativePath>
+	</parent>
+
 	<groupId>org.lins.mmmjjkx</groupId>
 	<artifactId>RykenSlimefunCustomizer</artifactId>
 	<version>20</version>
@@ -11,6 +18,7 @@
 
 	<name>RykenSlimefunCustomizer</name>
 	<description>An advanced Slimefun simple addon maker</description>
+
 	<properties>
 		<java.version>21</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,7 +35,6 @@
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
-					<!-- lombok -->
 					<annotationProcessorPaths>
 						<path>
 							<groupId>org.projectlombok</groupId>
@@ -58,22 +65,6 @@
 					</relocations>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>com.diffplug.spotless</groupId>
-				<artifactId>spotless-maven-plugin</artifactId>
-				<version>2.43.0</version>
-				<configuration>
-					<java>
-						<palantirJavaFormat>
-							<version>2.38.0</version>
-							<style>PALANTIR</style>
-						</palantirJavaFormat>
-
-						<removeUnusedImports />
-						<formatAnnotations />
-					</java>
-				</configuration>
-			</plugin>
 		</plugins>
 		<resources>
 			<resource>
@@ -85,41 +76,6 @@
 			</resource>
 		</resources>
 	</build>
-
-	<repositories>
-		<repository>
-			<id>central</id>
-			<url>https://repo1.maven.org/maven2/</url>
-		</repository>
-		<repository>
-			<id>jitpack</id>
-			<url>https://jitpack.io</url>
-		</repository>
-		<repository>
-			<id>AlessioDP</id>
-			<url>https://repo.alessiodp.com/releases/</url>
-		</repository>
-		<repository>
-			<id>minebench-repo</id>
-			<url>https://repo.minebench.de/</url>
-		</repository>
-		<repository>
-			<id>codemc-repo</id>
-			<url>https://repo.codemc.org/repository/maven-public/</url>
-		</repository>
-		<repository>
-			<id>placeholderapi</id>
-			<url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
-		</repository>
-		<repository>
-			<id>papermc-repo</id>
-			<url>https://repo.papermc.io/repository/maven-public/</url>
-		</repository>
-		<repository>
-			<id>sonatype</id>
-			<url>https://oss.sonatype.org/content/groups/public/</url>
-		</repository>
-	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -165,20 +121,24 @@
 		<dependency>
 			<groupId>io.papermc.paper</groupId>
 			<artifactId>paper-api</artifactId>
-            <version>1.21.11-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>dev.drake</groupId>
 			<artifactId>Slimefun</artifactId>
-			<version>5.0-Drake-1.21.11</version>
 			<scope>provided</scope>
 		</dependency>
+		
 		<dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.34</version>
+			<groupId>dev.drake.dough</groupId>
+			<artifactId>dough-core</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>

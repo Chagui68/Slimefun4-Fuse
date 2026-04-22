@@ -34,8 +34,8 @@ import io.github.sefiraat.crystamaehistoria.slimefun.items.mechanisms.chronicler
 import io.github.sefiraat.crystamaehistoria.slimefun.items.mechanisms.chroniclerpanel.ChroniclerPanelCache;
 import io.github.sefiraat.crystamaehistoria.stories.BlockDefinition;
 import dev.drake.dough.collections.Pair;
-import org.bstats.bukkit.Metrics;
-import org.bstats.charts.AdvancedPie;
+
+
 import org.bukkit.plugin.PluginManager;
 import org.checkerframework.checker.units.qual.N;
 
@@ -183,47 +183,7 @@ public class CrystamaeHistoria extends AbstractAddon {
     }
 
     private void setupBstats() {
-        Metrics metrics = new Metrics(this, 12065);
-
-        AdvancedPie disabledSpellsChart = new AdvancedPie("disabled_spells", () -> {
-            Map<String, Integer> values = new HashMap<>();
-            for (SpellType spellType : SpellType.getCachedValues()) {
-                Spell spell = spellType.getSpell();
-                values.put(spell.getId(), spell.isEnabled() ? 0 : 1);
-            }
-            return values;
-        });
-
-        AdvancedPie spellsCastChart = new AdvancedPie("spells_cast", () -> {
-            Map<String, Integer> values = new HashMap<>();
-            for (SpellType spellType : SpellType.getCachedValues()) {
-                Spell spell = spellType.getSpell();
-                int timesCast = 0;
-                for (String string : CrystamaeHistoria.getConfigManager().getPlayerStats().getKeys(false)) {
-                    UUID uuid = UUID.fromString(string);
-                    timesCast += PlayerStatistics.getUsages(uuid, spellType);
-                }
-                values.put(spell.getId(), timesCast);
-            }
-            return values;
-        });
-
-        AdvancedPie storiesChronicled = new AdvancedPie("stories_chronicled", () -> {
-            Map<String, Integer> values = new HashMap<>();
-            for (BlockDefinition definition : CrystamaeHistoria.getStoriesManager().getBlockDefinitionMap().values()) {
-                int timesChronicled = 0;
-                for (String string : CrystamaeHistoria.getConfigManager().getPlayerStats().getKeys(false)) {
-                    UUID uuid = UUID.fromString(string);
-                    timesChronicled += PlayerStatistics.getChronicle(uuid, definition);
-                }
-                values.put(definition.getMaterial().toString(), timesChronicled);
-            }
-            return values;
-        });
-
-        metrics.addCustomChart(disabledSpellsChart);
-        metrics.addCustomChart(spellsCastChart);
-        metrics.addCustomChart(storiesChronicled);
+        // bStats removed
     }
 
     @Override

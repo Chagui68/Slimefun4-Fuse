@@ -1,6 +1,7 @@
 package io.github.sefiraat.networks.slimefun.tools;
 
-import com.jeff_media.morepersistentdatatypes.DataType;
+import dev.sefiraat.sefilib.persistence.PersistenceTypes;
+import org.bukkit.persistence.PersistentDataType;
 import io.github.sefiraat.networks.slimefun.network.NetworkDirectional;
 import io.github.sefiraat.networks.slimefun.network.NetworkPusher;
 import io.github.sefiraat.networks.utils.Keys;
@@ -82,12 +83,12 @@ public class NetworkConfigurator extends SlimefunItem {
                 }
                 i++;
             }
-            DataTypeMethods.setCustom(itemMeta, Keys.ITEM, DataType.ITEM_STACK_ARRAY, itemStacks);
+            DataTypeMethods.setCustom(itemMeta, Keys.ITEM, PersistenceTypes.ITEM_STACK_ARRAY, itemStacks);
         } else {
             PersistentDataAPI.remove(itemMeta, Keys.ITEM);
         }
 
-        DataTypeMethods.setCustom(itemMeta, Keys.FACE, DataType.STRING, blockFace.name());
+        DataTypeMethods.setCustom(itemMeta, Keys.FACE, PersistentDataType.STRING, blockFace.name());
         itemStack.setItemMeta(itemMeta);
         player.sendMessage(Theme.SUCCESS + "Configuration copied.");
     }

@@ -1,11 +1,10 @@
 package io.ncbpfluffybear.flowerpower;
 
 import dev.drake.dough.config.Config;
-import dev.drake.dough.updater.BlobBuildUpdater;
-import dev.drake.dough.updater.GitHubBuildsUpdater;
+
 import io.ncbpfluffybear.flowerpower.setup.FlowerPowerItemSetup;
 import io.ncbpfluffybear.flowerpower.setup.ResearchSetup;
-import org.bstats.bukkit.Metrics;
+
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -30,15 +29,12 @@ public class FlowerPowerPlugin extends JavaPlugin implements SlimefunAddon {
 
         instance = this;
 
-        // bStats Metrics
-        final Metrics metrics = new Metrics(this, 12349);
+
 
         // Read something from your config.yml
         Config cfg = new Config(this);
 
-        if (cfg.getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV - ")) {
-            new BlobBuildUpdater(this, getFile(), "FlowerPower", "Dev").start();
-        }
+
 
         // Register events
         Utils.registerEvents(new Events());

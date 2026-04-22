@@ -42,7 +42,7 @@ public class Caffeine extends SimpleSlimefunItem<ItemUseHandler> implements NotP
             }
             p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 60 * 20, 0, false, false, false));
             p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 5 * 20, 1, false, false, false));
-            p.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 5 * 20, 2, false, false, false));
+            p.addPotionEffect(new PotionEffect(PotionEffectType.NAUSEA, 5 * 20, 2, false, false, false));
         };
     }
 }

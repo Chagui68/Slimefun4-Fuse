@@ -59,7 +59,10 @@ public class CommonUtils {
     }
 
     public static ItemStack doGlow(ItemStack item) {
-        item.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        Enchantment luck = org.bukkit.Registry.ENCHANTMENT.get(org.bukkit.NamespacedKey.minecraft("luck"));
+        if (luck != null) {
+            item.addUnsafeEnchantment(luck, 1);
+        }
         item.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 
         return item;
@@ -149,7 +152,7 @@ public class CommonUtils {
             case "slimefun" -> {
                 SlimefunItemStack sfis = addon.getPreloadItems().get(material);
                 if (sfis != null) {
-                    itemStack = sfis.item();
+                    itemStack = sfis.clone();
                     itemStack.editMeta(m -> {
                         if (!name.isBlank()) {
                             m.setDisplayName(name);
@@ -175,7 +178,7 @@ public class CommonUtils {
                         });
                     } else {
                         ExceptionHandler.handleError("Cannot find Slimefun item " + material + ", using stone instead");
-                        itemStack = CustomItemStack.create(Material.STONE, name, lore);
+                        itemStack = new CustomItemStack(Material.STONE, name, lore);
                     }
                 }
             }
@@ -184,7 +187,7 @@ public class CommonUtils {
                 if (!file.exists()) {
                     ExceptionHandler.handleError(
                             "The saved item file " + material + " is not found, using stone instead");
-                    itemStack = CustomItemStack.create(Material.STONE, name, lore);
+                    itemStack = new CustomItemStack(Material.STONE, name, lore);
                     break;
                 }
 
@@ -215,7 +218,7 @@ public class CommonUtils {
                 YamlConfiguration configuration = YamlConfiguration.loadConfiguration(file);
 
                 itemStack = new RSCItemStack(
-                        configuration.getItemStack("item", CustomItemStack.create(Material.STONE, name, lore)),
+                        configuration.getItemStack("item", new CustomItemStack(Material.STONE, name, lore)),
                         name,
                         lore).getItem();
 
@@ -244,7 +247,7 @@ public class CommonUtils {
                     }
                 }
 
-                itemStack = CustomItemStack.create(mat, name, lore);
+                itemStack = new CustomItemStack(mat, name, lore);
             }
         }
 

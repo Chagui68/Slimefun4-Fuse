@@ -7,7 +7,7 @@
     <parent>
         <groupId>dev.drake</groupId>
         <artifactId>drakes-slimefun-labs</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>6</version>
         <relativePath>../../../pom.xml</relativePath>
     </parent>
 
@@ -15,75 +15,27 @@
     <artifactId>SefiLib</artifactId>
     <version>0.3.0</version>
     <name>SefiLib</name>
-    <description>This library provides tools to help in the development of Slimefun Addons</description>
-
-    <licenses>
-        <license>
-            <name>GPL-3.0 license</name>
-            <url>https://github.com/Sefiraat/SefiLib/blob/master/LICENSE</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
 
     <build>
-        <finalName>${project.name} v${project.version}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.6.0</version>
-                <configuration>
-                    <relocations>
-                        <relocation>
-                            <pattern>org.bstats</pattern>
-                            <shadedPattern>dev.sefiraat.sefilib.bstats</shadedPattern>
-                        </relocation>
-                        <!-- Relocalización hacia nuestro nuevo Dough Core -->
-                        
-                    </relocations>
-                    <filters>
-                        <filter>
-                            <artifact>*:*</artifact>
-                            <excludes>
-                                <exclude>META-INF/*</exclude>
-                            </excludes>
-                        </filter>
-                    </filters>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
+        <finalName>${project.name}-v${project.version}</finalName>
+        <defaultGoal>clean package</defaultGoal>
     </build>
 
     <dependencies>
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>dev.drake</groupId>
             <artifactId>Slimefun</artifactId>
-            <version>5.0-Drake-1.21.11</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>dev.drake.dough</groupId>
             <artifactId>dough-core</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.bstats</groupId>
-            <artifactId>bstats-bukkit</artifactId>
-            <version>3.0.2</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
-
 </project>

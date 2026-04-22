@@ -1,6 +1,5 @@
 package io.github.sefiraat.crystamaehistoria.utils.datatypes;
 
-import com.jeff_media.morepersistentdatatypes.DataType;
 import io.github.sefiraat.crystamaehistoria.magic.spells.core.InstancePlate;
 import io.github.sefiraat.crystamaehistoria.slimefun.items.artistic.PoseCloner;
 import io.github.sefiraat.crystamaehistoria.utils.Keys;
@@ -55,41 +54,41 @@ public class PersistentPoseType implements PersistentDataType<PersistentDataCont
     @ParametersAreNonnullByDefault
     public PersistentDataContainer toPrimitive(PoseCloner.StoredPose complex, PersistentDataAdapterContext context) {
         PersistentDataContainer container = context.newPersistentDataContainer();
-        container.set(HEAD, DataType.DOUBLE_ARRAY, new double[]{
+        container.set(HEAD, PersistentDoubleArrayDataType.TYPE, new double[]{
             complex.getHead().getX(),
             complex.getHead().getY(),
             complex.getHead().getZ()}
         );
-        container.set(BODY, DataType.DOUBLE_ARRAY, new double[]{
+        container.set(BODY, PersistentDoubleArrayDataType.TYPE, new double[]{
             complex.getBody().getX(),
             complex.getBody().getY(),
             complex.getBody().getZ()}
         );
-        container.set(LEFT_ARM, DataType.DOUBLE_ARRAY, new double[]{
+        container.set(LEFT_ARM, PersistentDoubleArrayDataType.TYPE, new double[]{
             complex.getLeftArm().getX(),
             complex.getLeftArm().getY(),
             complex.getLeftArm().getZ()}
         );
-        container.set(RIGHT_ARM, DataType.DOUBLE_ARRAY, new double[]{
+        container.set(RIGHT_ARM, PersistentDoubleArrayDataType.TYPE, new double[]{
             complex.getRightArm().getX(),
             complex.getRightArm().getY(),
             complex.getRightArm().getZ()}
         );
-        container.set(LEFT_LEG, DataType.DOUBLE_ARRAY, new double[]{
+        container.set(LEFT_LEG, PersistentDoubleArrayDataType.TYPE, new double[]{
             complex.getLeftLeg().getX(),
             complex.getLeftLeg().getY(),
             complex.getLeftLeg().getZ()}
         );
-        container.set(RIGHT_LEG, DataType.DOUBLE_ARRAY, new double[]{
+        container.set(RIGHT_LEG, PersistentDoubleArrayDataType.TYPE, new double[]{
             complex.getRightLeg().getX(),
             complex.getRightLeg().getY(),
             complex.getRightLeg().getZ()}
         );
-        container.set(SMALL, DataType.BOOLEAN, complex.isSmall());
-        container.set(VISIBLE, DataType.BOOLEAN, complex.isVisible());
-        container.set(PLATE, DataType.BOOLEAN, complex.isPlateVisible());
-        container.set(ARMS, DataType.BOOLEAN, complex.isArmsVisible());
-        container.set(GRAVITY, DataType.BOOLEAN, complex.isHasGravity());
+        container.set(SMALL, PersistentDataType.BOOLEAN, complex.isSmall());
+        container.set(VISIBLE, PersistentDataType.BOOLEAN, complex.isVisible());
+        container.set(PLATE, PersistentDataType.BOOLEAN, complex.isPlateVisible());
+        container.set(ARMS, PersistentDataType.BOOLEAN, complex.isArmsVisible());
+        container.set(GRAVITY, PersistentDataType.BOOLEAN, complex.isHasGravity());
         return container;
     }
 
@@ -97,17 +96,17 @@ public class PersistentPoseType implements PersistentDataType<PersistentDataCont
     @Nonnull
     @ParametersAreNonnullByDefault
     public PoseCloner.StoredPose fromPrimitive(PersistentDataContainer primitive, PersistentDataAdapterContext context) {
-        double[] head = primitive.get(HEAD, DataType.DOUBLE_ARRAY);
-        double[] body = primitive.get(BODY, DataType.DOUBLE_ARRAY);
-        double[] leftArm = primitive.get(LEFT_ARM, DataType.DOUBLE_ARRAY);
-        double[] rightArm = primitive.get(RIGHT_ARM, DataType.DOUBLE_ARRAY);
-        double[] leftLeg = primitive.get(LEFT_LEG, DataType.DOUBLE_ARRAY);
-        double[] rightLeg = primitive.get(RIGHT_LEG, DataType.DOUBLE_ARRAY);
-        boolean isSmall = primitive.get(SMALL, DataType.BOOLEAN);
-        boolean isVisible = primitive.get(VISIBLE, DataType.BOOLEAN);
-        boolean plateVisible = primitive.get(PLATE, DataType.BOOLEAN);
-        boolean armsVisible = primitive.get(ARMS, DataType.BOOLEAN);
-        boolean hasGravity = primitive.get(GRAVITY, DataType.BOOLEAN);
+        double[] head = primitive.get(HEAD, PersistentDoubleArrayDataType.TYPE);
+        double[] body = primitive.get(BODY, PersistentDoubleArrayDataType.TYPE);
+        double[] leftArm = primitive.get(LEFT_ARM, PersistentDoubleArrayDataType.TYPE);
+        double[] rightArm = primitive.get(RIGHT_ARM, PersistentDoubleArrayDataType.TYPE);
+        double[] leftLeg = primitive.get(LEFT_LEG, PersistentDoubleArrayDataType.TYPE);
+        double[] rightLeg = primitive.get(RIGHT_LEG, PersistentDoubleArrayDataType.TYPE);
+        boolean isSmall = primitive.get(SMALL, PersistentDataType.BOOLEAN);
+        boolean isVisible = primitive.get(VISIBLE, PersistentDataType.BOOLEAN);
+        boolean plateVisible = primitive.get(PLATE, PersistentDataType.BOOLEAN);
+        boolean armsVisible = primitive.get(ARMS, PersistentDataType.BOOLEAN);
+        boolean hasGravity = primitive.get(GRAVITY, PersistentDataType.BOOLEAN);
         return new PoseCloner.StoredPose(
             new EulerAngle(head[0], head[1], head[2]),
             new EulerAngle(body[0], body[1], body[2]),

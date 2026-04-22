@@ -22,7 +22,7 @@ import org.bukkit.block.data.type.Sapling;
 import org.bukkit.inventory.ItemStack;
 
 public class AdvancedTreeGrowthAccelerator extends AbstractGrowthAccelerator {
-    private static final ItemStack organicFertilizer = ItemStackWrapper.wrap(SlimefunItems.FERTILIZER.item());
+    private static final ItemStack organicFertilizer = ItemStackWrapper.wrap(SlimefunItems.FERTILIZER.clone());
 
     private final int capacity;
     private final int radius;
@@ -89,7 +89,7 @@ public class AdvancedTreeGrowthAccelerator extends AbstractGrowthAccelerator {
                 inv.consumeItem(slot);
                 sapling.getWorld()
                         .spawnParticle(
-                                Particle.VILLAGER_HAPPY,
+                                Particle.HAPPY_VILLAGER,
                                 sapling.getLocation().add(0.5, 0.5, 0.5),
                                 4,
                                 0.10000000149011612,
@@ -114,7 +114,7 @@ public class AdvancedTreeGrowthAccelerator extends AbstractGrowthAccelerator {
                 inv.consumeItem(slot);
                 block.getWorld()
                         .spawnParticle(
-                                Particle.VILLAGER_HAPPY,
+                                Particle.HAPPY_VILLAGER,
                                 block.getLocation().add(0.5, 0.5, 0.5),
                                 4,
                                 0.10000000149011612,

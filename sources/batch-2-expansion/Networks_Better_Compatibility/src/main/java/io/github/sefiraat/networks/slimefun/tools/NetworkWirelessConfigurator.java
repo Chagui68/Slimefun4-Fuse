@@ -1,6 +1,7 @@
 package io.github.sefiraat.networks.slimefun.tools;
 
-import com.jeff_media.morepersistentdatatypes.DataType;
+import dev.sefiraat.sefilib.persistence.PersistenceTypes;
+import org.bukkit.persistence.PersistentDataType;
 import io.github.sefiraat.networks.slimefun.network.NetworkWirelessReceiver;
 import io.github.sefiraat.networks.slimefun.network.NetworkWirelessTransmitter;
 import io.github.sefiraat.networks.utils.Keys;
@@ -68,7 +69,7 @@ public class NetworkWirelessConfigurator extends SlimefunItem {
             @Nonnull BlockMenu blockMenu,
             @Nonnull Player player) {
         final ItemMeta itemMeta = itemStack.getItemMeta();
-        final Location location = PersistentDataAPI.get(itemMeta, TARGET_LOCATION, DataType.LOCATION);
+        final Location location = PersistentDataAPI.get(itemMeta, TARGET_LOCATION, PersistenceTypes.LOCATION);
 
         if (location == null) {
             player.sendMessage(Theme.ERROR + "No Wireless Receiver has been set.");
@@ -87,7 +88,7 @@ public class NetworkWirelessConfigurator extends SlimefunItem {
     private void setReceiver(@Nonnull ItemStack itemStack, @Nonnull BlockMenu blockMenu, @Nonnull Player player) {
         final Location location = blockMenu.getLocation();
         final ItemMeta itemMeta = itemStack.getItemMeta();
-        PersistentDataAPI.set(itemMeta, TARGET_LOCATION, DataType.LOCATION, location);
+        PersistentDataAPI.set(itemMeta, TARGET_LOCATION, PersistenceTypes.LOCATION, location);
         itemStack.setItemMeta(itemMeta);
         player.sendMessage(Theme.SUCCESS + "Wireless Receiver set.");
     }

@@ -17,7 +17,7 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.inventory.ItemStack;
 
 public class AdvancedAnimalGrowthAccelerator extends AbstractGrowthAccelerator {
-    private static final ItemStack organicFood = ItemStackWrapper.wrap(SlimefunItems.ORGANIC_FOOD.item());
+    private static final ItemStack organicFood = ItemStackWrapper.wrap(SlimefunItems.ORGANIC_FOOD.clone());
 
     private final int capacity;
     private final int radius;
@@ -62,7 +62,7 @@ public class AdvancedAnimalGrowthAccelerator extends AbstractGrowthAccelerator {
 
                         n.getWorld()
                                 .spawnParticle(
-                                        Particle.VILLAGER_HAPPY,
+                                        Particle.HAPPY_VILLAGER,
                                         ((LivingEntity) n).getEyeLocation(),
                                         8,
                                         0.20000000298023224,

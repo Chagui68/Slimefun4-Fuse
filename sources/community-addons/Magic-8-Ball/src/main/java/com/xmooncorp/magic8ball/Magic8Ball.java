@@ -6,7 +6,7 @@ import com.xmooncorp.magic8ball.implementation.resources.Magic8BallFragmentResou
 import com.xmooncorp.magic8ball.implementation.setup.ItemSetup;
 import com.xmooncorp.magic8ball.implementation.setup.ResearchSetup;
 import dev.drake.dough.config.Config;
-import dev.drake.dough.updater.BlobBuildUpdater;
+
 import org.bukkit.plugin.java.JavaPlugin;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 
@@ -25,7 +25,7 @@ public class Magic8Ball extends JavaPlugin implements SlimefunAddon {
         instance = this;
         config = new Config(this);
 
-        tryAutoUpdate();
+
         loadLanguage();
 
         log(localization().getString("console.registering-geo"));
@@ -68,12 +68,7 @@ public class Magic8Ball extends JavaPlugin implements SlimefunAddon {
         return instance;
     }
 
-    @SuppressWarnings("deprecation")
-    private void tryAutoUpdate() {
-        if (getConfig().getBoolean("options.auto-update") && getDescription().getVersion().startsWith("Dev")) {
-            new BlobBuildUpdater(this, getFile(), "Magic8Ball", "Dev").start();
-        }
-    }
+
 
     public static void log(@Nonnull String message) {
         instance().getLogger().info(message);

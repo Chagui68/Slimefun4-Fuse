@@ -54,7 +54,7 @@ public class BlockMenuUtil {
         }
 
         if (leftAmount > 0) {
-            return CustomItemStack.create(item, leftAmount);
+            return new CustomItemStack(item, leftAmount);
         } else {
             return null;
         }

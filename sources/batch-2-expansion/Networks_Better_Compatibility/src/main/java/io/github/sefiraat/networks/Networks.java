@@ -10,10 +10,9 @@ import io.github.sefiraat.networks.slimefun.NetworkSlimefunItems;
 import io.github.sefiraat.networks.slimefun.NetworksSlimefunItemStacks;
 import io.github.sefiraat.networks.slimefun.network.NetworkController;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import dev.drake.dough.updater.BlobBuildUpdater;
 
-import org.bstats.bukkit.Metrics;
-import org.bstats.charts.AdvancedPie;
+
+
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -49,26 +48,18 @@ public class Networks extends JavaPlugin implements SlimefunAddon {
         getLogger().info("########################################");
 
         saveDefaultConfig();
-        tryUpdate();
 
         this.supportedPluginManager = new SupportedPluginManager();
-
         setupSlimefun();
 
         this.listenerManager = new ListenerManager();
         this.getCommand("networks").setExecutor(new NetworksMain());
 
-        setupMetrics();
-
         // Initialize recipes after all items are registered
         SupportedRecipes.setup();
     }
 
-    public void tryUpdate() {
-        if (getConfig().getBoolean("auto-update") && getDescription().getVersion().startsWith("Dev")) {
-            new BlobBuildUpdater(this, getFile(), "Networks", "Dev").start();
-        }
-    }
+
 
     public void setupSlimefun() {
         getLogger().info("[Networks] --- Starting Slimefun Setup (v2.2) ---");
@@ -98,17 +89,7 @@ public class Networks extends JavaPlugin implements SlimefunAddon {
         }
     }
 
-    public void setupMetrics() {
-        final Metrics metrics = new Metrics(this, 13644);
 
-        AdvancedPie networksChart = new AdvancedPie("networks", () -> {
-            Map<String, Integer> networksMap = new HashMap<>();
-            networksMap.put("Number of networks", NetworkController.getNetworks().size());
-            return networksMap;
-        });
-
-        metrics.addCustomChart(networksChart);
-    }
 
     @Nonnull
     @Override

@@ -145,7 +145,7 @@ public class TemplateMachineReader extends YamlReader<CustomTemplateMachine> {
 
             List<CustomMachineRecipe> recipes =
                     readRecipes(s, inputSize, outputSize, section.getConfigurationSection(key), addon);
-            list.add(new MachineTemplate(item.item(), recipes));
+            list.add(new MachineTemplate(item.clone(), recipes));
         }
 
         return list;

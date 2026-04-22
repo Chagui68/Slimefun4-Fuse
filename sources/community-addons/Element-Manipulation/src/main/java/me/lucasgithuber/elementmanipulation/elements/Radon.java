@@ -30,9 +30,9 @@ public class Radon extends SimpleSlimefunItem<ItemUseHandler> {
             p.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 20 * 20, 1));
             p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20 * 20, 1));
             p.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 20 * 20, 1));
-            p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_DIGGING, 20 * 20, 1));
-            p.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 20 * 20, 1));
-            p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20 * 20, 1));
+            p.addPotionEffect(new PotionEffect(PotionEffectType.MINING_FATIGUE, 20 * 20, 1));
+            p.addPotionEffect(new PotionEffect(PotionEffectType.NAUSEA, 20 * 20, 1));
+            p.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 20 * 20, 1));
             p.setFireTicks(20 * 20);
         };
     }

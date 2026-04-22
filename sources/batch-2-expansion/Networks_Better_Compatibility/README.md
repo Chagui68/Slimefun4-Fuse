@@ -1,16 +1,22 @@
-<p align="center">
-  <img width="800" src="https://github.com/Sefiraat/Networks/blob/master/images/logo/logo.svg"><br><br>
-</p>
+# 🌐 Networks - Slimefun 6 (Drake Framework Port)
+### *The Ultimate Item Storage Solution for 1.21.11*
 
-# 🌐 Networks - Better Compatibility (Unofficial)
-
-[![Minecraft Version](https://img.shields.io/badge/Minecraft-1.20.6-brightgreen.svg)](https://www.spigotmc.org/)
-[![Slimefun](https://img.shields.io/badge/Slimefun4-RC--37-blue.svg)](https://github.com/Slimefun/Slimefun4)
+[![Minecraft Version](https://img.shields.io/badge/Minecraft-1.21.11-brightgreen.svg)](https://www.spigotmc.org/)
+[![Slimefun](https://img.shields.io/badge/Slimefun-6.0--Drake-blue.svg)](https://github.com/Slimefun/Slimefun4)
 [![Java Version](https://img.shields.io/badge/Java-21-orange.svg)](https://www.java.com/)
 
+---
+
+## 🤝 Créditos y Autoría
+- **Autor Original**: [Sefiraat](https://github.com/Sefiraat)
+- **Mantenedor Base**: [Chagui68](https://github.com/Chagui68)
+- **Port a 1.21.11**: [Pablo Elías](https://github.com/pabloelias) (DrakesCraft-Labs)
+
+---
+
 > [!IMPORTANT]
-> This is an **UNOFFICIAL** fork of the original [Networks](https://github.com/Sefiraat/Networks) addon by **Sefiraat**.
-> It has been updated to provide better compatibility with Minecraft **1.20.6** and resolve critical initialization issues.
+> Este es el port oficial del Drake Framework para **Slimefun 6**.
+> Hemos unificado el trabajo de compatibilidad previo de Chagui68 con las optimizaciones de nivel core del motor de Drake.
 
 ---
 

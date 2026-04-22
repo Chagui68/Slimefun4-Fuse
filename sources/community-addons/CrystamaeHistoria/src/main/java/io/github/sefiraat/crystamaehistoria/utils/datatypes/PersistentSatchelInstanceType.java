@@ -1,6 +1,5 @@
 package io.github.sefiraat.crystamaehistoria.utils.datatypes;
 
-import com.jeff_media.morepersistentdatatypes.DataType;
 import io.github.sefiraat.crystamaehistoria.slimefun.items.tools.satchel.SatchelInstance;
 import io.github.sefiraat.crystamaehistoria.stories.definition.StoryRarity;
 import io.github.sefiraat.crystamaehistoria.utils.Keys;
@@ -51,35 +50,35 @@ public class PersistentSatchelInstanceType implements PersistentDataType<Persist
     public PersistentDataContainer toPrimitive(@Nonnull SatchelInstance complex, @Nonnull PersistentDataAdapterContext context) {
         final PersistentDataContainer container = context.newPersistentDataContainer();
 
-        container.set(SATCHEL_ID, DataType.LONG, complex.getId());
-        container.set(SATCHEL_TIER, DataType.INTEGER, complex.getTier());
-        container.set(SATCHEL_LAST_USER, DataType.STRING, complex.getLastUser());
+        container.set(SATCHEL_ID, PersistentDataType.LONG, complex.getId());
+        container.set(SATCHEL_TIER, PersistentDataType.INTEGER, complex.getTier());
+        container.set(SATCHEL_LAST_USER, PersistentDataType.STRING, complex.getLastUser());
 
-        container.set(UNIQUE, DataType.INTEGER_ARRAY, complex.getAmounts().get(StoryRarity.UNIQUE));
-        container.set(COMMON, DataType.INTEGER_ARRAY, complex.getAmounts().get(StoryRarity.COMMON));
-        container.set(UNCOMMON, DataType.INTEGER_ARRAY, complex.getAmounts().get(StoryRarity.UNCOMMON));
-        container.set(RARE, DataType.INTEGER_ARRAY, complex.getAmounts().get(StoryRarity.RARE));
-        container.set(EPIC, DataType.INTEGER_ARRAY, complex.getAmounts().get(StoryRarity.EPIC));
-        container.set(MYTHICAL, DataType.INTEGER_ARRAY, complex.getAmounts().get(StoryRarity.MYTHICAL));
+        container.set(UNIQUE, PersistentDataType.INTEGER_ARRAY, complex.getAmounts().get(StoryRarity.UNIQUE));
+        container.set(COMMON, PersistentDataType.INTEGER_ARRAY, complex.getAmounts().get(StoryRarity.COMMON));
+        container.set(UNCOMMON, PersistentDataType.INTEGER_ARRAY, complex.getAmounts().get(StoryRarity.UNCOMMON));
+        container.set(RARE, PersistentDataType.INTEGER_ARRAY, complex.getAmounts().get(StoryRarity.RARE));
+        container.set(EPIC, PersistentDataType.INTEGER_ARRAY, complex.getAmounts().get(StoryRarity.EPIC));
+        container.set(MYTHICAL, PersistentDataType.INTEGER_ARRAY, complex.getAmounts().get(StoryRarity.MYTHICAL));
         return container;
     }
 
     @Override
     @Nonnull
     public SatchelInstance fromPrimitive(@Nonnull PersistentDataContainer primitive, @Nonnull PersistentDataAdapterContext context) {
-        final long id = primitive.get(SATCHEL_ID, DataType.LONG);
-        final int tier = primitive.get(SATCHEL_TIER, DataType.INTEGER);
-        final String name = primitive.get(SATCHEL_LAST_USER, DataType.STRING);
+        final long id = primitive.get(SATCHEL_ID, PersistentDataType.LONG);
+        final int tier = primitive.get(SATCHEL_TIER, PersistentDataType.INTEGER);
+        final String name = primitive.get(SATCHEL_LAST_USER, PersistentDataType.STRING);
         final SatchelInstance instance = new SatchelInstance(id, tier);
 
         instance.setLastUser(name);
 
-        instance.setAmounts(StoryRarity.UNIQUE, primitive.get(UNIQUE, DataType.INTEGER_ARRAY));
-        instance.setAmounts(StoryRarity.COMMON, primitive.get(COMMON, DataType.INTEGER_ARRAY));
-        instance.setAmounts(StoryRarity.UNCOMMON, primitive.get(UNCOMMON, DataType.INTEGER_ARRAY));
-        instance.setAmounts(StoryRarity.RARE, primitive.get(RARE, DataType.INTEGER_ARRAY));
-        instance.setAmounts(StoryRarity.EPIC, primitive.get(EPIC, DataType.INTEGER_ARRAY));
-        instance.setAmounts(StoryRarity.MYTHICAL, primitive.get(MYTHICAL, DataType.INTEGER_ARRAY));
+        instance.setAmounts(StoryRarity.UNIQUE, primitive.get(UNIQUE, PersistentDataType.INTEGER_ARRAY));
+        instance.setAmounts(StoryRarity.COMMON, primitive.get(COMMON, PersistentDataType.INTEGER_ARRAY));
+        instance.setAmounts(StoryRarity.UNCOMMON, primitive.get(UNCOMMON, PersistentDataType.INTEGER_ARRAY));
+        instance.setAmounts(StoryRarity.RARE, primitive.get(RARE, PersistentDataType.INTEGER_ARRAY));
+        instance.setAmounts(StoryRarity.EPIC, primitive.get(EPIC, PersistentDataType.INTEGER_ARRAY));
+        instance.setAmounts(StoryRarity.MYTHICAL, primitive.get(MYTHICAL, PersistentDataType.INTEGER_ARRAY));
 
         return instance;
     }

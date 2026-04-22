@@ -24,30 +24,18 @@ public final class GemAngelite extends AbstractGem {
 
     @Override
     public int getDefaultSupply(@Nonnull World.Environment environment, @Nonnull Biome biome) {
-        switch (environment) {
-            case NORMAL:
-                switch (biome) {
-                    case SNOWY_BEACH:
-                    case SNOWY_MOUNTAINS:
-                    case SNOWY_TAIGA:
-                    case SNOWY_TAIGA_HILLS:
-                    case SNOWY_TAIGA_MOUNTAINS:
-                    case SNOWY_TUNDRA:
-                    case COLD_OCEAN:
-                    case DEEP_COLD_OCEAN:
-                        return 25;
-                    case ICE_SPIKES:
-                    case FROZEN_OCEAN:
-                    case FROZEN_RIVER:
-                    case DEEP_FROZEN_OCEAN:
-                        return 40;
-                    default:
-                        return 5;
-                }
-            case NETHER:
-                return 0;
-            default:
-                return 15;
+        if (environment == World.Environment.NORMAL) {
+            if (biome == Biome.SNOWY_BEACH || biome == Biome.SNOWY_PLAINS || biome == Biome.SNOWY_TAIGA || biome == Biome.COLD_OCEAN || biome == Biome.DEEP_COLD_OCEAN) {
+                return 25;
+            } else if (biome == Biome.ICE_SPIKES || biome == Biome.FROZEN_OCEAN || biome == Biome.FROZEN_RIVER || biome == Biome.DEEP_FROZEN_OCEAN) {
+                return 40;
+            } else {
+                return 5;
+            }
+        } else if (environment == World.Environment.NETHER) {
+            return 0;
+        } else {
+            return 15;
         }
     }
 

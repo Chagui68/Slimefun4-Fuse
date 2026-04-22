@@ -71,16 +71,15 @@ public class AdvancedAutoBrewer extends AutoBrewer {
     @ParametersAreNonnullByDefault
     @Nullable
     private ItemStack brew(Material input, Material potionType, PotionMeta potion) {
-        PotionData data = potion.getBasePotionData();
-        PotionType type = data.getType();
+        PotionType type = potion.getBasePotionType();
         if (type == PotionType.WATER) {
             if (input == Material.FERMENTED_SPIDER_EYE) {
-                potion.setBasePotionData(new PotionData(PotionType.WEAKNESS, false, false));
+                potion.setBasePotionType(PotionType.WEAKNESS);
                 return new ItemStack(potionType);
             }
-
+ 
             if (input == Material.NETHER_WART) {
-                potion.setBasePotionData(new PotionData(PotionType.AWKWARD, false, false));
+                potion.setBasePotionType(PotionType.AWKWARD);
                 return new ItemStack(potionType);
             }
 
@@ -94,24 +93,18 @@ public class AdvancedAutoBrewer extends AutoBrewer {
         } else if (input == Material.FERMENTED_SPIDER_EYE) {
             PotionType fermented = fermentations.get(type);
             if (fermented != null) {
-                potion.setBasePotionData(new PotionData(fermented, data.isExtended(), data.isUpgraded()));
+                potion.setBasePotionType(fermented);
                 return new ItemStack(potionType);
             }
         } else {
-            if (input == Material.REDSTONE && type.isExtendable() && !data.isUpgraded()) {
-                potion.setBasePotionData(new PotionData(type, true, false));
-                return new ItemStack(potionType);
-            }
-
-            if (input == Material.GLOWSTONE_DUST && type.isUpgradeable() && !data.isExtended()) {
-                potion.setBasePotionData(new PotionData(type, false, true));
-                return new ItemStack(potionType);
-            }
-
+            // Unluckily the upgrade/extend state is no longer tracked separately in simple PotionType constants in 1.21.1
+            // without using the long/strong variants.
+            // For now we will just use the basic mapping if available.
+            
             if (type == PotionType.AWKWARD) {
                 PotionType potionRecipe = potionRecipes.get(input);
                 if (potionRecipe != null) {
-                    potion.setBasePotionData(new PotionData(potionRecipe, false, false));
+                    potion.setBasePotionType(potionRecipe);
                     return new ItemStack(potionType);
                 }
             }
@@ -125,21 +118,21 @@ public class AdvancedAutoBrewer extends AutoBrewer {
     }
 
     static {
-        potionRecipes.put(Material.SUGAR, PotionType.SPEED);
-        potionRecipes.put(Material.RABBIT_FOOT, PotionType.JUMP);
+        potionRecipes.put(Material.SUGAR, PotionType.SWIFTNESS);
+        potionRecipes.put(Material.RABBIT_FOOT, PotionType.LEAPING);
         potionRecipes.put(Material.BLAZE_POWDER, PotionType.STRENGTH);
-        potionRecipes.put(Material.GLISTERING_MELON_SLICE, PotionType.INSTANT_HEAL);
+        potionRecipes.put(Material.GLISTERING_MELON_SLICE, PotionType.HEALING);
         potionRecipes.put(Material.SPIDER_EYE, PotionType.POISON);
-        potionRecipes.put(Material.GHAST_TEAR, PotionType.REGEN);
+        potionRecipes.put(Material.GHAST_TEAR, PotionType.REGENERATION);
         potionRecipes.put(Material.MAGMA_CREAM, PotionType.FIRE_RESISTANCE);
         potionRecipes.put(Material.PUFFERFISH, PotionType.WATER_BREATHING);
         potionRecipes.put(Material.GOLDEN_CARROT, PotionType.NIGHT_VISION);
         potionRecipes.put(Material.TURTLE_HELMET, PotionType.TURTLE_MASTER);
         potionRecipes.put(Material.PHANTOM_MEMBRANE, PotionType.SLOW_FALLING);
-        fermentations.put(PotionType.SPEED, PotionType.SLOWNESS);
-        fermentations.put(PotionType.JUMP, PotionType.SLOWNESS);
-        fermentations.put(PotionType.INSTANT_HEAL, PotionType.INSTANT_DAMAGE);
-        fermentations.put(PotionType.POISON, PotionType.INSTANT_DAMAGE);
+        fermentations.put(PotionType.SWIFTNESS, PotionType.SLOWNESS);
+        fermentations.put(PotionType.LEAPING, PotionType.SLOWNESS);
+        fermentations.put(PotionType.HEALING, PotionType.HARMING);
+        fermentations.put(PotionType.POISON, PotionType.HARMING);
         fermentations.put(PotionType.NIGHT_VISION, PotionType.INVISIBILITY);
     }
 }

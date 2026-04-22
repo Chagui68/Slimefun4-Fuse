@@ -1,6 +1,7 @@
 package io.github.sefiraat.networks.utils.datatypes;
 
-import com.jeff_media.morepersistentdatatypes.DataType;
+import dev.sefiraat.sefilib.persistence.PersistenceTypes;
+import org.bukkit.persistence.PersistentDataType;
 import io.github.sefiraat.networks.network.stackcaches.BlueprintInstance;
 import io.github.sefiraat.networks.network.stackcaches.CardInstance;
 import io.github.sefiraat.networks.utils.Keys;
@@ -46,8 +47,8 @@ public class PersistentCraftingBlueprintType implements PersistentDataType<Persi
             @Nonnull PersistentDataAdapterContext context) {
         final PersistentDataContainer container = context.newPersistentDataContainer();
 
-        container.set(RECIPE, DataType.ITEM_STACK_ARRAY, complex.getRecipeItems());
-        container.set(OUTPUT, DataType.ITEM_STACK, complex.getItemStack());
+        container.set(RECIPE, PersistenceTypes.ITEM_STACK_ARRAY, complex.getRecipeItems());
+        container.set(OUTPUT, PersistenceTypes.ITEM_STACK, complex.getItemStack());
         return container;
     }
 
@@ -55,8 +56,8 @@ public class PersistentCraftingBlueprintType implements PersistentDataType<Persi
     @Nonnull
     public BlueprintInstance fromPrimitive(@Nonnull PersistentDataContainer primitive,
             @Nonnull PersistentDataAdapterContext context) {
-        final ItemStack[] recipe = primitive.get(RECIPE, DataType.ITEM_STACK_ARRAY);
-        final ItemStack output = primitive.get(OUTPUT, DataType.ITEM_STACK);
+        final ItemStack[] recipe = primitive.get(RECIPE, PersistenceTypes.ITEM_STACK_ARRAY);
+        final ItemStack output = primitive.get(OUTPUT, PersistenceTypes.ITEM_STACK);
 
         return new BlueprintInstance(recipe, output);
     }

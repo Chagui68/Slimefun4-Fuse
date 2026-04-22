@@ -99,7 +99,7 @@ public class CustomMaterialGenerator extends SlimefunItem
             } else {
                 if (statusSlot > -1) {
                     blockMenu.replaceExistingItem(
-                            statusSlot, CustomItemStack.create(Material.RED_STAINED_GLASS_PANE, "&4No enough energy"));
+                            statusSlot, new CustomItemStack(Material.RED_STAINED_GLASS_PANE, "&4No enough energy"));
                 }
             }
         }
@@ -166,7 +166,7 @@ public class CustomMaterialGenerator extends SlimefunItem
 
     @NotNull @Override
     public List<ItemStack> getDisplayRecipes() {
-        ItemStack speed = CustomItemStack.create(
+        ItemStack speed = new CustomItemStack(
                 Material.KNOWLEDGE_BOOK,
                 "&a&lSpeed",
                 Collections.singletonList("&a&lGenerates per &b&l" + tickRate + " &a&lticks once"));
@@ -190,7 +190,7 @@ public class CustomMaterialGenerator extends SlimefunItem
             if (blockMenu.fits(item, getOutputSlots())) {
                 if (blockMenu.hasViewer() && statusSlot > -1) {
                     blockMenu.replaceExistingItem(
-                            statusSlot, CustomItemStack.create(Material.LIME_STAINED_GLASS_PANE, "&aProducing"));
+                            statusSlot, new CustomItemStack(Material.LIME_STAINED_GLASS_PANE, "&aProducing"));
                 }
                 blockMenu.pushItem(item.clone(), getOutputSlots());
                 removeCharge(b.getLocation(), per);
@@ -198,7 +198,7 @@ public class CustomMaterialGenerator extends SlimefunItem
                 if (blockMenu.hasViewer()) {
                     if (statusSlot > -1) {
                         blockMenu.replaceExistingItem(
-                                statusSlot, CustomItemStack.create(Material.ORANGE_STAINED_GLASS_PANE, "&cNo enough space"));
+                                statusSlot, new CustomItemStack(Material.ORANGE_STAINED_GLASS_PANE, "&cNo enough space"));
                     }
                 }
             }
