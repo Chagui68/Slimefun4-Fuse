@@ -1,5 +1,7 @@
 package io.github.addoncommunity.slimechem.implementation.atomic;
 
+import dev.drake.dough.items.CustomItemStack;
+
 import io.github.addoncommunity.slimechem.implementation.atomic.isotopes.Isotope;
 import io.github.addoncommunity.slimechem.implementation.attributes.Ingredient;
 import lombok.Getter;
@@ -51,9 +53,9 @@ public class MoleculeIngredient {
         int size = (int) Math.ceil(this.amount / 64f);
         ItemStack[] items = new ItemStack[size];
         for (int i = 0 ; i < size - 1 ; i++) {
-            items[i] = new CustomItem(this.ingredient.getItem(), 64);
+            items[i] = new CustomItemStack(this.ingredient.getItem(), 64);
         }
-        items[size - 1] = new CustomItem(this.getIngredient().getItem(), this.amount % 64);
+        items[size - 1] = new CustomItemStack(this.getIngredient().getItem(), this.amount % 64);
         return items;
     }
     

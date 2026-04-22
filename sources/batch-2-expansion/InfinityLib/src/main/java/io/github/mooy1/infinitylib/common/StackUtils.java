@@ -34,6 +34,11 @@ public final class StackUtils {
     }
 
     @Nullable
+    public static String getID(ItemStack item) {
+        return getId(item);
+    }
+
+    @Nullable
     public static String getId(ItemMeta meta) {
         return meta.getPersistentDataContainer().get(ID_KEY, PersistentDataType.STRING);
     }

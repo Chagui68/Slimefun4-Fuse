@@ -24,7 +24,7 @@ public final class SlimefunPlugin {
     }
 
     public static MinecraftRecipeService getMinecraftRecipeService() {
-        return Slimefun.instance().getRecipeService();
+        return Slimefun.getMinecraftRecipeService();
     }
 
     public static ProtectionManager getProtectionManager() {

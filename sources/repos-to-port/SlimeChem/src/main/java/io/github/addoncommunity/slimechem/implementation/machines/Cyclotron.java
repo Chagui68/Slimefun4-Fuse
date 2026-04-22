@@ -1,18 +1,20 @@
 package io.github.addoncommunity.slimechem.implementation.machines;
 
+import dev.drake.dough.items.CustomItemStack;
+
 import io.github.addoncommunity.slimechem.implementation.atomic.Element;
 import io.github.addoncommunity.slimechem.implementation.atomic.isotopes.Isotope;
 import io.github.addoncommunity.slimechem.lists.Categories;
 import io.github.addoncommunity.slimechem.lists.Items;
 import io.github.mooy1.infinitylib.abstracts.AbstractMachine;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
-import io.github.thebusybiscuit.slimefun4.api.Config;
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems.RecipeType;
+import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.inventory.BlockMenu;
-import io.github.thebusybiscuit.slimefun4.api.inventory.BlockMenuPreset;
-import io.github.thebusybiscuit.slimefun4.api.inventory.DirtyChestMenu;
-import io.github.thebusybiscuit.slimefun4.api.item_transport.ItemTransportFlow;
+import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
+import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
+import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
+import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import dev.drake.dough.items.CustomItemStack;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -60,12 +62,12 @@ public class Cyclotron extends AbstractMachine {
         for (int i : BORDER_OUT) {
             preset.addItem(i, ChestMenuUtils.getOutputSlotTexture(), ChestMenuUtils.getEmptyClickHandler());
         }
-        preset.addItem(22, new CustomItem(Material.BLACK_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(22, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
     }
 
     @Nonnull
     @Override
-    protected int[] getTransportSlots(@Nonnull DirtyChestMenu dirtyChestMenu, @Nonnull ItemTransportFlow itemTransportFlow, ItemStack itemStack) {
+    public int[] getTransportSlots(@Nonnull DirtyChestMenu dirtyChestMenu, @Nonnull ItemTransportFlow itemTransportFlow, ItemStack itemStack) {
         if (itemTransportFlow == ItemTransportFlow.INSERT) {
             return INPUT_SLOTS;
         } else if (itemTransportFlow == ItemTransportFlow.WITHDRAW) {
@@ -86,7 +88,7 @@ public class Cyclotron extends AbstractMachine {
 
                 progress.put(l, timeleft);
             } else {
-                menu.replaceExistingItem(22, new CustomItem(Material.BLACK_STAINED_GLASS_PANE, " "));
+                menu.replaceExistingItem(22, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "));
 
                 menu.pushItem(results.get(l).clone(), OUTPUT_SLOTS);
 

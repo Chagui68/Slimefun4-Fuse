@@ -10,13 +10,13 @@ import io.github.mooy1.infinitylib.abstracts.AbstractMachine;
 import io.github.mooy1.infinitylib.presets.MenuPreset;
 import io.github.mooy1.infinitylib.recipes.normal.RandomRecipeMap;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
-import io.github.thebusybiscuit.slimefun4.api.Config;
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems.RecipeType;
+import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.inventory.BlockMenu;
-import io.github.thebusybiscuit.slimefun4.api.inventory.BlockMenuPreset;
-import io.github.thebusybiscuit.slimefun4.api.inventory.DirtyChestMenu;
-import io.github.thebusybiscuit.slimefun4.api.item_transport.ItemTransportFlow;
+import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
+import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
+import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
+import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import dev.drake.dough.collections.RandomizedSet;
 import org.bukkit.Material;
 import org.bukkit.Tag;
@@ -168,7 +168,7 @@ public class ChemicalDissolver extends AbstractMachine {
 
     @Nonnull
     @Override
-    protected int[] getTransportSlots(@Nonnull DirtyChestMenu dirtyChestMenu, @Nonnull ItemTransportFlow itemTransportFlow, ItemStack itemStack) {
+    public int[] getTransportSlots(@Nonnull DirtyChestMenu dirtyChestMenu, @Nonnull ItemTransportFlow itemTransportFlow, ItemStack itemStack) {
         if (itemTransportFlow == ItemTransportFlow.INSERT) {
             return inputSlots;
         } else if (itemTransportFlow == ItemTransportFlow.WITHDRAW) {

@@ -6,7 +6,7 @@ import io.github.addoncommunity.slimechem.lists.Constants;
 import io.github.addoncommunity.slimechem.utils.SubNum;
 import io.github.addoncommunity.slimechem.utils.SuperNum;
 import io.github.addoncommunity.slimechem.utils.Util;
-import io.github.mooy1.infinitylib.items.StackUtils;
+import io.github.mooy1.infinitylib.common.StackUtils;
 import io.github.addoncommunity.slimechem.implementation.atomic.Element;
 import io.github.addoncommunity.slimechem.implementation.attributes.Atom;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;

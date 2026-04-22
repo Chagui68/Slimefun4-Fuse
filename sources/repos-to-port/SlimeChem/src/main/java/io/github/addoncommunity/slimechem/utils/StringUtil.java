@@ -2,7 +2,6 @@ package io.github.addoncommunity.slimechem.utils;
 
 import io.github.addoncommunity.slimechem.SlimeChem;
 import lombok.Data;
-import org.apache.commons.lang3.WordUtils;
 
 import javax.annotation.Nonnull;
 import java.io.ByteArrayOutputStream;
@@ -22,7 +21,18 @@ public final class StringUtil {
 
     @Nonnull
     public static String enumNameToTitleCaseString(@Nonnull String enumName) {
-        return WordUtils.capitalizeFully(enumName.replace('_', ' '));
+        String[] words = enumName.split("_");
+        StringBuilder sb = new StringBuilder();
+        for (String word : words) {
+            if (word.length() > 0) {
+                sb.append(Character.toUpperCase(word.charAt(0)));
+                if (word.length() > 1) {
+                    sb.append(word.substring(1).toLowerCase());
+                }
+                sb.append(" ");
+            }
+        }
+        return sb.toString().trim();
     }
 
     @Nonnull

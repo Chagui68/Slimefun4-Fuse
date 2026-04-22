@@ -828,6 +828,20 @@ public class SlimefunItem implements Placeable {
         }
     }
 
+    public void registerBlockHandler(String id, @Nonnull BlockHandler handler) {
+        addItemHandler(new io.github.thebusybiscuit.slimefun4.core.handlers.BlockBreakHandler(false, false) {
+            @Override
+            public void onPlayerBreak(org.bukkit.event.block.BlockBreakEvent e, ItemStack item, java.util.List<ItemStack> drops) {
+                handler.onBreak(e.getPlayer(), e.getBlock(), item, null);
+            }
+        });
+    }
+
+    @FunctionalInterface
+    public interface BlockHandler {
+        boolean onBreak(Player p, org.bukkit.block.Block b, ItemStack item, Object reason);
+    }
+
     /**
      * This method will add any given {@link ItemSetting} to this {@link SlimefunItem}.
      * Note that this will not work after the {@link SlimefunItem} was registered.

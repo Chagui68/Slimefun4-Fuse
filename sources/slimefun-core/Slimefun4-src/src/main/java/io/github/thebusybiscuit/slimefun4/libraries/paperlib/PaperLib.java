@@ -16,16 +16,16 @@ public final class PaperLib {
 
     private PaperLib() {}
 
+    public static io.github.thebusybiscuit.slimefun4.libraries.paperlib.features.blockstatesnapshot.BlockStateSnapshotResult getBlockState(Block block, boolean useSnapshot) {
+        return new io.github.thebusybiscuit.slimefun4.libraries.paperlib.features.blockstatesnapshot.BlockStateSnapshotResult(block.getState(useSnapshot), useSnapshot);
+    }
+
     public static CompletableFuture<Boolean> teleportAsync(Entity entity, Location location) {
         return io.papermc.lib.PaperLib.teleportAsync(entity, location);
     }
 
-    public static CompletableFuture<Block> getChunkAtAsync(Location location) {
+    public static CompletableFuture<org.bukkit.Chunk> getChunkAtAsync(Location location) {
         return io.papermc.lib.PaperLib.getChunkAtAsync(location);
-    }
-
-    public static CompletableFuture<World> createWorld(org.bukkit.WorldCreator creator) {
-        return io.papermc.lib.PaperLib.createWorld(creator);
     }
 
     public static boolean isPaper() {

@@ -1,20 +1,22 @@
 package io.github.addoncommunity.slimechem.implementation.generators;
 
+import dev.drake.dough.items.CustomItemStack;
+
 import io.github.addoncommunity.slimechem.implementation.atomic.isotopes.Isotope;
 import io.github.addoncommunity.slimechem.lists.Categories;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetProvider;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import lombok.Data;
-import io.github.thebusybiscuit.slimefun4.api.Config;
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems.RecipeType;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.BlockStorage;
+import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.inventory.BlockMenu;
-import io.github.thebusybiscuit.slimefun4.api.inventory.BlockMenuPreset;
-import io.github.thebusybiscuit.slimefun4.api.inventory.DirtyChestMenu;
-import io.github.thebusybiscuit.slimefun4.api.item_transport.ItemTransportFlow;
+import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
+import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
+import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
+import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import dev.drake.dough.items.CustomItemStack;
 import dev.drake.dough.protection.Interaction;
 import org.bukkit.Location;
@@ -76,7 +78,7 @@ public class RTG extends SlimefunItem implements EnergyNetProvider {
             @Override
             public boolean canOpen(@Nonnull Block b, @Nonnull Player p) {
                 return p.hasPermission("slimefun.inventory.bypass") ||
-                    SlimefunPlugin.getProtectionManager().hasPermission(p, b.getLocation(), ProtectableAction.INTERACT_BLOCK);
+                    SlimefunPlugin.getProtectionManager().hasPermission(p, b.getLocation(), Interaction.INTERACT_BLOCK);
             }
 
             @Override
@@ -111,7 +113,7 @@ public class RTG extends SlimefunItem implements EnergyNetProvider {
             preset.addItem(i, ChestMenuUtils.getOutputSlotTexture(), ChestMenuUtils.getEmptyClickHandler());
         }
 
-        preset.addItem(22, new CustomItem(Material.BLACK_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(22, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
     }
 
     @Nonnull
@@ -136,7 +138,7 @@ public class RTG extends SlimefunItem implements EnergyNetProvider {
                 progress.put(l, timeleft);
                 return 8 * fuel.getPower();
             } else {
-                menu.replaceExistingItem(22, new CustomItem(Material.BLACK_STAINED_GLASS_PANE, " "));
+                menu.replaceExistingItem(22, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "));
 
                 for (ItemStack item : fuel.getByproducts()) {
                     menu.pushItem(item.clone(), OUTPUT_SLOTS);
