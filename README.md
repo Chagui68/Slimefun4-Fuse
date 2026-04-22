@@ -23,16 +23,24 @@ Aquí centralizamos el desarrollo de más de 35 addons, unificando dependencias 
 > [!IMPORTANT]
 > **Versión Actual**: `1.21.11` | **Estado**: 🧪 En Fase de Pruebas (Beta) | **Framework**: Drake 1.0
 
-Actualmente, el laboratorio está procesando un reactor mono-repo con **55 módulos activos**.
+Actualmente, el laboratorio trabaja sobre un universo de **87 addons** más `dough-core` y `Slimefun4-src`.
+De ese total, el **reactor activo** cubre **55 módulos** (`53 addons + 2 módulos base`).
 
 **Progreso de Migración:**
 `[============================>-----] 85%`
 
 | Métrica | Valor |
 | :--- | :--- |
-| 🚀 **Componentes Confirmados** | `49` |
-| ⏳ **Módulos en Cola (Pending)** | `6` |
+| 🚀 **Componentes Confirmados en Reactor** | `49` |
+| ⏳ **Pendientes Dentro del Reactor** | `6` |
+| 🧩 **Addons Fuera del Reactor** | `34` |
+| 📚 **Pendiente Bruto del Repo** | `40 addons` |
 | 📦 **Librería Core** | `dough-core:1.3.1-DRAKE` |
+
+**Cómo leer este tablero**
+- `6 pendientes` significa solo los addons que ya están declarados en el `pom.xml` raíz y todavía no quedan verdes.
+- `34 fuera del reactor` significa addons presentes en el repo que aún no están incorporados al build unificado.
+- El backlog real a revisar es `40 addons`, no `6`.
 
 **Últimos cierres validados**
 - `FoxyMachines`: eliminados usos de utilidades legacy de `commons-lang`.
