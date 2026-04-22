@@ -4,8 +4,8 @@ Estado actual del branch:
 
 - Rama: `1.21-latin`
 - Reactor: `53` módulos activos
-- Confirmados: `24`
-- Pendientes: `29`
+- Confirmados: `25`
+- Pendientes: `28`
 
 ## Qué quedó listo hoy
 
@@ -13,6 +13,7 @@ Estado actual del branch:
 - `ElectricSpawners` compila en `1.21.11`
 - `SFMobDrops` verificado con build aislado
 - `GlobalWarming` verificado con build aislado
+- `SimpleUtils` compila en `1.21.11`
 - plantilla base para nuevos addons en `templates/slimefun-addon`
 - smoke test del repo en `scripts/slimefun/smoke-test.ps1`
 - `README` principal actualizado con smoke test y plantilla
@@ -21,10 +22,6 @@ Estado actual del branch:
 ## Prioridades reales para mañana
 
 ### 1. Pendientes de infraestructura Maven
-
-- `SimpleUtils`
-  - problema detectado: sigue buscando `dev.drake:Slimefun` fuera del reactor
-  - objetivo: alinearlo al parent/reactor como se hizo con `PrivateStorage` y `ElectricSpawners`
 
 - `SlimyRepair`
   - problema detectado: misma clase de fallo que `SimpleUtils`

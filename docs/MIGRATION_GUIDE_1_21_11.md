@@ -68,7 +68,7 @@ Actualmente tenemos integrados en el workspace:
 > El workspace ya no usa las carpetas antiguas `Networks` y `Cultivation` para el reactor. Fueron reemplazadas por `Networks_Better_Compatibility` y `Cultivation_Updated`.
 
 > [!NOTE]
-> La Wiki de Slimefun lista más addons de los que hoy existen dentro del laboratorio. Esta guía se centra en el **estado real del workspace local**: `24` componentes ya confirmados y `29` módulos pendientes dentro del reactor actual.
+> La Wiki de Slimefun lista más addons de los que hoy existen dentro del laboratorio. Esta guía se centra en el **estado real del workspace local**: `25` componentes ya confirmados y `28` módulos pendientes dentro del reactor actual.
 
 ---
 
@@ -88,6 +88,7 @@ A pesar de los grandes avances del Día 1, el ecosistema es masivo. Aquí está 
 - [x] **ElectricSpawners**: Alineado al parent/reactor y compilando en 1.21.11.
 - [x] **SFMobDrops**: Verificado con build aislado.
 - [x] **GlobalWarming**: Verificado con build aislado.
+- [x] **SimpleUtils**: Build aislado validado; el bloqueo estaba en `InfinityLib` fijando una versión vieja de `dev.drake:Slimefun`.
 
 ### 2. Procesamiento Masivo de Addons
 - [ ] **Repos-to-port pendientes**: El frente activo ya no incluye `ExoticGarden`, `SoulJars`, `ExtraGear`, `ColoredEnderChests`, `DyedBackpacks` ni `InfinityExpansion`, porque ya forman parte del checkpoint confirmado. El trabajo sigue sobre módulos como `DynaTech`, `ElectricSpawners`, `SlimeChem`, `SoundMuffler` y compañía.
@@ -104,7 +105,7 @@ A pesar de los grandes avances del Día 1, el ecosistema es masivo. Aquí está 
 ## 📍 Dónde quedó el proyecto
 - `README.md` y `MIGRATION_CHECKLIST.md` ya reflejan el conteo real del reactor.
 - Los forks activos de Chagui para `Networks` y `Cultivation` quedaron adoptados como variantes oficiales del laboratorio.
-- El siguiente trabajo ya no es "arreglar la base", sino seguir bajando la cola de los `29` módulos pendientes con compilación aislada vía `-pl`.
+- El siguiente trabajo ya no es "arreglar la base", sino seguir bajando la cola de los `28` módulos pendientes con compilación aislada vía `-pl`.
 
 ## 🤝 Créditos de Porting
 - **Chagui (`Chagui68`)**: sus forks `Networks_Better_Compatibility` y `Cultivation_Updated` quedaron adoptados como variantes activas dentro del workspace para estos addons.

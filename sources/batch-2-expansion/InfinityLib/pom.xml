@@ -22,10 +22,9 @@
             <artifactId>paper-api</artifactId>
         </dependency>
 
-                <dependency>
+        <dependency>
             <groupId>dev.drake</groupId>
             <artifactId>Slimefun</artifactId>
-            <version>5.0-Drake-1.21.11</version>
             <scope>provided</scope>
         </dependency>
 
