@@ -22,6 +22,50 @@ Si entraste al repo buscando "que esta listo y que falta", arranca por aca:
 - [Handoff de trabajo](docs/TOMORROW_HANDOFF.md)
 - [Plantilla para addons nuevos](docs/NEW_ADDON_TEMPLATE.md)
 
+## Primeros Comandos
+
+Si acabas de entrar al repo y solo quieres lo basico, usa esto:
+
+### Verificar herramientas
+
+```powershell
+java --version
+mvn --version
+gh --version
+```
+
+### Empaquetar un addon puntual
+
+```powershell
+mvn -pl ruta/del/modulo -am -DskipTests package
+```
+
+Ejemplos reales:
+
+```powershell
+mvn -pl sources/repos-to-port/SimpleUtils -am -DskipTests package
+mvn -pl sources/repos-to-port/DynaTech -am -DskipTests package
+mvn -pl sources/repos-to-port/SoundMuffler -am -DskipTests package
+```
+
+Que hace cada flag:
+
+- `-pl`: elige el modulo a compilar
+- `-am`: compila tambien dependencias necesarias dentro del reactor
+- `-DskipTests`: salta tests para validacion rapida de build
+
+### Correr el smoke test rapido
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\slimefun\smoke-test.ps1
+```
+
+### Donde mirar el estado real
+
+- si buscas que esta listo y que falta: [MIGRATION_CHECKLIST.md](MIGRATION_CHECKLIST.md)
+- si buscas como se esta porteando: [docs/MIGRATION_GUIDE_1_21_11.md](docs/MIGRATION_GUIDE_1_21_11.md)
+- si buscas comandos y entorno: [docs/DEV_SETUP.md](docs/DEV_SETUP.md)
+
 ## Estado Actual
 
 Estado documentado del branch `1.21-latin`:
@@ -118,6 +162,14 @@ Comando recomendado:
 
 ```powershell
 mvn -pl ruta/del/modulo -am -DskipTests package
+```
+
+Ejemplos comunes:
+
+```powershell
+mvn -pl sources/dough-core -am -DskipTests package
+mvn -pl sources/slimefun-core/Slimefun4-src -am -DskipTests package
+mvn -pl sources/repos-to-port/SimpleUtils -am -DskipTests package
 ```
 
 ## Smoke Test
