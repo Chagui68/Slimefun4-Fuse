@@ -4,8 +4,8 @@ Estado actual del branch:
 
 - Rama: `1.21-latin`
 - Reactor: `53` módulos activos
-- Confirmados: `27`
-- Pendientes: `26`
+- Confirmados: `28`
+- Pendientes: `25`
 
 ## Qué quedó listo hoy
 
@@ -16,6 +16,7 @@ Estado actual del branch:
 - `SimpleUtils` compila en `1.21.11`
 - `SlimyRepair` compila en `1.21.11`
 - `SFCalc` compila en `1.21.11`
+- `Magic-8-Ball` compila en `1.21.11`
 - plantilla base para nuevos addons en `templates/slimefun-addon`
 - smoke test del repo en `scripts/slimefun/smoke-test.ps1`
 - `README` principal actualizado con smoke test y plantilla
@@ -25,7 +26,7 @@ Estado actual del branch:
 
 ### 1. Pendientes de infraestructura Maven
 
-- `Magic-8-Ball`
+- `SfChunkInfo`
   - problema detectado: candidato fuerte de quick win por parent y dependencias ya alineadas
   - objetivo: validar build con `-pl` y confirmar si compila sin tocar código
 

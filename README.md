@@ -72,8 +72,8 @@ powershell -ExecutionPolicy Bypass -File .\scripts\slimefun\smoke-test.ps1
 Estado documentado del branch `1.21-latin`:
 
 - `53` modulos activos en el reactor Maven raiz
-- `27` componentes confirmados para `1.21.11`
-- `26` modulos pendientes de validacion final, port o documentacion
+- `28` componentes confirmados para `1.21.11`
+- `25` modulos pendientes de validacion final, port o documentacion
 - `dough-core`: `dev.drake.dough:dough-core:1.3.1-DRAKE`
 - core activo: `sources/slimefun-core/Slimefun4-src`
 - variantes activas adoptadas desde Chagui:
@@ -231,6 +231,7 @@ Entre los componentes ya documentados como listos se incluyen:
 - `SimpleUtils`
 - `SlimyRepair`
 - `SFCalc`
+- `Magic-8-Ball`
 - `SoulJars`
 - `ExtraGear`
 - `ColoredEnderChests`
@@ -248,7 +249,7 @@ Ejemplos de pendientes inmediatos que vienen apareciendo en el trabajo reciente:
 - `DynaTech`
 - `SoundMuffler`
 - `SlimeChem`
-- `Magic-8-Ball`
+- `SfChunkInfo`
 - pruebas de runtime en `Paper/Purpur 1.21.11`
 
 ## Creditos
