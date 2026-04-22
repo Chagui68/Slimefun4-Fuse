@@ -72,7 +72,7 @@
         <dependency>
             <groupId>io.github.thebusybiscuit</groupId>
             <artifactId>ExoticGarden</artifactId>
-            <version>UNOFFICIAL</version>
+            <version>${slimefun.drake.version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -114,3 +114,4 @@
         </plugins>
     </build>
 </project>
+

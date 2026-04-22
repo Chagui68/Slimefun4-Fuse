@@ -97,8 +97,8 @@
         </dependency>
 
         <dependency>
-            <groupId>com.github.Slimefun</groupId>
-            <artifactId>Slimefun4</artifactId>
+            <groupId>dev.drake</groupId>
+            <artifactId>Slimefun</artifactId>
             <scope>provided</scope>
             <exclusions>
                 <exclusion>
@@ -115,4 +115,5 @@
         </dependency>
     </dependencies>
 </project>
+
 

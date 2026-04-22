@@ -1,10 +1,12 @@
 package dev.j3fftw.soundmuffler;
 
+import dev.drake.dough.items.CustomItemStack;
+
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import io.github.thebusybiscuit.slimefun4.core.researching.Research;
-import me.mrCookieSlime.Slimefun.Objects.Category;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
-import me.mrCookieSlime.Slimefun.cscorelib2.updater.GitHubBuildsUpdater;
+import io.github.thebusybiscuit.slimefun4.api.researches.Research;
+import io.github.thebusybiscuit.slimefun4.api.items.Category;
+import dev.drake.dough.items.CustomItemStack;
+import dev.drake.dough.updater.GitHubBuildsUpdater;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -28,7 +30,7 @@ public class SoundMuffler extends JavaPlugin implements SlimefunAddon {
         }
 
         SOUND_MUFFLER = new Category(new NamespacedKey(this, "sound_muffler"),
-            new CustomItem(Material.BEACON, "&7SoundMuffler", "", "&a> Click to open"));
+            new CustomItemStack(Material.BEACON, "&7SoundMuffler", "", "&a> Click to open"));
 
         new SoundMufflerListener(this).start();
 

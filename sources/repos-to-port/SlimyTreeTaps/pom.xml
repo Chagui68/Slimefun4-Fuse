@@ -14,7 +14,7 @@
 
     <groupId>io.github.thebusybiscuit</groupId>
     <artifactId>SlimyTreeTaps</artifactId>
-    <version>UNOFFICIAL</version>
+    <version>${slimefun.drake.version}</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -78,8 +78,8 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.Slimefun</groupId>
-            <artifactId>Slimefun4</artifactId>
+            <groupId>dev.drake</groupId>
+            <artifactId>Slimefun</artifactId>
             <scope>provided</scope>
             <exclusions>
                 <exclusion>
@@ -95,3 +95,4 @@
         </dependency>
     </dependencies>
 </project>
+

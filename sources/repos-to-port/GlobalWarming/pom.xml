@@ -12,7 +12,7 @@
 
     <groupId>me.poma123</groupId>
     <artifactId>GlobalWarming</artifactId>
-    <version>UNOFFICIAL</version>
+    <version>${slimefun.drake.version}</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -177,4 +177,5 @@
         </dependency>
     </dependencies>
 </project>
+
 

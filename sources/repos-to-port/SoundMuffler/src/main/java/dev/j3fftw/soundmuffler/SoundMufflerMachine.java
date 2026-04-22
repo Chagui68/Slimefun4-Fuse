@@ -1,22 +1,24 @@
 package dev.j3fftw.soundmuffler;
 
+import dev.drake.dough.items.CustomItemStack;
+
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun4.core.handlers.BlockPlaceHandler;
 import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
-import me.mrCookieSlime.Slimefun.Objects.handlers.ItemHandler;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemHandler;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
-import me.mrCookieSlime.Slimefun.cscorelib2.protection.ProtectableAction;
+import dev.drake.dough.items.CustomItemStack;
+import dev.drake.dough.protection.Interaction;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -66,9 +68,9 @@ public class SoundMufflerMachine extends SlimefunItem implements EnergyNetCompon
                     enabled = Boolean.parseBoolean(BlockStorage.getLocationInfo(b.getLocation(), "enabled"));
                 }
 
-                menu.replaceExistingItem(8, new CustomItem((enabled ? Material.REDSTONE : Material.GUNPOWDER),
+                menu.replaceExistingItem(8, new CustomItemStack((enabled ? Material.REDSTONE : Material.GUNPOWDER),
                     "&7Enabled: " + (enabled ? "&a\u2714" : "&4\u2718"), "", "&e> Click to enable this Machine"));
-                menu.replaceExistingItem(0, new CustomItem(Material.PAPER,
+                menu.replaceExistingItem(0, new CustomItemStack(Material.PAPER,
                     "&eVolume: &b" + volume,
                     "&7Valid value range: 0-100",
                     "&7L-click: -10",
@@ -110,7 +112,7 @@ public class SoundMufflerMachine extends SlimefunItem implements EnergyNetCompon
             public boolean canOpen(Block b, Player p) {
                 return p.hasPermission("slimefun.inventory.bypass")
                     || SlimefunPlugin.getProtectionManager()
-                    .hasPermission(p, b, ProtectableAction.ACCESS_INVENTORIES);
+                    .hasPermission(p, b, Interaction.INTERACT_BLOCK);
             }
 
             @Override
@@ -128,7 +130,7 @@ public class SoundMufflerMachine extends SlimefunItem implements EnergyNetCompon
 
     protected void constructMenu(BlockMenuPreset preset) {
         for (int i : border) {
-            preset.addItem(i, new CustomItem(Material.GRAY_STAINED_GLASS_PANE, " "),
+            preset.addItem(i, new CustomItemStack(Material.GRAY_STAINED_GLASS_PANE, " "),
                 (player, i1, itemStack, clickAction) -> false);
         }
     }

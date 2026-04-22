@@ -7,7 +7,7 @@ import com.comphenix.protocol.events.PacketAdapter;
 import com.comphenix.protocol.events.PacketEvent;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -17,6 +17,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 
 public class SoundMufflerListener extends PacketAdapter implements Listener, EnergyNetComponent {
+
+    @Override
+    public String getId() {
+        return "SOUND_MUFFLER";
+    }
 
     public SoundMufflerListener(Plugin plugin) {
         super(plugin, ListenerPriority.NORMAL,

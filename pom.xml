@@ -55,6 +55,8 @@
         <module>sources/repos-to-port/SlimyTreeTaps</module>
         <module>sources/repos-to-port/SoulJars</module>
         <module>sources/repos-to-port/SoundMuffler</module>
+        <module>sources/repos-to-port/ExtraHeads</module>
+        <module>sources/repos-to-port/MobCapturer</module>
 
         <!-- Batch 2 & Expansion Libraries -->
         <module>sources/batch-2-expansion/SefiLib</module>

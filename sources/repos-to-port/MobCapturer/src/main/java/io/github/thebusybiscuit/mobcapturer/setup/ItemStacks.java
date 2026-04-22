@@ -7,7 +7,7 @@ import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.libraries.commons.lang.Validate;
+import org.apache.commons.lang.Validate;
 import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
 
 import lombok.experimental.UtilityClass;

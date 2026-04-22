@@ -49,7 +49,7 @@ public class SlimefunChest extends SlimefunItem {
                     case PRIVATE:
                         return BlockStorage.getLocationInfo(b.getLocation(), "owner").equals(p.getUniqueId().toString());
                     default:
-                        return Slimefun.getProtectionManager().hasPermission(p, b, Interaction.INTERACT_BLOCK);
+                        return Slimefun.getProtectionManager().hasPermission(p, b.getLocation(), Interaction.INTERACT_BLOCK);
                 }
             }
 
