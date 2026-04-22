@@ -18,9 +18,11 @@ Este documento detalla el progreso del port masivo del ecosistema Slimefun a la 
 | **dough-core** | **[x] LISTO** | Versión `1.3.1-DRAKE`. NMS purgado y empaquetado. |
 | **SefiLib** | **[x] LISTO** | Compilado para 1.21.11. |
 | **InfinityLib** | **[x] LISTO** | Compilado para 1.21.11. |
-| **Networks** | **[x] LISTO** | Refactorizado: Constantes 1.21 corrigas (LUCK_OF_THE_SEA, etc). |
+| **Networks** | **[x] LISTO** | Compila en 1.21.11. POM alineado con repos válidos y referencia cruzada con el fork de Chagui. |
+| **Networks_Better_Compatibility** | **[x] LISTO** | Validado en 1.21.11 como referencia externa útil para integración. |
 | **LiteXpansion** | **[x] LISTO** | Refactorizado: Eliminada reflexión de encantamientos (incompatible). |
 | **SlimeTinker** | **[x] LISTO** | Compila en 1.21.11. Integración con `Networks` quedó opcional para no bloquear el build. |
+| **Cultivation** | **[x] LISTO** | Compila en 1.21.11. Contrastado con `Cultivation_Updated` de Chagui. |
 | **+60 Addons Restantes** | [ ] Pendiente | Clonados y listos para procesar uno a uno. |
 
 ## 3. Logros del Día 1
@@ -30,9 +32,12 @@ Este documento detalla el progreso del port masivo del ecosistema Slimefun a la 
 - [x] Creación de la `docs/MIGRATION_GUIDE_1_21_11.md`.
 
 ## 4. Próximos Pasos (Día 2)
-1. Terminar `Networks` y sus dependencias opcionales.
-2. Seguir con `CrystamaeHistoria` y `SMG`.
+1. Seguir con `SMG` y `CrystamaeHistoria`.
+2. Revisar `Supreme` y `TranscEndence`.
 3. Mantener compilación aislada con `-pl` para no saturar el PC.
+
+## 5. Créditos de Referencia
+- **Chagui (`Chagui68`)** aportó referencias útiles de porting en sus forks `Networks_Better_Compatibility` y `Cultivation_Updated`, que se usaron para validar repositorios, compatibilidad y estado de compilación.
 
 ---
 *Checklist actualizado al cierre de la sesión del 21/04/2026.*

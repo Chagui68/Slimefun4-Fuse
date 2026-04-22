@@ -38,9 +38,13 @@ Esta tabla clasifica los componentes según el esfuerzo técnico estimado para s
 
 ### ✅ Logros del Checkpoint actual
 - [x] **Dough-Core (1.3.1-DRAKE)**: Unificación total de librerías.
-- [x] **Networks**: Resolución de bucle de dependencias y migración de encantamientos 1.21.1.
+- [x] **Networks**: Compila en 1.21.11. Se alinearon repos/dependencias con la línea de trabajo validada en el fork de Chagui.
 - [x] **LiteXpansion**: Eliminación de hacks de reflexión para compatibilidad total con Java 21.
 - [x] **SlimeTinker**: Compilación restaurada en 1.21.11 con integración de `Networks` degradada a opcional.
+- [x] **Cultivation**: Compila en 1.21.11 dentro del monorepo.
+
+### 🤝 Créditos
+- **Chagui (`Chagui68`)**: referencia práctica para el port con sus forks `Networks_Better_Compatibility` y `Cultivation_Updated`, usados para contrastar repositorios, compatibilidad y estrategia de actualización.
 
 ---
 

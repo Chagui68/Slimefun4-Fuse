@@ -50,7 +50,7 @@ Si Maven se queda colgado descargando metadatos de `angeschossen` o `william278`
 
 ## 📂 Estado de los Addons (Audit)
 Actualmente tenemos integrados en el workspace:
-1. **Batch 2 Expansion**: `Networks`, `LiteXpansion`, `SlimeTinker`. (Estatus: `SlimeTinker` compila; `Networks` sigue abierto).
+1. **Batch 2 Expansion**: `Networks`, `LiteXpansion`, `SlimeTinker`, `Cultivation`, `Networks_Better_Compatibility`. (Estatus: compilando en 1.21.11).
 2. **Community Addons**: ~21 repositorios en la carpeta homónima.
 3. **Slimefun Core**: Adaptado para 1.21.11 (Base Drake).
 
@@ -65,6 +65,8 @@ A pesar de los grandes avances del Día 1, el ecosistema es masivo. Aquí está 
 
 ### 1. Finalización de Módulos Críticos (Batch-2)
 - [x] **SlimeTinker**: Compila en 1.21.11. Se hizo opcional la integración con `Networks` para evitar bloqueo por dependencias externas.
+- [x] **Networks**: Compila en 1.21.11. Se corrigieron repositorios de resolución usando como referencia el fork `Networks_Better_Compatibility`.
+- [x] **Cultivation**: Compila en 1.21.11. Contrastado con el fork `Cultivation_Updated`.
 - [ ] **SMG (Simple Material Generators)**: Actualizar POM y verificar constantes de materiales.
 - [ ] **CrystamaeHistoria**: Migrar lógica de partículas y encantamientos.
 - [ ] **TranscEndence**: Revisar compatibilidad con el nuevo sistema de teletransporte de la 1.21.
@@ -84,6 +86,9 @@ A pesar de los grandes avances del Día 1, el ecosistema es masivo. Aquí está 
 ### 4. Pruebas en Vivo (Runtime)
 - [ ] Instalar el `Slimefun4-src` (Core) en un servidor de pruebas 1.21.11.
 - [ ] Comprobar que la `SlimefunGuide` se abre y los items se pueden craftear sin errores en consola.
+
+## 🤝 Créditos de Porting
+- **Chagui (`Chagui68`)**: sus forks `Networks_Better_Compatibility` y `Cultivation_Updated` sirvieron como referencia práctica para validar la resolución de dependencias y la compatibilidad base durante la migración.
 
 ---
 *Manual generado para el equipo de DrakesCraft-Labs.*
