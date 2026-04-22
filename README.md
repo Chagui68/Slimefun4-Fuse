@@ -24,25 +24,26 @@ Aquí centralizamos el desarrollo de más de 35 addons, unificando dependencias 
 > **Versión Actual**: `1.21.11` | **Estado**: 🧪 En Fase de Pruebas (Beta) | **Framework**: Drake 1.0
 
 Actualmente, el laboratorio trabaja sobre un universo de **87 addons** más `dough-core` y `Slimefun4-src`.
-De ese total, el **reactor activo** cubre **55 módulos** (`53 addons + 2 módulos base`).
+De ese total, el **reactor activo** cubre **56 módulos** (`54 addons + 2 módulos base`).
 
 **Progreso de Migración:**
 `[============================>-----] 85%`
 
 | Métrica | Valor |
 | :--- | :--- |
-| 🚀 **Componentes Confirmados en Reactor** | `49` |
+| 🚀 **Componentes Confirmados en Reactor** | `50` |
 | ⏳ **Pendientes Dentro del Reactor** | `6` |
-| 🧩 **Addons Fuera del Reactor** | `34` |
-| 📚 **Pendiente Bruto del Repo** | `40 addons` |
+| 🧩 **Addons Fuera del Reactor** | `33` |
+| 📚 **Pendiente Bruto del Repo** | `39 addons` |
 | 📦 **Librería Core** | `dough-core:1.3.1-DRAKE` |
 
 **Cómo leer este tablero**
 - `6 pendientes` significa solo los addons que ya están declarados en el `pom.xml` raíz y todavía no quedan verdes.
-- `34 fuera del reactor` significa addons presentes en el repo que aún no están incorporados al build unificado.
-- El backlog real a revisar es `40 addons`, no `6`.
+- `33 fuera del reactor` significa addons presentes en el repo que aún no están incorporados al build unificado.
+- El backlog real a revisar es `39 addons`, no `6`.
 
 **Últimos cierres validados**
+- `DyeBench`: integrado al reactor y alineado a dependencias Drake.
 - `FoxyMachines`: eliminados usos de utilidades legacy de `commons-lang`.
 - `FlowerPower`: ajustado al API moderno de atributos de Bukkit/Paper.
 - `MissileWarfare`: vuelve a compilar en el reactor actual.

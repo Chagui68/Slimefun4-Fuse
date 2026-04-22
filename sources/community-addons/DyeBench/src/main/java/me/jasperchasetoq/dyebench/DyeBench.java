@@ -1,8 +1,7 @@
 package me.jasperchasetoq.dyebench;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
+import dev.drake.dough.updater.GitHubBuildsUpdater;
 
 import me.jasperchasetoq.dyebench.setup.DyeBenchItemSetup;
 
@@ -18,9 +17,6 @@ public class DyeBench extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public void onEnable() {
-
-        Config cfg = new Config(this);
-
         DyeBenchItemSetup.setup(this);
         if (!new File(getDataFolder(), "config.yml").exists()) {
             saveDefaultConfig();
