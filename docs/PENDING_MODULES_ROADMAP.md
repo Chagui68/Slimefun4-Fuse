@@ -7,8 +7,8 @@ Hoja de ruta operativa para bajar la cola de modulos pendientes del branch `1.21
 Checkpoint actual del reactor:
 
 - `53` modulos activos
-- `28` componentes confirmados
-- `25` modulos pendientes
+- `29` componentes confirmados
+- `24` modulos pendientes
 
 Fuente de verdad del estado:
 
@@ -18,7 +18,7 @@ Fuente de verdad del estado:
 
 ## Objetivo Final
 
-Cerrar los `25` modulos restantes con evidencia real, no con estimaciones.
+Cerrar los `24` modulos restantes con evidencia real, no con estimaciones.
 
 Cada modulo debe terminar en uno de estos estados:
 
@@ -81,7 +81,6 @@ Un modulo cuenta como cerrado para este roadmap cuando:
 - `MissileWarfare`
 - `PotionExpansion`
 - `RykenSlimeCustomizer-EN`
-- `SfChunkInfo`
 - `Simple-Storage`
 - `SlimeCustomizer`
 - `VillagerUtil`
@@ -96,9 +95,8 @@ Meta: convertir varios pendientes en `LISTO` con cambios chicos de `pom.xml`, pa
 
 Orden sugerido:
 
-1. `SfChunkInfo`
-2. `Element-Manipulation`
-3. `VillagerUtil`
+1. `Element-Manipulation`
+2. `VillagerUtil`
 
 Por que entran aca:
 
@@ -111,7 +109,7 @@ Resultado esperado de la fase:
 
 - bajar rapidamente el numero de pendientes
 - descubrir patrones repetidos
-- reutilizar fixes cortos como paso con `SimpleUtils`, `SlimyRepair`, `SFCalc` y `Magic-8-Ball`
+- reutilizar fixes cortos como paso con `SimpleUtils`, `SlimyRepair`, `SFCalc`, `Magic-8-Ball` y `SfChunkInfo`
 
 ## Fase 2: Dependencias Y Alineacion Media
 
@@ -225,11 +223,10 @@ Plantilla de trabajo por turno:
 
 Si hubiera que seguir hoy mismo, el orden recomendado seria:
 
-1. `SfChunkInfo`
-2. `Element-Manipulation`
-3. `VillagerUtil`
-4. `DynaTech`
-5. `SlimeChem`
+1. `Element-Manipulation`
+2. `VillagerUtil`
+3. `DynaTech`
+4. `SlimeChem`
 
 ## Criterio Para Reordenar
 
