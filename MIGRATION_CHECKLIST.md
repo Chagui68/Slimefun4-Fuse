@@ -31,7 +31,10 @@ El `pom.xml` raíz es el **reactor Maven** del workspace:
 | **LiteXpansion** | **[x] LISTO** | Refactorizado: Eliminada reflexión de encantamientos (incompatible). |
 | **SlimeTinker** | **[x] LISTO** | Compila en 1.21.11. Integración con `Networks` quedó opcional para no bloquear el build. |
 | **Cultivation_Updated** | **[x] LISTO** | Compila en 1.21.11 y reemplaza al `Cultivation` antiguo en el reactor. |
-| **+60 Addons Restantes** | [ ] Pendiente | Clonados y listos para procesar uno a uno. |
+| **CrystamaeHistoria** | **[x] LISTO** | Portado a 1.21.11 (paquetes y persistencia adaptados). |
+| **Supreme** | **[x] LISTO** | Compila en 1.21.11. |
+| **TranscEndence** | **[x] LISTO** | Compila en 1.21.11. |
+| **+57 Addons Restantes** | [ ] Pendiente | Clonados y listos para procesar uno a uno. |
 
 ## 3. Logros del Día 1
 - [x] Unificación del reactor Maven (eliminados repositorios muertos).
