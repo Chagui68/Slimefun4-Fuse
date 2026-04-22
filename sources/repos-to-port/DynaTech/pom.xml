@@ -25,13 +25,12 @@
         <dependency>
             <groupId>dev.drake</groupId>
             <artifactId>Slimefun</artifactId>
-            <version>5.0-Drake-1.21.11</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>io.github.mooy1</groupId>
             <artifactId>InfinityExpansion</artifactId>
-            <version>c4e42cc</version>
+            <version>1.20.6-Drake</version>
             <scope>provided</scope>
         </dependency>
         

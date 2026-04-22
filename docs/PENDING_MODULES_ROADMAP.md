@@ -7,8 +7,8 @@ Hoja de ruta operativa para bajar la cola de modulos pendientes del branch `1.21
 Checkpoint actual del reactor:
 
 - `53` modulos activos
-- `30` componentes confirmados
-- `23` modulos pendientes
+- `31` componentes confirmados
+- `22` modulos pendientes
 
 Fuente de verdad del estado:
 
@@ -18,7 +18,7 @@ Fuente de verdad del estado:
 
 ## Objetivo Final
 
-Cerrar los `23` modulos restantes con evidencia real, no con estimaciones.
+Cerrar los `22` modulos restantes con evidencia real, no con estimaciones.
 
 Cada modulo debe terminar en uno de estos estados:
 
@@ -57,7 +57,6 @@ Un modulo cuenta como cerrado para este roadmap cuando:
 
 ### Repos To Port
 
-- `DynaTech`
 - `EcoPower`
 - `ExtraUtils`
 - `FluffyMachines`
@@ -132,7 +131,6 @@ Riesgos tipicos de esta fase:
 
 Notas destacadas:
 
-- `DynaTech` ya esta marcado como candidato claro porque todavia depende de `ExoticGarden:UNOFFICIAL`
 - `SlimeChem` viene apareciendo como siguiente batch fuerte
 
 ## Fase 3: Port De Codigo De Riesgo Medio
@@ -220,9 +218,9 @@ Plantilla de trabajo por turno:
 
 Si hubiera que seguir hoy mismo, el orden recomendado seria:
 
-1. `DynaTech`
-2. `SlimeChem`
-3. `Element-Manipulation`
+1. `SlimeChem`
+2. `Element-Manipulation`
+3. `EcoPower`
 
 ## Criterio Para Reordenar
 

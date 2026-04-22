@@ -4,8 +4,8 @@ Estado actual del branch:
 
 - Rama: `1.21-latin`
 - Reactor: `53` módulos activos
-- Confirmados: `30`
-- Pendientes: `23`
+- Confirmados: `31`
+- Pendientes: `22`
 
 ## Qué quedó listo hoy
 
@@ -14,6 +14,7 @@ Estado actual del branch:
 - `SFMobDrops` verificado con build aislado
 - `GlobalWarming` verificado con build aislado
 - `SimpleUtils` compila en `1.21.11`
+- `DynaTech` compila en `1.21.11`
 - `SlimyRepair` compila en `1.21.11`
 - `SFCalc` compila en `1.21.11`
 - `Magic-8-Ball` compila en `1.21.11`
@@ -32,10 +33,6 @@ Estado actual del branch:
   - problema detectado: no era quick win; cae por clases/imports ausentes de `adventure-platform-bukkit` y paquetes legacy de `dough`
   - objetivo: decidir si se resuelve por dependencias faltantes del `pom.xml` o por refactor de API antes de retomarlo
 
-- `DynaTech`
-  - problema detectado: dependencia externa a `io.github.thebusybiscuit:ExoticGarden:UNOFFICIAL`
-  - objetivo: reemplazar esa dependencia por integración reactor/local o volverla opcional
-
 ### 2. Pendientes de port real
 
 - `SoundMuffler`
@@ -45,6 +42,9 @@ Estado actual del branch:
 
 - `SlimeChem`
   - sigue siendo uno de los candidatos fuertes del siguiente batch
+
+- `DynaTech`
+  - ya no está pendiente: quedó validado tras alinear `Slimefun` e `InfinityExpansion` al reactor
 
 ### 3. Pruebas de runtime
 
