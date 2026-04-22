@@ -8,8 +8,8 @@
 ![Build](https://img.shields.io/badge/Build-Maven-red?style=for-the-badge&logo=apachemaven)
 ![License](https://img.shields.io/badge/License-GPL--3.0-blue?style=for-the-badge)
 
-**Drake Framework** es la respuesta definitiva para un ecosistema de Slimefun moderno, eficiente e independiente. 
-Hemos unificado **+85 repositorios** en un Mono-Repo estratégico para la migración total a la 1.21.11.
+**Drake Framework** es la respuesta definitiva para un ecosistema de Slimefun moderno, eficiente e independiente.
+Este repo funciona como **laboratorio de migración**: un mono-repo estratégico para unificar versiones, dependencias, compatibilidad Paper y fixes repetidos antes de volver a separar addons.
 
 [Explorar Código](/sources) • [Checklist de Migración](MIGRATION_CHECKLIST.md) • [Arquitectura](ARCHITECTURE.md) • [Dev Setup](docs/DEV_SETUP.md)
 
@@ -43,6 +43,13 @@ Esta tabla clasifica los componentes según el esfuerzo técnico estimado para s
 - [x] **SlimeTinker**: Compilación restaurada en 1.21.11 con integración de `Networks` degradada a opcional.
 - [x] **Cultivation_Updated**: Compila en 1.21.11 y reemplaza al `Cultivation` viejo dentro del workspace.
 
+### 🔧 Qué Hace El Reactor
+- El `pom.xml` raíz no es “un plugin gigante”; es un **parent/reactor Maven**.
+- Centraliza `Java 21`, `Paper 1.21.11`, `Slimefun RC-37`, `dough-core` y librerías comunes para que los módulos no repitan lo mismo.
+- Declara qué carpetas del workspace participan en el build y en qué orden conviene resolver dependencias.
+- Permite compilar por módulo con `-pl` sin perder una base común de versiones.
+- Su función principal es **coordinar** el port masivo, no reemplazar el destino final de tener repos separados.
+
 ### 🤝 Créditos
 - **Chagui (`Chagui68`)**: referencia práctica y base adoptada para el port con sus forks `Networks_Better_Compatibility` y `Cultivation_Updated`, ahora integrados como reemplazo de las variantes antiguas.
 
@@ -53,7 +60,7 @@ Esta tabla clasifica los componentes según el esfuerzo técnico estimado para s
 | :-- | :-- |
 | **`dough-core`** | Versión nativizada para 1.21.11. Unifica 13 módulos en uno solo (`dev.drake.dough`). |
 | **`Version Bridge`** | Abstracción total entre el antiguo NBT/PDC y los nuevos componentes de ítem. |
-| **`Multi-Module Maven`** | Organización centralizada de dependencias y versiones para +85 módulos. |
+| **`Multi-Module Maven Reactor`** | Parent POM que centraliza versiones, módulos y dependencias comunes para coordinar el porting masivo. |
 
 ## 📂 Organización del Proyecto
 ```bash

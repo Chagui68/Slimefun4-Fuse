@@ -33,7 +33,16 @@ Se ha creado un "Drake Framework" basado en `dough-core`. Todos los addons deben
 
 ## 🏗️ Estrategia de Compilación (Maven)
 
-El reactor principal tiene +24 módulos. Compilarlos todos a la vez consumirá el 100% de tu CPU y RAM.
+El `pom.xml` raíz funciona como **reactor Maven**. No es un plugin más: coordina módulos, versiones y dependencias comunes del laboratorio de migración.
+
+### Qué hace exactamente el `pom` pesado
+- fija la versión global de `Java`, `Paper`, `Slimefun` y `dough-core`
+- define qué addons y librerías forman parte del build actual
+- resuelve el orden lógico entre librerías base y addons dependientes
+- permite compilar un módulo concreto con `-pl` sin perder consistencia
+- evita repetir el mismo cambio de versión o dependencia en docenas de repos
+
+El reactor principal tiene muchos módulos. Compilarlos todos a la vez consumirá mucho CPU y RAM.
 
 ### Atajos y Comandos Salvavidas
 - **Compilar solo UN plugin** (Recomendado):
@@ -53,6 +62,9 @@ Actualmente tenemos integrados en el workspace:
 1. **Batch 2 Expansion**: `Networks_Better_Compatibility`, `LiteXpansion`, `SlimeTinker`, `Cultivation_Updated`. (Estatus: compilando en 1.21.11).
 2. **Community Addons**: ~21 repositorios en la carpeta homónima.
 3. **Slimefun Core**: Adaptado para 1.21.11 (Base Drake).
+
+> [!TIP]
+> El workspace ya no usa las carpetas antiguas `Networks` y `Cultivation` para el reactor. Fueron reemplazadas por `Networks_Better_Compatibility` y `Cultivation_Updated`.
 
 > [!NOTE]
 > La Wiki de Slimefun lista +80 addons. Aún faltan aproximadamente 40 repositorios que no están presentes en este workspace. Se pueden añadir clonando sus ramas master/v4 a la carpeta `community-addons`.

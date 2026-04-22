@@ -11,6 +11,15 @@ Este documento detalla el progreso del port masivo del ecosistema Slimefun a la 
 | ProtocolLib | 5.3.0 (Build 720+) | [x] **LISTO** |
 | Vault | Standard 1.21 | [x] **LISTO** |
 
+## 1.1 Reactor Actual
+
+El `pom.xml` raíz es el **reactor Maven** del workspace:
+
+- define las versiones compartidas (`Java 21`, `Paper 1.21.11`, `Slimefun RC-37`, `dough-core`)
+- lista los módulos activos del port
+- permite compilar por addon sin perder una base común
+- hoy las variantes activas para esta parte del árbol son `Cultivation_Updated` y `Networks_Better_Compatibility`
+
 ## 2. Estado de Porteo (Dough-Core & Addons)
 
 | Componente | Estado de Porteo | Observaciones |
