@@ -34,7 +34,9 @@ El `pom.xml` raíz es el **reactor Maven** del workspace:
 | **CrystamaeHistoria** | **[x] LISTO** | Portado a 1.21.11 (paquetes y persistencia adaptados). |
 | **Supreme** | **[x] LISTO** | Compila en 1.21.11. |
 | **TranscEndence** | **[x] LISTO** | Compila en 1.21.11. |
-| **+57 Addons Restantes** | [ ] Pendiente | Clonados y listos para procesar uno a uno. |
+| **SMG (SimpleMaterialGenerators)** | **[x] LISTO** | Portado a 1.21.11. Dependencia de PaperLib purgada. |
+| **+56 Addons Restantes** | [ ] Pendiente | Clonados y listos para procesar uno a uno. |
+
 
 ## 3. Logros del Día 1
 - [x] Unificación del reactor Maven (eliminados repositorios muertos).
@@ -42,9 +44,9 @@ El `pom.xml` raíz es el **reactor Maven** del workspace:
 - [x] Mapeo completo de renombrados de constantes (Bukkit -> Paper 1.21).
 - [x] Creación de la `docs/MIGRATION_GUIDE_1_21_11.md`.
 
-## 4. Próximos Pasos (Día 2)
-1. Seguir con `SMG` y `CrystamaeHistoria`.
-2. Revisar `Supreme` y `TranscEndence`.
+## 4. Próximos Pasos (Día 3)
+1. Seguir con el resto de expansiones del Batch 2 (ej. `SefiLib` refactorización si falta).
+2. Hacer testing in-game en un servidor local 1.21.11 de los addons ya porteados (`SMG`, `Supreme`, `TranscEndence`, etc.).
 3. Mantener compilación aislada con `-pl` para no saturar el PC.
 
 ## 5. Créditos de Referencia

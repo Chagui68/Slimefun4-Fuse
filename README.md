@@ -42,6 +42,7 @@ Esta tabla clasifica los componentes según el esfuerzo técnico estimado para s
 - [x] **LiteXpansion**: Eliminación de hacks de reflexión para compatibilidad total con Java 21.
 - [x] **SlimeTinker**: Compilación restaurada en 1.21.11 con integración de `Networks` degradada a opcional.
 - [x] **Cultivation_Updated**: Compila en 1.21.11 y reemplaza al `Cultivation` viejo dentro del workspace.
+- [x] **Batch 2 Expansiones Completadas**: `SMG` (migración de PaperLib), `Supreme`, `TranscEndence` y `CrystamaeHistoria` conectados y compilando orgánicamente usando componentes actualizados.
 
 ### 🔧 Qué Hace El Reactor
 - El `pom.xml` raíz no es “un plugin gigante”; es un **parent/reactor Maven**.
