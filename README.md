@@ -19,6 +19,7 @@ Si entraste al repo buscando "que esta listo y que falta", arranca por aca:
 - [Smoke test](docs/SMOKE_TEST.md)
 - [Setup de desarrollo](docs/DEV_SETUP.md)
 - [Arquitectura](ARCHITECTURE.md)
+- [Ruta de cierre de pendientes](docs/PENDING_MODULES_ROADMAP.md)
 - [Handoff de trabajo](docs/TOMORROW_HANDOFF.md)
 - [Plantilla para addons nuevos](docs/NEW_ADDON_TEMPLATE.md)
 
@@ -143,6 +144,10 @@ Ve a [docs/SMOKE_TEST.md](docs/SMOKE_TEST.md).
 ### Quiero seguir el trabajo del siguiente turno
 
 Ve a [docs/TOMORROW_HANDOFF.md](docs/TOMORROW_HANDOFF.md).
+
+### Quiero ver el plan hasta cerrar todos los pendientes
+
+Ve a [docs/PENDING_MODULES_ROADMAP.md](docs/PENDING_MODULES_ROADMAP.md).
 
 ### Quiero crear un addon nuevo alineado al stack
 
