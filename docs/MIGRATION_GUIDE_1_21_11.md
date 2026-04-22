@@ -59,15 +59,16 @@ Si Maven se queda colgado descargando metadatos de `angeschossen` o `william278`
 
 ## 📂 Estado de los Addons (Audit)
 Actualmente tenemos integrados en el workspace:
-1. **Batch 2 Expansion**: `Networks_Better_Compatibility`, `LiteXpansion`, `SlimeTinker`, `Cultivation_Updated`. (Estatus: compilando en 1.21.11).
-2. **Community Addons**: ~21 repositorios en la carpeta homónima.
-3. **Slimefun Core**: Adaptado para 1.21.11 (Base Drake).
+1. **53 módulos activos** en el reactor raíz.
+2. **Batch 2 Expansion**: `SefiLib`, `InfinityLib`, `Cultivation_Updated`, `LiteXpansion`, `Networks_Better_Compatibility`, `SlimeTinker`, `SMG`, `Supreme` y `TranscEndence`.
+3. **Community Addons**: `18` módulos activos en la carpeta homónima.
+4. **Slimefun Core**: Adaptado para 1.21.11 como base Drake.
 
 > [!TIP]
 > El workspace ya no usa las carpetas antiguas `Networks` y `Cultivation` para el reactor. Fueron reemplazadas por `Networks_Better_Compatibility` y `Cultivation_Updated`.
 
 > [!NOTE]
-> La Wiki de Slimefun lista +80 addons. Aún faltan aproximadamente 40 repositorios que no están presentes en este workspace. Se pueden añadir clonando sus ramas master/v4 a la carpeta `community-addons`.
+> La Wiki de Slimefun lista más addons de los que hoy existen dentro del laboratorio. Esta guía se centra en el **estado real del workspace local**: `20` componentes ya confirmados y `33` módulos pendientes dentro del reactor actual.
 
 ---
 
@@ -79,17 +80,14 @@ A pesar de los grandes avances del Día 1, el ecosistema es masivo. Aquí está 
 - [x] **SlimeTinker**: Compila en 1.21.11. Se hizo opcional la integración con `Networks` para evitar bloqueo por dependencias externas.
 - [x] **Networks_Better_Compatibility**: Compila en 1.21.11 y reemplaza la variante antigua de `Networks`.
 - [x] **Cultivation_Updated**: Compila en 1.21.11 y reemplaza la variante antigua de `Cultivation`.
-- [ ] **SMG (Simple Material Generators)**: Actualizar POM y verificar constantes de materiales.
-- [ ] **CrystamaeHistoria**: Migrar lógica de partículas y encantamientos.
-- [ ] **TranscEndence**: Revisar compatibilidad con el nuevo sistema de teletransporte de la 1.21.
-- [ ] **Supreme**: Integración básica y corrección de advertencias.
+- [x] **SMG (Simple Material Generators)**: Compila en 1.21.11.
+- [x] **CrystamaeHistoria**: Portado a 1.21.11 y ya no bloquea el reactor.
+- [x] **TranscEndence**: Compila en 1.21.11.
+- [x] **Supreme**: Compila en 1.21.11.
 
 ### 2. Procesamiento Masivo de Addons
-- [ ] **Repos-to-port (26 repos)**: Módulos como `ExoticGarden`, `DynaTech` (v2), `ElectricSpawners` y `SoulJars` requieren una revisión individual de `pom.xml` para apuntar al nuevo `dough-core`.
-- [ ] **Community-addons (~47 repos)**: Esta es la tarea más larga. Se deben procesar uno por uno buscando:
-    - Imports obsoletos.
-    - Uso de `org.bukkit.enchantments.Enchantment` (cambiar `LUCK` -> `LUCK_OF_THE_SEA`, etc).
-    - Métodos de NMS o Reflection (sustituir por API de Paper).
+- [ ] **Repos-to-port pendientes**: El frente activo ya no incluye `ExoticGarden`, `SoulJars`, `ExtraGear`, `ColoredEnderChests`, `DyedBackpacks` ni `InfinityExpansion`, porque ya forman parte del checkpoint confirmado. El trabajo sigue sobre módulos como `DynaTech`, `ElectricSpawners`, `SlimeChem`, `SoundMuffler` y compañía.
+- [ ] **Community-addons pendientes**: El siguiente tramo sigue siendo el más largo. Se deben procesar módulo por módulo buscando imports obsoletos, renombres de API Bukkit/Paper 1.21 y reemplazo de reflection/NMS por Paper cuando sea viable.
 
 ### 3. Verificación de Lógica de Datos (Components)
 - [ ] **PersistentDataAPI**: Auditar el manejo de metadatos en items. La 1.21 cambió los items a "Data Components", lo que puede afectar a cómo Slimefun guarda los IDs de los items.
@@ -98,6 +96,11 @@ A pesar de los grandes avances del Día 1, el ecosistema es masivo. Aquí está 
 ### 4. Pruebas en Vivo (Runtime)
 - [ ] Instalar el `Slimefun4-src` (Core) en un servidor de pruebas 1.21.11.
 - [ ] Comprobar que la `SlimefunGuide` se abre y los items se pueden craftear sin errores en consola.
+
+## 📍 Dónde quedó el proyecto
+- `README.md` y `MIGRATION_CHECKLIST.md` ya reflejan el conteo real del reactor.
+- Los forks activos de Chagui para `Networks` y `Cultivation` quedaron adoptados como variantes oficiales del laboratorio.
+- El siguiente trabajo ya no es "arreglar la base", sino seguir bajando la cola de los `33` módulos pendientes con compilación aislada vía `-pl`.
 
 ## 🤝 Créditos de Porting
 - **Chagui (`Chagui68`)**: sus forks `Networks_Better_Compatibility` y `Cultivation_Updated` quedaron adoptados como variantes activas dentro del workspace para estos addons.

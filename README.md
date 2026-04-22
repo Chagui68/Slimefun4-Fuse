@@ -10,6 +10,7 @@
 
 **Slimefun 6 (Drake Framework)** es la respuesta definitiva para un ecosistema de Slimefun moderno, eficiente e independiente.
 Este repo funciona como **laboratorio de migración**: un mono-repo estratégico para unificar versiones, dependencias, compatibilidad Paper y fixes repetidos antes de volver a separar addons.
+Hoy el reactor agrupa **53 módulos activos**: `Slimefun 6 Core`, `dough-core`, librerías base y addons del port masivo.
 
 [Explorar Código](/sources) • [Checklist de Migración](MIGRATION_CHECKLIST.md) • [Arquitectura](ARCHITECTURE.md) • [Dev Setup](docs/DEV_SETUP.md)
 
@@ -39,8 +40,15 @@ Esta tabla clasifica los componentes según el esfuerzo técnico estimado para s
 ### ✅ Logros del Checkpoint actual
 - [x] **Slimefun 6**: Salto generacional para soporte nativo de 1.21.11.
 - [x] **Dough-Core (1.3.1-DRAKE)**: Unificación total de librerías.
-- [x] **Networks_Better_Compatibility**: Compila en 1.21.11 y reemplaza al `Networks` viejo.
-- [x] **Batch 3 Completado**: `AlchimiaVitae`, `CrystamaeHistoria` y `DankTech2` migrados exitosamente.
+- [x] **20 componentes confirmados**: `Slimefun 6 Core`, `dough-core` y 18 addons/librerías ya documentados como listos.
+- [x] **Forks activos de Chagui**: `Networks_Better_Compatibility` y `Cultivation_Updated` reemplazan a las variantes antiguas.
+- [x] **Batch técnico cerrado**: `SMG`, `Supreme`, `TranscEndence`, `CrystamaeHistoria`, `ExoticGarden` y otros módulos clave ya quedaron alineados al checkpoint actual.
+
+### 📌 Estado real del tablero
+- `53` módulos activos en el reactor raíz.
+- `20` componentes confirmados para `1.21.11`.
+- `33` módulos aún pendientes de validación final, port o documentación.
+- La documentación prioriza **el estado real del workspace**, no el conteo histórico de la wiki pública.
 
 ### 🔧 Qué Hace El Reactor
 - El `pom.xml` raíz centraliza `Java 21`, `Paper 1.21.11`, `Slimefun 6.0`, `dough-core` y librerías comunes.
@@ -62,7 +70,7 @@ Damos crédito a todos los visionarios detrás de este ecosistema:
 - **[Mooy1](https://github.com/Mooy1)**: Creador original de InfinityExpansion.
 - **[Sfiguz7](https://github.com/Sfiguz7)**: Creador original de DankTech2.
 - **[Chagui68](https://github.com/Chagui68)**: Aportes fundamentales en compatibilidad de redes y cultivos.
-- **[Pablo Elías](https://github.com/pabloelias)**: Arquitecto del **Drake Framework** y líder de la migración a **Slimefun 6**.
+- **[Pablo Elías](https://github.com/JackStar6677-1)**: Arquitecto del **Drake Framework** y líder de la migración a **Slimefun 6**.
 
 ---
 <div align="center">

@@ -7,7 +7,7 @@ Este addon ha sido portado y optimizado como parte del ecosistema **Slimefun 6**
 
 ## 🤝 Créditos y Autoría
 - **Autor Original**: [Sefiraat](https://github.com/Sefiraat)
-- **Port a 1.21.11**: [Pablo Elías](https://github.com/pabloelias) (DrakesCraft-Labs)
+- **Port a 1.21.11**: [Pablo Elías](https://github.com/JackStar6677-1) (DrakesCraft-Labs)
 
 ---
 

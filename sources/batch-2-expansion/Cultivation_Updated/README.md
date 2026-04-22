@@ -10,7 +10,7 @@
 ## 🤝 Créditos y Autoría
 - **Autor Original**: [Sefiraat](https://github.com/Sefiraat)
 - **Mantenedor Base**: [Chagui68](https://github.com/Chagui68)
-- **Port a 1.21.11**: [Pablo Elías](https://github.com/pabloelias) (DrakesCraft-Labs)
+- **Port a 1.21.11**: [Pablo Elías](https://github.com/JackStar6677-1) (DrakesCraft-Labs)
 
 ---
 
