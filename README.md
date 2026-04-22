@@ -32,19 +32,19 @@ Esta tabla clasifica los componentes según el esfuerzo técnico estimado para s
 | Nivel de Dificultad | Componentes Representativos | Estado de Porteo |
 | :--- | :--- | :--- |
 | **Nivel 1: Easy** (Items/Recetas) | ExoticGarden, SoulJars, ExtraGear | ⏳ Pendiente |
-| **Nivel 2: Medium** (Máquinas/GUIs) | LiteXpansion, Networks, SlimeChem | ✅ LiteXpansion & Networks Listos |
+| **Nivel 2: Medium** (Máquinas/GUIs) | LiteXpansion, Networks_Better_Compatibility, SlimeChem | ✅ LiteXpansion y compatibilidad de Networks listas |
 | **Nivel 3: Hard** (Deep Logic/NMS) | **Slimefun4 Core**, SlimeTinker, InfinityExpansion | ✅ SlimeTinker compila en 1.21.11 |
 | **Nivel 4: Riesgo / Legacy** | Addons antiguos (ExtraTools, etc.) | ⏳ Pendiente |
 
 ### ✅ Logros del Checkpoint actual
 - [x] **Dough-Core (1.3.1-DRAKE)**: Unificación total de librerías.
-- [x] **Networks**: Compila en 1.21.11. Se alinearon repos/dependencias con la línea de trabajo validada en el fork de Chagui.
+- [x] **Networks_Better_Compatibility**: Compila en 1.21.11 y reemplaza al `Networks` viejo dentro del workspace.
 - [x] **LiteXpansion**: Eliminación de hacks de reflexión para compatibilidad total con Java 21.
 - [x] **SlimeTinker**: Compilación restaurada en 1.21.11 con integración de `Networks` degradada a opcional.
-- [x] **Cultivation**: Compila en 1.21.11 dentro del monorepo.
+- [x] **Cultivation_Updated**: Compila en 1.21.11 y reemplaza al `Cultivation` viejo dentro del workspace.
 
 ### 🤝 Créditos
-- **Chagui (`Chagui68`)**: referencia práctica para el port con sus forks `Networks_Better_Compatibility` y `Cultivation_Updated`, usados para contrastar repositorios, compatibilidad y estrategia de actualización.
+- **Chagui (`Chagui68`)**: referencia práctica y base adoptada para el port con sus forks `Networks_Better_Compatibility` y `Cultivation_Updated`, ahora integrados como reemplazo de las variantes antiguas.
 
 ---
 

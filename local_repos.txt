@@ -6,11 +6,10 @@ dough-core
 internal-metadata
 repos-to-port
 slimefun-core
-Cultivation
+Cultivation_Updated
 Galactifun
 InfinityLib
 LiteXpansion
-Networks
 Networks_Better_Compatibility
 SefiLib
 SlimeTinker

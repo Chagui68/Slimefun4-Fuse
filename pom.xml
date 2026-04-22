@@ -57,9 +57,8 @@
         <!-- Batch 2 & Expansion Libraries -->
         <module>sources/batch-2-expansion/SefiLib</module>
         <module>sources/batch-2-expansion/InfinityLib</module>
-        <module>sources/batch-2-expansion/Cultivation</module>
+        <module>sources/batch-2-expansion/Cultivation_Updated</module>
         <module>sources/batch-2-expansion/LiteXpansion</module>
-        <module>sources/batch-2-expansion/Networks</module>
         <module>sources/batch-2-expansion/Networks_Better_Compatibility</module>
         <module>sources/batch-2-expansion/SlimeTinker</module>
         <module>sources/batch-2-expansion/SMG</module>
