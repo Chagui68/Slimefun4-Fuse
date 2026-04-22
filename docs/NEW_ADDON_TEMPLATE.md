@@ -23,6 +23,7 @@ La base reutilizable está en:
 3. Ajusta `plugin.yml`.
 4. Si el addon entrará al monorepo, agrega su ruta en `pom.xml` raíz.
 5. Compílalo aislado con `-pl`.
+6. Corre el smoke test del repo si lo integraste al reactor.
 
 ## Reglas de este ecosistema
 
@@ -38,6 +39,14 @@ La base reutilizable está en:
 ```powershell
 mvn -pl ruta/del/modulo -am -DskipTests package
 ```
+
+## Smoke test después de integrarlo
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\slimefun\smoke-test.ps1
+```
+
+Si el addon toca librerías base o core, usa el perfil `core` o `extended`.
 
 ## Qué trae el ejemplo
 

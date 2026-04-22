@@ -76,6 +76,16 @@ java --version
 mvn --version
 ```
 
+### Correr smoke test rápido
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\slimefun\smoke-test.ps1
+```
+
+Guía completa:
+
+- [SMOKE_TEST.md](</C:/Users/pablo/OneDrive/Documents/GitHub/Experimentos/drakes-slimefun-labs/docs/SMOKE_TEST.md>)
+
 ### Compilar un modulo concreto
 
 ```powershell
@@ -100,3 +110,4 @@ mvn -pl sources/dough-core -am -DskipTests package
 - Mantén todo el repo alineado a `1.21.11`.
 - No asumas que un addon usa Maven solo porque está dentro del monorepo.
 - Si una consola nueva sigue viendo Java incorrecto, cierra y abre terminal para recargar `JAVA_HOME` y `Path`.
+- Antes de pushes grandes, corre el smoke test del repo.
