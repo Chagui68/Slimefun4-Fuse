@@ -1,20 +1,20 @@
-# Drakes Slimefun 1.20.6 Port
+# Drakes Slimefun 1.21.11 Port
 
-Unofficial `Slimefun4` port for `Paper/Purpur 1.20.6`, published by `DrakesCraft-Labs`.
+Unofficial `Slimefun4` port for `Paper/Purpur 1.21.11`, published by `DrakesCraft-Labs`.
 
 ## What This Repository Is
 
-This repository packages a compatibility-focused `Slimefun4` build for:
+This repository packages the `Slimefun4` core used by the `DrakesCraft-Labs` mono-repo for:
 
-- `Paper 1.20.6`
-- `Purpur 1.20.6`
+- `Paper 1.21.11`
+- `Purpur 1.21.11`
 - `Java 21`
 
 The published jar is versioned as:
 
-- `Slimefun v4.9-Drake-1.20.6.jar`
+- `Slimefun v5.0-Drake-1.21.11.jar`
 
-This is meant for server owners who explicitly need a `1.20.6` line without jumping to a later upstream branch that may shift compatibility expectations for existing addons.
+This line is meant to be the canonical base for the Drakes ecosystem on `1.21.11`, aligned with the rest of the reactor and its addon migration effort.
 
 ## Credits
 
@@ -29,42 +29,45 @@ This repository is a derivative publication built on top of the upstream GPL pro
 
 ## Technical Base
 
-This port is based on the upstream `Slimefun4` commit:
+This port now tracks the Drakes mono-repo target of `1.21.11` and is wired into the shared parent POM plus the internal `dough-core` publication.
 
-- `4e4654683` - `Update to 1.20.5 (#4186)`
+The current strategy is:
 
-That base was chosen because it already carried the `1.20.5+` transition work and explicitly treated `1.20.6` as part of the supported version range, making it a safer compatibility point than trying to backport from the later `1.21.x` line.
+- use `Paper/Purpur 1.21.11`
+- keep Java at `21`
+- integrate against `dev.drake.dough:dough-core`
+- preserve upstream Slimefun behavior where possible while applying compatibility fixes required for modern Paper
 
 ## What Was Changed
 
-The goal here was to keep changes minimal and honest.
+The goal here is no longer a frozen `1.20.6` compatibility snapshot.
 
-- packaged a dedicated `1.20.6` release line
-- marked the build as `4.9-Drake-1.20.6`
-- kept the upstream gameplay and API line as close as possible to that branch point
-- added repository documentation and release notes for this port
-- updated a test-only build dependency so the project can still be compiled cleanly today
+- packaged a dedicated `1.21.11` release line
+- marked the build as `5.0-Drake-1.21.11`
+- aligned the module with the root reactor versioning
+- kept the test suite in place
+- migrated compatibility hotspots to direct Paper APIs where it reduces friction, such as head/profile handling
 
 ## What This Port Is Not
 
 - It is not the official upstream repository.
 - It is not a full fork that aims to outpace upstream.
 - It is not a promise that every addon made for every Slimefun era will work unchanged.
-- It is not a `1.21.x` feature backport.
+- It is not a legacy `1.20.6` compatibility line anymore.
 
 ## Compatibility Notes
 
 Expected to work with:
 
-- `Paper 1.20.6`
-- `Purpur 1.20.6`
-- addons targeting the same general Slimefun API line around the upstream `1.20.5+` transition
+- `Paper 1.21.11`
+- `Purpur 1.21.11`
+- addons that are being migrated inside the Drakes mono-repo against the `5.0-Drake-1.21.11` core line
 
 Potential incompatibilities may still appear with:
 
-- addons depending on newer upstream changes after this base commit
+- addons depending on upstream branches or APIs that diverge from the Drakes reactor
 - addons with their own fragile NMS logic
-- addons expecting exact upstream metadata, updater behavior, or newer APIs
+- addons that still assume pre-1.21 item/meta or attribute names
 
 More detailed notes live in [PORTING.md](PORTING.md).
 
@@ -89,13 +92,10 @@ mvn clean package "-Dmaven.test.skip=true"
 
 ## Release
 
-GitHub release:
+GitHub release metadata should match the active Drakes core line:
 
-- [`v4.9-Drake-1.20.6`](https://github.com/DrakesCraft-Labs/Slimefun4-1.20.6-Port/releases/tag/v4.9-Drake-1.20.6)
-
-Included asset:
-
-- `Slimefun v4.9-Drake-1.20.6.jar`
+- `v5.0-Drake-1.21.11`
+- `Slimefun v5.0-Drake-1.21.11.jar`
 
 ## Addons
 

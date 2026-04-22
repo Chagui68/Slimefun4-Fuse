@@ -12,6 +12,7 @@ import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 import org.apache.commons.lang.Validate;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -23,9 +24,13 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
+import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
+
+import com.destroystokyo.paper.profile.PlayerProfile;
+import com.destroystokyo.paper.profile.ProfileProperty;
 
 import dev.drake.dough.common.CommonPatterns;
 import dev.drake.dough.items.ItemMetaSnapshot;
@@ -242,8 +247,23 @@ public final class SlimefunUtils {
             base64 = Base64.getEncoder().encodeToString(("{\"textures\":{\"SKIN\":{\"url\":\"http://textures.minecraft.net/texture/" + texture + "\"}}}").getBytes(StandardCharsets.UTF_8));
         }
 
-        PlayerSkin skin = PlayerSkin.fromBase64(base64);
-        return PlayerHead.getItemStack(skin);
+        try {
+            ItemStack item = new ItemStack(Material.PLAYER_HEAD);
+            SkullMeta customMeta = (SkullMeta) item.getItemMeta();
+
+            if (customMeta == null) {
+                return item;
+            }
+
+            PlayerProfile profile = Bukkit.createProfile(java.util.UUID.nameUUIDFromBytes(base64.getBytes(StandardCharsets.UTF_8)), "SFHead");
+            profile.setProperty(new ProfileProperty("textures", base64));
+            customMeta.setPlayerProfile(profile);
+            item.setItemMeta(customMeta);
+            return item;
+        } catch (Throwable ignored) {
+            PlayerSkin skin = PlayerSkin.fromBase64(base64);
+            return PlayerHead.getItemStack(skin);
+        }
     }
 
     public static boolean containsSimilarItem(Inventory inventory, ItemStack item, boolean checkLore) {

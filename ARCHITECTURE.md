@@ -9,7 +9,7 @@ Hemos consolidado los 13 sub-módulos originales de la librería Dough en un ún
 
 ### Cambios Críticos:
 - **Relocalización (Repackaging)**: Todos los paquetes han sido movidos físicamente de `io.github.bakedlibs.dough` a `dev.drake.dough`. Esto garantiza independencia total y evita conflictos de classpath con otros plugins o versiones de Slimefun.
-- **Purga de NMS**: Se ha eliminado toda la lógica legacy de adaptadores para versiones antiguas (1.17 - 1.20). El núcleo ahora es nativo para **Paper 1.21.1** y utiliza **Adventure Components** directamente.
+- **Purga de NMS**: Se ha eliminado toda la lógica legacy de adaptadores para versiones antiguas (1.17 - 1.20). El núcleo ahora es nativo para **Paper 1.21.11** y utiliza **Adventure Components** directamente.
 - **Persistencia Nativa**: `PersistentDataAPI` ha sido simplificado para centrarse en los **Data Components** de Minecraft 1.21.
 
 ## 2. Gestión de Plugins (Addons)

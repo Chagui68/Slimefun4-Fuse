@@ -1,13 +1,13 @@
-# Checklist de Migración: DrakesCraft-Labs 1.21.1
+# Checklist de Migración: DrakesCraft-Labs 1.21.11
 
-Este documento detalla el progreso del port masivo del ecosistema Slimefun a la versión **1.21.1 (Java 21)**.
+Este documento detalla el progreso del port masivo del ecosistema Slimefun a la versión **1.21.11 (Java 21)**.
 
 ## 1. Dependencias Core (Estado de Migración)
 
 | Dependencia | Versión 1.21.1 | Estado |
 |-----------|-------------------------|--------|
-| Paper/Spigot API | 1.21.1-R0.1-SNAPSHOT | [x] **LISTO** |
-| Slimefun4 Core | 5.0-Drake-1.21.1 | [x] **READY** (Base POM adaptada) |
+| Paper/Spigot API | 1.21.11-R0.1-SNAPSHOT | [x] **LISTO** |
+| Slimefun4 Core | 5.0-Drake-1.21.11 | [x] **READY** (Base POM adaptada) |
 | ProtocolLib | 5.3.0 (Build 720+) | [x] **LISTO** |
 | Vault | Standard 1.21 | [x] **LISTO** |
 
@@ -16,11 +16,10 @@ Este documento detalla el progreso del port masivo del ecosistema Slimefun a la 
 | Componente | Estado de Porteo | Observaciones |
 |------------|------------------|---------------|
 | **dough-core** | **[x] LISTO** | Versión `1.3.1-DRAKE`. NMS purgado y empaquetado. |
-| **SefiLib** | **[x] LISTO** | Compilado para 1.21.1. |
-| **InfinityLib** | **[x] LISTO** | Compilado para 1.21.1. |
+| **SefiLib** | **[x] LISTO** | Compilado para 1.21.11. |
+| **InfinityLib** | **[x] LISTO** | Compilado para 1.21.11. |
 | **Networks** | **[x] LISTO** | Refactorizado: Constantes 1.21 corrigas (LUCK_OF_THE_SEA, etc). |
 | **LiteXpansion** | **[x] LISTO** | Refactorizado: Eliminada reflexión de encantamientos (incompatible). |
-| **EMC2** | **[x] LISTO** | Compilado exitosamente. |
 | **SlimeTinker** | **[/] EN PROCESO** | Errores de constantes (JUMP_BOOST, TNT) corregidos. |
 | **+60 Addons Restantes** | [ ] Pendiente | Clonados y listos para procesar uno a uno. |
 
@@ -28,7 +27,7 @@ Este documento detalla el progreso del port masivo del ecosistema Slimefun a la 
 - [x] Unificación del reactor Maven (eliminados repositorios muertos).
 - [x] Solución al bloqueo de registro de encantamientos personalizados en 1.21.1.
 - [x] Mapeo completo de renombrados de constantes (Bukkit -> Paper 1.21).
-- [x] Creación de la `docs/MIGRATION_GUIDE_1_21_1.md`.
+- [x] Creación de la `docs/MIGRATION_GUIDE_1_21_11.md`.
 
 ## 4. Próximos Pasos (Día 2)
 1. Finalizar `SlimeTinker`.

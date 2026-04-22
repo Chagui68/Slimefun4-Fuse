@@ -10,7 +10,7 @@ Estamos migrando un ecosistema de 35+ addons de Slimefun y su librería base Dou
 - **Mono-Repo Maven**: El repositorio está organizado como un proyecto multi-módulo.
 - **Lógica de Versión (Version Bridge)**: No usamos código mezclado. Usamos una interfaz `VersionBridge` para abstraer la lógica entre la 1.20.6 (PDC antiguo) y la 1.21.11 (Data Components nativos).
 - **Dough-Core (dev.drake.dough)**: Hemos absorbido la librería Dough, unificado sus 13 módulos en uno solo (`dough-core`) y relocalizado el paquete para evitar conflictos. Se ha purgado todo el NMS antiguo; es 100% nativo 1.21.11.
-- **Stack**: Java 21, Paper/Purpur API 1.21.1, Slimefun RC-37.
+- **Stack**: Java 21, Paper/Purpur API 1.21.11, Slimefun RC-37.
 
 ## 3. Estructura del Repositorio
 - **/sources/**: Todos los códigos fuente de los addons y dough-core.
@@ -25,7 +25,7 @@ Estamos migrando un ecosistema de 35+ addons de Slimefun y su librería base Dou
 - ⚠️ **PENDIENTE**: Migración masiva de los 30+ addons restantes siguiendo el `MIGRATION_CHECKLIST.md`.
 
 ## 5. Reglas de Oro para el Desarrollo
-- **Prohibido NMS**: No uses reflexión o clases internas de Minecraft. Usa la API de Paper 1.21.1.
+- **Prohibido NMS**: No uses reflexión o clases internas de Minecraft. Usa la API de Paper 1.21.11.
 - **Data Components**: Los metadatos deben manejarse a través del nuevo `VersionBridge` o el `dough-core` refactorizado.
 - **Traducciones**: Todo el output de los plugins debe estar en Español Latino.
 - **Inmutabilidad**: Respeta la inmutabilidad de los ítems en la 1.21.11 usando `.editMeta()`.

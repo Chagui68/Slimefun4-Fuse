@@ -1,13 +1,13 @@
-# 📖 Guía Técnica de Migración: Slimefun - Minecraft 1.21.1
+# 📖 Guía Técnica de Migración: Slimefun - Minecraft 1.21.11
 
-Esta guía resume los descubrimientos técnicos, soluciones a errores comunes y estrategias de compilación optimizadas para el ecosistema Slimefun en la versión 1.21.1 y Java 21.
+Esta guía resume los descubrimientos técnicos, soluciones a errores comunes y estrategias de compilación optimizadas para el ecosistema Slimefun en la versión 1.21.11 y Java 21.
 
 ## 🛠️ Descubrimientos Técnicos (Modo Supervivencia)
 
-### 1. El Gran Renombrado (API 1.21.1)
+### 1. El Gran Renombrado (API 1.21.11)
 Minecraft 1.20.5+ introdujo cambios masivos en los nombres de las constantes de la API de Bukkit/Paper. Si ves un error de "symbol not found", lo más probable es que sea un cambio de nombre:
 
-| Antiguo (1.20.4) | Nuevo (1.21.1) | Notas |
+| Antiguo (1.20.4) | Nuevo (1.21.11) | Notas |
 | :--- | :--- | :--- |
 | `Enchantment.LUCK` | `Enchantment.LUCK_OF_THE_SEA` | |
 | `Enchantment.ARROW_DAMAGE` | `Enchantment.POWER` | También aplica a KNOCKBACK -> PUNCH |
@@ -16,7 +16,7 @@ Minecraft 1.20.5+ introdujo cambios masivos en los nombres de las constantes de 
 | `Particle.FIREWORKS_SPARK` | `Particle.FIREWORK` | |
 
 ### 2. Adiós a la Reflexión de Encantamientos
-En 1.21.1, el comando `acceptingNew()` y la modificación de campos privados para registrar encantamientos personalizados (como `GlowEnchant`) **ya no funciona** y causa crashes.
+En 1.21.11, el comando `acceptingNew()` y la modificación de campos privados para registrar encantamientos personalizados (como `GlowEnchant`) **ya no funciona** y causa crashes.
 - **Solución implementada**: Usar encantamientos existentes (como `LUCK_OF_THE_SEA`) y ocultarlos con `ItemFlag.HIDE_ENCHANTS` para obtener el efecto visual de "brillo" de forma segura.
 
 ### 3. Dough-Core Unificado
@@ -50,9 +50,9 @@ Si Maven se queda colgado descargando metadatos de `angeschossen` o `william278`
 
 ## 📂 Estado de los Addons (Audit)
 Actualmente tenemos integrados en el workspace:
-1. **Batch 2 Expansion**: `Networks`, `LiteXpansion`, `SlimeTinker`, `EMC2`. (Estatus: Compilando).
+1. **Batch 2 Expansion**: `Networks`, `LiteXpansion`, `SlimeTinker`. (Estatus: Compilando).
 2. **Community Addons**: ~21 repositorios en la carpeta homónima.
-3. **Slimefun Core**: Adaptado para 1.21.1 (Base Drake).
+3. **Slimefun Core**: Adaptado para 1.21.11 (Base Drake).
 
 > [!NOTE]
 > La Wiki de Slimefun lista +80 addons. Aún faltan aproximadamente 40 repositorios que no están presentes en este workspace. Se pueden añadir clonando sus ramas master/v4 a la carpeta `community-addons`.
@@ -82,7 +82,7 @@ A pesar de los grandes avances del Día 1, el ecosistema es masivo. Aquí está 
 - [ ] **Androides y Filtros**: Validar que los inventarios de los androides persistan correctamente tras el cambio de formato de NBT a Components.
 
 ### 4. Pruebas en Vivo (Runtime)
-- [ ] Instalar el `Slimefun4-src` (Core) en un servidor de pruebas 1.21.1.
+- [ ] Instalar el `Slimefun4-src` (Core) en un servidor de pruebas 1.21.11.
 - [ ] Comprobar que la `SlimefunGuide` se abre y los items se pueden craftear sin errores en consola.
 
 ---

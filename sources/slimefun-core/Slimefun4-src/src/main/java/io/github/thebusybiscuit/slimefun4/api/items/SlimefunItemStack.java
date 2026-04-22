@@ -13,12 +13,14 @@ import javax.annotation.Nullable;
 
 import org.apache.commons.lang.Validate;
 import org.bukkit.ChatColor;
+import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.PotionMeta;
+import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -26,6 +28,8 @@ import dev.drake.dough.common.CommonPatterns;
 import dev.drake.dough.items.ItemMetaSnapshot;
 import dev.drake.dough.skins.PlayerHead;
 import dev.drake.dough.skins.PlayerSkin;
+import com.destroystokyo.paper.profile.PlayerProfile;
+import com.destroystokyo.paper.profile.ProfileProperty;
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.api.exceptions.PrematureCodeException;
 import io.github.thebusybiscuit.slimefun4.api.exceptions.WrongItemStackException;
@@ -288,8 +292,25 @@ public class SlimefunItemStack extends ItemStack {
             return new ItemStack(Material.PLAYER_HEAD);
         }
 
-        PlayerSkin skin = PlayerSkin.fromBase64(getTexture(id, texture));
-        return PlayerHead.getItemStack(skin);
+        String base64 = getTexture(id, texture);
+
+        try {
+            ItemStack item = new ItemStack(Material.PLAYER_HEAD);
+            SkullMeta customMeta = (SkullMeta) item.getItemMeta();
+
+            if (customMeta == null) {
+                return item;
+            }
+
+            PlayerProfile profile = Bukkit.createProfile(java.util.UUID.nameUUIDFromBytes(base64.getBytes(StandardCharsets.UTF_8)), "SFHead");
+            profile.setProperty(new ProfileProperty("textures", base64));
+            customMeta.setPlayerProfile(profile);
+            item.setItemMeta(customMeta);
+            return item;
+        } catch (Throwable ignored) {
+            PlayerSkin skin = PlayerSkin.fromBase64(base64);
+            return PlayerHead.getItemStack(skin);
+        }
     }
 
     private static @Nonnull String getTexture(@Nonnull String id, @Nonnull String texture) {

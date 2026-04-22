@@ -53,7 +53,13 @@ public enum MinecraftVersion {
      * This constant represents Minecraft (Java Edition) Version 1.20.5
      * ("The Armored Paws Update")
      */
-    MINECRAFT_1_20_5(20, 5, "1.20.5+"),
+    MINECRAFT_1_20_5(20, 5, 10, "1.20.5+"),
+
+    /**
+     * This constant represents Minecraft (Java Edition) Version 1.21.11
+     * ("Chase the Skies")
+     */
+    MINECRAFT_1_21_11(21, 11, "1.21.11+"),
 
     /**
      * This constant represents an exceptional state in which we were unable

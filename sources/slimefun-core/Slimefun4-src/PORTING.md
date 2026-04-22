@@ -1,13 +1,13 @@
-# Slimefun 1.20.6 Port Notes
+# Slimefun 1.21.11 Port Notes
 
-This repository is an unofficial packaging and publication of a `Slimefun4` code line suitable for `Paper/Purpur 1.20.6`.
+This repository is an unofficial packaging and publication of a `Slimefun4` code line suitable for `Paper/Purpur 1.21.11`.
 
 ## What This Is
 
-- A GitHub-hosted port for `Minecraft 1.20.6`
+- A GitHub-hosted port for `Minecraft 1.21.11`
 - Built for `Paper` and `Purpur`
 - Intended for `Java 21`
-- Published with a clearly marked local version: `4.9-Drake-1.20.6`
+- Published with a clearly marked local version: `5.0-Drake-1.21.11`
 - Designed to stay as close as possible to upstream behavior and API shape
 
 ## What This Is Not
@@ -15,40 +15,36 @@ This repository is an unofficial packaging and publication of a `Slimefun4` code
 - Not the official `Slimefun` upstream repository
 - Not an attempt to replace or supersede upstream development
 - Not a blanket compatibility promise for every addon ever made
-- Not a forward-port of `1.21.x` content into `1.20.6`
+- Not a frozen archival `1.20.6` branch
 
 ## Technical Base
 
-This port is based on the upstream `Slimefun/Slimefun4` commit:
+This port is the active Drakes core line for the mono-repo migration to `1.21.11`.
 
-- `4e4654683` - `Update to 1.20.5 (#4186)`
+Current design choices:
 
-That upstream point was chosen because it already:
-
-- treats `1.20.6` as part of the supported `1.20.5+` range
-- keeps compatibility logic for older supported server lines
-- is much safer for existing Slimefun addons than rebasing onto the later `1.21.x` line
+- Paper API target standardized to `1.21.11-R0.1-SNAPSHOT`
+- local artifact version standardized to `5.0-Drake-1.21.11`
+- integration with `dev.drake.dough:dough-core`
+- selective adoption of direct Paper APIs in places where older abstractions create friction
 
 ## Local Changes Made Here
 
-The local publication keeps code changes intentionally minimal.
+The local publication is now an actively maintained `1.21.11` core line.
 
-- Maven version changed to `4.9-Drake-1.20.6` so the jar is identifiable
-- Test-only `MockBukkit` dependency updated to a resolvable artifact so the project can build cleanly today
-- Porting documentation added
-- Release packaging script added outside this repository during local build preparation
-
-No gameplay-facing API rewrite was introduced for this publication.
+- Maven version changed to `5.0-Drake-1.21.11`
+- parent alignment with `drakes-slimefun-labs`
+- direct Paper profile-based head handling in key compatibility hotspots
+- updated health attribute usages for the Paper 1.21.11 API
+- test suite kept intact instead of being stripped to force a build
 
 ## Compatibility
 
 Expected to be compatible with:
 
-- `Paper 1.20.6`
-- `Purpur 1.20.6`
-- addons that target the same general Slimefun API line used by upstream around the `1.20.5+` transition
-
-Should remain safer for older addon expectations than a `1.21.x`-based backport because this publication does not intentionally move the API surface forward beyond that branch point.
+- `Paper 1.21.11`
+- `Purpur 1.21.11`
+- addons migrated against the Drakes reactor and `dough-core`
 
 Potential incompatibilities still exist for:
 
@@ -72,8 +68,8 @@ mvn clean package "-Dmaven.test.skip=true"
 
 The published release jar is:
 
-- `Slimefun v4.9-Drake-1.20.6.jar`
+- `Slimefun v5.0-Drake-1.21.11.jar`
 
 ## Support Expectations
 
-This repository should be treated as a compatibility-focused publication for `1.20.6`, not as an official upstream support channel.
+This repository should be treated as the active Drakes compatibility-focused core for `1.21.11`, not as an official upstream support channel.

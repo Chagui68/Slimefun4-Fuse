@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.logging.Level;
+import java.nio.charset.StandardCharsets;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -19,6 +20,7 @@ import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Dispenser;
+import org.bukkit.block.Skull;
 import org.bukkit.block.data.BlockData;
 import org.bukkit.block.data.Rotatable;
 import org.bukkit.entity.LivingEntity;
@@ -50,6 +52,8 @@ import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import io.github.thebusybiscuit.slimefun4.utils.HeadTexture;
 import io.github.thebusybiscuit.slimefun4.utils.NumberUtils;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
+import com.destroystokyo.paper.profile.PlayerProfile;
+import com.destroystokyo.paper.profile.ProfileProperty;
 import io.papermc.lib.PaperLib;
 
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
@@ -880,11 +884,19 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
             block.setBlockData(blockData);
 
             Slimefun.runSync(() -> {
-                PlayerSkin skin = PlayerSkin.fromBase64(texture);
                 Material type = block.getType();
                 // Ensure that this Block is still a Player Head
                 if (type == Material.PLAYER_HEAD || type == Material.PLAYER_WALL_HEAD) {
-                    PlayerHead.setSkin(block, skin, true);
+                    try {
+                        Skull skull = (Skull) block.getState();
+                        PlayerProfile profile = org.bukkit.Bukkit.createProfile(java.util.UUID.nameUUIDFromBytes(texture.getBytes(StandardCharsets.UTF_8)), "SFHead");
+                        profile.setProperty(new ProfileProperty("textures", texture));
+                        skull.setPlayerProfile(profile);
+                        skull.update(true, false);
+                    } catch (Throwable ignored) {
+                        PlayerSkin skin = PlayerSkin.fromBase64(texture);
+                        PlayerHead.setSkin(block, skin, true);
+                    }
                 }
             });
 
