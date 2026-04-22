@@ -30,11 +30,12 @@ Actualmente, el laboratorio está procesando un reactor mono-repo con **55 módu
 
 | Métrica | Valor |
 | :--- | :--- |
-| 🚀 **Componentes Confirmados** | `47` |
-| ⏳ **Módulos en Cola (Pending)** | `8` |
+| 🚀 **Componentes Confirmados** | `48` |
+| ⏳ **Módulos en Cola (Pending)** | `7` |
 | 📦 **Librería Core** | `dough-core:1.3.1-DRAKE` |
 
 **Últimos cierres validados**
+- `FlowerPower`: ajustado al API moderno de atributos de Bukkit/Paper.
 - `MissileWarfare`: vuelve a compilar en el reactor actual.
 - `Element-Manipulation`: alineado a `dev.drake.dough.*`, serializers Adventure actuales e `InfinityLib` moderno.
 
