@@ -35,6 +35,22 @@ Actualmente, el laboratorio está procesando un reactor mono-repo con **53 módu
 
 ---
 
+## 💎 Addons Destacados (Premium)
+Explora los pilares del laboratorio, ahora con rediseño visual y estabilización completa para 1.21.1:
+
+<p align="center">
+  <a href="sources/repos-to-port/InfinityExpansion/README.md"><b>Infinity Expansion</b></a> • 
+  <a href="sources/batch-2-expansion/SlimeTinker/README.md"><b>SlimeTinker</b></a> • 
+  <a href="sources/batch-2-expansion/Cultivation_Updated/README.md"><b>Cultivation</b></a> • 
+  <a href="sources/community-addons/CrystamaeHistoria/README.md"><b>Crystamae Historia</b></a>
+</p>
+
+<p align="center">
+  <sub>Haz clic en los nombres para ver la documentación detallada y el arte cinemático de cada addon.</sub>
+</p>
+
+---
+
 ## 🏗️ Arquitectura del Laboratorio
 
 Este no es un plugin convencional; es un **entorno de ingeniería modular**. El uso de un reactor Maven nos permite:
