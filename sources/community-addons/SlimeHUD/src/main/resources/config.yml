@@ -1,0 +1,50 @@
+options:
+
+  auto-update: true
+
+  # Use PlaceholderAPI to get the player's toggle status
+  placeholder-api-support: true
+
+  # Use SlimefunTranslation to display the translated name of items
+  slimefun-translation-support: true
+
+waila:
+
+  # If set to true, will disable waila for all players,
+  # overriding individual preferences and 'disabled-in'
+  disabled: false
+
+  # List of worlds that the WAILA is disabled in
+  disabled-in: []
+
+  # Can be 'bossbar' or 'hotbar'
+  location: bossbar
+
+  # Whether or not to keep colors and format of the text. If set to false, defaults to white.
+  use-original-colors: true
+
+  # The color of the bossbar. Must be a valid color in 'snake_case'.
+  # 'inherit' means 'match the color of the bossbar to that of the text'.
+  # 'default' is white
+  bossbar-color: inherit
+
+  # How many nodes on the cargo network; shown on connectors and managers
+  show-cargo-size: true
+
+  # Shown on output and input nodes
+  show-cargo-channel: true
+
+  # How many nodes on the energy network; shown on connectors and regulators
+  show-energy-size: true
+
+  # Shown on capacitors
+  show-energy-stored: true
+
+  # Shown on most machines
+  show-machine-progress: true
+
+  # Shown on most generators
+  show-generator-generation: true
+
+  # Rate at which WAILA updates, in *game* ticks
+  tick-rate: 10

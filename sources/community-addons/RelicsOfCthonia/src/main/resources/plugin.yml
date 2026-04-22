@@ -1,0 +1,8 @@
+name: RelicsOfCthonia
+version: '${project.version}'
+main: ne.fnfal113.relicsofcthonia.RelicsOfCthonia
+api-version: "1.21"
+authors: [ FN_FAL113 ]
+description: My Slimefun addon jam 2022 entry which is based on nether theme
+website: https://github.com/FN-FAL113
+depend: [Slimefun]

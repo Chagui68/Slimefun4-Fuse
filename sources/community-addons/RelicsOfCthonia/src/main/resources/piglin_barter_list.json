@@ -1,0 +1,47 @@
+{
+  "COMMON": {
+    "drop-1": "COPPER_WIRE",
+    "drop-2": "COPPER_INGOT",
+    "drop-3": "SILVER_INGOT",
+    "drop-4": "BOOKSHELF",
+    "drop-5": "CLAY",
+    "drop-6": "IRON_ORE",
+    "drop-7": "GOLD_INGOT"
+  },
+  "UNCOMMON": {
+    "drop-1": "ALUMINUM_BRONZE_INGOT",
+    "drop-2": "BRONZE_INGOT",
+    "drop-3": "SWORD_OF_BEHEADING",
+    "drop-4": "BASIC_CIRCUIT_BOARD",
+    "drop-5": "REPEATER",
+    "drop-6": "GOLD_ORE",
+    "drop-7": "ELECTRIC_MOTOR"
+  },
+  "RARE": {
+    "drop-1": "CARBON",
+    "drop-2": "SEISMIC_AXE",
+    "drop-3": "ALUMINUM_BRASS_INGOT",
+    "drop-4": "ENERGY_REGULATOR",
+    "drop-5": "SYNTHETIC_SAPPHIRE",
+    "drop-6": "ELECTRIC_DUST_WASHER",
+    "drop-7": "SOLAR_GENERATOR_2"
+  },
+  "EPIC": {
+    "drop-1": "SOLAR_GENERATOR_4",
+    "drop-2": "SYNTHETIC_DIAMOND",
+    "drop-3": "REDSTONE_ALLOY",
+    "drop-4": "GILDED_IRON_CHESTPLATE",
+    "drop-5": "EXPLOSIVE_BOW",
+    "drop-6": "PROGRAMMABLE_ANDROID_2",
+    "drop-7": "LARGE_CAPACITOR"
+  },
+  "LEGENDARY": {
+    "drop-1": "CARBONADO_EDGED_CAPACITOR",
+    "drop-2": "REINFORCED_ALLOY_INGOT",
+    "drop-3": "GOLD_12K_LEGGINGS",
+    "drop-4": "ICY_BOW",
+    "drop-5": "CARBONADO",
+    "drop-6": "PROGRAMMABLE_ANDROID_3",
+    "drop-7": "PLASTIC_SHEET"
+  }
+}

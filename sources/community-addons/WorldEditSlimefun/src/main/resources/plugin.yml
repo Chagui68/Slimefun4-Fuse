@@ -1,0 +1,14 @@
+name: WorldEditSlimefun
+version: '${project.version}'
+main: dev.j3fftw.worldeditslimefun.WorldEditSlimefun
+api-version: 1.19
+authors: [J3fftw1]
+depend:
+  - Slimefun
+
+permissions:
+  wesf.*:
+    description: Provides permissions for all WorldEditSlimefun functions
+    default: op
+    children:
+      wesf.admin: true

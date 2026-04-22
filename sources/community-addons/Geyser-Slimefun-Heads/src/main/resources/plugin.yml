@@ -1,0 +1,14 @@
+name: GeyserHeads
+author: lz5509
+description: Geyser Heads
+main: me.lz5509.geyserheads.GeyserHeads
+website: https://github.com/Slimefun/Addon-Template
+version: ${project.version}
+api-version: "1.21"
+softdepend: [Geyser-Spigot, Slimefun, HeadDatabase]
+commands:
+  geyserheads:
+      description: GSFH COMMANDS
+      usage: /geyserheads
+      aliases: [gh, geyserhead]
+      permission: geyserheads

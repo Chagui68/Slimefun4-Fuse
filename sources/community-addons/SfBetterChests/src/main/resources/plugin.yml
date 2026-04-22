@@ -1,0 +1,8 @@
+name: BetterChests
+version: 'Dev - ?'
+main: me.mmmjjkx.betterChests.BetterChests
+api-version: '1.19'
+depend: ["Slimefun"]
+softdepend: ["SlimeHUD"]
+author: "mmmjjkx"
+description: "A plugin that adds more chests to the game."

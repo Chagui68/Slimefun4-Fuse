@@ -1,0 +1,27 @@
+name: Netheopoiesis
+author: Sefiraat, J3fftw
+description: Addon Jam 2022 Entry - Terraform the Nether!
+main: dev.sefiraat.netheopoiesis.Netheopoiesis
+website: https://github.com/Sefiraat/Netheopoiesis
+version: ${project.version}
+api-version: "1.21"
+depend:
+  - Slimefun
+commands:
+  netheopoiesis:
+    description: /netheopoiesis
+    usage: /netheopoiesis <sub>
+permissions:
+  netheopoiesis.*:
+    description: Provides permissions for all Netheo functions
+    default: op
+    children:
+      netheopoiesis.admin: true
+  netheopoiesis.admin:
+    description: Provides access to all Netheo admin functions
+    default: op
+    children:
+      netheopoiesis.admin.mobcaps: true
+  netheopoiesis.admin.mobcaps:
+    description: Allows the user to see and manage Nethero MobCaps
+    default: op

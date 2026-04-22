@@ -1,0 +1,10 @@
+/bin/
+/.settings/
+/target/
+/.vscode/
+/.idea/
+*.iml
+.project
+.classpath
+dependency-reduced-pom.xml
+.DS_Store

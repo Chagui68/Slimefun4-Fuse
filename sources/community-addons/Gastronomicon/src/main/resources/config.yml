@@ -1,0 +1,49 @@
+options:
+  auto-update: true
+
+# Disable recipes that require ExoticGarden items.
+disable-exotic-garden-recipes: false
+
+# Disable putting Gastronomicon crops into DynaTech growth chambers.
+disable-dynatech-integration: false
+
+# The maximum chance to craft a perfect food [0 ... 1]
+perfect-food-max-chance: 0.25
+
+# The proficiency required to teach a Chef Android and to count towards players' titles
+proficiency-threshold: 256
+
+drops:
+  # The chance for dropping Gastronomicon items when an appropriate block is broken [0 ... 1]
+  block-break-chances:
+    grass: 0.15
+    tall-grass: 0.15
+    fern: 0.15
+    large-fern: 0.15
+    podzol: 0.15
+    dirt: 0.15
+    grass-block: 0.15
+    rooted-dirt: 0.15
+    mycelium: 0.15
+    seagrass: 0.15
+
+  # The chance for dropping Gastronomicon mob drops when an appropriate mob is killed [0 ... 1]
+  mob-kill-chances:
+    squid: 0.35
+    guardian: 0.35
+    goat: 0.35
+    salmon: 0.35
+
+
+  # The worlds that mob and block break drops are to be disabled in
+  disabled-in: []
+  
+
+profile:
+  # Titles based on total proficient food
+  titles:
+    0: Not-a-chef
+    1: Novice Chef
+    50: Apprentice Chef
+    100: Experienced Chef
+    200: 3-Star Chef

@@ -1,0 +1,12 @@
+/bin/
+/.settings/
+/.idea/
+*.iml
+.project
+.classpath
+dependency-reduced-pom.xml
+.DS_Store
+test.bat
+test2.bat
+/target/
+/target/*

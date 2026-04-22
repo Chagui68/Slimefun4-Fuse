@@ -1,0 +1,87 @@
+groups:
+  main: "&6&lBetter Chests"
+  storages: "&a&lStorages"
+  tool_machines: "&b&lTools & Machines"
+  materials: "&3&lMaterials"
+  cargo: "&e&lCargo"
+items:
+  tip:
+    name: "&bTip"
+    lore:
+    - "&c&lDon't place too many drawers in one chunk!"
+    - "&c&lThe drawers will spawn 3 entities once they were placed."
+    - "&c&lYou might losing some items if you place too many drawers in one chunk."
+  gear_wheel:
+    name: "&bGear Wheel"
+    lore:
+      - "&7A thing for crafting BC's things"
+  chest_color_changer:
+    name: "&aChest Color Changer"
+    lore:
+      - "&aRight-click to change the color of the BC chest"
+      - "&aShift + Right-click to cycle through colors"
+      - ""
+      - "&dCurrent color: &6NoColor"
+      - ""
+      - "&8⇨ &e⚡ &7 0 / 200 J"
+    current_color: "&dCurrent color: "
+    no_energy: "&cThis item is out of energy!"
+    colors:
+      red: "&cRed"
+      orange: "&6Orange"
+      yellow: "&eYellow"
+      lime: "&aLime"
+      green: "&aGreen"
+      cyan: "&bCyan"
+      light_blue: "&9Light Blue"
+      blue: "&9Blue"
+      purple: "&dPurple"
+      magenta: "&dMagenta"
+      pink: "&dPink"
+      black: "&0Black"
+      gray: "&7Gray"
+      light_gray: "&7Light Gray"
+      white: "&fWhite"
+      no_color: "&6NoColor"
+  location_recorder:
+    name: "&aLocation Recorder"
+    lore:
+      - "&bShift + Right-click to record location"
+      - "&bRight-click to open the corresponding machine"
+  tightly_blistering_ingot:
+    name: "&eTightly Blistering Ingot"
+    lore:
+      - "&7A high-hardness metal"
+  tightly_blistering_plate:
+    name: "&eTightly Blistering Plate"
+    lore:
+      - "&7A high-hardness metal plate"
+  drawer:
+    name_lvl: "&bDrawer &aLv. &6%lvl%"
+    name_max: "&bDrawer &aLv. &6MAX"
+    lore:
+      - "&bRight-click grab 64 items (when your hand is empty)"
+      - "&bRight-click to store items that you hand in"
+      - "&dCapacity: %capacity%"
+  infinity_expansion_like_storage:
+    name_lvl: "&bInfinity Expansion-like Storage &aLv. &6%lvl%"
+    name_max: "&bInfinity Expansion-like Storage &aLv. &6MAX"
+    lore:
+      - "&bInfinityExpansion-like storage unit"
+      - "&dCapacity: %capacity%"
+    status: "&aStatus"
+    empty: "&6Stored: &e0 / %max% &7(0%)"
+    error: "&c&lERROR"
+    break: "&aStored items transferred to dropped item"
+    lore_stored: "&6Stored: %itemname% &ex %amount%"
+  p2p_transfer:
+    name: "&aPoint-to-Point Transfer"
+    lore:
+      - "&b&lA great tool for transferring items between two blocks"
+      - "&d&lPlace and ready to use"
+    up: "&7&lUP"
+    down: "&7&lDOWN"
+    west: "&7&lWEST"
+    east: "&7&lEAST"
+    north: "&7&lNORTH"
+    south: "&7&lSOUTH"

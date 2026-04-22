@@ -1,0 +1,34 @@
+name: SlimeFrame
+author: Voper
+description: A Warframe based Slimefun addon
+main: me.voper.slimeframe.SlimeFrame
+website: https://github.com/VoperAD/SlimeFrame
+version: ${project.version}
+api-version: 1.19
+depend:
+  - Slimefun
+softdepend:
+  - PlaceholderAPI
+  - SlimeHUD
+  - Geyser-Spigot
+permissions:
+  slimeframe.anyone.refine:
+    description: Can refine a SlimeFrame relic
+  slimeframe.anyone.traces:
+    description: Can see the amount of traces a player has
+  slimeframe.anyone.inventory:
+    description: Can see your own relic inventory
+  slimeframe.admin.invsee:
+    description: Can see another player's relic inventory
+  slimeframe.admin.*:
+    description: Permissions for admins
+    default: op
+    children:
+      slimeframe.admin.invsee: true
+  slimeframe.anyone.*:
+    description: Permissions for anyone
+    default: not op
+    children:
+      slimeframe.anyone.refine: true
+      slimeframe.anyone.traces: true
+      slimeframe.anyone.inventory: true

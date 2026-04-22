@@ -1,0 +1,15 @@
+
+name: CompressionCraft
+author: jasperchasetoq
+description: A generic Slimefun4-Addon
+main: me.jasperchasetoq.compressioncraft.CompressionCraft
+website: https://github.com/JasperChaseTOQ/CompressionCraft
+version: ${project.version}
+api-version: 1.17
+depend: [Slimefun]
+commands:
+
+  compressioncraft:
+    description: Use /compressioncraft help for a list of commands
+    usage: /compressioncraft <subcommand>
+    aliases: [cc]
