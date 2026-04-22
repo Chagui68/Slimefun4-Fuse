@@ -55,6 +55,30 @@ Esta tabla clasifica los componentes según el esfuerzo técnico estimado para s
 - Permite compilar por módulo con `-pl` sin perder una base común de versiones.
 - Implementa **reflexión estratégica** para desacoplar APIs de terceros (mcMMO, etc.) y permitir compilación limpia.
 
+### 🧪 Smoke Test
+- El repo incluye un smoke test en [scripts/slimefun/smoke-test.ps1](</C:/Users/pablo/OneDrive/Documents/GitHub/Experimentos/drakes-slimefun-labs/scripts/slimefun/smoke-test.ps1>).
+- Sirve para validar entorno, `dough-core`, `Slimefun 6 Core` y un set de addons representativos sin compilar los `53` módulos completos.
+- Perfiles disponibles: `quick`, `core`, `extended`.
+- Guía completa: [docs/SMOKE_TEST.md](</C:/Users/pablo/OneDrive/Documents/GitHub/Experimentos/drakes-slimefun-labs/docs/SMOKE_TEST.md>)
+
+Uso rápido:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\slimefun\smoke-test.ps1
+```
+
+### 🧱 Plantilla de Addon
+- El repo incluye una plantilla base para crear addons nuevos sobre este stack en [templates/slimefun-addon](</C:/Users/pablo/OneDrive/Documents/GitHub/Experimentos/drakes-slimefun-labs/templates/slimefun-addon>).
+- La plantilla ya viene alineada a `Java 21`, `Paper 1.21.11`, `Slimefun 6` y `dough-core`.
+- Incluye `pom.xml`, `plugin.yml`, clase principal `SlimefunAddon`, `ItemGroup`, `Research` e item/máquina de ejemplo.
+- Guía de uso: [docs/NEW_ADDON_TEMPLATE.md](</C:/Users/pablo/OneDrive/Documents/GitHub/Experimentos/drakes-slimefun-labs/docs/NEW_ADDON_TEMPLATE.md>)
+
+Flujo corto:
+
+```text
+copiar template -> renombrar package/artifactId -> agregar modulo al reactor -> compilar con -pl -> correr smoke test
+```
+
 ### 🗺️ Pilares de la Arquitectura
 | Componente | Descripción |
 | :-- | :-- |
