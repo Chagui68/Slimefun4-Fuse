@@ -4,12 +4,12 @@ import io.github.addoncommunity.slimechem.SlimeChem;
 import io.github.addoncommunity.slimechem.implementation.atomic.Element;
 import io.github.mooy1.infinitylib.player.LeaveListener;
 import io.github.thebusybiscuit.slimefun4.api.player.PlayerProfile;
-import io.github.thebusybiscuit.slimefun4.core.categories.FlexCategory;
+import io.github.thebusybiscuit.slimefun4.api.items.groups.FlexItemGroup;
 import io.github.thebusybiscuit.slimefun4.core.guide.SlimefunGuideImplementation;
 import io.github.thebusybiscuit.slimefun4.core.guide.SlimefunGuideMode;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
-import io.github.thebusybiscuit.slimefun4.api.items.ChestMenu;
+import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
 import dev.drake.dough.items.CustomItemStack;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -31,15 +31,15 @@ import java.util.UUID;
  * @author Mooy1
  * 
  */
-public final class ElementCategory extends FlexCategory {
+public final class ElementCategory extends FlexItemGroup {
 
-    private final ItemStack BACKGROUND = new CustomItem(Material.BLACK_STAINED_GLASS_PANE, "");
+    private final ItemStack BACKGROUND = new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, "");
     private final ChestMenu[] menus = new ChestMenu[4];
     private final Map<UUID, Integer> history = new HashMap<>();
     private final SlimefunGuideImplementation implementation = SlimefunPlugin.getRegistry().getSlimefunGuide(SlimefunGuideMode.SURVIVAL_MODE);
     
     public ElementCategory(SlimeChem plugin) {
-        super(new NamespacedKey(plugin, "periodic_table"), new CustomItem(Material.DIAMOND, "Periodic Table"), 3);
+        super(new NamespacedKey(plugin, "periodic_table"), new CustomItemStack(Material.DIAMOND, "Periodic Table"), 3);
         LeaveListener.add(this.history);
         this.menus[0] = makeTopMenu();
         this.menus[1] = makeBottomMenu();
@@ -118,7 +118,7 @@ public final class ElementCategory extends FlexCategory {
     
     @Nonnull
     private static ItemStack makeItem(Element e) {
-        return new CustomItem(
+        return new CustomItemStack(
                 Objects.requireNonNull(Material.getMaterial(e.getSeries().getColor() + "_STAINED_GLASS_PANE")),
                 ChatColor.AQUA + "" + e.getSymbol() + " " + e.getNumber(),
                 ChatColor.AQUA + e.getName(),
@@ -128,7 +128,7 @@ public final class ElementCategory extends FlexCategory {
     
     @Nonnull
     private static ItemStack makeItem(Element e, String lore) {
-        return new CustomItem(
+        return new CustomItemStack(
                 Objects.requireNonNull(Material.getMaterial(e.getSeries().getColor() + "_STAINED_GLASS_PANE")),
                 ChatColor.AQUA + "" + e.getSymbol() + " " + e.getNumber(),
                 ChatColor.AQUA + e.getName(),

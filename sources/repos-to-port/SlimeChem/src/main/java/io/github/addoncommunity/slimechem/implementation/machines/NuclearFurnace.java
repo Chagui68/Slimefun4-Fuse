@@ -12,11 +12,12 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import io.github.thebusybiscuit.slimefun4.api.Config;
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems.RecipeType;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.BlockStorage;
 import io.github.thebusybiscuit.slimefun4.api.inventory.BlockMenu;
-import io.github.thebusybiscuit.slimefun4.api.inventory.BlockMenuPreset;
+import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
+import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
 import io.github.thebusybiscuit.slimefun4.api.inventory.DirtyChestMenu;
 import io.github.thebusybiscuit.slimefun4.api.item_transport.ItemTransportFlow;
 import dev.drake.dough.items.CustomItemStack;
@@ -91,7 +92,7 @@ public class NuclearFurnace extends AbstractTicker implements RecipeDisplayItem 
 
         //display recipes
         for (Map.Entry<String, Integer> entry : this.fuels.entrySet()) {
-            SlimefunItem sfItem = SlimefunItem.getByID(entry.getKey());
+            SlimefunItem sfItem = SlimefunItem.getById(entry.getKey());
             if (sfItem != null) {
                 ItemStack stack = sfItem.getItem().clone();
                 ItemMeta meta = stack.getItemMeta();
@@ -202,7 +203,7 @@ public class NuclearFurnace extends AbstractTicker implements RecipeDisplayItem 
 
     @Nonnull
     private static ItemStack getFuelItem(int fuel) {
-        return new CustomItem(
+        return new CustomItemStack(
                 fuel < 1 ? Material.GRAY_STAINED_GLASS_PANE :
                         fuel < 36 ? Material.RED_STAINED_GLASS_PANE :
                                 fuel < 161 ? Material.ORANGE_STAINED_GLASS_PANE :

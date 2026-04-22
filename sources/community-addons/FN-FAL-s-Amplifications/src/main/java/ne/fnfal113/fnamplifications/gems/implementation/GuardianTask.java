@@ -63,7 +63,7 @@ public class GuardianTask extends BukkitRunnable {
         getZombie().setBaby(true);
 
         getZombie().getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(0.4F);
-        getZombie().getAttribute(Attribute.MAX_HEALTH).setBaseValue(40);
+        getZombie().getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(40);
         getZombie().getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(7.0D);
 
         getZombie().getEquipment().setHelmet(new ItemStack(Material.GOLDEN_HELMET));

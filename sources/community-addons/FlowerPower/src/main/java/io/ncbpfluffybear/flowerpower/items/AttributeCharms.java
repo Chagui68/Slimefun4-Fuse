@@ -91,7 +91,7 @@ public class AttributeCharms extends SimpleSlimefunItem<ItemUseHandler> implemen
         ATTACK_SPEED(Attribute.ATTACK_SPEED, 0.1, 0.5, AttributeModifier.Operation.MULTIPLY_SCALAR_1),
         FLY_SPEED(Attribute.FLYING_SPEED, 0.01, 1, AttributeModifier.Operation.MULTIPLY_SCALAR_1),
         DAMAGE(Attribute.ATTACK_DAMAGE, 0.01, 1, AttributeModifier.Operation.MULTIPLY_SCALAR_1),
-        MAX_HEALTH(Attribute.MAX_HEALTH, 1, 5, AttributeModifier.Operation.ADD_NUMBER),
+        MAX_HEALTH(Attribute.GENERIC_MAX_HEALTH, 1, 5, AttributeModifier.Operation.ADD_NUMBER),
         KNOCKBACK_RESISTANCE(Attribute.KNOCKBACK_RESISTANCE, 0.1, 0.5, AttributeModifier.Operation.ADD_NUMBER);
 
         private final Attribute attribute;

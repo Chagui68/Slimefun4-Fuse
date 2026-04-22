@@ -1,0 +1,934 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for dev.drake:Slimefun:jar:6.0-Drake-1.21.11
+[WARNING] 'version' contains an expression but should be a constant. @ dev.drake:Slimefun:${slimefun.drake.version}, C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\slimefun-core\Slimefun4-src\pom.xml, line 15, column 14
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] DrakesCraft-Labs                                                   [pom]
+[INFO] Dough Core (DrakesLab Port)                                        [jar]
+[INFO] Slimefun                                                           [jar]
+[INFO] InfinityLib                                                        [jar]
+[INFO] InfinityExpansion                                                  [jar]
+[INFO] ExoticGarden                                                       [jar]
+[INFO] DynaTech                                                           [jar]
+[INFO] ExtraUtils                                                         [jar]
+[INFO] SlimeChem                                                          [jar]
+[INFO] FNAmplifications                                                   [jar]
+[INFO] FoxyMachines                                                       [jar]
+[INFO] GeneticChickengineering-Reborn                                     [jar]
+[INFO] PotionExpansion                                                    [jar]
+[INFO] 
+[INFO] -------------------< dev.drake:drakes-slimefun-labs >-------------------
+[INFO] Building DrakesCraft-Labs 6                                       [1/13]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ drakes-slimefun-labs ---
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ drakes-slimefun-labs ---
+[INFO] Installing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\pom.xml to C:\Users\Jack\.m2\repository\dev\drake\drakes-slimefun-labs\6\drakes-slimefun-labs-6.pom
+[INFO] 
+[INFO] ---------------------< dev.drake.dough:dough-core >---------------------
+[INFO] Building Dough Core (DrakesLab Port) 1.3.1-DRAKE                  [2/13]
+[INFO]   from sources\dough-core\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ dough-core ---
+[INFO] Deleting C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\dough-core\target
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ dough-core ---
+[INFO] skip non existing resourceDirectory C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\dough-core\src\main\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ dough-core ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 90 source files with javac [debug release 21] to target\classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[INFO] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/dough-core/src/main/java/dev/drake/dough/chat/ChatInputListener.java: Some input files use or override a deprecated API.
+[INFO] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/dough-core/src/main/java/dev/drake/dough/chat/ChatInputListener.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ dough-core ---
+[INFO] skip non existing resourceDirectory C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\dough-core\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ dough-core ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ dough-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.5.0:jar (default-jar) @ dough-core ---
+[INFO] Building jar: C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\dough-core\target\dough-core-1.3.1-DRAKE.jar
+[INFO] 
+[INFO] --- shade:3.6.0:shade (default) @ dough-core ---
+[INFO] Including io.papermc:paperlib:jar:1.0.8 in the shaded jar.
+[WARNING] dough-core-1.3.1-DRAKE.jar, paperlib-1.0.8.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/MANIFEST.MF
+[WARNING] maven-shade-plugin has detected that some files are
+[WARNING] present in two or more JARs. When this happens, only one
+[WARNING] single version of the file is copied to the uber jar.
+[WARNING] Usually this is not harmful and you can skip these warnings,
+[WARNING] otherwise try to manually exclude artifacts based on
+[WARNING] mvn dependency:tree -Ddetail=true and the above output.
+[WARNING] See https://maven.apache.org/plugins/maven-shade-plugin/
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\dough-core\target\dough-core-1.3.1-DRAKE.jar with C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\dough-core\target\dough-core-1.3.1-DRAKE-shaded.jar
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ dough-core ---
+[INFO] Installing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\dough-core\pom.xml to C:\Users\Jack\.m2\repository\dev\drake\dough\dough-core\1.3.1-DRAKE\dough-core-1.3.1-DRAKE.pom
+[INFO] Installing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\dough-core\target\dough-core-1.3.1-DRAKE.jar to C:\Users\Jack\.m2\repository\dev\drake\dough\dough-core\1.3.1-DRAKE\dough-core-1.3.1-DRAKE.jar
+[INFO] 
+[INFO] -------------------------< dev.drake:Slimefun >-------------------------
+[INFO] Building Slimefun 6.0-Drake-1.21.11                               [3/13]
+[INFO]   from sources\slimefun-core\Slimefun4-src\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ Slimefun ---
+[INFO] Deleting C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\slimefun-core\Slimefun4-src\target
+[INFO] 
+[INFO] --- jacoco:0.8.11:prepare-agent (prepare) @ Slimefun ---
+[INFO] argLine set to -javaagent:C:\\Users\\Jack\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.11\\org.jacoco.agent-0.8.11-runtime.jar=destfile=C:\\Users\\Jack\\Documents\\GitHub\\Experimentos\\DrakesVanillaSlimefun+\\sources\\slimefun-core\\Slimefun4-src\\target\\jacoco.exec
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ Slimefun ---
+[INFO] Copying 273 resources from src\main\resources to target\classes
+[INFO] Copying 1 resource from . to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ Slimefun ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 584 source files with javac [debug release 21] to target\classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/main/java/me/mrCookieSlime/Slimefun/Objects/SlimefunItem/interfaces/InventoryBlock.java:[23,8] deprecated item is not annotated with @Deprecated
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/main/java/io/github/thebusybiscuit/slimefun4/implementation/items/armor/StomperBoots.java:[60,55] EntityDamageByEntityEvent(org.bukkit.entity.Entity,org.bukkit.entity.Entity,org.bukkit.event.entity.EntityDamageEvent.DamageCause,double) in org.bukkit.event.entity.EntityDamageByEntityEvent has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/main/java/io/github/thebusybiscuit/slimefun4/implementation/items/electric/machines/AutoBrewer.java:[154,9] org.bukkit.potion.PotionData in org.bukkit.potion has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/main/java/io/github/thebusybiscuit/slimefun4/implementation/items/electric/machines/AutoBrewer.java:[158,46] org.bukkit.potion.PotionData in org.bukkit.potion has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/main/java/io/github/thebusybiscuit/slimefun4/implementation/items/electric/machines/AutoBrewer.java:[161,46] org.bukkit.potion.PotionData in org.bukkit.potion has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/main/java/io/github/thebusybiscuit/slimefun4/implementation/items/electric/machines/AutoBrewer.java:[172,46] org.bukkit.potion.PotionData in org.bukkit.potion has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/main/java/io/github/thebusybiscuit/slimefun4/implementation/items/electric/machines/AutoBrewer.java:[177,42] org.bukkit.potion.PotionData in org.bukkit.potion has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/main/java/io/github/thebusybiscuit/slimefun4/implementation/items/electric/machines/AutoBrewer.java:[181,42] org.bukkit.potion.PotionData in org.bukkit.potion has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/main/java/io/github/thebusybiscuit/slimefun4/implementation/items/electric/machines/AutoBrewer.java:[187,46] org.bukkit.potion.PotionData in org.bukkit.potion has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/main/java/io/github/thebusybiscuit/slimefun4/implementation/items/electric/machines/FluidPump.java:[208,48] org.bukkit.potion.PotionData in org.bukkit.potion has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/main/java/io/github/thebusybiscuit/slimefun4/implementation/items/weapons/ExplosiveBow.java:[66,55] EntityDamageByEntityEvent(org.bukkit.entity.Entity,org.bukkit.entity.Entity,org.bukkit.event.entity.EntityDamageEvent.DamageCause,double) in org.bukkit.event.entity.EntityDamageByEntityEvent has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/main/java/io/github/thebusybiscuit/slimefun4/implementation/items/weapons/SeismicAxe.java:[127,47] EntityDamageByEntityEvent(org.bukkit.entity.Entity,org.bukkit.entity.Entity,org.bukkit.event.entity.EntityDamageEvent.DamageCause,double) in org.bukkit.event.entity.EntityDamageByEntityEvent has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/main/java/io/github/thebusybiscuit/slimefun4/implementation/setup/SlimefunItemSetup.java:[844,40] org.bukkit.potion.PotionData in org.bukkit.potion has been deprecated and marked for removal
+[INFO] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/main/java/io/github/thebusybiscuit/slimefun4/api/ErrorReport.java: Some input files use or override a deprecated API.
+[INFO] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/main/java/io/github/thebusybiscuit/slimefun4/api/ErrorReport.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ Slimefun ---
+[INFO] Copying 8 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ Slimefun ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 108 source files with javac [debug release 21] to target\test-classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/test/java/io/github/thebusybiscuit/slimefun4/implementation/listeners/TestBeeListener.java:[65,43] EntityDamageByEntityEvent(org.bukkit.entity.Entity,org.bukkit.entity.Entity,org.bukkit.event.entity.EntityDamageEvent.DamageCause,double) in org.bukkit.event.entity.EntityDamageByEntityEvent has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/test/java/io/github/thebusybiscuit/slimefun4/implementation/listeners/TestFireworksListener.java:[42,43] EntityDamageByEntityEvent(org.bukkit.entity.Entity,org.bukkit.entity.Entity,org.bukkit.event.entity.EntityDamageEvent.DamageCause,double) in org.bukkit.event.entity.EntityDamageByEntityEvent has been deprecated and marked for removal
+[INFO] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/test/java/io/github/thebusybiscuit/slimefun4/api/profiles/TestPlayerProfile.java: Some input files use or override a deprecated API.
+[INFO] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/slimefun-core/Slimefun4-src/src/test/java/io/github/thebusybiscuit/slimefun4/api/profiles/TestPlayerProfile.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- surefire:3.3.1:test (default-test) @ Slimefun ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco:0.8.11:report (report) @ Slimefun ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --- jar:3.5.0:jar (default-jar) @ Slimefun ---
+[INFO] Building jar: C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\slimefun-core\Slimefun4-src\target\Slimefun v6.0-Drake-1.21.11.jar
+[INFO] 
+[INFO] >>> source:3.3.1:jar (attach-sources) > generate-sources @ Slimefun >>>
+[INFO] 
+[INFO] --- jacoco:0.8.11:prepare-agent (prepare) @ Slimefun ---
+[INFO] argLine set to -javaagent:C:\\Users\\Jack\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.11\\org.jacoco.agent-0.8.11-runtime.jar=destfile=C:\\Users\\Jack\\Documents\\GitHub\\Experimentos\\DrakesVanillaSlimefun+\\sources\\slimefun-core\\Slimefun4-src\\target\\jacoco.exec
+[INFO] 
+[INFO] <<< source:3.3.1:jar (attach-sources) < generate-sources @ Slimefun <<<
+[INFO] 
+[INFO] 
+[INFO] --- source:3.3.1:jar (attach-sources) @ Slimefun ---
+[INFO] Building jar: C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\slimefun-core\Slimefun4-src\target\Slimefun v6.0-Drake-1.21.11-sources.jar
+[INFO] 
+[INFO] --- shade:3.6.0:shade (default) @ Slimefun ---
+[INFO] Including dev.drake.dough:dough-core:jar:1.3.1-DRAKE in the shaded jar.
+[INFO] Including io.papermc:paperlib:jar:1.0.8 in the shaded jar.
+[INFO] Including commons-lang:commons-lang:jar:2.6 in the shaded jar.
+[WARNING] dough-core-1.3.1-DRAKE.jar, paperlib-1.0.8.jar define 30 overlapping classes: 
+[WARNING]   - io.papermc.lib.PaperLib
+[WARNING]   - io.papermc.lib.environments.CraftBukkitEnvironment
+[WARNING]   - io.papermc.lib.environments.Environment
+[WARNING]   - io.papermc.lib.environments.PaperEnvironment
+[WARNING]   - io.papermc.lib.environments.SpigotEnvironment
+[WARNING]   - io.papermc.lib.features.asyncchunks.AsyncChunks
+[WARNING]   - io.papermc.lib.features.asyncchunks.AsyncChunksPaper_13
+[WARNING]   - io.papermc.lib.features.asyncchunks.AsyncChunksPaper_15
+[WARNING]   - io.papermc.lib.features.asyncchunks.AsyncChunksPaper_9_12
+[WARNING]   - io.papermc.lib.features.asyncchunks.AsyncChunksSync
+[WARNING]   - 20 more...
+[WARNING] maven-shade-plugin has detected that some files are
+[WARNING] present in two or more JARs. When this happens, only one
+[WARNING] single version of the file is copied to the uber jar.
+[WARNING] Usually this is not harmful and you can skip these warnings,
+[WARNING] otherwise try to manually exclude artifacts based on
+[WARNING] mvn dependency:tree -Ddetail=true and the above output.
+[WARNING] See https://maven.apache.org/plugins/maven-shade-plugin/
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\slimefun-core\Slimefun4-src\target\Slimefun v6.0-Drake-1.21.11.jar with C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\slimefun-core\Slimefun4-src\target\Slimefun-6.0-Drake-1.21.11-shaded.jar
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ Slimefun ---
+[INFO] Installing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\slimefun-core\Slimefun4-src\pom.xml to C:\Users\Jack\.m2\repository\dev\drake\Slimefun\6.0-Drake-1.21.11\Slimefun-6.0-Drake-1.21.11.pom
+[INFO] Installing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\slimefun-core\Slimefun4-src\target\Slimefun v6.0-Drake-1.21.11.jar to C:\Users\Jack\.m2\repository\dev\drake\Slimefun\6.0-Drake-1.21.11\Slimefun-6.0-Drake-1.21.11.jar
+[INFO] Installing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\slimefun-core\Slimefun4-src\target\Slimefun v6.0-Drake-1.21.11-sources.jar to C:\Users\Jack\.m2\repository\dev\drake\Slimefun\6.0-Drake-1.21.11\Slimefun-6.0-Drake-1.21.11-sources.jar
+[INFO] 
+[INFO] --------------------< io.github.mooy1:InfinityLib >---------------------
+[INFO] Building InfinityLib 1.3.10                                       [4/13]
+[INFO]   from sources\batch-2-expansion\InfinityLib\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ InfinityLib ---
+[INFO] Deleting C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\batch-2-expansion\InfinityLib\target
+[INFO] 
+[INFO] --- templating:3.0.0:filter-sources (filter-src) @ InfinityLib ---
+[INFO] Copying files with filtering to temporary directory.
+[INFO] Copying 1 resource from src\main\java-templates to target\templates-tmp381442413
+[INFO] Copied 1 files to output directory: C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\batch-2-expansion\InfinityLib\target\generated-sources\java-templates
+[INFO] Source directory: C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\batch-2-expansion\InfinityLib\target\generated-sources\java-templates added.
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ InfinityLib ---
+[INFO] skip non existing resourceDirectory C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\batch-2-expansion\InfinityLib\src\main\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ InfinityLib ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 31 source files with javac [debug release 21] to target\classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/main/java/io/github/mooy1/infinitylib/core/AbstractAddon.java:[69,26] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/main/java/io/github/mooy1/infinitylib/core/AbstractAddon.java:[69,26] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/main/java/io/github/mooy1/infinitylib/core/AbstractAddon.java:[69,26] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/main/java/io/github/mooy1/infinitylib/core/AbstractAddon.java:[69,26] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/main/java/io/github/mooy1/infinitylib/core/AbstractAddon.java:[69,26] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/main/java/io/github/mooy1/infinitylib/core/AbstractAddon.java:[77,19] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/main/java/io/github/mooy1/infinitylib/core/AbstractAddon.java:[77,19] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/main/java/io/github/mooy1/infinitylib/core/AbstractAddon.java:[77,19] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/main/java/io/github/mooy1/infinitylib/core/AbstractAddon.java:[77,19] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/main/java/io/github/mooy1/infinitylib/core/AbstractAddon.java:[77,19] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/main/java/io/github/mooy1/infinitylib/core/AbstractAddon.java:[80,9] JavaPlugin(org.bukkit.plugin.java.JavaPluginLoader,org.bukkit.plugin.PluginDescriptionFile,java.io.File,java.io.File) in org.bukkit.plugin.java.JavaPlugin has been deprecated and marked for removal
+[INFO] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/main/java/io/github/mooy1/infinitylib/commands/HelpCommand.java: Some input files use or override a deprecated API.
+[INFO] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/main/java/io/github/mooy1/infinitylib/commands/HelpCommand.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ InfinityLib ---
+[INFO] Copying 3 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ InfinityLib ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 21 source files with javac [debug release 21] to target\test-classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/test/java/io/github/mooy1/infinitylib/core/MockAddon.java:[28,22] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/test/java/io/github/mooy1/infinitylib/core/MockAddon.java:[28,22] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/test/java/io/github/mooy1/infinitylib/core/MockAddon.java:[28,22] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/test/java/io/github/mooy1/infinitylib/core/MockAddon.java:[28,22] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/test/java/io/github/mooy1/infinitylib/core/MockAddon.java:[28,22] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/test/java/io/github/mooy1/otheraddon/MockOtherAddon.java:[13,27] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/test/java/io/github/mooy1/otheraddon/MockOtherAddon.java:[13,27] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/test/java/io/github/mooy1/otheraddon/MockOtherAddon.java:[13,27] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/test/java/io/github/mooy1/otheraddon/MockOtherAddon.java:[13,27] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/test/java/io/github/mooy1/otheraddon/MockOtherAddon.java:[13,27] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[INFO] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/test/java/io/github/mooy1/infinitylib/common/TestPersistentType.java: Some input files use or override a deprecated API.
+[INFO] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/batch-2-expansion/InfinityLib/src/test/java/io/github/mooy1/infinitylib/common/TestPersistentType.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ InfinityLib ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.5.0:jar (default-jar) @ InfinityLib ---
+[INFO] Building jar: C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\batch-2-expansion\InfinityLib\target\InfinityLib v1.3.10.jar
+[INFO] 
+[INFO] --- shade:3.6.0:shade (default) @ InfinityLib ---
+[INFO] Including org.bstats:bstats-bukkit:jar:3.0.2 in the shaded jar.
+[INFO] Including org.bstats:bstats-base:jar:3.0.2 in the shaded jar.
+[INFO] Dependency-reduced POM written at: C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\batch-2-expansion\InfinityLib\dependency-reduced-pom.xml
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\batch-2-expansion\InfinityLib\target\InfinityLib v1.3.10.jar with C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\batch-2-expansion\InfinityLib\target\InfinityLib-1.3.10-shaded.jar
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ InfinityLib ---
+[INFO] Installing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\batch-2-expansion\InfinityLib\dependency-reduced-pom.xml to C:\Users\Jack\.m2\repository\io\github\mooy1\InfinityLib\1.3.10\InfinityLib-1.3.10.pom
+[INFO] Installing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\batch-2-expansion\InfinityLib\target\InfinityLib v1.3.10.jar to C:\Users\Jack\.m2\repository\io\github\mooy1\InfinityLib\1.3.10\InfinityLib-1.3.10.jar
+[INFO] 
+[INFO] -----------------< io.github.mooy1:InfinityExpansion >------------------
+[INFO] Building InfinityExpansion 1.20.6-Drake                           [5/13]
+[INFO]   from sources\repos-to-port\InfinityExpansion\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ InfinityExpansion ---
+[INFO] Deleting C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\InfinityExpansion\target
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ InfinityExpansion ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] Copying 1 resource from . to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ InfinityExpansion ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 51 source files with javac [debug release 21] to target\classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/InfinityExpansion/src/main/java/io/github/mooy1/infinityexpansion/InfinityExpansion.java:[32,30] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/InfinityExpansion/src/main/java/io/github/mooy1/infinityexpansion/InfinityExpansion.java:[32,30] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/InfinityExpansion/src/main/java/io/github/mooy1/infinityexpansion/InfinityExpansion.java:[32,30] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/InfinityExpansion/src/main/java/io/github/mooy1/infinityexpansion/InfinityExpansion.java:[32,30] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/InfinityExpansion/src/main/java/io/github/mooy1/infinityexpansion/InfinityExpansion.java:[32,30] org.bukkit.plugin.java.JavaPluginLoader in org.bukkit.plugin.java has been deprecated and marked for removal
+[INFO] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/InfinityExpansion/src/main/java/io/github/mooy1/infinityexpansion/categories/InfinityGroup.java: Some input files use or override a deprecated API.
+[INFO] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/InfinityExpansion/src/main/java/io/github/mooy1/infinityexpansion/categories/InfinityGroup.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ InfinityExpansion ---
+[INFO] skip non existing resourceDirectory C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\InfinityExpansion\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ InfinityExpansion ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug release 21] to target\test-classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ InfinityExpansion ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.5.0:jar (default-jar) @ InfinityExpansion ---
+[INFO] Building jar: C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\InfinityExpansion\target\InfinityExpansion v1.20.6-Drake.jar
+[INFO] 
+[INFO] --- shade:3.5.2:shade (default) @ InfinityExpansion ---
+[INFO] Including io.github.mooy1:InfinityLib:jar:1.3.10 in the shaded jar.
+[INFO] Including org.bstats:bstats-bukkit:jar:3.0.2 in the shaded jar.
+[INFO] Including org.bstats:bstats-base:jar:3.0.2 in the shaded jar.
+[INFO] Minimizing jar io.github.mooy1:InfinityExpansion:jar:1.20.6-Drake
+[INFO] Dependency-reduced POM written at: C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\InfinityExpansion\dependency-reduced-pom.xml
+[INFO] Minimized 140 -> 119 (85%)
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\InfinityExpansion\target\InfinityExpansion v1.20.6-Drake.jar with C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\InfinityExpansion\target\InfinityExpansion-1.20.6-Drake-shaded.jar
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ InfinityExpansion ---
+[INFO] Installing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\InfinityExpansion\dependency-reduced-pom.xml to C:\Users\Jack\.m2\repository\io\github\mooy1\InfinityExpansion\1.20.6-Drake\InfinityExpansion-1.20.6-Drake.pom
+[INFO] Installing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\InfinityExpansion\target\InfinityExpansion v1.20.6-Drake.jar to C:\Users\Jack\.m2\repository\io\github\mooy1\InfinityExpansion\1.20.6-Drake\InfinityExpansion-1.20.6-Drake.jar
+[INFO] 
+[INFO] ---------------< io.github.thebusybiscuit:ExoticGarden >----------------
+[INFO] Building ExoticGarden UNOFFICIAL                                  [6/13]
+[INFO]   from sources\repos-to-port\ExoticGarden\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ ExoticGarden ---
+[INFO] Deleting C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\ExoticGarden\target
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ ExoticGarden ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] Copying 1 resource from . to target\classes
+[INFO] Copying 11 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ ExoticGarden ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 33 source files with javac [debug release 21] to target\classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[INFO] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/ExoticGarden/src/main/java/io/github/thebusybiscuit/exoticgarden/CustomPotion.java: Some input files use or override a deprecated API.
+[INFO] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/ExoticGarden/src/main/java/io/github/thebusybiscuit/exoticgarden/CustomPotion.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ ExoticGarden ---
+[INFO] skip non existing resourceDirectory C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\ExoticGarden\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ ExoticGarden ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ ExoticGarden ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.5.0:jar (default-jar) @ ExoticGarden ---
+[INFO] Building jar: C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\ExoticGarden\target\ExoticGarden vUNOFFICIAL.jar
+[INFO] 
+[INFO] --- shade:3.5.2:shade (default) @ ExoticGarden ---
+[INFO] Including org.bstats:bstats-bukkit:jar:3.0.2 in the shaded jar.
+[INFO] Including org.bstats:bstats-base:jar:3.0.2 in the shaded jar.
+[INFO] Dependency-reduced POM written at: C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\ExoticGarden\dependency-reduced-pom.xml
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\ExoticGarden\target\ExoticGarden vUNOFFICIAL.jar with C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\ExoticGarden\target\ExoticGarden-UNOFFICIAL-shaded.jar
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ ExoticGarden ---
+[INFO] Installing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\ExoticGarden\dependency-reduced-pom.xml to C:\Users\Jack\.m2\repository\io\github\thebusybiscuit\ExoticGarden\UNOFFICIAL\ExoticGarden-UNOFFICIAL.pom
+[INFO] Installing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\ExoticGarden\target\ExoticGarden vUNOFFICIAL.jar to C:\Users\Jack\.m2\repository\io\github\thebusybiscuit\ExoticGarden\UNOFFICIAL\ExoticGarden-UNOFFICIAL.jar
+[INFO] 
+[INFO] ----------------------< me.profelements:DynaTech >----------------------
+[INFO] Building DynaTech 1.21-Drake                                      [7/13]
+[INFO]   from sources\repos-to-port\DynaTech\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ DynaTech ---
+[INFO] Deleting C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\DynaTech\target
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ DynaTech ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ DynaTech ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 56 source files with javac [debug release 21] to target\classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/DynaTech/src/main/java/me/profelements/dynatech/items/electric/PotionSprinkler.java:[55,17] org.bukkit.potion.PotionData in org.bukkit.potion has been deprecated and marked for removal
+[INFO] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/DynaTech/src/main/java/me/profelements/dynatech/DynaTech.java: Some input files use or override a deprecated API.
+[INFO] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/DynaTech/src/main/java/me/profelements/dynatech/DynaTech.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ DynaTech ---
+[INFO] skip non existing resourceDirectory C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\DynaTech\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ DynaTech ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ DynaTech ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.5.0:jar (default-jar) @ DynaTech ---
+[INFO] Building jar: C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\DynaTech\target\DynaTech v1.21-Drake.jar
+[INFO] 
+[INFO] --- shade:3.6.0:shade (default) @ DynaTech ---
+[INFO] Including io.papermc:paperlib:jar:1.0.8 in the shaded jar.
+[INFO] Including io.github.mooy1:InfinityLib:jar:1.3.10 in the shaded jar.
+[INFO] Including dev.drake.dough:dough-core:jar:1.3.1-DRAKE in the shaded jar.
+[INFO] Including commons-lang:commons-lang:jar:2.6 in the shaded jar.
+[INFO] Including org.bstats:bstats-bukkit:jar:3.0.2 in the shaded jar.
+[INFO] Including org.bstats:bstats-base:jar:3.0.2 in the shaded jar.
+[INFO] Including com.github.Slimefun-Addon-Community:extrautils:jar:73e76ac in the shaded jar.
+[INFO] Dependency-reduced POM written at: C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\DynaTech\dependency-reduced-pom.xml
+[WARNING] dough-core-1.3.1-DRAKE.jar, paperlib-1.0.8.jar define 30 overlapping classes: 
+[WARNING]   - io.papermc.lib.PaperLib
+[WARNING]   - io.papermc.lib.environments.CraftBukkitEnvironment
+[WARNING]   - io.papermc.lib.environments.Environment
+[WARNING]   - io.papermc.lib.environments.PaperEnvironment
+[WARNING]   - io.papermc.lib.environments.SpigotEnvironment
+[WARNING]   - io.papermc.lib.features.asyncchunks.AsyncChunks
+[WARNING]   - io.papermc.lib.features.asyncchunks.AsyncChunksPaper_13
+[WARNING]   - io.papermc.lib.features.asyncchunks.AsyncChunksPaper_15
+[WARNING]   - io.papermc.lib.features.asyncchunks.AsyncChunksPaper_9_12
+[WARNING]   - io.papermc.lib.features.asyncchunks.AsyncChunksSync
+[WARNING]   - 20 more...
+[WARNING] DynaTech v1.21-Drake.jar, bstats-base-3.0.2.jar, bstats-bukkit-3.0.2.jar, commons-lang-2.6.jar, dough-core-1.3.1-DRAKE.jar, extrautils-73e76ac.jar, paperlib-1.0.8.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/MANIFEST.MF
+[WARNING] maven-shade-plugin has detected that some files are
+[WARNING] present in two or more JARs. When this happens, only one
+[WARNING] single version of the file is copied to the uber jar.
+[WARNING] Usually this is not harmful and you can skip these warnings,
+[WARNING] otherwise try to manually exclude artifacts based on
+[WARNING] mvn dependency:tree -Ddetail=true and the above output.
+[WARNING] See https://maven.apache.org/plugins/maven-shade-plugin/
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\DynaTech\target\DynaTech v1.21-Drake.jar with C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\DynaTech\target\DynaTech-1.21-Drake-shaded.jar
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ DynaTech ---
+[INFO] Installing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\DynaTech\dependency-reduced-pom.xml to C:\Users\Jack\.m2\repository\me\profelements\DynaTech\1.21-Drake\DynaTech-1.21-Drake.pom
+[INFO] Installing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\DynaTech\target\DynaTech v1.21-Drake.jar to C:\Users\Jack\.m2\repository\me\profelements\DynaTech\1.21-Drake\DynaTech-1.21-Drake.jar
+[INFO] 
+[INFO] -----------------------< dev.j3fftw:ExtraUtils >------------------------
+[INFO] Building ExtraUtils 1.20.6-Drake                                  [8/13]
+[INFO]   from sources\repos-to-port\ExtraUtils\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ ExtraUtils ---
+[INFO] Deleting C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\ExtraUtils\target
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ ExtraUtils ---
+[INFO] skip non existing resourceDirectory C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\ExtraUtils\src\main\resources
+[INFO] Copying 1 resource from . to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ ExtraUtils ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 7 source files with javac [debug release 21] to target\classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/ExtraUtils/src/main/java/dev/j3fftw/extrautils/enchants/GlowEnchant.java:[58,19] translationKey() in org.bukkit.enchantments.Enchantment has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/ExtraUtils/src/main/java/dev/j3fftw/extrautils/enchants/GlowEnchant.java:[150,18] getDamageIncrease(int,org.bukkit.entity.EntityType) in org.bukkit.enchantments.Enchantment has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/ExtraUtils/src/main/java/dev/j3fftw/extrautils/enchants/GlowEnchant.java:[145,18] getDamageIncrease(int,org.bukkit.entity.EntityCategory) in org.bukkit.enchantments.Enchantment has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/ExtraUtils/src/main/java/dev/j3fftw/extrautils/enchants/GlowEnchant.java:[140,30] getRarity() in org.bukkit.enchantments.Enchantment has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/ExtraUtils/src/main/java/dev/j3fftw/extrautils/enchants/GlowEnchant.java:[74,30] getItemTarget() in org.bukkit.enchantments.Enchantment has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/ExtraUtils/src/main/java/dev/j3fftw/extrautils/enchants/GlowEnchant.java:[52,19] getTranslationKey() in org.bukkit.Translatable has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/ExtraUtils/src/main/java/dev/j3fftw/extrautils/enchants/GlowEnchant.java:[140,12] io.papermc.paper.enchantments.EnchantmentRarity in io.papermc.paper.enchantments has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/ExtraUtils/src/main/java/dev/j3fftw/extrautils/enchants/GlowEnchant.java:[140,12] io.papermc.paper.enchantments.EnchantmentRarity in io.papermc.paper.enchantments has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/ExtraUtils/src/main/java/dev/j3fftw/extrautils/enchants/GlowEnchant.java:[140,12] io.papermc.paper.enchantments.EnchantmentRarity in io.papermc.paper.enchantments has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/ExtraUtils/src/main/java/dev/j3fftw/extrautils/enchants/GlowEnchant.java:[140,12] io.papermc.paper.enchantments.EnchantmentRarity in io.papermc.paper.enchantments has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/ExtraUtils/src/main/java/dev/j3fftw/extrautils/enchants/GlowEnchant.java:[140,12] io.papermc.paper.enchantments.EnchantmentRarity in io.papermc.paper.enchantments has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/ExtraUtils/src/main/java/dev/j3fftw/extrautils/enchants/GlowEnchant.java:[141,16] io.papermc.paper.enchantments.EnchantmentRarity in io.papermc.paper.enchantments has been deprecated and marked for removal
+[WARNING] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/ExtraUtils/src/main/java/dev/j3fftw/extrautils/enchants/GlowEnchant.java:[156,31] getActiveSlots() in org.bukkit.enchantments.Enchantment has been deprecated and marked for removal
+[INFO] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/ExtraUtils/src/main/java/dev/j3fftw/extrautils/enchants/GlowEnchant.java: Some input files use or override a deprecated API.
+[INFO] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/ExtraUtils/src/main/java/dev/j3fftw/extrautils/enchants/GlowEnchant.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ ExtraUtils ---
+[INFO] skip non existing resourceDirectory C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\ExtraUtils\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ ExtraUtils ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ ExtraUtils ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.5.0:jar (default-jar) @ ExtraUtils ---
+[INFO] Building jar: C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\ExtraUtils\target\ExtraUtils.jar
+[INFO] 
+[INFO] --- shade:3.5.2:shade (default) @ ExtraUtils ---
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\ExtraUtils\target\ExtraUtils.jar with C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\ExtraUtils\target\ExtraUtils-1.20.6-Drake-shaded.jar
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ ExtraUtils ---
+[INFO] Installing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\ExtraUtils\pom.xml to C:\Users\Jack\.m2\repository\dev\j3fftw\ExtraUtils\1.20.6-Drake\ExtraUtils-1.20.6-Drake.pom
+[INFO] Installing C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\ExtraUtils\target\ExtraUtils.jar to C:\Users\Jack\.m2\repository\dev\j3fftw\ExtraUtils\1.20.6-Drake\ExtraUtils-1.20.6-Drake.jar
+[INFO] 
+[INFO] -----------------< io.github.addoncommunity:SlimeChem >-----------------
+[INFO] Building SlimeChem 1.21-Drake                                     [9/13]
+[INFO]   from sources\repos-to-port\SlimeChem\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ SlimeChem ---
+[INFO] Deleting C:\Users\Jack\Documents\GitHub\Experimentos\DrakesVanillaSlimefun+\sources\repos-to-port\SlimeChem\target
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ SlimeChem ---
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ SlimeChem ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 32 source files with javac [debug release 21] to target\classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/SlimeChem.java:[5,35] cannot find symbol
+  symbol:   class PluginUtils
+  location: package io.github.mooy1.infinitylib
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/atomic/isotopes/Isotope.java:[9,41] package io.github.mooy1.infinitylib.items does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/utils/StringUtil.java:[5,32] cannot find symbol
+  symbol:   class WordUtils
+  location: package org.apache.commons.lang3
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[6,57] cannot find symbol
+  symbol:   class SlimefunPlugin
+  location: package io.github.thebusybiscuit.slimefun4.implementation
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[9,46] cannot find symbol
+  symbol:   class Config
+  location: package io.github.thebusybiscuit.slimefun4.api
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[10,71] cannot find symbol
+  symbol:   class RecipeType
+  location: class io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[11,65] cannot find symbol
+  symbol:   class SlimefunItem
+  location: class io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[12,46] cannot find symbol
+  symbol:   class BlockStorage
+  location: package io.github.thebusybiscuit.slimefun4.api
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[14,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[15,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[16,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[17,61] package io.github.thebusybiscuit.slimefun4.api.item_transport does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[39,26] cannot find symbol
+  symbol: class SlimefunItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[105,36] cannot find symbol
+  symbol:   class BlockMenuPreset
+  location: class io.github.addoncommunity.slimechem.implementation.generators.RTG
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[118,36] cannot find symbol
+  symbol:   class ItemTransportFlow
+  location: class io.github.addoncommunity.slimechem.implementation.generators.RTG
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[125,65] cannot find symbol
+  symbol:   class Config
+  location: class io.github.addoncommunity.slimechem.implementation.generators.RTG
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalCombiner.java:[8,71] cannot find symbol
+  symbol:   class RecipeType
+  location: class io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalCombiner.java:[9,65] cannot find symbol
+  symbol:   class SlimefunItem
+  location: class io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalCombiner.java:[21,39] cannot find symbol
+  symbol: class SlimefunItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[9,45] package io.github.mooy1.infinitylib.abstracts does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[10,43] package io.github.mooy1.infinitylib.presets does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[11,50] package io.github.mooy1.infinitylib.recipes.normal does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[13,46] cannot find symbol
+  symbol:   class Config
+  location: package io.github.thebusybiscuit.slimefun4.api
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[14,71] cannot find symbol
+  symbol:   class RecipeType
+  location: class io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[16,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[17,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[18,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[19,61] package io.github.thebusybiscuit.slimefun4.api.item_transport does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[36,40] cannot find symbol
+  symbol: class AbstractMachine
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[45,19] cannot find symbol
+  symbol:   class RandomRecipeMap
+  location: class io.github.addoncommunity.slimechem.implementation.machines.ChemicalDissolver
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[157,36] cannot find symbol
+  symbol:   class BlockMenuPreset
+  location: class io.github.addoncommunity.slimechem.implementation.machines.ChemicalDissolver
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[171,48] cannot find symbol
+  symbol:   class DirtyChestMenu
+  location: class io.github.addoncommunity.slimechem.implementation.machines.ChemicalDissolver
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[171,88] cannot find symbol
+  symbol:   class ItemTransportFlow
+  location: class io.github.addoncommunity.slimechem.implementation.machines.ChemicalDissolver
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[182,40] cannot find symbol
+  symbol:   class BlockMenu
+  location: class io.github.addoncommunity.slimechem.implementation.machines.ChemicalDissolver
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[182,92] cannot find symbol
+  symbol:   class Config
+  location: class io.github.addoncommunity.slimechem.implementation.machines.ChemicalDissolver
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[7,45] package io.github.mooy1.infinitylib.abstracts does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[9,46] cannot find symbol
+  symbol:   class Config
+  location: package io.github.thebusybiscuit.slimefun4.api
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[10,71] cannot find symbol
+  symbol:   class RecipeType
+  location: class io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[12,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[13,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[14,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[15,61] package io.github.thebusybiscuit.slimefun4.api.item_transport does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[28,32] cannot find symbol
+  symbol: class AbstractMachine
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[55,36] cannot find symbol
+  symbol:   class BlockMenuPreset
+  location: class io.github.addoncommunity.slimechem.implementation.machines.Cyclotron
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[68,48] cannot find symbol
+  symbol:   class DirtyChestMenu
+  location: class io.github.addoncommunity.slimechem.implementation.machines.Cyclotron
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[68,88] cannot find symbol
+  symbol:   class ItemTransportFlow
+  location: class io.github.addoncommunity.slimechem.implementation.machines.Cyclotron
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[79,40] cannot find symbol
+  symbol:   class BlockMenu
+  location: class io.github.addoncommunity.slimechem.implementation.machines.Cyclotron
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[79,87] cannot find symbol
+  symbol:   class Config
+  location: class io.github.addoncommunity.slimechem.implementation.machines.Cyclotron
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[8,45] package io.github.mooy1.infinitylib.abstracts does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[9,41] package io.github.mooy1.infinitylib.items does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[12,57] cannot find symbol
+  symbol:   class SlimefunPlugin
+  location: package io.github.thebusybiscuit.slimefun4.implementation
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[14,46] cannot find symbol
+  symbol:   class Config
+  location: package io.github.thebusybiscuit.slimefun4.api
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[17,46] cannot find symbol
+  symbol:   class BlockStorage
+  location: package io.github.thebusybiscuit.slimefun4.api
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[18,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[21,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[22,61] package io.github.thebusybiscuit.slimefun4.api.item_transport does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[40,37] cannot find symbol
+  symbol: class AbstractTicker
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[120,40] cannot find symbol
+  symbol:   class BlockMenu
+  location: class io.github.addoncommunity.slimechem.implementation.machines.NuclearFurnace
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[126,34] cannot find symbol
+  symbol:   class BlockMenu
+  location: class io.github.addoncommunity.slimechem.implementation.machines.NuclearFurnace
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[126,77] cannot find symbol
+  symbol:   class Config
+  location: class io.github.addoncommunity.slimechem.implementation.machines.NuclearFurnace
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[144,34] cannot find symbol
+  symbol:   class BlockMenu
+  location: class io.github.addoncommunity.slimechem.implementation.machines.NuclearFurnace
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[161,53] cannot find symbol
+  symbol:   class BlockMenu
+  location: class io.github.addoncommunity.slimechem.implementation.machines.NuclearFurnace
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[177,45] cannot find symbol
+  symbol:   class DirtyChestMenu
+  location: class io.github.addoncommunity.slimechem.implementation.machines.NuclearFurnace
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[177,75] cannot find symbol
+  symbol:   class ItemTransportFlow
+  location: class io.github.addoncommunity.slimechem.implementation.machines.NuclearFurnace
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/lists/Items.java:[5,43] package io.github.mooy1.infinitylib.presets does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/objects/IngredientItem.java:[9,71] cannot find symbol
+  symbol:   class RecipeType
+  location: class io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/objects/IngredientItem.java:[11,65] cannot find symbol
+  symbol:   class SlimefunItem
+  location: class io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/objects/IngredientItem.java:[12,33] cannot find symbol
+  symbol:   class ItemUtils
+  location: package dev.drake.dough.inventory
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/objects/IngredientItem.java:[29,37] cannot find symbol
+  symbol: class SlimefunItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/objects/IngredientItem.java:[41,69] cannot find symbol
+  symbol:   class RecipeType
+  location: class io.github.addoncommunity.slimechem.objects.IngredientItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/objects/RadioactiveItem.java:[7,71] cannot find symbol
+  symbol:   class RecipeType
+  location: class io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/objects/RadioactiveItem.java:[9,65] cannot find symbol
+  symbol:   class SlimefunItem
+  location: class io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/objects/RadioactiveItem.java:[13,38] cannot find symbol
+  symbol: class SlimefunItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/objects/RadioactiveItem.java:[18,70] cannot find symbol
+  symbol:   class RecipeType
+  location: class io.github.addoncommunity.slimechem.objects.RadioactiveItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/setup/ElementCategory.java:[5,42] package io.github.mooy1.infinitylib.player does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/setup/ElementCategory.java:[10,57] cannot find symbol
+  symbol:   class SlimefunPlugin
+  location: package io.github.thebusybiscuit.slimefun4.implementation
+[INFO] 76 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] DrakesCraft-Labs 6 ................................. SUCCESS [  0.504 s]
+[INFO] Dough Core (DrakesLab Port) 1.3.1-DRAKE ............ SUCCESS [  9.484 s]
+[INFO] Slimefun 6.0-Drake-1.21.11 ......................... SUCCESS [ 23.942 s]
+[INFO] InfinityLib 1.3.10 ................................. SUCCESS [  4.938 s]
+[INFO] InfinityExpansion 1.20.6-Drake ..................... SUCCESS [  6.237 s]
+[INFO] ExoticGarden UNOFFICIAL ............................ SUCCESS [  1.337 s]
+[INFO] DynaTech 1.21-Drake ................................ SUCCESS [  2.259 s]
+[INFO] ExtraUtils 1.20.6-Drake ............................ SUCCESS [  1.305 s]
+[INFO] SlimeChem 1.21-Drake ............................... FAILURE [  2.154 s]
+[INFO] FNAmplifications Unoffical-4.2.4 ................... SKIPPED
+[INFO] FoxyMachines MODIFIED .............................. SKIPPED
+[INFO] GeneticChickengineering-Reborn UNOFFICIAL .......... SKIPPED
+[INFO] PotionExpansion 1.0.0 .............................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  52.878 s
+[INFO] Finished at: 2026-04-22T11:40:29-04:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project SlimeChem: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/SlimeChem.java:[5,35] cannot find symbol
+[ERROR]   symbol:   class PluginUtils
+[ERROR]   location: package io.github.mooy1.infinitylib
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/atomic/isotopes/Isotope.java:[9,41] package io.github.mooy1.infinitylib.items does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/utils/StringUtil.java:[5,32] cannot find symbol
+[ERROR]   symbol:   class WordUtils
+[ERROR]   location: package org.apache.commons.lang3
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[6,57] cannot find symbol
+[ERROR]   symbol:   class SlimefunPlugin
+[ERROR]   location: package io.github.thebusybiscuit.slimefun4.implementation
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[9,46] cannot find symbol
+[ERROR]   symbol:   class Config
+[ERROR]   location: package io.github.thebusybiscuit.slimefun4.api
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[10,71] cannot find symbol
+[ERROR]   symbol:   class RecipeType
+[ERROR]   location: class io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[11,65] cannot find symbol
+[ERROR]   symbol:   class SlimefunItem
+[ERROR]   location: class io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[12,46] cannot find symbol
+[ERROR]   symbol:   class BlockStorage
+[ERROR]   location: package io.github.thebusybiscuit.slimefun4.api
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[14,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[15,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[16,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[17,61] package io.github.thebusybiscuit.slimefun4.api.item_transport does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[39,26] cannot find symbol
+[ERROR]   symbol: class SlimefunItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[105,36] cannot find symbol
+[ERROR]   symbol:   class BlockMenuPreset
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.generators.RTG
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[118,36] cannot find symbol
+[ERROR]   symbol:   class ItemTransportFlow
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.generators.RTG
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/generators/RTG.java:[125,65] cannot find symbol
+[ERROR]   symbol:   class Config
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.generators.RTG
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalCombiner.java:[8,71] cannot find symbol
+[ERROR]   symbol:   class RecipeType
+[ERROR]   location: class io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalCombiner.java:[9,65] cannot find symbol
+[ERROR]   symbol:   class SlimefunItem
+[ERROR]   location: class io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalCombiner.java:[21,39] cannot find symbol
+[ERROR]   symbol: class SlimefunItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[9,45] package io.github.mooy1.infinitylib.abstracts does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[10,43] package io.github.mooy1.infinitylib.presets does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[11,50] package io.github.mooy1.infinitylib.recipes.normal does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[13,46] cannot find symbol
+[ERROR]   symbol:   class Config
+[ERROR]   location: package io.github.thebusybiscuit.slimefun4.api
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[14,71] cannot find symbol
+[ERROR]   symbol:   class RecipeType
+[ERROR]   location: class io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[16,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[17,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[18,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[19,61] package io.github.thebusybiscuit.slimefun4.api.item_transport does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[36,40] cannot find symbol
+[ERROR]   symbol: class AbstractMachine
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[45,19] cannot find symbol
+[ERROR]   symbol:   class RandomRecipeMap
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.machines.ChemicalDissolver
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[157,36] cannot find symbol
+[ERROR]   symbol:   class BlockMenuPreset
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.machines.ChemicalDissolver
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[171,48] cannot find symbol
+[ERROR]   symbol:   class DirtyChestMenu
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.machines.ChemicalDissolver
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[171,88] cannot find symbol
+[ERROR]   symbol:   class ItemTransportFlow
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.machines.ChemicalDissolver
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[182,40] cannot find symbol
+[ERROR]   symbol:   class BlockMenu
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.machines.ChemicalDissolver
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/ChemicalDissolver.java:[182,92] cannot find symbol
+[ERROR]   symbol:   class Config
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.machines.ChemicalDissolver
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[7,45] package io.github.mooy1.infinitylib.abstracts does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[9,46] cannot find symbol
+[ERROR]   symbol:   class Config
+[ERROR]   location: package io.github.thebusybiscuit.slimefun4.api
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[10,71] cannot find symbol
+[ERROR]   symbol:   class RecipeType
+[ERROR]   location: class io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[12,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[13,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[14,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[15,61] package io.github.thebusybiscuit.slimefun4.api.item_transport does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[28,32] cannot find symbol
+[ERROR]   symbol: class AbstractMachine
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[55,36] cannot find symbol
+[ERROR]   symbol:   class BlockMenuPreset
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.machines.Cyclotron
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[68,48] cannot find symbol
+[ERROR]   symbol:   class DirtyChestMenu
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.machines.Cyclotron
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[68,88] cannot find symbol
+[ERROR]   symbol:   class ItemTransportFlow
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.machines.Cyclotron
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[79,40] cannot find symbol
+[ERROR]   symbol:   class BlockMenu
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.machines.Cyclotron
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/Cyclotron.java:[79,87] cannot find symbol
+[ERROR]   symbol:   class Config
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.machines.Cyclotron
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[8,45] package io.github.mooy1.infinitylib.abstracts does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[9,41] package io.github.mooy1.infinitylib.items does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[12,57] cannot find symbol
+[ERROR]   symbol:   class SlimefunPlugin
+[ERROR]   location: package io.github.thebusybiscuit.slimefun4.implementation
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[14,46] cannot find symbol
+[ERROR]   symbol:   class Config
+[ERROR]   location: package io.github.thebusybiscuit.slimefun4.api
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[17,46] cannot find symbol
+[ERROR]   symbol:   class BlockStorage
+[ERROR]   location: package io.github.thebusybiscuit.slimefun4.api
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[18,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[21,56] package io.github.thebusybiscuit.slimefun4.api.inventory does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[22,61] package io.github.thebusybiscuit.slimefun4.api.item_transport does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[40,37] cannot find symbol
+[ERROR]   symbol: class AbstractTicker
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[120,40] cannot find symbol
+[ERROR]   symbol:   class BlockMenu
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.machines.NuclearFurnace
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[126,34] cannot find symbol
+[ERROR]   symbol:   class BlockMenu
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.machines.NuclearFurnace
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[126,77] cannot find symbol
+[ERROR]   symbol:   class Config
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.machines.NuclearFurnace
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[144,34] cannot find symbol
+[ERROR]   symbol:   class BlockMenu
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.machines.NuclearFurnace
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[161,53] cannot find symbol
+[ERROR]   symbol:   class BlockMenu
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.machines.NuclearFurnace
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[177,45] cannot find symbol
+[ERROR]   symbol:   class DirtyChestMenu
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.machines.NuclearFurnace
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/implementation/machines/NuclearFurnace.java:[177,75] cannot find symbol
+[ERROR]   symbol:   class ItemTransportFlow
+[ERROR]   location: class io.github.addoncommunity.slimechem.implementation.machines.NuclearFurnace
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/lists/Items.java:[5,43] package io.github.mooy1.infinitylib.presets does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/objects/IngredientItem.java:[9,71] cannot find symbol
+[ERROR]   symbol:   class RecipeType
+[ERROR]   location: class io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/objects/IngredientItem.java:[11,65] cannot find symbol
+[ERROR]   symbol:   class SlimefunItem
+[ERROR]   location: class io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/objects/IngredientItem.java:[12,33] cannot find symbol
+[ERROR]   symbol:   class ItemUtils
+[ERROR]   location: package dev.drake.dough.inventory
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/objects/IngredientItem.java:[29,37] cannot find symbol
+[ERROR]   symbol: class SlimefunItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/objects/IngredientItem.java:[41,69] cannot find symbol
+[ERROR]   symbol:   class RecipeType
+[ERROR]   location: class io.github.addoncommunity.slimechem.objects.IngredientItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/objects/RadioactiveItem.java:[7,71] cannot find symbol
+[ERROR]   symbol:   class RecipeType
+[ERROR]   location: class io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/objects/RadioactiveItem.java:[9,65] cannot find symbol
+[ERROR]   symbol:   class SlimefunItem
+[ERROR]   location: class io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/objects/RadioactiveItem.java:[13,38] cannot find symbol
+[ERROR]   symbol: class SlimefunItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/objects/RadioactiveItem.java:[18,70] cannot find symbol
+[ERROR]   symbol:   class RecipeType
+[ERROR]   location: class io.github.addoncommunity.slimechem.objects.RadioactiveItem
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/setup/ElementCategory.java:[5,42] package io.github.mooy1.infinitylib.player does not exist
+[ERROR] /C:/Users/Jack/Documents/GitHub/Experimentos/DrakesVanillaSlimefun+/sources/repos-to-port/SlimeChem/src/main/java/io/github/addoncommunity/slimechem/setup/ElementCategory.java:[10,57] cannot find symbol
+[ERROR]   symbol:   class SlimefunPlugin
+[ERROR]   location: package io.github.thebusybiscuit.slimefun4.implementation
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :SlimeChem

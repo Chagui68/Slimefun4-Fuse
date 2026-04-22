@@ -2,12 +2,16 @@ package dev.j3fftw.extrautils.enchants;
 
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import java.util.Arrays;
-import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import io.papermc.paper.enchantments.EnchantmentRarity;
+import io.papermc.paper.registry.set.RegistryKeySet;
+import io.papermc.paper.registry.set.RegistrySet;
+import io.papermc.paper.registry.RegistryAccess;
+import io.papermc.paper.registry.RegistryKey;
 import net.kyori.adventure.text.Component;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
@@ -15,7 +19,9 @@ import org.bukkit.enchantments.EnchantmentTarget;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.EntityCategory;
 import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.inventory.EquipmentSlotGroup;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.ItemType;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class GlowEnchant extends Enchantment {
@@ -148,7 +154,42 @@ public class GlowEnchant extends Enchantment {
     @Nonnull
     @Override
     public Set<EquipmentSlot> getActiveSlots() {
-        return EnumSet.allOf(EquipmentSlot.class);
+        return new HashSet<>(Arrays.asList(EquipmentSlot.values()));
+    }
+
+    @Nonnull
+    @Override
+    public Set<EquipmentSlotGroup> getActiveSlotGroups() {
+        return new HashSet<>(Arrays.asList(EquipmentSlotGroup.ANY));
+    }
+
+    @Nonnull
+    @Override
+    public RegistryKeySet<Enchantment> getExclusiveWith() {
+        return RegistrySet.keySet(RegistryKey.ENCHANTMENT);
+    }
+
+    @Nonnull
+    @Override
+    public RegistryKeySet<ItemType> getSupportedItems() {
+        return RegistrySet.keySet(RegistryKey.ITEM);
+    }
+
+    @Nullable
+    @Override
+    public RegistryKeySet<ItemType> getPrimaryItems() {
+        return null;
+    }
+
+    @Override
+    public int getWeight() {
+        return 1;
+    }
+
+    @Nonnull
+    @Override
+    public Component description() {
+        return Component.text("Adds a cosmetic glow to items.");
     }
 
 }

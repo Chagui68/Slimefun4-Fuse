@@ -1,32 +1,50 @@
-# PotionExpansion
-This is an addon for slimefun that adds new potions with legal xray!<br>
-The idea of this addon is from [Potions Master](https://www.curseforge.com/minecraft/mc-mods/potionsmaster) mod.
+# 🧪 PotionExpansion
 
-## Potions
-- CoalSight
-- IronSight
-- DiamondSight
-- GoldSight
-- LapisSight
-- RedstoneSight
-- EmeraldSight
-- QuartzSight
-- AncientDebrisSight
-- CopperSight
+![Cinematic Banner](file:///C:/Users/Jack/.gemini/antigravity/brain/be765fcc-5abb-4aa7-a52c-c13f6ba52b83/potion_expansion_banner_1776872626620.png)
 
-## Download
-You can download this addon from here:<br>
+## 👁️ Visión Alquímica Avanzada
+**PotionExpansion** revoluciona la minería en **Drake Slimefun** introduciendo pociones de visión que permiten detectar minerales a través de las paredes (X-Ray Legal). Inspirado en el clásico *Potions Master*, este addon ha sido refinado para la era moderna.
 
-<p align="center">
-  <a href="https://thebusybiscuit.github.io/builds/EpicPlayerA10/PotionExpansion/master"><img src="https://thebusybiscuit.github.io/builds/EpicPlayerA10/PotionExpansion/master/badge.svg" alt="Build Status"/></a>
-</p>
+> [!TIP]
+> **Optimizado para 1.21.1**: Los efectos visuales han sido ajustados para funcionar perfectamente con los nuevos motores de renderizado de Paper.
 
-## Tutorials:
-- https://www.youtube.com/watch?v=GDrJ5mX4njk
+---
 
-## Commands
-Main command is `/pe`
-- `/pe showEffects` - Shows custom effects in chat (Custom effects are automatically shown on actionbar by default)
+## 💎 Pociones de Visión (Sight Potions)
 
-## Configuration
-Click [here](https://github.com/EpicPlayerA10/PotionExpansion/wiki).
+| Poción | Mineral Detectado |
+| :--- | :--- |
+| **🌑 CoalSight** | Carbón |
+| **⛓️ IronSight** | Hierro |
+| **💎 DiamondSight** | Diamante |
+| **🌕 GoldSight** | Oro |
+| **🌌 LapisSight** | Lapislázuli |
+| **🏮 RedstoneSight** | Redstone |
+| **🟢 EmeraldSight** | Esmeralda |
+| **🔥 AncientDebrisSight** | Escombros Ancestrales |
+
+---
+
+## ⌨️ Comandos y Control
+
+El comando principal es `/pe`:
+- `/pe showEffects`: Alterna la visualización de efectos personalizados en el chat (Activos en la ActionBar por defecto).
+
+---
+
+## 🛠️ Especificaciones Drake Port
+- **Build Engine**: Maven Reactor v6.
+- **Java**: 21.
+- **Minecraft**: 1.21.1.
+
+---
+
+## 🚀 Instalación
+Disponible de forma nativa en la suite **DrakesVanillaSlimefun+**.
+1. Prepara tus materiales de alquimia.
+2. Encuentra la categoría **PotionExpansion** en tu guía.
+3. ¡Minimiza el tiempo de búsqueda y maximiza tus ganancias!
+
+---
+
+[⬅️ Volver a la Suite Principal](../../README.md)

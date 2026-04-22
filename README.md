@@ -15,22 +15,23 @@
 **Drakes Slimefun Labs** es el centro neurálgico de la migración masiva del ecosistema Slimefun. 
 Aquí centralizamos el desarrollo de más de 35 addons, unificando dependencias y aplicando el **Drake Framework** para garantizar una estabilidad absoluta en la versión **1.21.11**.
 
-[Explorar Checklist](MIGRATION_CHECKLIST.md) • [Arquitectura](ARCHITECTURE.md) • [Guía Técnica](docs/MIGRATION_GUIDE_1_21_11.md)
+[Wiki Oficial](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki) • [Arquitectura](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Arquitectura-del-Ecosistema) • [Guía de Migración](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Referencia-Técnica-(Paper-1.21.1))
 
 </div>
 
-## 📊 Estado de la Migración
+## 📊 Estado del Proyecto
+> [!IMPORTANT]
+> **Versión Actual**: `1.21.11` | **Estado**: 🧪 En Fase de Pruebas (Beta) | **Framework**: Drake 1.0
 
 Actualmente, el laboratorio está procesando un reactor mono-repo con **53 módulos activos**.
 
-**Progreso Total:**
+**Progreso de Migración:**
 `[====================>-------------] 60%`
 
 | Métrica | Valor |
 | :--- | :--- |
 | 🚀 **Componentes Confirmados** | `32` |
 | ⏳ **Módulos en Cola (Pending)** | `21` |
-| 🛠️ **Framework Base** | `Slimefun 6 / Drake` |
 | 📦 **Librería Core** | `dough-core:1.3.1-DRAKE` |
 
 ---
@@ -40,9 +41,10 @@ Explora los pilares del laboratorio, ahora con rediseño visual y estabilizació
 
 <p align="center">
   <a href="sources/repos-to-port/InfinityExpansion/README.md"><b>Infinity Expansion</b></a> • 
-  <a href="sources/batch-2-expansion/SlimeTinker/README.md"><b>SlimeTinker</b></a> • 
-  <a href="sources/batch-2-expansion/Cultivation_Updated/README.md"><b>Cultivation</b></a> • 
-  <a href="sources/community-addons/CrystamaeHistoria/README.md"><b>Crystamae Historia</b></a>
+  <a href="sources/repos-to-port/DynaTech/README.md"><b>DynaTech</b></a> • 
+  <a href="sources/repos-to-port/SlimeChem/README.md"><b>SlimeChem</b></a> • 
+  <a href="sources/repos-to-port/ExtraUtils/README.md"><b>ExtraUtils</b></a> • 
+  <a href="sources/community-addons/PotionExpansion/README.md"><b>PotionExpansion</b></a>
 </p>
 
 <p align="center">
@@ -51,49 +53,23 @@ Explora los pilares del laboratorio, ahora con rediseño visual y estabilizació
 
 ---
 
-## 🏗️ Arquitectura del Laboratorio
+## 🏗️ Arquitectura (Drake Framework)
 
-Este no es un plugin convencional; es un **entorno de ingeniería modular**. El uso de un reactor Maven nos permite:
+Este ecosistema utiliza el **Drake Framework**, una evolución técnica diseñada para desacoplar a Slimefun de dependencias legacy y NMS.
 
-> [!TIP]
-> **Aislamiento Inteligente**: Puedes compilar un único addon sin procesar todo el reactor usando el flag `-pl`.
-
-*   **Centralización**: Versiones de Paper, Slimefun y Dough fijadas en el [pom.xml](pom.xml) raíz.
-*   **Fixes en Cascada**: Un parche en el Core se propaga instantáneamente a todos los addons del Batch.
-*   **Drake Framework**: Abstracciones nativas para Minecraft 1.21 (eliminando NMS legacy).
-
-```powershell
-# Comando maestro para validación de módulo
-mvn -pl sources/repos-to-port/DynaTech -am -DskipTests package
-```
+*   **Modularidad Atómica**: Compila cualquier addon con `mvn -pl <path> -am package`.
+*   **Dough-Core Unificado**: 13 librerías consolidadas en un único núcleo relocalizado (`dev.drake.dough`).
+*   **Persistencia Nativa**: Optimizado para Minecraft 1.21.1 Data Components.
 
 ---
 
-## 🗺️ Mapa del Proyecto
+## 📖 Documentación y Guías
+Toda la documentación técnica ha sido movida a la **[Wiki Oficial](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki)** para mantener la raíz del repositorio limpia.
 
-<details>
-<summary>📂 <b>Estructura de Carpetas (Click para expandir)</b></summary>
-
-- `sources/`
-  - `dough-core/`: El corazón del Drake Framework.
-  - `slimefun-core/`: Nuestra versión evolucionada de Slimefun 4.
-  - `repos-to-port/`: Addons principales (Batch 1).
-  - `batch-2-expansion/`: Addons de expansión técnica (Batch 2).
-  - `community-addons/`: Archivo de addons comunitarios recuperados.
-- `scripts/`: Herramientas de automatización y Smoke Tests.
-- `docs/`: Guías maestras de migración y handoffs.
-</details>
-
----
-
-## 🚀 Guías de Operación
-
-¿Qué estás buscando hacer hoy?
-
-*   🔍 **Ver qué addon está listo**: Mira el [MIGRATION_CHECKLIST.md](MIGRATION_CHECKLIST.md).
-*   💻 **Entender los cambios en la API**: Lee la [Guía Técnica 1.21.11](docs/MIGRATION_GUIDE_1_21_11.md).
-*   🧪 **Validar la salud del repo**: Ejecuta el [Smoke Test](docs/SMOKE_TEST.md).
-*   📝 **Crear un nuevo addon**: Usa nuestro [Template Oficial](templates/slimefun-addon).
+*   🔍 **[Checklist de Migración](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Checklist-de-Migración)**: Revisa qué addons están listos.
+*   💻 **[Referencia Técnica 1.21.1](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Referencia-Técnica-(Paper-1.21.1))**: Descubrimientos de la API 1.21.
+*   🧪 **[Guía de Smoke Test](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Guía-de-Smoke-Test)**: Valida la salud de tu build.
+*   📝 **[Plantilla de Addon](templates/slimefun-addon)**: Comienza a desarrollar tu propio addon Drake.
 
 ---
 
