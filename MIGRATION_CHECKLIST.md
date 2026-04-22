@@ -35,7 +35,11 @@ El `pom.xml` raíz es el **reactor Maven** del workspace:
 | **Supreme** | **[x] LISTO** | Compila en 1.21.11. |
 | **TranscEndence** | **[x] LISTO** | Compila en 1.21.11. |
 | **SMG (SimpleMaterialGenerators)** | **[x] LISTO** | Portado a 1.21.11. Dependencia de PaperLib purgada. |
-| **+56 Addons Restantes** | [ ] Pendiente | Clonados y listos para procesar uno a uno. |
+| **SoulJars** | **[x] LISTO** | Reactor heredado. dough-core y bstats centralizados. |
+| **ExtraGear** | **[x] LISTO** | Reactor heredado. dough-core y bstats centralizados. |
+| **ColoredEnderChests** | **[x] LISTO** | Reactor heredado. dough-core y bstats centralizados. |
+| **DyedBackpacks** | **[x] LISTO** | Reactor heredado. dough-core, bstats y commons-lang centralizados. |
+| **+52 Addons Restantes** | [ ] Pendiente | Clonados y listos para procesar uno a uno. |
 
 
 ## 3. Logros del Día 1
