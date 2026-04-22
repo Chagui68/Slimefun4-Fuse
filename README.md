@@ -23,16 +23,20 @@ Aquí centralizamos el desarrollo de más de 35 addons, unificando dependencias 
 > [!IMPORTANT]
 > **Versión Actual**: `1.21.11` | **Estado**: 🧪 En Fase de Pruebas (Beta) | **Framework**: Drake 1.0
 
-Actualmente, el laboratorio está procesando un reactor mono-repo con **53 módulos activos**.
+Actualmente, el laboratorio está procesando un reactor mono-repo con **55 módulos activos**.
 
 **Progreso de Migración:**
-`[====================>-------------] 60%`
+`[============================>-----] 85%`
 
 | Métrica | Valor |
 | :--- | :--- |
-| 🚀 **Componentes Confirmados** | `32` |
-| ⏳ **Módulos en Cola (Pending)** | `21` |
+| 🚀 **Componentes Confirmados** | `47` |
+| ⏳ **Módulos en Cola (Pending)** | `8` |
 | 📦 **Librería Core** | `dough-core:1.3.1-DRAKE` |
+
+**Últimos cierres validados**
+- `MissileWarfare`: vuelve a compilar en el reactor actual.
+- `Element-Manipulation`: alineado a `dev.drake.dough.*`, serializers Adventure actuales e `InfinityLib` moderno.
 
 ---
 

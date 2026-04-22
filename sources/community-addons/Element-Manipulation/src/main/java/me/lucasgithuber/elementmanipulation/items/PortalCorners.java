@@ -1,7 +1,7 @@
 package me.lucasgithuber.elementmanipulation.items;
 
-import io.github.bakedlibs.dough.skins.PlayerHead;
-import io.github.bakedlibs.dough.skins.PlayerSkin;
+import dev.drake.dough.skins.PlayerHead;
+import dev.drake.dough.skins.PlayerSkin;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import me.lucasgithuber.elementmanipulation.ElementManipulation;
@@ -10,7 +10,7 @@ import me.lucasgithuber.elementmanipulation.utils.BigLore;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
 import me.lucasgithuber.elementmanipulation.utils.RecipeTypes;
 import me.lucasgithuber.elementmanipulation.utils.Util;
-import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -20,12 +20,12 @@ public class PortalCorners {
  static final SlimefunItemStack TOP_LEFT_PORTAL = new SlimefunItemStack(
             "EM_TOP_LEFT_PORTAL",
             new ItemStack(Material.GOLD_NUGGET),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#FF0000:#B60E4F>Top left portal corner</gradient>")),
             "",
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#FF0000:#B60E4F>The top left corner of the trans-dimensional portal</gradient>")),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#FF0000:#B60E4F>This one is responsible for making the other world physic</gradient>"))
     );
 
@@ -54,3 +54,4 @@ public class PortalCorners {
 
     }
 }
+

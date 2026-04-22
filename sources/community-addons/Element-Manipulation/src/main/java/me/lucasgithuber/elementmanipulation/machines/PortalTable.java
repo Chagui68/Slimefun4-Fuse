@@ -9,7 +9,7 @@ import dev.drake.dough.items.ItemUtils;
 import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.lucasgithuber.elementmanipulation.ElementManipulation;
-import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
@@ -28,9 +28,9 @@ public class PortalTable extends MultiBlockMachine {
             new NamespacedKey(ElementManipulation.i(), "em_portal_table_type"),
             Machines.PORTAL_TABLE,
             "",
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize("<rainbow:3>This is the right place to</rainbow>")),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize("<rainbow:2>manipulate atoms the most subatomic</rainbow>")),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize("<rainbow:1>way, and create corners for making inter-dimensional portals</rainbow>"))
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize("<rainbow:3>This is the right place to</rainbow>")),
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize("<rainbow:2>manipulate atoms the most subatomic</rainbow>")),
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize("<rainbow:1>way, and create corners for making inter-dimensional portals</rainbow>"))
     );
 
 
@@ -149,3 +149,4 @@ public class PortalTable extends MultiBlockMachine {
 
 
 }
+

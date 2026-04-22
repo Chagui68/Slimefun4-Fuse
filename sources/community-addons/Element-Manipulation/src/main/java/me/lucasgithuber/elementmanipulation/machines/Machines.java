@@ -9,19 +9,19 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import me.lucasgithuber.elementmanipulation.ElementManipulation;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
-import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 public class Machines{
     //machines
 
-    public static final SlimefunItemStack EMDeconstructor = new SlimefunItemStack("EM_DECONSTRUCTOR", Material.SMITHING_TABLE, BukkitComponentSerializer.legacy().serialize
+    public static final SlimefunItemStack EMDeconstructor = new SlimefunItemStack("EM_DECONSTRUCTOR", Material.SMITHING_TABLE, LegacyComponentSerializer.legacySection().serialize
             (ElementManipulation.MM.deserialize("<gradient:#000000:#FFFFFF>Deconstructor</gradient>")), "&8Used to make items from elements", "&8Machine",
             LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
             LoreBuilder.power(128, "/s"));
 
-    public static final SlimefunItemStack EMUltraCompressor = new SlimefunItemStack("EM_ULTRA_COMPRESSOR", Material.PISTON, BukkitComponentSerializer.legacy().serialize
+    public static final SlimefunItemStack EMUltraCompressor = new SlimefunItemStack("EM_ULTRA_COMPRESSOR", Material.PISTON, LegacyComponentSerializer.legacySection().serialize
             (ElementManipulation.MM.deserialize("<gradient:#000000:#FFFFFF>Ultra compressor</gradient>")), "&8Used to compress elements", "&8Machine",
             LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
             LoreBuilder.power(4092, "/s"));
@@ -46,7 +46,7 @@ public class Machines{
     public static final SlimefunItemStack PORTAL_TABLE= new SlimefunItemStack(
             "EM_PORTAL_TABLE",
             Material.SMITHING_TABLE,
-            BukkitComponentSerializer.legacy().serialize
+            LegacyComponentSerializer.legacySection().serialize
             (ElementManipulation.MM.deserialize("<rainbow>Portal table</rainbow>")),
             "&7Used to craft Portal corners",
             "",
@@ -97,3 +97,4 @@ public class Machines{
     }
 
 }
+

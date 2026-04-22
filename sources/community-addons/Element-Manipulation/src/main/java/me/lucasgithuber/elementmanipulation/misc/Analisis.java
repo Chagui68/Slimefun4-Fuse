@@ -9,7 +9,7 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import io.github.thebusybiscuit.slimefun4.core.attributes.Radioactivity;
 import me.lucasgithuber.elementmanipulation.utils.RecipeTypes;
-import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 
@@ -125,3 +125,4 @@ public final class Analisis {
         "&8AuTe2"
     );
 }
+

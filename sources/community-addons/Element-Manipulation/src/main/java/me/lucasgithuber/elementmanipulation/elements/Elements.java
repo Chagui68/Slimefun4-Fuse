@@ -6,7 +6,7 @@ import me.lucasgithuber.elementmanipulation.ElementManipulation;
 import me.lucasgithuber.elementmanipulation.elements.WaterReactiveElement;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
 import me.lucasgithuber.elementmanipulation.utils.RecipeTypes;
-import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
@@ -27,7 +27,7 @@ public class Elements {
     public static final SlimefunItemStack HYDROGEN = new SlimefunItemStack(
             "EM_HYDROGEN",
             new ItemStack(Material.LIME_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#38CA08:#25FF09>Hydrogen</gradient>")),
             "&8Symbol: H",
             "&8Atomic number: 1",
@@ -36,7 +36,7 @@ public class Elements {
     public static final SlimefunItemStack CARBON = new SlimefunItemStack(
             "EM_CARBON",
             new ItemStack(Material.LIME_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#38CA08:#25FF09>Carbon</gradient>")),
             "&8Symbol: C",
             "&8Atomic number: 6",
@@ -45,7 +45,7 @@ public class Elements {
     public static final SlimefunItemStack NITROGEN = new SlimefunItemStack(
             "EM_NITROGEN",
             new ItemStack(Material.LIME_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#38CA08:#25FF09>Nitrogen</gradient>")),
             "&8Symbol: N",
             "&8Atomic number: 7",
@@ -56,7 +56,7 @@ public class Elements {
     public static final SlimefunItemStack OXYGEN = new SlimefunItemStack(
             "EM_OXYGEN",
             new ItemStack(Material.LIME_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#38CA08:#25FF09>Oxygen</gradient>")),
             "&8Symbol: O",
             "&8Atomic number: 8",
@@ -66,7 +66,7 @@ public class Elements {
     public static final SlimefunItemStack PHOSPHORUS = new SlimefunItemStack(
             "EM_PHOSPHORUS",
             new ItemStack(Material.LIME_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#38CA08:#25FF09>Phosphorus</gradient>")),
             "&8Symbol: P",
             "&8Atomic number: 15",
@@ -75,7 +75,7 @@ public class Elements {
     public static final SlimefunItemStack SULFUR = new SlimefunItemStack(
             "SULFUR",
             new ItemStack(Material.LIME_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#38CA08:#25FF09>Sulfur</gradient>")),
             "&8Symbol: S",
             "&8Atomic number: 16",
@@ -84,7 +84,7 @@ public class Elements {
     public static final SlimefunItemStack SELENIUM = new SlimefunItemStack(
             "EM_SELENIUM",
             new ItemStack(Material.LIME_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#38CA08:#25FF09>Selenium</gradient>")),
             "&8Symbol: Se",
             "&8Atomic number: 34",
@@ -96,7 +96,7 @@ public class Elements {
     public static final SlimefunItemStack LITHIUM = new SlimefunItemStack(
             "EM_LITHIUM",
             new ItemStack(Material.ORANGE_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#F3A33B:#FF953E>Lithium</gradient>")),
             "&8Symbol: Li",
             "&8Atomic number: 3",
@@ -106,7 +106,7 @@ public class Elements {
     public static final SlimefunItemStack SODIUM = new SlimefunItemStack(
             "EM_SODIUM",
             new ItemStack(Material.ORANGE_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#F3A33B:#FF953E>Sodium</gradient>")),
             "&8Symbol: Na",
             "&8Atomic number: 11",
@@ -116,7 +116,7 @@ public class Elements {
     public static final SlimefunItemStack POTASSIUM = new SlimefunItemStack(
             "EM_POTASSIUM",
             new ItemStack(Material.ORANGE_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#F3A33B:#FF953E>Potassium</gradient>")),
             "&8Symbol: K",
             "&8Atomic number: 19",
@@ -126,7 +126,7 @@ public class Elements {
     public static final SlimefunItemStack RUBIDIUM = new SlimefunItemStack(
             "EM_RUBIDIUM",
             new ItemStack(Material.ORANGE_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#F3A33B:#FF953E>Rubidium</gradient>")),
             "&8Symbol: Rb",
             "&8Atomic number: 37",
@@ -136,7 +136,7 @@ public class Elements {
     public static final SlimefunItemStack CAESIUM = new SlimefunItemStack(
             "EM_CAESIUM",
             new ItemStack(Material.ORANGE_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#F3A33B:#FF953E>Caesium</gradient>")),
             "&8Symbol: Cs",
             "&8Atomic number: 55",
@@ -146,7 +146,7 @@ public class Elements {
     public static final SlimefunItemStack FRANCIUM = new SlimefunItemStack(
             "EM_FRANCIUM",
             new ItemStack(Material.ORANGE_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#F3A33B:#FF953E>Francium</gradient>")),
             "&8Symbol: Fr",
             "&8Atomic number: 87",
@@ -158,7 +158,7 @@ public class Elements {
     public static final SlimefunItemStack FLUORINE = new SlimefunItemStack(
             "EM_FLUORINE",
             new ItemStack(Material.CYAN_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#EEFF00:#97FFE5>Fluorine</gradient>")),
             "&8Symbol: F",
             "&8Atomic number: 9",
@@ -168,7 +168,7 @@ public class Elements {
     public static final SlimefunItemStack CHLORINE = new SlimefunItemStack(
             "EM_CHANGE",
             new ItemStack(Material.CYAN_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#EEFF00:#97FFE5>Chlorine</gradient>")),
             "&8Symbol: Cl",
             "&8Atomic number: 17",
@@ -178,7 +178,7 @@ public class Elements {
     public static final SlimefunItemStack BROMINE = new SlimefunItemStack(
             "EM_BROMINE",
             new ItemStack(Material.CYAN_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#EEFF00:#97FFE5>Bromine</gradient>")),
             "&8Symbol: Br",
             "&8Atomic number: 35",
@@ -188,7 +188,7 @@ public class Elements {
     public static final SlimefunItemStack IODINE = new SlimefunItemStack(
             "EM_IODINE",
             new ItemStack(Material.CYAN_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#EEFF00:#97FFE5>Iodine</gradient>")),
             "&8Symbol: I",
             "&8Atomic number: 53",
@@ -198,7 +198,7 @@ public class Elements {
     public static final SlimefunItemStack ASTATINE = new SlimefunItemStack(
             "EM_ASTATINE",
             new ItemStack(Material.CYAN_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#EEFF00:#97FFE5>Astatine</gradient>")),
             "&8Symbol: At",
             "&8Atomic number: 85",
@@ -208,7 +208,7 @@ public class Elements {
     public static final SlimefunItemStack TENNESSINE = new SlimefunItemStack(
             "EM_TENNESSINE",
             new ItemStack(Material.CYAN_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#EEFF00:#97FFE5>Tennessine</gradient>")),
             "&8Symbol: Ts",
             "&8Atomic number: 117",
@@ -220,7 +220,7 @@ public class Elements {
     public static final SlimefunItemStack BERYLLIUM = new SlimefunItemStack(
             "EM_BERYLLIUM",
             new ItemStack(Material.YELLOW_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#EDE342:#BBB816>Beryllium</gradient>")),
             "&8Symbol: Be",
             "&8Atomic number: 4",
@@ -230,7 +230,7 @@ public class Elements {
     public static final SlimefunItemStack MAGNESIUM = new SlimefunItemStack(
             "EM_MAGNESIUM",
             new ItemStack(Material.YELLOW_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#EDE342:#BBB816>Magnesium</gradient>")),
             "&8Symbol: Mg",
             "&8Atomic number: 12",
@@ -240,7 +240,7 @@ public class Elements {
     public static final SlimefunItemStack CALCIUM = new SlimefunItemStack(
             "EM_CALCIUM",
             new ItemStack(Material.YELLOW_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#EDE342:#BBB816>Calcium</gradient>")),
             "&8Symbol: Ca",
             "&8Atomic number: 20",
@@ -250,7 +250,7 @@ public class Elements {
     public static final SlimefunItemStack STRONTIUM = new SlimefunItemStack(
             "EM_STRONTIUM",
             new ItemStack(Material.YELLOW_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#EDE342:#BBB816>Strontium</gradient>")),
             "&8Symbol: Sr",
             "&8Atomic number: 38",
@@ -260,7 +260,7 @@ public class Elements {
     public static final SlimefunItemStack BARIUM = new SlimefunItemStack(
             "EM_BARIUM",
             new ItemStack(Material.YELLOW_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#EDE342:#BBB816>Barium</gradient>")),
             "&8Symbol: Ba",
             "&8Atomic number: 56",
@@ -270,7 +270,7 @@ public class Elements {
     public static final SlimefunItemStack RADIUM = new SlimefunItemStack(
             "EM_RADIUM",
             new ItemStack(Material.YELLOW_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#EDE342:#BBB816>Radium</gradient>")),
             "&8Symbol: Ra",
             "&8Atomic number: 88",
@@ -281,7 +281,7 @@ public class Elements {
     public static final SlimefunItemStack BORON = new SlimefunItemStack(
             "EM_BORON",
             new ItemStack(Material.LIGHT_BLUE_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Boron</gradient>")),
             "&8Symbol: B",
             "&8Atomic number: 5",
@@ -291,7 +291,7 @@ public class Elements {
     public static final SlimefunItemStack SILICON = new SlimefunItemStack(
             "EM_SILICON",
             new ItemStack(Material.LIGHT_BLUE_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Silicon</gradient>")),
             "&8Symbol: Si",
             "&8Atomic number: 14",
@@ -301,7 +301,7 @@ public class Elements {
     public static final SlimefunItemStack GERMANIUM = new SlimefunItemStack(
             "EM_GERMANIUM",
             new ItemStack(Material.LIGHT_BLUE_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Germanium</gradient>")),
             "&8Symbol: Ge",
             "&8Atomic number: 32",
@@ -311,7 +311,7 @@ public class Elements {
     public static final SlimefunItemStack ARSENIC = new SlimefunItemStack(
             "EM_ARSENIC",
             new ItemStack(Material.LIGHT_BLUE_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Arsenic</gradient>")),
             "&8Symbol: As",
             "&8Atomic number: 33",
@@ -321,7 +321,7 @@ public class Elements {
     public static final SlimefunItemStack ANTIMONY = new SlimefunItemStack(
             "EM_ANTIMONY",
             new ItemStack(Material.LIGHT_BLUE_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Antimony</gradient>")),
             "&8Symbol: Sb",
             "&8Atomic number: 51",
@@ -331,7 +331,7 @@ public class Elements {
     public static final SlimefunItemStack TELLURIUM = new SlimefunItemStack(
             "EM_TELLURIUM",
             new ItemStack(Material.LIGHT_BLUE_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Tellurium</gradient>")),
             "&8Symbol: Te",
             "&8Atomic number: 52",
@@ -341,7 +341,7 @@ public class Elements {
     public static final SlimefunItemStack POLONIUM = new SlimefunItemStack(
             "EM_POLONIUM",
             new ItemStack(Material.LIGHT_BLUE_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Polonium</gradient>")),
             "&8Symbol: Po",
             "&8Atomic number: 84",
@@ -352,7 +352,7 @@ public class Elements {
     public static final SlimefunItemStack ALUMINUM = new SlimefunItemStack(
             "EM_ALUMINUM",
             new ItemStack(Material.GRAY_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Aluminum</gradient>")),
             "&8Symbol: Al",
             "&8Atomic number: 13",
@@ -362,7 +362,7 @@ public class Elements {
     public static final SlimefunItemStack GALLIUM = new SlimefunItemStack(
             "EM_GALLIUM",
             new ItemStack(Material.GRAY_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Gallium</gradient>")),
             "&8Symbol: Ga",
             "&8Atomic number: 31",
@@ -372,7 +372,7 @@ public class Elements {
     public static final SlimefunItemStack INDIUM = new SlimefunItemStack(
             "EM_INDIUM",
             new ItemStack(Material.GRAY_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Indium</gradient>")),
             "&8Symbol: In",
             "&8Atomic number: 49",
@@ -382,7 +382,7 @@ public class Elements {
     public static final SlimefunItemStack THALLIUM = new SlimefunItemStack(
             "EM_THALLIUM",
             new ItemStack(Material.GRAY_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Thallium</gradient>")),
             "&8Symbol: Tl",
             "&8Atomic number: 81",
@@ -392,7 +392,7 @@ public class Elements {
     public static final SlimefunItemStack NIHONIUM = new SlimefunItemStack(
             "EM_NIHONIUM",
             new ItemStack(Material.GRAY_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Nihonium</gradient>")),
             "&8Symbol: Nh",
             "&8Atomic number: 113",
@@ -402,7 +402,7 @@ public class Elements {
     public static final SlimefunItemStack TIN = new SlimefunItemStack(
             "EM_TIN",
             new ItemStack(Material.GRAY_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Tin</gradient>")),
             "&8Symbol: Sn",
             "&8Atomic number: 50",
@@ -412,7 +412,7 @@ public class Elements {
     public static final SlimefunItemStack LEAD = new SlimefunItemStack(
             "EM_LEAD",
             new ItemStack(Material.GRAY_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Lead</gradient>")),
             "&8Symbol: Pb",
             "&8Atomic number: 82",
@@ -422,7 +422,7 @@ public class Elements {
     public static final SlimefunItemStack FLEROVIUM = new SlimefunItemStack(
             "EM_FLEROVIUM",
             new ItemStack(Material.GRAY_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Flerovium</gradient>")),
             "&8Symbol: Fl",
             "&8Atomic number: 114",
@@ -432,7 +432,7 @@ public class Elements {
     public static final SlimefunItemStack BISMUTH = new SlimefunItemStack(
             "EM_BISMUTH",
             new ItemStack(Material.GRAY_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Bismuth</gradient>")),
             "&8Symbol: Bi",
             "&8Atomic number: 83",
@@ -449,7 +449,7 @@ public class Elements {
     public static final SlimefunItemStack MOSCOVIUM = new SlimefunItemStack(
             "EM_MOSCOVIUM",
             new ItemStack(Material.GRAY_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Moscovium</gradient>")),
             "&8Symbol: Mc",
             "&8Atomic number: 115",
@@ -459,7 +459,7 @@ public class Elements {
     public static final SlimefunItemStack LIVERMORIUM = new SlimefunItemStack(
             "EM_LIVERMORIUM",
             new ItemStack(Material.GRAY_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Livermorium</gradient>")),
             "&8Symbol: Lv",
             "&8Atomic number: 116",
@@ -471,7 +471,7 @@ public class Elements {
     public static final SlimefunItemStack SCANDIUM = new SlimefunItemStack(
             "EM_SCANDIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Scandium</gradient>")),
             "&8Symbol: Sc",
             "&8Atomic number: 21",
@@ -481,7 +481,7 @@ public class Elements {
     public static final SlimefunItemStack VANADIUM = new SlimefunItemStack(
             "EM_VANADIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Vanadium</gradient>")),
             "&8Symbol: V",
             "&8Atomic number: 23",
@@ -491,7 +491,7 @@ public class Elements {
     public static final SlimefunItemStack CHROMIUM = new SlimefunItemStack(
             "EM_CHROMIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Chromium</gradient>")),
             "&8Symbol: Cr",
             "&8Atomic number: 24",
@@ -501,7 +501,7 @@ public class Elements {
     public static final SlimefunItemStack MANGANESE = new SlimefunItemStack(
             "EM_MANGANESE",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Manganese</gradient>")),
             "&8Symbol: Mn",
             "&8Atomic number: 25",
@@ -511,7 +511,7 @@ public class Elements {
     public static final SlimefunItemStack IRON = new SlimefunItemStack(
             "EM_IRON",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Iron</gradient>")),
             "&8Symbol: Fe",
             "&8Atomic number: 26",
@@ -521,7 +521,7 @@ public class Elements {
     public static final SlimefunItemStack COBALT = new SlimefunItemStack(
             "EM_COBALT",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Cobalt</gradient>")),
             "&8Symbol: Co",
             "&8Atomic number: 27",
@@ -531,7 +531,7 @@ public class Elements {
     public static final SlimefunItemStack NICKEL = new SlimefunItemStack(
             "EM_NICKEL",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Nickel</gradient>")),
             "&8Symbol: Ni",
             "&8Atomic number: 28",
@@ -541,7 +541,7 @@ public class Elements {
     public static final SlimefunItemStack COPPER = new SlimefunItemStack(
             "EM_COPPER",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Copper</gradient>")),
             "&8Symbol: Cu",
             "&8Atomic number: 29",
@@ -551,7 +551,7 @@ public class Elements {
     public static final SlimefunItemStack ZINC = new SlimefunItemStack(
             "EM_ZINC",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Zinc</gradient>")),
             "&8Symbol: Zn",
             "&8Atomic number: 30",
@@ -561,7 +561,7 @@ public class Elements {
     public static final SlimefunItemStack YTTRIUM = new SlimefunItemStack(
             "EM_YTTRIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Yttrium</gradient>")),
             "&8Symbol: Y",
             "&8Atomic number: 39",
@@ -571,7 +571,7 @@ public class Elements {
     public static final SlimefunItemStack ZIRCONIUM = new SlimefunItemStack(
             "EM_ZIRCONIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Zirconium</gradient>")),
             "&8Symbol: Zr",
             "&8Atomic number: 40",
@@ -581,7 +581,7 @@ public class Elements {
     public static final SlimefunItemStack NIOBIUM = new SlimefunItemStack(
             "EM_NIOBIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Niobium</gradient>")),
             "&8Symbol: Nb",
             "&8Atomic number: 41",
@@ -591,7 +591,7 @@ public class Elements {
     public static final SlimefunItemStack MOLYBDENUM = new SlimefunItemStack(
             "EM_MOLYBDENUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Molybdenum</gradient>")),
             "&8Symbol: Mo",
             "&8Atomic number: 42",
@@ -601,7 +601,7 @@ public class Elements {
     public static final SlimefunItemStack TECHNETIUM = new SlimefunItemStack(
             "EM_TECHNETIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Technetium</gradient>")),
             "&8Symbol: Tc",
             "&8Atomic number: 43",
@@ -611,7 +611,7 @@ public class Elements {
     public static final SlimefunItemStack RUTHENIUM = new SlimefunItemStack(
             "EM_RUTHENIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Ruthenium</gradient>")),
             "&8Symbol: Ru",
             "&8Atomic number: 44",
@@ -621,7 +621,7 @@ public class Elements {
     public static final SlimefunItemStack RHODIUM = new SlimefunItemStack(
             "EM_RHODIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Rhodium</gradient>")),
             "&8Symbol: Rh",
             "&8Atomic number: 45",
@@ -631,7 +631,7 @@ public class Elements {
     public static final SlimefunItemStack PALLADIUM = new SlimefunItemStack(
             "EM_PALLADIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Palladium</gradient>")),
             "&8Symbol: Pd",
             "&8Atomic number: 46",
@@ -641,7 +641,7 @@ public class Elements {
     public static final SlimefunItemStack SILVER = new SlimefunItemStack(
             "EM_SILVER",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Silver</gradient>")),
             "&8Symbol: Ag",
             "&8Atomic number: 47",
@@ -651,7 +651,7 @@ public class Elements {
     public static final SlimefunItemStack CADMIUM = new SlimefunItemStack(
             "EM_CADMIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Cadmium</gradient>")),
             "&8Symbol: Cd",
             "&8Atomic number: 48",
@@ -661,7 +661,7 @@ public class Elements {
     public static final SlimefunItemStack HAFNIUM = new SlimefunItemStack(
             "EM_HAFNIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Hafnium</gradient>")),
             "&8Symbol: Hf",
             "&8Atomic number: 72",
@@ -671,7 +671,7 @@ public class Elements {
     public static final SlimefunItemStack TANTALUM = new SlimefunItemStack(
             "EM_TANTALUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Tantalum</gradient>")),
             "&8Symbol: Ta",
             "&8Atomic number: 73",
@@ -681,7 +681,7 @@ public class Elements {
     public static final SlimefunItemStack TUNGSTEN = new SlimefunItemStack(
             "EM_TUNGSTEN",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Tungsten</gradient>")),
             "&8Symbol: W",
             "&8Atomic number: 74",
@@ -691,7 +691,7 @@ public class Elements {
     public static final SlimefunItemStack RHENIUM = new SlimefunItemStack(
             "EM_RHENIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Rhenium</gradient>")),
             "&8Symbol: Re",
             "&8Atomic number: 75",
@@ -702,7 +702,7 @@ public class Elements {
     public static final SlimefunItemStack PLATINUM = new SlimefunItemStack(
             "EM_PLATINUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Platinum</gradient>")),
             "&8Symbol: Pt",
             "&8Atomic number: 78",
@@ -712,7 +712,7 @@ public class Elements {
     public static final SlimefunItemStack GOLD = new SlimefunItemStack(
             "EM_GOLD",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Gold</gradient>")),
             "&8Symbol: Au",
             "&8Atomic number: 79",
@@ -722,7 +722,7 @@ public class Elements {
     public static final SlimefunItemStack MERCURY = new SlimefunItemStack(
             "EM_MERCURY",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Mercury</gradient>")),
             "&8Symbol: Hg",
             "&8Atomic number: 80",
@@ -732,7 +732,7 @@ public class Elements {
     public static final SlimefunItemStack RUTHERFORDIUM = new SlimefunItemStack(
             "EM_RUTHERFORDIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
             "<gradient:#f08080:#ffdab9>Rutherfordium</gradient>")),
             "&8Symbol: Rf",
             "&8Atomic number: 104",
@@ -742,7 +742,7 @@ public class Elements {
     public static final SlimefunItemStack DUBNIUM = new SlimefunItemStack(
             "EM_DUBNIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Dubnium</gradient>")),
             "&8Symbol: Db",
             "&8Atomic number: 105",
@@ -752,7 +752,7 @@ public class Elements {
     public static final SlimefunItemStack SEABORGIUM = new SlimefunItemStack(
             "EM_SEABORGIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Seaborgium</gradient>")),
             "&8Symbol: Sg",
             "&8Atomic number: 106",
@@ -762,7 +762,7 @@ public class Elements {
     public static final SlimefunItemStack BOHRIUM = new SlimefunItemStack(
             "EM_BOHRIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Bohrium</gradient>")),
             "&8Symbol: Bh",
             "&8Atomic number: 107",
@@ -772,7 +772,7 @@ public class Elements {
     public static final SlimefunItemStack HASSIUM = new SlimefunItemStack(
             "EM_HASSIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Hassium</gradient>")),
             "&8Symbol: Hs",
             "&8Atomic number: 108",
@@ -782,7 +782,7 @@ public class Elements {
     public static final SlimefunItemStack MEITNERIUM = new SlimefunItemStack(
             "EM_MEITNERIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Meitnerium</gradient>")),
             "&8Symbol: Mt",
             "&8Atomic number: 109",
@@ -792,7 +792,7 @@ public class Elements {
     public static final SlimefunItemStack DARMSTADTIUM = new SlimefunItemStack(
             "EM_DARMSTADTIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Darmstadtium</gradient>")),
             "&8Symbol: Ds",
             "&8Atomic number: 110",
@@ -802,7 +802,7 @@ public class Elements {
     public static final SlimefunItemStack ROENTGENIUM = new SlimefunItemStack(
             "EM_ROENTGENIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Roentgenium</gradient>")),
             "&8Symbol: Rg",
             "&8Atomic number: 111",
@@ -812,7 +812,7 @@ public class Elements {
     public static final SlimefunItemStack COPERNICIUM = new SlimefunItemStack(
             "EM_COPERNICIUM",
             new ItemStack(Material.MAGENTA_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Copernicium</gradient>")),
             "&8Symbol: Cn",
             "&8Atomic number: 112",
@@ -823,7 +823,7 @@ public class Elements {
     public static final SlimefunItemStack HELIUM = new SlimefunItemStack(
             "EM_HELIUM",
             new ItemStack(Material.CYAN_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#0097B1:#51BFD89>Helium</gradient>")),
             "&8Symbol: He",
             "&8Atomic number: 2",
@@ -834,7 +834,7 @@ public class Elements {
     public static final SlimefunItemStack NEON = new SlimefunItemStack(
             "EM_NEON",
             new ItemStack(Material.CYAN_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#0097B1:#51BFD89>Neon</gradient>")),
             "&8Symbol: Ne",
             "&8Atomic number: 10",
@@ -845,7 +845,7 @@ public class Elements {
     public static final SlimefunItemStack ARGON = new SlimefunItemStack(
             "EM_ARGON",
             new ItemStack(Material.CYAN_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#0097B1:#51BFD89>Argon</gradient>")),
             "&8Symbol: Ar",
             "&8Atomic number: 18",
@@ -855,7 +855,7 @@ public class Elements {
     public static final SlimefunItemStack KRYPTON = new SlimefunItemStack(
             "EM_KRYPTON",
             new ItemStack(Material.CYAN_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#0097B1:#51BFD89>Krypton</gradient>")),
             "&8Symbol:  Kr",
             "&8Atomic number: 36",
@@ -865,7 +865,7 @@ public class Elements {
     public static final SlimefunItemStack XENON = new SlimefunItemStack(
             "EM_XENON",
             new ItemStack(Material.CYAN_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#0097B1:#51BFD89>Xenon</gradient>")),
             "&8Symbol: Xe",
             "&8Atomic number: 54",
@@ -875,7 +875,7 @@ public class Elements {
     public static final SlimefunItemStack RADON = new SlimefunItemStack(
             "EM_RADON",
             new ItemStack(Material.CYAN_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#0097B1:#51BFD89>Radon</gradient>")),
             "&8Symbol: Rn",
             "&8Atomic number: 86",
@@ -886,7 +886,7 @@ public class Elements {
     public static final SlimefunItemStack OGANESSON = new SlimefunItemStack(
             "EM_OGANESSON",
             new ItemStack(Material.CYAN_DYE),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
+            LegacyComponentSerializer.legacySection().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#0097B1:#51BFD89>Oganesson</gradient>")),
             "&8Symbol: Og",
             "&8Atomic number: 118",
@@ -996,4 +996,5 @@ public class Elements {
         new ChemicalElements(Categories.ELEMENTS, OGANESSON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
     }
 }
+
 

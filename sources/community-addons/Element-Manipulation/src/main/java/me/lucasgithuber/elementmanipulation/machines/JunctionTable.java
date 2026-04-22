@@ -42,7 +42,7 @@ public final class JunctionTable extends io.github.mooy1.infinitylib.machines.Cr
     public JunctionTable(ItemGroup category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe, int energy) {
         super(category, item, type, recipe);
         addRecipesFrom(TYPE);
-        layout(new MachineLayout()
+        setLayout(new MachineLayout()
                 .inputSlots(INPUT_SLOTS)
                 .outputSlots(new int[]{
                         34, 43

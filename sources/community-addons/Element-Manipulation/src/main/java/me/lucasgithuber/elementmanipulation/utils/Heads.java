@@ -1,6 +1,6 @@
 package me.lucasgithuber.elementmanipulation.utils;
 
-import io.github.bakedlibs.dough.skins.PlayerSkin;
+import dev.drake.dough.skins.PlayerSkin;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import org.bukkit.inventory.ItemStack;
 
