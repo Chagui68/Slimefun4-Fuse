@@ -72,8 +72,8 @@ powershell -ExecutionPolicy Bypass -File .\scripts\slimefun\smoke-test.ps1
 Estado documentado del branch `1.21-latin`:
 
 - `53` modulos activos en el reactor Maven raiz
-- `31` componentes confirmados para `1.21.11`
-- `22` modulos pendientes de validacion final, port o documentacion
+- `32` componentes confirmados para `1.21.11`
+- `21` modulos pendientes de validacion final, port o documentacion
 - `dough-core`: `dev.drake.dough:dough-core:1.3.1-DRAKE`
 - core activo: `sources/slimefun-core/Slimefun4-src`
 - variantes activas adoptadas desde Chagui:

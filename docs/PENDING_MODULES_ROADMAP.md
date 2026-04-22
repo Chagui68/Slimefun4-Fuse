@@ -7,8 +7,8 @@ Hoja de ruta operativa para bajar la cola de modulos pendientes del branch `1.21
 Checkpoint actual del reactor:
 
 - `53` modulos activos
-- `31` componentes confirmados
-- `22` modulos pendientes
+- `32` componentes confirmados
+- `21` modulos pendientes
 
 Fuente de verdad del estado:
 
@@ -18,7 +18,7 @@ Fuente de verdad del estado:
 
 ## Objetivo Final
 
-Cerrar los `22` modulos restantes con evidencia real, no con estimaciones.
+Cerrar los `21` modulos restantes con evidencia real, no con estimaciones.
 
 Cada modulo debe terminar en uno de estos estados:
 
@@ -57,7 +57,6 @@ Un modulo cuenta como cerrado para este roadmap cuando:
 
 ### Repos To Port
 
-- `EcoPower`
 - `ExtraUtils`
 - `FluffyMachines`
 - `HardcoreSlimefun`
@@ -220,7 +219,7 @@ Si hubiera que seguir hoy mismo, el orden recomendado seria:
 
 1. `SlimeChem`
 2. `Element-Manipulation`
-3. `EcoPower`
+3. `ExtraUtils`
 
 ## Criterio Para Reordenar
 

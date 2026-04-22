@@ -4,8 +4,8 @@ Estado actual del branch:
 
 - Rama: `1.21-latin`
 - Reactor: `53` módulos activos
-- Confirmados: `31`
-- Pendientes: `22`
+- Confirmados: `32`
+- Pendientes: `21`
 
 ## Qué quedó listo hoy
 
@@ -15,6 +15,7 @@ Estado actual del branch:
 - `GlobalWarming` verificado con build aislado
 - `SimpleUtils` compila en `1.21.11`
 - `DynaTech` compila en `1.21.11`
+- `EcoPower` compila en `1.21.11`
 - `SlimyRepair` compila en `1.21.11`
 - `SFCalc` compila en `1.21.11`
 - `Magic-8-Ball` compila en `1.21.11`
@@ -45,6 +46,9 @@ Estado actual del branch:
 
 - `DynaTech`
   - ya no está pendiente: quedó validado tras alinear `Slimefun` e `InfinityExpansion` al reactor
+
+- `EcoPower`
+  - ya no está pendiente: quedó validado tras heredar del parent y declarar `dough-core`
 
 ### 3. Pruebas de runtime
 
