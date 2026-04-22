@@ -22,10 +22,6 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <maven.compiler.testSource>21</maven.compiler.testSource>
-        <maven.compiler.testTarget>21</maven.compiler.testTarget>
 
         <spigot.version>1.21.11</spigot.version>
         <spigot.javadocs>https://hub.spigotmc.org/javadocs/spigot/</spigot.javadocs>
@@ -345,7 +341,7 @@
         <dependency>
             <groupId>dev.drake.dough</groupId>
             <artifactId>dough-core</artifactId>
-            <version>1.3.1-DRAKE</version>
+            <version>${dough.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
