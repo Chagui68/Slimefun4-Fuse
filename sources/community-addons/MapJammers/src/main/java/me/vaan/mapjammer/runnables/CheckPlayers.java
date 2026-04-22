@@ -1,7 +1,7 @@
 package me.vaan.mapjammer.runnables;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.collections.Pair;
+import dev.drake.dough.collections.Pair;
 import me.vaan.mapjammer.implementation.Jammer;
 import me.vaan.mapjammer.util.ConfigStorage;
 import me.vaan.mapjammer.util.ShowHideInterface;

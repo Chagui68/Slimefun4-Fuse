@@ -80,9 +80,12 @@
         <module>sources/community-addons/FN-FAL-s-Amplifications</module>
         <module>sources/community-addons/FoxyMachines</module>
         <module>sources/community-addons/GeneticChickengineering-Reborn</module>
+        <module>sources/community-addons/HeadLimiter</module>
         <module>sources/community-addons/Liquid</module>
         <module>sources/community-addons/Magic-8-Ball</module>
+        <module>sources/community-addons/MapJammers</module>
         <module>sources/community-addons/MissileWarfare</module>
+        <module>sources/community-addons/MiniBlocks</module>
         <module>sources/community-addons/PotionExpansion</module>
         <module>sources/community-addons/RykenSlimeCustomizer-EN</module>
         <module>sources/community-addons/SfChunkInfo</module>

@@ -1,12 +1,12 @@
 package me.EzCoins.MiniBlocks;
 
 import io.github.mooy1.infinitylib.core.AbstractAddon;
-import io.github.mooy1.infinitylib.metrics.bukkit.Metrics;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
+import dev.drake.dough.updater.GitHubBuildsUpdater;
 import me.EzCoins.MiniBlocks.core.Groups;
 import me.EzCoins.MiniBlocks.itemsetup.ItemSetup;
 import me.EzCoins.MiniBlocks.utils.CustomHead;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPluginLoader;
 

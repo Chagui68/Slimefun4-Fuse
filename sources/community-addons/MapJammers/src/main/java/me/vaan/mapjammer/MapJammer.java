@@ -2,7 +2,7 @@ package me.vaan.mapjammer;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import dev.drake.dough.items.CustomItemStack;
 import me.vaan.mapjammer.implementation.Setup;
 import me.vaan.mapjammer.runnables.CheckPlayers;
 import me.vaan.mapjammer.util.ConfigStorage;

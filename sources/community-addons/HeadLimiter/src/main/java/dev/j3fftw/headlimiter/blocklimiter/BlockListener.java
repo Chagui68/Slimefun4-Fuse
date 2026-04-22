@@ -9,7 +9,7 @@ import org.bukkit.event.Listener;
 import io.github.thebusybiscuit.slimefun4.api.events.SlimefunBlockBreakEvent;
 import io.github.thebusybiscuit.slimefun4.api.events.SlimefunBlockPlaceEvent;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.blocks.ChunkPosition;
+import dev.drake.dough.blocks.ChunkPosition;
 
 import dev.j3fftw.headlimiter.HeadLimiter;
 

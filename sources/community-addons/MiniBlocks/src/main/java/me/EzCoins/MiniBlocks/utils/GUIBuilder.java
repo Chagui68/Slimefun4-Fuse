@@ -1,6 +1,6 @@
 package me.EzCoins.MiniBlocks.utils;
 
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import dev.drake.dough.items.CustomItemStack;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 
