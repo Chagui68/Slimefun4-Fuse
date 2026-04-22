@@ -4,8 +4,8 @@ Estado actual del branch:
 
 - Rama: `1.21-latin`
 - Reactor: `53` módulos activos
-- Confirmados: `25`
-- Pendientes: `28`
+- Confirmados: `26`
+- Pendientes: `27`
 
 ## Qué quedó listo hoy
 
@@ -14,6 +14,7 @@ Estado actual del branch:
 - `SFMobDrops` verificado con build aislado
 - `GlobalWarming` verificado con build aislado
 - `SimpleUtils` compila en `1.21.11`
+- `SlimyRepair` compila en `1.21.11`
 - plantilla base para nuevos addons en `templates/slimefun-addon`
 - smoke test del repo en `scripts/slimefun/smoke-test.ps1`
 - `README` principal actualizado con smoke test y plantilla
@@ -23,9 +24,9 @@ Estado actual del branch:
 
 ### 1. Pendientes de infraestructura Maven
 
-- `SlimyRepair`
-  - problema detectado: misma clase de fallo que `SimpleUtils`
-  - objetivo: heredar parent, limpiar dependencia a `Slimefun`, validar build con `-pl`
+- `SFCalc`
+  - problema detectado: candidato fuerte de quick win por alineación Maven ya bastante limpia
+  - objetivo: validar build con `-pl` y confirmar si cae solo o requiere ajuste menor
 
 - `DynaTech`
   - problema detectado: dependencia externa a `io.github.thebusybiscuit:ExoticGarden:UNOFFICIAL`
