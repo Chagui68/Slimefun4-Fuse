@@ -11,7 +11,7 @@
 **Drake Framework** es la respuesta definitiva para un ecosistema de Slimefun moderno, eficiente e independiente. 
 Hemos unificado **+85 repositorios** en un Mono-Repo estratégico para la migración total a la 1.21.11.
 
-[Explorar Código](/sources) • [Checklist de Migración](MIGRATION_CHECKLIST.md) • [Arquitectura](ARCHITECTURE.md)
+[Explorar Código](/sources) • [Checklist de Migración](MIGRATION_CHECKLIST.md) • [Arquitectura](ARCHITECTURE.md) • [Dev Setup](docs/DEV_SETUP.md)
 
 </div>
 
@@ -33,14 +33,14 @@ Esta tabla clasifica los componentes según el esfuerzo técnico estimado para s
 | :--- | :--- | :--- |
 | **Nivel 1: Easy** (Items/Recetas) | ExoticGarden, SoulJars, ExtraGear | ⏳ Pendiente |
 | **Nivel 2: Medium** (Máquinas/GUIs) | LiteXpansion, Networks, SlimeChem | ✅ LiteXpansion & Networks Listos |
-| **Nivel 3: Hard** (Deep Logic/NMS) | **Slimefun4 Core**, SlimeTinker, InfinityExpansion | 🛠️ SlimeTinker en Progreso |
+| **Nivel 3: Hard** (Deep Logic/NMS) | **Slimefun4 Core**, SlimeTinker, InfinityExpansion | ✅ SlimeTinker compila en 1.21.11 |
 | **Nivel 4: Riesgo / Legacy** | Addons antiguos (ExtraTools, etc.) | ⏳ Pendiente |
 
 ### ✅ Logros del Checkpoint actual
 - [x] **Dough-Core (1.3.1-DRAKE)**: Unificación total de librerías.
 - [x] **Networks**: Resolución de bucle de dependencias y migración de encantamientos 1.21.1.
 - [x] **LiteXpansion**: Eliminación de hacks de reflexión para compatibilidad total con Java 21.
-- [ ] **SlimeTinker**: Pendiente de corrección de constantes de pociones y entidades.
+- [x] **SlimeTinker**: Compilación restaurada en 1.21.11 con integración de `Networks` degradada a opcional.
 
 ---
 

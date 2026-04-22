@@ -50,7 +50,7 @@ Si Maven se queda colgado descargando metadatos de `angeschossen` o `william278`
 
 ## 📂 Estado de los Addons (Audit)
 Actualmente tenemos integrados en el workspace:
-1. **Batch 2 Expansion**: `Networks`, `LiteXpansion`, `SlimeTinker`. (Estatus: Compilando).
+1. **Batch 2 Expansion**: `Networks`, `LiteXpansion`, `SlimeTinker`. (Estatus: `SlimeTinker` compila; `Networks` sigue abierto).
 2. **Community Addons**: ~21 repositorios en la carpeta homónima.
 3. **Slimefun Core**: Adaptado para 1.21.11 (Base Drake).
 
@@ -64,7 +64,7 @@ Actualmente tenemos integrados en el workspace:
 A pesar de los grandes avances del Día 1, el ecosistema es masivo. Aquí está el desglose de lo que falta por hacer:
 
 ### 1. Finalización de Módulos Críticos (Batch-2)
-- [ ] **SlimeTinker**: Finalizar la compilación tras corregir las constantes de pociones. Verificar que los eventos de daño no crasheen.
+- [x] **SlimeTinker**: Compila en 1.21.11. Se hizo opcional la integración con `Networks` para evitar bloqueo por dependencias externas.
 - [ ] **SMG (Simple Material Generators)**: Actualizar POM y verificar constantes de materiales.
 - [ ] **CrystamaeHistoria**: Migrar lógica de partículas y encantamientos.
 - [ ] **TranscEndence**: Revisar compatibilidad con el nuevo sistema de teletransporte de la 1.21.

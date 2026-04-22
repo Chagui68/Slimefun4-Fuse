@@ -166,11 +166,5 @@
             <version>0.5.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>io.github.sefiraat</groupId>
-            <artifactId>networks</artifactId>
-            <version>1.21-Drake</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
 </project>

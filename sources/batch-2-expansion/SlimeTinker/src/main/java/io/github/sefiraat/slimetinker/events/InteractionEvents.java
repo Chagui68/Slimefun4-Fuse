@@ -1,9 +1,6 @@
 package io.github.sefiraat.slimetinker.events;
 
 import com.google.common.base.Preconditions;
-import io.github.sefiraat.networks.slimefun.network.grid.NetworkGrid;
-import io.github.sefiraat.networks.slimefun.tools.NetworkRemote;
-import io.github.sefiraat.networks.utils.Theme;
 import io.github.sefiraat.slimetinker.SlimeTinker;
 import io.github.sefiraat.slimetinker.events.friend.ActiveFriendElement;
 import io.github.sefiraat.slimetinker.events.friend.EventFriend;
@@ -38,6 +35,8 @@ import org.bukkit.event.block.Action;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -282,14 +281,45 @@ public final class InteractionEvents {
 
             final SlimefunItem slimefunItem = BlockStorage.check(block);
             if (Slimefun.getProtectionManager().hasPermission(player, block, Interaction.INTERACT_BLOCK)
-                && slimefunItem instanceof NetworkGrid
+                && isNetworkGrid(slimefunItem)
             ) {
-                NetworkRemote.setGrid(friend.getActiveStack(), block, player);
+                setNetworkGrid(friend.getActiveStack(), block, player);
             } else {
-                player.sendMessage(Theme.ERROR + "Must be set to a Network Grid (not crafting grid).");
+                player.sendMessage(ThemeUtils.WARNING + "Must be set to a Network Grid (not crafting grid).");
             }
         } else if (friend.getAction() == Action.LEFT_CLICK_AIR) {
-            NetworkRemote.tryOpenGrid(friend.getActiveStack(), player, -1);
+            openNetworkGrid(friend.getActiveStack(), player);
+        }
+    }
+
+    private static boolean isNetworkGrid(SlimefunItem slimefunItem) {
+        if (slimefunItem == null) {
+            return false;
+        }
+
+        try {
+            Class<?> networkGridClass = Class.forName("io.github.sefiraat.networks.slimefun.network.grid.NetworkGrid");
+            return networkGridClass.isInstance(slimefunItem);
+        } catch (ClassNotFoundException ignored) {
+            return false;
+        }
+    }
+
+    private static void setNetworkGrid(ItemStack itemStack, Block block, Player player) {
+        invokeNetworkRemote("setGrid", new Class<?>[]{ItemStack.class, Block.class, Player.class}, itemStack, block, player);
+    }
+
+    private static void openNetworkGrid(ItemStack itemStack, Player player) {
+        invokeNetworkRemote("tryOpenGrid", new Class<?>[]{ItemStack.class, Player.class, int.class}, itemStack, player, -1);
+    }
+
+    private static void invokeNetworkRemote(String methodName, Class<?>[] parameterTypes, Object... args) {
+        try {
+            Class<?> networkRemoteClass = Class.forName("io.github.sefiraat.networks.slimefun.tools.NetworkRemote");
+            Method method = networkRemoteClass.getMethod(methodName, parameterTypes);
+            method.invoke(null, args);
+        } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InvocationTargetException ignored) {
+            // Networks is optional for SlimeTinker, so we silently ignore missing integration hooks.
         }
     }
 }

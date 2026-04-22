@@ -20,7 +20,7 @@ Este documento detalla el progreso del port masivo del ecosistema Slimefun a la 
 | **InfinityLib** | **[x] LISTO** | Compilado para 1.21.11. |
 | **Networks** | **[x] LISTO** | Refactorizado: Constantes 1.21 corrigas (LUCK_OF_THE_SEA, etc). |
 | **LiteXpansion** | **[x] LISTO** | Refactorizado: Eliminada reflexión de encantamientos (incompatible). |
-| **SlimeTinker** | **[/] EN PROCESO** | Errores de constantes (JUMP_BOOST, TNT) corregidos. |
+| **SlimeTinker** | **[x] LISTO** | Compila en 1.21.11. Integración con `Networks` quedó opcional para no bloquear el build. |
 | **+60 Addons Restantes** | [ ] Pendiente | Clonados y listos para procesar uno a uno. |
 
 ## 3. Logros del Día 1
@@ -30,7 +30,7 @@ Este documento detalla el progreso del port masivo del ecosistema Slimefun a la 
 - [x] Creación de la `docs/MIGRATION_GUIDE_1_21_11.md`.
 
 ## 4. Próximos Pasos (Día 2)
-1. Finalizar `SlimeTinker`.
+1. Terminar `Networks` y sus dependencias opcionales.
 2. Seguir con `CrystamaeHistoria` y `SMG`.
 3. Mantener compilación aislada con `-pl` para no saturar el PC.
 

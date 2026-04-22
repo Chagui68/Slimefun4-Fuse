@@ -1,8 +1,7 @@
 package io.github.thebusybiscuit.slimefun4.utils.biomes;
 
-import java.util.EnumMap;
-import java.util.EnumSet;
-import java.util.Locale;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -11,6 +10,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 import org.apache.commons.lang.Validate;
 import org.bukkit.NamespacedKey;
+import org.bukkit.Registry;
 import org.bukkit.block.Biome;
 
 import com.google.gson.JsonArray;
@@ -40,7 +40,7 @@ public class BiomeMapParser<T> {
 
     private final NamespacedKey key;
     private final BiomeDataConverter<T> valueConverter;
-    private final Map<Biome, T> map = new EnumMap<>(Biome.class);
+    private final Map<Biome, T> map = new HashMap<>();
 
     /**
      * This flag specifies whether the parsing is "lenient" or not.
@@ -159,19 +159,19 @@ public class BiomeMapParser<T> {
 
     private @Nonnull Set<Biome> readBiomes(@Nonnull JsonArray array) throws BiomeMapException {
         Validate.notNull(array, "The JSON array should not be null!");
-        Set<Biome> biomes = EnumSet.noneOf(Biome.class);
+        Set<Biome> biomes = new HashSet<>();
 
         for (JsonElement element : array) {
             if (element.isJsonPrimitive() && element.getAsJsonPrimitive().isString()) {
                 String value = element.getAsString();
 
                 if (PatternUtils.MINECRAFT_NAMESPACEDKEY.matcher(value).matches()) {
-                    String formattedValue = CommonPatterns.COLON.split(value)[1].toUpperCase(Locale.ROOT);
+                    String keyValue = CommonPatterns.COLON.split(value)[1];
+                    Biome biome = Registry.BIOME.get(NamespacedKey.minecraft(keyValue));
 
-                    try {
-                        Biome biome = Biome.valueOf(formattedValue);
+                    if (biome != null) {
                         biomes.add(biome);
-                    } catch (IllegalArgumentException x) {
+                    } else {
                         // Lenient Parsers will ignore unknown biomes
                         if (isLenient) {
                             continue;
