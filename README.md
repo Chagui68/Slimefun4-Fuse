@@ -1,269 +1,100 @@
-# Drakes Slimefun Labs
+<div align="center">
 
-Laboratorio de migracion para llevar el ecosistema de addons de Slimefun a `Paper 1.21.11`, `Java 21` y `Slimefun 6 / Drake Framework`.
+![Drakes Slimefun Labs Banner](docs/img/banner.png)
 
-Este repositorio no representa un plugin unico. Es un `mono-repo de trabajo` donde se centralizan:
+# 🔬 Drakes Slimefun Labs
+### *The Next Evolution of Slimefun Addons for Minecraft 1.21.11*
 
-- versiones compartidas
-- dependencias comunes
-- fixes repetidos de API/Paper
-- adaptaciones de `dough-core`
-- validacion por modulo antes de separar o publicar addons
+[![Java Version](https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=openjdk)](https://adoptium.net/)
+[![Paper Version](https://img.shields.io/badge/Paper-1.21.11-blue?style=for-the-badge&logo=minecraft)](https://papermc.io/)
+[![Slimefun Version](https://img.shields.io/badge/Slimefun-6.0--Drake-green?style=for-the-badge)](https://github.com/Slimefun/Slimefun4)
+[![License](https://img.shields.io/badge/License-GPL%20v3-red?style=for-the-badge)](LICENSE)
 
-## Acceso Rapido
+---
 
-Si entraste al repo buscando "que esta listo y que falta", arranca por aca:
+**Drakes Slimefun Labs** es el centro neurálgico de la migración masiva del ecosistema Slimefun. 
+Aquí centralizamos el desarrollo de más de 35 addons, unificando dependencias y aplicando el **Drake Framework** para garantizar una estabilidad absoluta en la versión **1.21.11**.
 
-- [Checklist de migracion](MIGRATION_CHECKLIST.md)
-- [Guia tecnica 1.21.11](docs/MIGRATION_GUIDE_1_21_11.md)
-- [Smoke test](docs/SMOKE_TEST.md)
-- [Setup de desarrollo](docs/DEV_SETUP.md)
-- [Arquitectura](ARCHITECTURE.md)
-- [Ruta de cierre de pendientes](docs/PENDING_MODULES_ROADMAP.md)
-- [Handoff de trabajo](docs/TOMORROW_HANDOFF.md)
-- [Plantilla para addons nuevos](docs/NEW_ADDON_TEMPLATE.md)
+[Explorar Checklist](MIGRATION_CHECKLIST.md) • [Arquitectura](ARCHITECTURE.md) • [Guía Técnica](docs/MIGRATION_GUIDE_1_21_11.md)
 
-## Primeros Comandos
+</div>
 
-Si acabas de entrar al repo y solo quieres lo basico, usa esto:
+## 📊 Estado de la Migración
 
-### Verificar herramientas
+Actualmente, el laboratorio está procesando un reactor mono-repo con **53 módulos activos**.
+
+**Progreso Total:**
+`[====================>-------------] 60%`
+
+| Métrica | Valor |
+| :--- | :--- |
+| 🚀 **Componentes Confirmados** | `32` |
+| ⏳ **Módulos en Cola (Pending)** | `21` |
+| 🛠️ **Framework Base** | `Slimefun 6 / Drake` |
+| 📦 **Librería Core** | `dough-core:1.3.1-DRAKE` |
+
+---
+
+## 🏗️ Arquitectura del Laboratorio
+
+Este no es un plugin convencional; es un **entorno de ingeniería modular**. El uso de un reactor Maven nos permite:
+
+> [!TIP]
+> **Aislamiento Inteligente**: Puedes compilar un único addon sin procesar todo el reactor usando el flag `-pl`.
+
+*   **Centralización**: Versiones de Paper, Slimefun y Dough fijadas en el [pom.xml](pom.xml) raíz.
+*   **Fixes en Cascada**: Un parche en el Core se propaga instantáneamente a todos los addons del Batch.
+*   **Drake Framework**: Abstracciones nativas para Minecraft 1.21 (eliminando NMS legacy).
 
 ```powershell
-java --version
-mvn --version
-gh --version
-```
-
-### Empaquetar un addon puntual
-
-```powershell
-mvn -pl ruta/del/modulo -am -DskipTests package
-```
-
-Ejemplos reales:
-
-```powershell
-mvn -pl sources/repos-to-port/SimpleUtils -am -DskipTests package
+# Comando maestro para validación de módulo
 mvn -pl sources/repos-to-port/DynaTech -am -DskipTests package
-mvn -pl sources/repos-to-port/SoundMuffler -am -DskipTests package
 ```
 
-Que hace cada flag:
+---
 
-- `-pl`: elige el modulo a compilar
-- `-am`: compila tambien dependencias necesarias dentro del reactor
-- `-DskipTests`: salta tests para validacion rapida de build
+## 🗺️ Mapa del Proyecto
 
-### Correr el smoke test rapido
+<details>
+<summary>📂 <b>Estructura de Carpetas (Click para expandir)</b></summary>
 
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\slimefun\smoke-test.ps1
-```
+- `sources/`
+  - `dough-core/`: El corazón del Drake Framework.
+  - `slimefun-core/`: Nuestra versión evolucionada de Slimefun 4.
+  - `repos-to-port/`: Addons principales (Batch 1).
+  - `batch-2-expansion/`: Addons de expansión técnica (Batch 2).
+  - `community-addons/`: Archivo de addons comunitarios recuperados.
+- `scripts/`: Herramientas de automatización y Smoke Tests.
+- `docs/`: Guías maestras de migración y handoffs.
+</details>
 
-### Donde mirar el estado real
+---
 
-- si buscas que esta listo y que falta: [MIGRATION_CHECKLIST.md](MIGRATION_CHECKLIST.md)
-- si buscas como se esta porteando: [docs/MIGRATION_GUIDE_1_21_11.md](docs/MIGRATION_GUIDE_1_21_11.md)
-- si buscas comandos y entorno: [docs/DEV_SETUP.md](docs/DEV_SETUP.md)
+## 🚀 Guías de Operación
 
-## Estado Actual
+¿Qué estás buscando hacer hoy?
 
-Estado documentado del branch `1.21-latin`:
+*   🔍 **Ver qué addon está listo**: Mira el [MIGRATION_CHECKLIST.md](MIGRATION_CHECKLIST.md).
+*   💻 **Entender los cambios en la API**: Lee la [Guía Técnica 1.21.11](docs/MIGRATION_GUIDE_1_21_11.md).
+*   🧪 **Validar la salud del repo**: Ejecuta el [Smoke Test](docs/SMOKE_TEST.md).
+*   📝 **Crear un nuevo addon**: Usa nuestro [Template Oficial](templates/slimefun-addon).
 
-- `53` modulos activos en el reactor Maven raiz
-- `32` componentes confirmados para `1.21.11`
-- `21` modulos pendientes de validacion final, port o documentacion
-- `dough-core`: `dev.drake.dough:dough-core:1.3.1-DRAKE`
-- core activo: `sources/slimefun-core/Slimefun4-src`
-- variantes activas adoptadas desde Chagui:
-  - `Networks_Better_Compatibility`
-  - `Cultivation_Updated`
+---
 
-El estado vivo y detallado se mantiene en [MIGRATION_CHECKLIST.md](MIGRATION_CHECKLIST.md).
+## 👥 Colaboradores y Créditos
 
-## Que Es Este Repo
+Este proyecto es posible gracias al legado de grandes desarrolladores del ecosistema:
 
-`drakes-slimefun-labs` existe para evitar rehacer el mismo trabajo addon por addon.
+| Dev | Contribución |
+| :--- | :--- |
+| **TheBusyBiscuit** | Autor original de Slimefun 4. |
+| **Sefiraat** | Mentor de las librerías de expansión y addons técnicos. |
+| **Mooy1** | Creador de InfinityExpansion y arquitectura modular. |
+| **Chagui68** | Variantes de compatibilidad y lógica de transición. |
+| **[Pablo Elías](https://github.com/JackStar6677-1)** | Liderazgo del port 1.21.11 y creación del Drake Framework. |
 
-En vez de mantener decenas de ramas y POMs separados, este laboratorio permite:
+---
 
-- fijar una sola base para `Paper 1.21.11`
-- unificar `Slimefun`, `dough-core` y librerias comunes
-- compilar un addon concreto con `-pl`
-- detectar rapido si un fallo es de `pom.xml`, dependencia o API
-- documentar el progreso real del workspace
-
-## Mapa Del Workspace
-
-### Raiz del laboratorio
-
-- [pom.xml](pom.xml): reactor Maven principal
-- [MIGRATION_CHECKLIST.md](MIGRATION_CHECKLIST.md): tablero de estado real del port
-- [ARCHITECTURE.md](ARCHITECTURE.md): decisiones y piezas principales del stack
-- [docs/](docs): guias operativas y handoffs
-- [scripts/slimefun/](scripts/slimefun): utilidades del flujo Slimefun
-- [templates/slimefun-addon/](templates/slimefun-addon): base para addons nuevos
-
-### Sources
-
-- `sources/dough-core`: dough unificado del framework Drake
-- `sources/slimefun-core/Slimefun4-src`: core de Slimefun 6 en esta migracion
-- `sources/repos-to-port`: addons principales en cola de port o validacion
-- `sources/batch-2-expansion`: librerias y addons del batch expansion
-- `sources/community-addons`: archivo de addons comunitarios integrados al laboratorio
-
-## Documentacion Recomendada Segun Lo Que Buscas
-
-### Quiero ver el estado del proyecto
-
-Ve a [MIGRATION_CHECKLIST.md](MIGRATION_CHECKLIST.md).
-
-Ahi esta:
-
-- que modulos estan `LISTO`
-- cuantos faltan
-- que fue validado de verdad
-- que sigue pendiente
-
-### Quiero entender como se esta migrando a 1.21.11
-
-Ve a [docs/MIGRATION_GUIDE_1_21_11.md](docs/MIGRATION_GUIDE_1_21_11.md).
-
-Incluye:
-
-- renombres tipicos de API Bukkit/Paper
-- decisiones tecnicas del port
-- estrategia de compilacion
-- foco actual del trabajo
-
-### Quiero validar que el repo sigue sano
-
-Ve a [docs/SMOKE_TEST.md](docs/SMOKE_TEST.md).
-
-### Quiero seguir el trabajo del siguiente turno
-
-Ve a [docs/TOMORROW_HANDOFF.md](docs/TOMORROW_HANDOFF.md).
-
-### Quiero ver el plan hasta cerrar todos los pendientes
-
-Ve a [docs/PENDING_MODULES_ROADMAP.md](docs/PENDING_MODULES_ROADMAP.md).
-
-### Quiero crear un addon nuevo alineado al stack
-
-Ve a [docs/NEW_ADDON_TEMPLATE.md](docs/NEW_ADDON_TEMPLATE.md) y usa [templates/slimefun-addon/](templates/slimefun-addon).
-
-## Reglas De Trabajo Del Laboratorio
-
-Estas son las reglas operativas que se estan usando para no romper el reactor:
-
-- no compilar el reactor entero salvo necesidad real
-- priorizar build aislado por modulo
-- revisar primero si el fallo es de `pom.xml` o de API
-- si un addon ya usa `dev.drake.dough.*` pero falla por imports, revisar primero parent y dependencias
-- solo actualizar el estado documental cuando hubo validacion real
-
-Comando recomendado:
-
-```powershell
-mvn -pl ruta/del/modulo -am -DskipTests package
-```
-
-Ejemplos comunes:
-
-```powershell
-mvn -pl sources/dough-core -am -DskipTests package
-mvn -pl sources/slimefun-core/Slimefun4-src -am -DskipTests package
-mvn -pl sources/repos-to-port/SimpleUtils -am -DskipTests package
-```
-
-## Smoke Test
-
-El smoke test sirve para revisar rapidamente que la base no se rompio sin compilar los `53` modulos.
-
-Script:
-
-- [scripts/slimefun/smoke-test.ps1](scripts/slimefun/smoke-test.ps1)
-
-Uso rapido:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\slimefun\smoke-test.ps1
-```
-
-Mas detalle:
-
-- [docs/SMOKE_TEST.md](docs/SMOKE_TEST.md)
-
-## Flujo Recomendado Para Portear Un Addon
-
-1. Revisar su `pom.xml`.
-2. Determinar si hereda del parent correcto.
-3. Verificar dependencias a `Slimefun`, `dough-core` y librerias internas.
-4. Correr build aislado con `-pl`.
-5. Si falla, separar si el problema es de POM/dependencias o de API/codigo.
-6. Validar de nuevo con build aislado.
-7. Recien ahi actualizar checklist y docs.
-
-## Checkpoint Confirmado
-
-Entre los componentes ya documentados como listos se incluyen:
-
-- `Slimefun 6 Core`
-- `dough-core`
-- `SefiLib`
-- `InfinityLib`
-- `Networks_Better_Compatibility`
-- `Cultivation_Updated`
-- `LiteXpansion`
-- `SlimeTinker`
-- `SMG`
-- `Supreme`
-- `TranscEndence`
-- `CrystamaeHistoria`
-- `AlchimiaVitae`
-- `DankTech2`
-- `InfinityExpansion`
-- `PrivateStorage`
-- `ElectricSpawners`
-- `SFMobDrops`
-- `GlobalWarming`
-- `SimpleUtils`
-- `SlimyRepair`
-- `SFCalc`
-- `Magic-8-Ball`
-- `SfChunkInfo`
-- `SoulJars`
-- `ExtraGear`
-- `ColoredEnderChests`
-- `DyedBackpacks`
-- `ExoticGarden`
-
-La lista fuente de verdad sigue siendo [MIGRATION_CHECKLIST.md](MIGRATION_CHECKLIST.md).
-
-## Roadmap Inmediato
-
-El frente actual del laboratorio ya no es "levantar la base", sino seguir bajando la cola de pendientes con cambios pequenos y validacion real.
-
-Ejemplos de pendientes inmediatos que vienen apareciendo en el trabajo reciente:
-
-- `DynaTech`
-- `SoundMuffler`
-- `SlimeChem`
-- `Element-Manipulation`
-- pruebas de runtime en `Paper/Purpur 1.21.11`
-
-## Creditos
-
-Reconocimiento a los autores y mantenedores originales del ecosistema:
-
-- [TheBusyBiscuit](https://github.com/TheBusyBiscuit): creador original de Slimefun
-- [Sefiraat](https://github.com/Sefiraat): Networks, AlchimiaVitae, CrystamaeHistoria y librerias de expansion
-- [Mooy1](https://github.com/Mooy1): InfinityExpansion
-- [Sfiguz7](https://github.com/Sfiguz7): DankTech2
-- [Chagui68](https://github.com/Chagui68): aportes clave y variantes activas para compatibilidad
-- [Pablo Elias](https://github.com/JackStar6677-1): Drake Framework y direccion de la migracion 1.21.11
-
-## Licencia
-
-Este laboratorio conserva la licencia declarada en [LICENSE](LICENSE). Cada addon puede mantener su propio historial, autoria y contexto de origen.
+<div align="center">
+  <sub>Drakes Slimefun Labs es un proyecto independiente. Todas las marcas registradas pertenecen a sus respectivos dueños.</sub>
+</div>
