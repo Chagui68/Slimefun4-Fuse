@@ -147,7 +147,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
      * This does not necessarily mean that it's the minimum version
      * required to run Slimefun.
      */
-    private static final int RECOMMENDED_JAVA_VERSION = 17;
+    private static final int RECOMMENDED_JAVA_VERSION = 21;
 
     /**
      * Our static instance of {@link Slimefun}.

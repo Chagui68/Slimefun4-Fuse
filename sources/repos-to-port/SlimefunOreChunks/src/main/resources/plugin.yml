@@ -7,4 +7,4 @@ website: https://github.com/TheBusyBiscuit/SlimefunOreChunks
 main: io.github.thebusybiscuit.slimefunorechunks.OreChunks
 depend: [Slimefun]
 
-api-version: 1.14
+api-version: "1.21"

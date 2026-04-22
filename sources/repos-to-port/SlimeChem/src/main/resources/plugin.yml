@@ -4,4 +4,4 @@ description: slimefun chemistry
 main: io.github.addoncommunity.slimechem.SlimeChem
 depend: [Slimefun]
 version: ${project.version}
-api-version: 1.16
+api-version: "1.21"

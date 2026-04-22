@@ -56,10 +56,10 @@ public enum MinecraftVersion {
     MINECRAFT_1_20_5(20, 5, 10, "1.20.5+"),
 
     /**
-     * This constant represents Minecraft (Java Edition) Version 1.21.11
-     * ("Chase the Skies")
+     * This constant represents Minecraft (Java Edition) Version 1.21
+     * ("Tricky Trials Update")
      */
-    MINECRAFT_1_21_11(21, 11, "1.21.11+"),
+    MINECRAFT_1_21(21, 0, "1.21.x"),
 
     /**
      * This constant represents an exceptional state in which we were unable

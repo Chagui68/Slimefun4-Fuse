@@ -1,7 +1,7 @@
 name: SfChunkInfo
 version: ${project.version}
 main: me.fnfal113.sfchunkinfo.SfChunkInfo
-api-version: 1.14
+api-version: "1.21"
 authors: [ FN_FAL113 ]
 description: Scan the amount of Slimefun blocks in a chunk
 depend: [Slimefun]

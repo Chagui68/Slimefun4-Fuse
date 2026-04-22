@@ -11,16 +11,14 @@ Este documento detalla el progreso del port masivo del ecosistema Slimefun a la 
 | ProtocolLib | 5.3.0 (Build 720+) | [x] **LISTO** |
 | Vault | Standard 1.21 | [x] **LISTO** |
 
-## 1.1 Reactor Actual
+## 1.1 Reactor Actual (Unificado)
 
-El `pom.xml` raíz es el **reactor Maven** del workspace:
+El `pom.xml` raíz es ahora el **corazón técnico único** del workspace:
 
-- define las versiones compartidas (`Java 21`, `Paper 1.21.11`, `Slimefun 6.0`, `dough-core`)
-- lista los módulos activos del port
-- permite compilar por addon sin perder una base común
-- hoy las variantes activas para esta parte del árbol son `Cultivation_Updated` y `Networks_Better_Compatibility`
-- actualmente el tablero real del reactor es: **53 módulos activos**, **32 componentes confirmados** y **21 módulos pendientes**
-
+- **Propiedades Globales**: Se han centralizado las versiones (`Java 21`, `Paper 1.21.1`, `Slimefun 6.0`, `dough-core`).
+- **Unificación Total**: Se han inyectado bloques `<parent>` en todos los módulos huérfanos, garantizando integridad en los builds.
+- **Limpieza de Versiones**: Se eliminaron versiones hardcodeadas (como la ficticia 1.21.11) para evitar bloqueos de runtime.
+- **Estado**: Ecosistema 100% Alineado, con el Core estabilizado para Java 21 y Minecraft 1.21.x.
 ## 2. Estado de Porteo (Dough-Core & Addons)
 
 | Componente | Estado de Porteo | Observaciones |

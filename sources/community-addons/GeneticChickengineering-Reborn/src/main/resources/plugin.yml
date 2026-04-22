@@ -4,7 +4,7 @@ description: An addon for Slimefun that adds resource chickens, rewritten by ybw
 main: net.guizhanss.gcereborn.GeneticChickengineering
 website: https://github.com/ybw0014/GeneticChickengineering-Reborn
 version: ${project.version}
-api-version: 1.18
+api-version: "1.21"
 depend:
   - Slimefun
 softdepend:

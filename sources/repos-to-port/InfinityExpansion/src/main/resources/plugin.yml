@@ -6,7 +6,7 @@ website: https://github.com/Mooy1/InfinityExpansion
 depend: [Slimefun]
 softdepend: [LiteXpansion]
 version: ${project.version}
-api-version: 1.16
+api-version: "1.21"
 
 commands:
   infinityexpansion:

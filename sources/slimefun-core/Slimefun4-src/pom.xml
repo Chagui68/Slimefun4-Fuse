@@ -12,7 +12,7 @@
     </parent>
 
     <artifactId>Slimefun</artifactId>
-    <version>6.0-Drake-1.21.11</version>
+    <version>${slimefun.drake.version}</version>
     <inceptionYear>2013</inceptionYear>
     <packaging>jar</packaging>
 
@@ -23,7 +23,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <spigot.version>1.21.11</spigot.version>
+        <spigot.version>1.21.1</spigot.version>
         <spigot.javadocs>https://hub.spigotmc.org/javadocs/spigot/</spigot.javadocs>
     </properties>
 
@@ -486,7 +486,7 @@
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.21.11-R0.1-SNAPSHOT</version>
+            <version>${paper.version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

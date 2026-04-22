@@ -5,7 +5,7 @@ main: me.poma123.globalwarming.GlobalWarmingPlugin
 website: https://github.com/poma123/GlobalWarming
 depend: [Slimefun]
 version: ${project.version}
-api-version: 1.14
+api-version: "1.21"
 
 commands:
   globalwarming:
