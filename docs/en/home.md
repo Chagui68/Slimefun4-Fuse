@@ -27,6 +27,7 @@
 - [[Development Setup]]
 - [[New-Addon-Template-EN]]
 - [[Tomorrow-Handoff-EN]]
+- [Release and CI Strategy](release-and-ci-strategy.md)
 
 ## What the Numbers Mean
 

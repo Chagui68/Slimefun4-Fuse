@@ -30,6 +30,7 @@
 - [[New-Addon-Template]]
 - [[Tomorrow-Handoff]]
 - [[Home-EN]]
+- [Estrategia de Releases y CI](release-and-ci-strategy.md)
 
 ## Que significa cada numero
 

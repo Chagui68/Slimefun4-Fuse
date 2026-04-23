@@ -31,6 +31,7 @@ This repository is not a single plugin. It is a consolidation, porting, validati
 | Development standards | [Development Standards](docs/en/development-standards.md) | [Development Standards](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Development-Standards) | Conventions and quality criteria. |
 | AI guide | [AI Instructions](docs/en/ai-instructions.md) | [AI Instructions](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/AI-Instructions) | Context and rules for assisted sessions. |
 | Addon template guide | [New Addon Template](docs/en/new-addon-template.md) | [New Addon Template](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/New-Addon-Template-EN) | English explanation for the base template. |
+| Release/CI strategy | [Release and CI Strategy](docs/en/release-and-ci-strategy.md) | [Release and CI Strategy](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Release-and-CI-Strategy) | Publication and automation policy. |
 | Actual local template | [Template README](templates/slimefun-addon/README.md) | Not applicable | Local baseline for new addons in this stack. |
 
 ## Executive Status
@@ -111,6 +112,13 @@ mvn -pl sources/community-addons/MapJammers -am -DskipTests compile
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\slimefun\smoke-test.ps1
 ```
+
+### Curated CI
+
+The repository includes a conservative GitHub Actions workflow that validates curated groups of stable modules and uploads downloadable artifacts without building the entire reactor:
+
+- workflow: `.github/workflows/ci-curated-modules.yml`
+- strategy: [Release and CI Strategy](docs/en/release-and-ci-strategy.md)
 
 ### Operational rule before touching code
 
@@ -295,6 +303,7 @@ For deeper context:
 | AI guide | [AI Instructions](docs/en/ai-instructions.md) | [AI Instructions](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/AI-Instructions) |
 | AI start prompt | [AI Start Prompt](docs/en/ai-start-prompt.md) | [AI Start Prompt](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/AI-Start-Prompt-EN) |
 | Addon template guide | [New Addon Template](docs/en/new-addon-template.md) | [New Addon Template](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/New-Addon-Template-EN) |
+| Release/CI strategy | [Release and CI Strategy](docs/en/release-and-ci-strategy.md) | [Release and CI Strategy](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Release-and-CI-Strategy) |
 
 ## New Addon Template
 

@@ -31,6 +31,7 @@ Este repo no representa un único plugin. Es un laboratorio de consolidación, p
 | Estándares de desarrollo | [Estándares de Desarrollo](docs/es/development-standards.md) | [Estándares de Desarrollo](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Est%C3%A1ndares-de-Desarrollo) | Convenciones y criterios de calidad. |
 | Guía para IA | [Instrucciones para la IA](docs/es/ai-instructions.md) | [Instrucciones para la IA](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Instrucciones-para-la-IA) | Contexto y reglas para sesiones asistidas. |
 | Plantilla de addon | [New-Addon-Template](docs/es/new-addon-template.md) | [New-Addon-Template](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/New-Addon-Template) | Explicación de la plantilla estándar. |
+| Estrategia de releases/CI | [Estrategia de Releases y CI](docs/es/release-and-ci-strategy.md) | [Estrategia de Releases y CI](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Estrategia-de-Releases-y-CI) | Política de publicación y automatización. |
 | Template real | [Template README](templates/slimefun-addon/README.md) | No aplica | Base local para crear nuevos addons del stack. |
 
 ## Estado Ejecutivo
@@ -111,6 +112,13 @@ mvn -pl sources/community-addons/MapJammers -am -DskipTests compile
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\slimefun\smoke-test.ps1
 ```
+
+### CI curada
+
+El repo incluye una workflow conservadora de GitHub Actions para validar grupos curados de módulos estables y adjuntar artifacts descargables sin compilar todo el reactor:
+
+- workflow: `.github/workflows/ci-curated-modules.yml`
+- estrategia: [Estrategia de Releases y CI](docs/es/release-and-ci-strategy.md)
 
 ### Criterio operativo antes de tocar código
 
@@ -295,6 +303,7 @@ Para contexto más profundo:
 | Guía IA | [Instrucciones para la IA](docs/es/ai-instructions.md) | [Instrucciones para la IA](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Instrucciones-para-la-IA) |
 | Prompt inicial IA | [AI-Start-Prompt](docs/es/ai-start-prompt.md) | [AI-Start-Prompt](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/AI-Start-Prompt) |
 | Plantilla de addon | [New-Addon-Template](docs/es/new-addon-template.md) | [New-Addon-Template](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/New-Addon-Template) |
+| Estrategia de releases/CI | [Estrategia de Releases y CI](docs/es/release-and-ci-strategy.md) | [Estrategia de Releases y CI](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Estrategia-de-Releases-y-CI) |
 
 ## Template de Nuevo Addon
 
