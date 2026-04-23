@@ -92,6 +92,7 @@
         <module>sources/community-addons/Simple-Storage</module>
         <module>sources/community-addons/SlimeCustomizer</module>
         <module>sources/community-addons/VillagerUtil</module>
+        <module>sources/community-addons/UltimateGenerators2</module>
     </modules>
 
     <dependencyManagement>

@@ -18,6 +18,8 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import net.guizhanss.gcereborn.GeneticChickengineering;
 import net.guizhanss.gcereborn.items.GCEItems;
 import net.guizhanss.gcereborn.utils.ChickenUtils;
+import net.guizhanss.gcereborn.utils.PocketChickenData;
+import net.guizhanss.gcereborn.utils.SimpleProfiler;
 
 public class RestorationChamber extends AbstractMachine {
 
@@ -34,10 +36,12 @@ public class RestorationChamber extends AbstractMachine {
     @Override
     @Nullable
     protected MachineRecipe findNextRecipe(@Nonnull BlockMenu menu) {
-        var config = GeneticChickengineering.getConfigService();
-        ItemStack chicken = null;
-        ItemStack seed = null;
-        for (int slot : getInputSlots()) {
+        long __start = System.nanoTime();
+        try {
+            var config = GeneticChickengineering.getConfigService();
+            ItemStack chicken = null;
+            ItemStack seed = null;
+            for (int slot : getInputSlots()) {
             ItemStack item = menu.getItemInSlot(slot);
 
             if (item == null || item.getType() == Material.AIR) {
@@ -55,7 +59,8 @@ public class RestorationChamber extends AbstractMachine {
             return null;
         }
 
-        double health = ChickenUtils.getHealth(chicken);
+        PocketChickenData data = PocketChickenData.fromItem(chicken);
+        double health = data != null ? data.getHealth() : ChickenUtils.getHealth(chicken);
         int seedAmount = seed.getAmount();
         int toConsume = 0;
         while (seedAmount > 0 && health < 4d) {
@@ -63,9 +68,9 @@ public class RestorationChamber extends AbstractMachine {
             toConsume++;
             health = health + 0.25;
         }
-        if (toConsume == 0) {
-            return null;
-        }
+            if (toConsume == 0) {
+                return null;
+            }
         ItemStack recipeSeeds = seed.clone();
         recipeSeeds.setAmount(toConsume);
         ItemStack recipeChick = chicken.clone();
@@ -78,8 +83,11 @@ public class RestorationChamber extends AbstractMachine {
         if (!InvUtils.fitAll(menu.toInventory(), recipe.getOutput(), getOutputSlots())) {
             return null;
         }
-        ItemUtils.consumeItem(chicken, false);
-        ItemUtils.consumeItem(seed, toConsume, false);
-        return recipe;
+            ItemUtils.consumeItem(chicken, false);
+            ItemUtils.consumeItem(seed, toConsume, false);
+            return recipe;
+        } finally {
+            SimpleProfiler.record("RestorationChamber.findNextRecipe", System.nanoTime() - __start);
+        }
     }
 }

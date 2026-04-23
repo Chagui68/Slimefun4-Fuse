@@ -24,6 +24,8 @@ import net.guizhanss.gcereborn.core.genetics.DNA;
 import net.guizhanss.gcereborn.items.chicken.PocketChicken;
 import net.guizhanss.gcereborn.utils.ChickenUtils;
 import net.guizhanss.gcereborn.utils.Keys;
+import net.guizhanss.gcereborn.utils.PocketChickenData;
+import net.guizhanss.gcereborn.utils.SimpleProfiler;
 
 public class GrowthChamber extends AbstractMachine {
 
@@ -40,10 +42,12 @@ public class GrowthChamber extends AbstractMachine {
     @Override
     @Nullable
     protected MachineRecipe findNextRecipe(@Nonnull BlockMenu menu) {
-        var config = GeneticChickengineering.getConfigService();
-        ItemStack chicken = null;
-        ItemStack seed = null;
-        for (int slot : getInputSlots()) {
+        long __start = System.nanoTime();
+        try {
+            var config = GeneticChickengineering.getConfigService();
+            ItemStack chicken = null;
+            ItemStack seed = null;
+            for (int slot : getInputSlots()) {
             ItemStack item = menu.getItemInSlot(slot);
 
             if (item == null || item.getType() == Material.AIR) {
@@ -63,9 +67,10 @@ public class GrowthChamber extends AbstractMachine {
 
         ItemStack output = chicken.clone();
         output.setAmount(1);
-        ItemMeta outputMeta = output.getItemMeta();
-        JsonObject adapter = PersistentDataAPI.get(outputMeta, Keys.POCKET_CHICKEN_ADAPTER, PocketChicken.ADAPTER);
-        var dnaState = PersistentDataAPI.getIntArray(outputMeta, Keys.POCKET_CHICKEN_DNA);
+        // Use PocketChickenData to avoid repeated PDC reads
+        var data = PocketChickenData.fromItem(chicken);
+        JsonObject adapter = data != null ? data.getAdapter() : PersistentDataAPI.get(output.getItemMeta(), Keys.POCKET_CHICKEN_ADAPTER, PocketChicken.ADAPTER);
+        var dnaState = data != null ? data.getState() : PersistentDataAPI.getIntArray(output.getItemMeta(), Keys.POCKET_CHICKEN_DNA);
         adapter.addProperty("baby", false);
         adapter.addProperty("_age", 6000);
         adapter.addProperty("_breedable", false);
@@ -79,8 +84,11 @@ public class GrowthChamber extends AbstractMachine {
         if (!InvUtils.fitAll(menu.toInventory(), recipe.getOutput(), getOutputSlots())) {
             return null;
         }
-        ItemUtils.consumeItem(chicken, false);
-        ItemUtils.consumeItem(seed, seed.getMaxStackSize(), false);
-        return recipe;
+            ItemUtils.consumeItem(chicken, false);
+            ItemUtils.consumeItem(seed, seed.getMaxStackSize(), false);
+            return recipe;
+        } finally {
+            SimpleProfiler.record("GrowthChamber.findNextRecipe", System.nanoTime() - __start);
+        }
     }
 }

@@ -7,7 +7,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems
 import io.github.thebusybiscuit.slimefun4.implementation.operations.FuelOperation
-import io.github.thebusybiscuit.slimefun4.libraries.dough.blocks.BlockPosition
+import dev.drake.dough.blocks.BlockPosition
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config
 import me.mrCookieSlime.Slimefun.api.BlockStorage
@@ -61,7 +61,7 @@ class EnderCrystalGenerator(
         val loc: Location = menu.location
         CRYSTAL_COUNT.remove(BlockPosition(loc))
         loc.world!!
-            .getNearbyEntities(loc, 4.0, 4.0, 4.0) { entity: Entity -> entity.type == EntityType.ENDER_CRYSTAL }
+            .getNearbyEntities(loc, 4.0, 4.0, 4.0) { entity: Entity -> entity.type == EntityType.END_CRYSTAL }
             .stream()
             .map { obj: Entity -> obj as EnderCrystal }
             .forEachOrdered { crystal: EnderCrystal ->

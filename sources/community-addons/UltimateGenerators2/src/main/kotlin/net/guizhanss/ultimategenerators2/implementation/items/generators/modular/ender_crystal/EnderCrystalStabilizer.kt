@@ -5,7 +5,7 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType
-import io.github.thebusybiscuit.slimefun4.libraries.dough.blocks.BlockPosition
+import dev.drake.dough.blocks.BlockPosition
 import me.mrCookieSlime.Slimefun.api.BlockStorage
 import net.guizhanss.ultimategenerators2.UltimateGenerators2
 import net.guizhanss.ultimategenerators2.implementation.items.abstracts.SimpleTickingMachine

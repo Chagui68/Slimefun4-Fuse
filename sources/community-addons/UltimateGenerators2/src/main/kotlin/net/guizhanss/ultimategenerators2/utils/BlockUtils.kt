@@ -1,7 +1,7 @@
 package net.guizhanss.ultimategenerators2.utils
 
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent
-import io.github.thebusybiscuit.slimefun4.libraries.dough.blocks.BlockPosition
+import dev.drake.dough.blocks.BlockPosition
 import org.bukkit.Location
 import org.bukkit.block.Block
 

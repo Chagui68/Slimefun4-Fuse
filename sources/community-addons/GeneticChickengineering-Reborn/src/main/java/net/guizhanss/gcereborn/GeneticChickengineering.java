@@ -20,6 +20,7 @@ import net.guizhanss.gcereborn.core.services.IntegrationService;
 import net.guizhanss.gcereborn.core.services.LocalizationService;
 import net.guizhanss.gcereborn.setup.Items;
 import net.guizhanss.gcereborn.setup.Researches;
+import net.guizhanss.gcereborn.utils.SimpleProfiler;
 import net.guizhanss.guizhanlib.slimefun.addon.AbstractAddon;
 import net.guizhanss.guizhanlib.updater.GuizhanBuildsUpdater;
 
@@ -120,6 +121,10 @@ public class GeneticChickengineering extends AbstractAddon {
         // integrations
         log(Level.INFO, localization.getString("console.load.integrations"));
         integrationService = new IntegrationService(this);
+
+        if (configService.isProfilerEnabled()) {
+            SimpleProfiler.startReporter(this);
+        }
 
         // metrics
         setupMetrics();

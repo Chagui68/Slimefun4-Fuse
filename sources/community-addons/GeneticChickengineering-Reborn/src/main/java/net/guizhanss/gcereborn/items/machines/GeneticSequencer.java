@@ -18,6 +18,8 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import net.guizhanss.gcereborn.GeneticChickengineering;
 import net.guizhanss.gcereborn.items.GCEItems;
 import net.guizhanss.gcereborn.utils.ChickenUtils;
+import net.guizhanss.gcereborn.utils.PocketChickenData;
+import net.guizhanss.gcereborn.utils.SimpleProfiler;
 
 public class GeneticSequencer extends AbstractMachine {
 
@@ -34,10 +36,12 @@ public class GeneticSequencer extends AbstractMachine {
     @Override
     @Nullable
     protected MachineRecipe findNextRecipe(@Nonnull BlockMenu menu) {
+        long __start = System.nanoTime();
         var config = GeneticChickengineering.getConfigService();
         for (int slot : getInputSlots()) {
             ItemStack item = menu.getItemInSlot(slot);
-            if (!ChickenUtils.isPocketChicken(item) || ChickenUtils.isLearned(item)) {
+            var data = PocketChickenData.fromItem(item);
+            if (data == null || data.isKnown()) {
                 continue;
             }
             ItemStack chicken = item.clone();
@@ -62,14 +66,17 @@ public class GeneticSequencer extends AbstractMachine {
             }
             if (config.isPainEnabled() && ChickenUtils.getHealth(learnedChicken) <= 0d) {
                 ItemUtils.consumeItem(chicken, false);
-                menu.getBlock().getWorld().playSound(menu.getLocation(), Sound.ENTITY_CHICKEN_DEATH, 1f, 1f);
+                if (config.isSoundsEnabled()) {
+                    menu.getBlock().getWorld().playSound(menu.getLocation(), Sound.ENTITY_CHICKEN_DEATH, 1f, 1f);
+                }
                 continue;
             }
             menu.consumeItem(slot, 1);
-
+            SimpleProfiler.record("GeneticSequencer.findNextRecipe", System.nanoTime() - __start);
             return recipe;
         }
 
+        SimpleProfiler.record("GeneticSequencer.findNextRecipe", System.nanoTime() - __start);
         return null;
     }
 

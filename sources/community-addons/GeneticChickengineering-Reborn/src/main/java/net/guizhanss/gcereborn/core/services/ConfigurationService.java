@@ -31,6 +31,10 @@ public final class ConfigurationService {
     private boolean growthChamberEnabled;
     private int growthChamberTime;
     private boolean commandsEnabled;
+    private boolean particlesEnabled;
+    private boolean soundsEnabled;
+    private boolean liveLoreEnabled;
+    private boolean profilerEnabled;
 
     public ConfigurationService(GeneticChickengineering plugin) {
         config = new AddonConfig(plugin, "config.yml");
@@ -57,6 +61,10 @@ public final class ConfigurationService {
         growthChamberEnabled = config.getBoolean("options.enable-growth-chamber", false);
         growthChamberTime = config.getInt("options.growth-chamber-time", 1, 60, 600);
         commandsEnabled = config.getBoolean("commands.enabled", true);
+        particlesEnabled = config.getBoolean("options.enable-particles", true);
+        soundsEnabled = config.getBoolean("options.enable-sounds", true);
+        liveLoreEnabled = config.getBoolean("options.live-lore", false);
+        profilerEnabled = config.getBoolean("options.enable-profiler", false);
 
         config.save();
     }

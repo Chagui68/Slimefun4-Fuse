@@ -30,6 +30,8 @@ import net.guizhanss.gcereborn.GeneticChickengineering;
 import net.guizhanss.gcereborn.items.GCEItems;
 import net.guizhanss.gcereborn.utils.GuiItems;
 import net.guizhanss.gcereborn.utils.ChickenUtils;
+import net.guizhanss.gcereborn.utils.PocketChickenData;
+import net.guizhanss.gcereborn.utils.SimpleProfiler;
 
 public class PrivateCoop extends AbstractMachine {
 
@@ -45,20 +47,27 @@ public class PrivateCoop extends AbstractMachine {
 
     @Override
     protected void tick(@Nonnull Block b) {
-        super.tick(b);
+        long __start = System.nanoTime();
+        try {
+            super.tick(b);
 
-        MachineProcessor<CraftingOperation> processor = getMachineProcessor();
-        if (processor.getOperation(b) != null) {
-            if (ThreadLocalRandom.current().nextDouble() < 0.25) {
-                Location l = b.getLocation().toCenterLocation();
-                l.getWorld().spawnParticle(Particle.HEART, l.add(0, 0.5, 0), 2, 0.2, 0, 0.2);
+            MachineProcessor<CraftingOperation> processor = getMachineProcessor();
+            if (processor.getOperation(b) != null) {
+                if (ThreadLocalRandom.current().nextDouble() < 0.25) {
+                    Location l = b.getLocation().toCenterLocation();
+                    if (GeneticChickengineering.getConfigService().isParticlesEnabled()) {
+                        l.getWorld().spawnParticle(Particle.HEART, l.add(0, 0.5, 0), 2, 0.2, 0, 0.2);
+                    }
+                }
+                BlockMenu inv = BlockStorage.getInventory(b);
+                // Check if parent chickens have been removed
+                if (this.getParents(inv).size() != 2) {
+                    processor.endOperation(b);
+                    inv.replaceExistingItem(INFO_SLOT, GuiItems.BLACK_PANE);
+                }
             }
-            BlockMenu inv = BlockStorage.getInventory(b);
-            // Check if parent chickens have been removed
-            if (this.getParents(inv).size() != 2) {
-                processor.endOperation(b);
-                inv.replaceExistingItem(INFO_SLOT, GuiItems.BLACK_PANE);
-            }
+        } finally {
+            SimpleProfiler.record("PrivateCoop.tick", System.nanoTime() - __start);
         }
     }
 
@@ -74,7 +83,8 @@ public class PrivateCoop extends AbstractMachine {
                 // a length of two anyway, saving some time
                 return parents;
             }
-            if (ChickenUtils.isPocketChicken(parent) && ChickenUtils.isAdult(parent)) {
+            var data = PocketChickenData.fromItem(parent);
+            if (data != null && data.isAdult()) {
                 parents.add(parent);
             }
         }
@@ -115,7 +125,9 @@ public class PrivateCoop extends AbstractMachine {
                 ChickenUtils.possiblyHarm(parent);
                 if (ChickenUtils.getHealth(parent) <= 0d) {
                     ItemUtils.consumeItem(parent, false);
-                    menu.getBlock().getWorld().playSound(menu.getLocation(), Sound.ENTITY_CHICKEN_DEATH, 1f, 1f);
+                    if (GeneticChickengineering.getConfigService().isSoundsEnabled()) {
+                        menu.getBlock().getWorld().playSound(menu.getLocation(), Sound.ENTITY_CHICKEN_DEATH, 1f, 1f);
+                    }
                     return null;
                 }
             }
