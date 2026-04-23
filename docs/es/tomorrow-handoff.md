@@ -16,31 +16,16 @@ La fuente de verdad humana es `README.md`.
 
 Allí ya quedó documentado:
 
-- qué addons están listos
-- cuáles siguen fallando dentro del reactor
-- cuáles siguen fuera del reactor
+- qué addons están listos (ahora `59/59` en el reactor)
 - observaciones especiales por plugin cuando aplican
 
 ## Bloqueos Activos
 
-### `GeneticChickengineering-Reborn`
-
-- sigue integrado al reactor, pero no listo
-- bloqueo principal actual: `pom.xml` y dependencias faltantes
-- revisar primero `lombok` y `bstats`
-
-### `PotionExpansion`
-
-- sigue integrado al reactor, pero no listo
-- bloqueo principal actual: API vieja
-- revisar usos de `SlimefunItemStack.item()`
-- revisar llamadas viejas a `CustomItemStack.create(...)`
+- **Ninguno** en el reactor actual.
 
 ## Siguiente Ruta Recomendada
 
-1. cerrar `GeneticChickengineering-Reborn`
-2. cerrar `PotionExpansion`
-3. volver a quick wins fuera del reactor:
+1. Seguir con quick wins fuera del reactor:
    - `MoreResearches`
    - `SfBetterChests`
    - `SlimeHUD`

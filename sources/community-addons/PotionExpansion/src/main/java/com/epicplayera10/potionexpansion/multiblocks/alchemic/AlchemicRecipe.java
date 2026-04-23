@@ -25,7 +25,7 @@ public class AlchemicRecipe {
     private PotionType getPotionType(@Nonnull ItemStack potion) {
         if (potion.getType() == Material.POTION && potion.hasItemMeta()) {
             PotionMeta meta = (PotionMeta) potion.getItemMeta();
-            return meta.getBasePotionData().getType();
+            return meta.getBasePotionType();
         }
         return null;
     }

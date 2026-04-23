@@ -44,10 +44,10 @@ El `pom.xml` raíz funciona como reactor unificado y hoy declara `59 módulos` a
 
 | Métrica | Valor |
 | :--- | :--- |
-| Módulos listos en reactor | `57` |
-| Módulos activos con fallo confirmado | `2` |
+| Módulos listos en reactor | `59` |
+| Módulos activos con fallo confirmado | `0` |
 | Addons fuera del reactor | `30` |
-| Backlog operativo real | `32 addons` |
+| Backlog operativo real | `30 addons` |
 | Base unificada | `dev.drake.dough:dough-core:1.3.1-DRAKE` |
 | Core | `dev.drake:Slimefun:6.0-Drake-1.21.11` |
 
@@ -203,11 +203,13 @@ Estos módulos ya están integrados al reactor y hoy compilan en esta rama.
 | `FN-FAL-s-Amplifications` | `Listo` | Verificado en build aislado. |
 | `FoxyMachines` | `Listo` | Limpiado de usos legacy de utilidades viejas. |
 | `HeadLimiter` | `Listo` | Integrado al reactor. `Towny` es opcional y debe validarse en runtime si se usa. |
+| `GeneticChickengineering-Reborn` | `Listo` | Integrado al reactor. Corregidas dependencias de Lombok/bStats y migrado a Java 21. |
 | `Liquid` | `Listo` | Verificado en build aislado. |
 | `Magic-8-Ball` | `Listo` | Validado como quick win. |
 | `MapJammers` | `Listo` | Requiere `squaremap` o `dynmap` en runtime para ser funcional. |
 | `MiniBlocks` | `Listo` | Integrado con `InfinityLib` local. Mantiene warnings por API deprecated de Bukkit, pero compila en Java 21. |
 | `MissileWarfare` | `Listo` | Corregidas partículas obsoletas; recomendable smoke test por tratarse de combate/efectos. |
+| `PotionExpansion` | `Listo` | Migrado a API de pociones de 1.21.1 y corregidas llamadas legacy de SlimefunItemStack. |
 | `RykenSlimeCustomizer-EN` | `Listo` | Verificado en build aislado. |
 | `SfChunkInfo` | `Listo` | Validado como quick win. |
 | `Simple-Storage` | `Listo` | Verificado en build aislado. Conviene prueba de runtime por inventarios/red. |
@@ -220,8 +222,7 @@ Estos módulos ya están dentro del build unificado, pero todavía presentan fal
 
 | Addon | Estado | Observación |
 | :--- | :--- | :--- |
-| `GeneticChickengineering-Reborn` | `Pendiente` | Fallo confirmado de dependencias/anotaciones: faltan `lombok` y `bstats` en el `pom.xml`, antes de entrar al port fino. |
-| `PotionExpansion` | `Pendiente` | Fallo confirmado de API: sigue usando `SlimefunItemStack.item()` y `CustomItemStack.create(...)` con firma vieja. |
+| - | - | Todos los módulos activos en el reactor están actualmente estables. |
 
 ### Addons presentes en el repo pero fuera del reactor
 

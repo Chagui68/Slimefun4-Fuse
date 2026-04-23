@@ -28,7 +28,10 @@ jobs:
   curated-build:
     name: ${{ matrix.name }}
     runs-on: ubuntu-latest
-    if: github.event_name != 'workflow_dispatch' || inputs.group == 'all' || inputs.group == matrix.group
+    if: |
+      github.event_name != 'workflow_dispatch' || 
+      github.event.inputs.group == 'all' || 
+      github.event.inputs.group == matrix.group
     strategy:
       fail-fast: false
       matrix:

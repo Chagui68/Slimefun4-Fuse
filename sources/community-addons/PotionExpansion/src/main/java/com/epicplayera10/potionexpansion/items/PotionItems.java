@@ -25,7 +25,7 @@ public class PotionItems {
     // Normal Items
     public static final ItemStack mundanePotion = CustomItemStack.create(Material.POTION, (itemMeta -> {
         PotionMeta meta = (PotionMeta) itemMeta;
-        meta.setBasePotionData(new PotionData(PotionType.MUNDANE));
+        meta.setBasePotionType(PotionType.MUNDANE);
     }));
 
     // Categories
@@ -35,7 +35,7 @@ public class PotionItems {
                 PotionMeta meta = (PotionMeta) itemMeta;
                 meta.setColor(Color.AQUA);
                 meta.setDisplayName(ChatColors.color("&bPotion Expansion"));
-                meta.addEnchant(Enchantment.LURE, 1, true);
+                meta.addEnchant(Enchantment.LUCK_OF_THE_SEA, 1, true);
                 meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
             })
     );

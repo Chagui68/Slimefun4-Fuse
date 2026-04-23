@@ -155,7 +155,7 @@ public class AlchemicStation extends MultiBlockMachine {
     private boolean isInputPotionValid(@Nonnull AlchemicRecipe recipe, @Nullable ItemStack item) {
         if (item != null && item.getType() == Material.POTION && item.hasItemMeta()) {
             PotionMeta meta = (PotionMeta) item.getItemMeta();
-            return meta.getBasePotionData().getType() == recipe.getInputPotion();
+            return meta.getBasePotionType() == recipe.getInputPotion();
         }
         return false;
     }

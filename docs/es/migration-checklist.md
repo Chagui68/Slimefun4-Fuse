@@ -4,10 +4,10 @@
 
 - Universo real del repo: `87 addons + 2 modulos base`
 - Reactor activo actual: `59 modulos`
-- Listos en reactor: `57`
-- Activos con fallo confirmado: `2`
+- Listos en reactor: `59`
+- Activos con fallo confirmado: `0`
 - Fuera del reactor: `30`
-- Pendiente bruto real: `32 addons`
+- Pendiente bruto real: `30 addons`
 
 ## Regla de Lectura
 
