@@ -28,10 +28,6 @@ jobs:
   curated-build:
     name: ${{ matrix.name }}
     runs-on: ubuntu-latest
-    if: |
-      github.event_name != 'workflow_dispatch' || 
-      github.event.inputs.group == 'all' || 
-      github.event.inputs.group == matrix.group
     strategy:
       fail-fast: false
       matrix:
@@ -77,10 +73,12 @@ jobs:
           cache: maven
 
       - name: Build curated group
+        if: github.event_name != 'workflow_dispatch' || github.event.inputs.group == 'all' || github.event.inputs.group == matrix.group
         shell: bash
         run: ${{ matrix.commands }}
 
       - name: Upload build artifacts
+        if: success() && (github.event_name != 'workflow_dispatch' || github.event.inputs.group == 'all' || github.event.inputs.group == matrix.group)
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact_name }}
