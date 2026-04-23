@@ -8,11 +8,12 @@ import javax.annotation.Nonnull;
 
 import com.google.common.base.Preconditions;
 
+import io.papermc.lib.PaperLib;
+
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.Plugin;
 
 import dev.drake.dough.updater.BlobBuildUpdater;
-import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
 
 import net.guizhanss.gcereborn.core.commands.GCECommand;
 import net.guizhanss.gcereborn.core.services.ConfigurationService;
