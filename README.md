@@ -27,20 +27,21 @@ Actualmente, el laboratorio trabaja sobre un universo de **87 addons** más `dou
 De ese total, el **reactor activo** cubre **59 módulos** (`57 addons + 2 módulos base`).
 
 **Progreso de Migración:**
-`[============================>-----] 85%`
+`[=============================>----] 89%`
 
 | Métrica | Valor |
 | :--- | :--- |
-| 🚀 **Componentes Confirmados en Reactor** | `53` |
-| ⏳ **Pendientes Dentro del Reactor** | `6` |
+| 🚀 **Módulos Listos en Reactor** | `57` |
+| ⛔ **Módulos Activos con Fallo Confirmado** | `2` |
 | 🧩 **Addons Fuera del Reactor** | `30` |
-| 📚 **Pendiente Bruto del Repo** | `36 addons` |
+| 📚 **Pendiente Bruto del Repo** | `32 addons` |
 | 📦 **Librería Core** | `dough-core:1.3.1-DRAKE` |
 
 **Cómo leer este tablero**
-- `6 pendientes` significa solo los addons que ya están declarados en el `pom.xml` raíz y todavía no quedan verdes.
+- `57 listos` significa módulos que hoy compilan para `1.21.11` dentro del stack Drake.
+- `2 activos con fallo` significa módulos ya integrados al `pom.xml` raíz, pero todavía no cerrados.
 - `30 fuera del reactor` significa addons presentes en el repo que aún no están incorporados al build unificado.
-- El backlog real a revisar es `36 addons`, no `6`.
+- El backlog operativo real hoy es `32 addons`, no `2`.
 
 **Últimos cierres validados**
 - `DyeBench`: integrado al reactor y alineado a dependencias Drake.
@@ -51,6 +52,146 @@ De ese total, el **reactor activo** cubre **59 módulos** (`57 addons + 2 módul
 - `FlowerPower`: ajustado al API moderno de atributos de Bukkit/Paper.
 - `MissileWarfare`: vuelve a compilar en el reactor actual.
 - `Element-Manipulation`: alineado a `dev.drake.dough.*`, serializers Adventure actuales e `InfinityLib` moderno.
+
+## 📦 Inventario Explícito 1.21.11
+Esta sección es la fuente de verdad humana del repo. Si un conteo viejo contradice esta lista, manda esta lista.
+
+### ✅ Base/Core listo para 1.21.11
+
+| Componente | Estado | Observación |
+| :--- | :--- | :--- |
+| `sources/dough-core` | `Listo` | `dev.drake.dough:dough-core:1.3.1-DRAKE` unificado para el stack actual. |
+| `sources/slimefun-core/Slimefun4-src` | `Listo` | Core estabilizado con puentes de compatibilidad para addons legacy. |
+
+### ✅ Batch 1 `sources/repos-to-port` listo para 1.21.11
+Los `26/26` módulos de esta carpeta están considerados listos en esta rama.
+
+| Addon | Estado | Observación |
+| :--- | :--- | :--- |
+| `ColoredEnderChests` | `Listo` | Sin observación especial actual. |
+| `DyedBackpacks` | `Listo` | Sin observación especial actual. |
+| `DynaTech` | `Listo` | Se alineó el `pom.xml` al reactor Drake y dependencias actuales. |
+| `EcoPower` | `Listo` | Se corrigió herencia del parent y dependencia a `dough-core`. |
+| `ElectricSpawners` | `Listo` | Sin observación especial actual. |
+| `ExoticGarden` | `Listo` | Ya trabajado para este stack; revisar runtime si se usan integraciones externas no incluidas. |
+| `ExtraGear` | `Listo` | Sin observación especial actual. |
+| `ExtraHeads` | `Listo` | Convertido/integrado al reactor Maven unificado. |
+| `ExtraUtils` | `Listo` | Referencia útil para dependencias comunitarias que antes apuntaban a JitPack. |
+| `FluffyMachines` | `Listo` | Sin observación especial actual. |
+| `GlobalWarming` | `Listo` | Sin observación especial actual. |
+| `HardcoreSlimefun` | `Listo` | Sin observación especial actual. |
+| `HotbarPets` | `Listo` | Se corrigieron errores de API en el port a 1.21.11. |
+| `InfinityExpansion` | `Listo` | Depende del `InfinityLib` local del reactor. |
+| `luckyblocks-sf` | `Listo` | Sin observación especial actual. |
+| `MobCapturer` | `Listo` | Convertido/integrado al reactor Maven unificado. |
+| `PrivateStorage` | `Listo` | Se corrigieron errores de API durante la migración. |
+| `SFCalc` | `Listo` | Validado como quick win. |
+| `SFMobDrops` | `Listo` | Sin observación especial actual. |
+| `SimpleUtils` | `Listo` | Su cierre dependió de alinear `InfinityLib` al reactor actual. |
+| `SlimeChem` | `Listo` | Se corrigieron errores de API en el port. |
+| `SlimefunOreChunks` | `Listo` | Sin observación especial actual. |
+| `SlimyRepair` | `Listo` | Validado como quick win. |
+| `SlimyTreeTaps` | `Listo` | Compila en esta rama; revisar runtime si se toca protección externa. |
+| `SoulJars` | `Listo` | Sin observación especial actual. |
+| `SoundMuffler` | `Listo` | Se corrigieron errores de API legacy. Recomendable smoke test porque toca eventos/sonidos. |
+
+### ✅ Batch 2 activo listo para 1.21.11
+Estas son las variantes y librerías actualmente activas dentro del stack.
+
+| Componente | Estado | Observación |
+| :--- | :--- | :--- |
+| `SefiLib` | `Listo` | Librería de soporte de expansiones. |
+| `InfinityLib` | `Listo` | Alineado al parent y usado por varios addons del ecosistema. |
+| `Cultivation_Updated` | `Listo` | Esta es la variante activa adoptada; `Cultivation` original queda fuera del reactor. |
+| `LiteXpansion` | `Listo` | Sin observación especial actual. |
+| `Networks_Better_Compatibility` | `Listo` | Esta es la variante activa adoptada; `Networks` original queda fuera del reactor. |
+| `SlimeTinker` | `Listo` | Quedó alineado al parent del reactor y a `Slimefun 6.0-Drake-1.21.11`. |
+| `SMG` | `Listo` | En el reactor figura como `SimpleMaterialGenerators`. |
+| `Supreme` | `Listo` | Sin observación especial actual. |
+| `TranscEndence` | `Listo` | Sin observación especial actual. |
+
+### ✅ Community addons activos listos para 1.21.11
+Estos módulos ya están integrados al reactor y hoy compilan en esta rama.
+
+| Addon | Estado | Observación |
+| :--- | :--- | :--- |
+| `AlchimiaVitae` | `Listo` | Sin observación especial actual. |
+| `CrystamaeHistoria` | `Listo` | Sin observación especial actual. |
+| `DankTech2` | `Listo` | Sin observación especial actual. |
+| `DyeBench` | `Listo` | Integrado al reactor y migrado a `dev.drake.dough.*`. |
+| `Element-Manipulation` | `Listo` | Tuvo port real de API/serializers; conviene smoke test cuando se arme runtime. |
+| `ExtraTools` | `Listo` | Verificado en build aislado. |
+| `FlowerPower` | `Listo` | Ajustado a API moderna de atributos de Bukkit/Paper. |
+| `FN-FAL-s-Amplifications` | `Listo` | Verificado en build aislado. |
+| `FoxyMachines` | `Listo` | Limpiado de usos legacy de utilidades viejas. |
+| `HeadLimiter` | `Listo` | Integrado al reactor. `Towny` es opcional y su comportamiento de protección debe probarse en runtime. |
+| `Liquid` | `Listo` | Verificado en build aislado. |
+| `Magic-8-Ball` | `Listo` | Validado como quick win. |
+| `MapJammers` | `Listo` | Requiere `squaremap` o `dynmap` en runtime para que su funcionalidad tenga sentido. |
+| `MiniBlocks` | `Listo` | Integrado con `InfinityLib` local. Mantiene warnings por API deprecated de Bukkit, pero compila en Java 21. |
+| `MissileWarfare` | `Listo` | Corregidas partículas obsoletas; recomendable smoke test por tratarse de efectos/runtime. |
+| `RykenSlimeCustomizer-EN` | `Listo` | Verificado en build aislado. |
+| `SfChunkInfo` | `Listo` | Validado como quick win. |
+| `Simple-Storage` | `Listo` | Verificado en build aislado. Conviene prueba de runtime por inventarios/red. |
+| `SlimeCustomizer` | `Listo` | Verificado en build aislado. Conviene prueba de runtime por ser addon muy configurable. |
+| `VillagerUtil` | `Listo` | Verificado en build aislado. |
+
+### ⚠️ Activos en reactor pero todavía NO listos
+Estos módulos ya están dentro del build unificado, pero todavía presentan fallo confirmado o requieren port técnico adicional.
+
+| Addon | Estado | Observación |
+| :--- | :--- | :--- |
+| `GeneticChickengineering-Reborn` | `Pendiente` | Fallo confirmado de dependencias/anotaciones: faltan `lombok` y `bstats` en el `pom.xml`, antes de entrar al port fino. |
+| `PotionExpansion` | `Pendiente` | Fallo confirmado de API: sigue usando `SlimefunItemStack.item()` y `CustomItemStack.create(...)` con firma vieja. |
+
+### ⏳ Addons presentes en el repo pero fuera del reactor
+Estos addons todavía faltan por integrar, revisar o cerrar. Mientras estén aquí, no deben contarse como listos para `1.21.11`.
+
+| Addon | Estado | Observación |
+| :--- | :--- | :--- |
+| `Cultivation` | `Fuera del reactor` | Variante vieja; la activa hoy es `Cultivation_Updated`. |
+| `EMC2` | `Fuera del reactor` | Variante histórica; requiere triage antes de gastar tiempo. |
+| `Galactifun` | `Fuera del reactor` | Probable caso pesado o con tooling propio. |
+| `Networks` | `Fuera del reactor` | Variante vieja; la activa hoy es `Networks_Better_Compatibility`. |
+| `AdvancedTech` | `Fuera del reactor` | Pendiente de triage. |
+| `Better-Nuclear-Generator` | `Fuera del reactor` | Pendiente de triage. |
+| `Bump` | `Fuera del reactor` | Sospechoso de necesitar trabajo extra de build/tooling. |
+| `CompressionCraft` | `Fuera del reactor` | Pendiente de integración. |
+| `CustomItemGenerators` | `Fuera del reactor` | Sospechoso de requerir trabajo extra de build/tooling. |
+| `EMCTech` | `Fuera del reactor` | Pendiente de integración. |
+| `FastMachines` | `Fuera del reactor` | Sospechoso de requerir trabajo extra de build/tooling. |
+| `Gastronomicon` | `Fuera del reactor` | Candidato intermedio. |
+| `Geyser-Slimefun-Heads` | `Fuera del reactor` | Candidato intermedio. |
+| `MoreResearches` | `Fuera del reactor` | Quick win candidato. |
+| `Netheopoiesis` | `Fuera del reactor` | Pendiente de triage. |
+| `Quaptics` | `Fuera del reactor` | Quick win candidato. |
+| `RelicsOfCthonia` | `Fuera del reactor` | Candidato intermedio. |
+| `SaneCrafting` | `Fuera del reactor` | Pendiente de integración. |
+| `SfBetterChests` | `Fuera del reactor` | Quick win candidato. |
+| `SlimeFrame` | `Fuera del reactor` | Probable caso pesado. |
+| `SlimefunAdvancements` | `Fuera del reactor` | Probable caso pesado. |
+| `SlimefunTranslation` | `Fuera del reactor` | Sospechoso de requerir tooling/conversión extra. |
+| `SlimefunWarfare` | `Fuera del reactor` | Variante histórica; triage antes de integrar. |
+| `SlimeHUD` | `Fuera del reactor` | Quick win candidato. |
+| `SmallSpace` | `Fuera del reactor` | Quick win candidato. |
+| `SpiritsUnchained` | `Fuera del reactor` | Pendiente de integración. |
+| `UltimateGenerators2` | `Fuera del reactor` | Sospechoso de requerir tooling/conversión extra. |
+| `VillagerTrade` | `Fuera del reactor` | Candidato intermedio. |
+| `Wildernether` | `Fuera del reactor` | Candidato intermedio. |
+| `WorldEditSlimefun` | `Fuera del reactor` | Candidato intermedio; revisar integración con WorldEdit actual. |
+
+### 📝 Observaciones importantes por plugin/stack
+
+- `MapJammers`: compila, pero su utilidad real depende de que el servidor tenga `squaremap` o `dynmap`.
+- `HeadLimiter`: compila y carga su lógica propia; si se usa `Towny`, conviene validar wilderness/claims en runtime.
+- `MiniBlocks`: compila en Java 21, pero mantiene warnings por API deprecated de Bukkit (`JavaPluginLoader`).
+- `MissileWarfare`: compila después del ajuste de partículas obsoletas; por ser addon visual/combate, requiere smoke test real.
+- `Element-Manipulation`: ya quedó alineado a serializers y utilidades modernas; igual conviene validación runtime por efectos y mecánicas.
+- `Simple-Storage`: compila, pero al tocar inventarios y red conviene prueba con servidor real.
+- `SlimeCustomizer` y `RykenSlimeCustomizer-EN`: compilan, pero por ser addons altamente configurables conviene validación con configs reales.
+- `Cultivation_Updated` y `Networks_Better_Compatibility`: son las variantes activas. No mezclar con `Cultivation` y `Networks` originales al hablar de “listo”.
+- `GeneticChickengineering-Reborn`: hoy está trabado primero por `pom.xml`/dependencias, no por un port profundo de API.
+- `PotionExpansion`: hoy está trabado por cambios reales de API/código, no solo por Maven.
 
 ---
 
