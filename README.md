@@ -1,116 +1,180 @@
-<div align="center">
-
-![Drakes Slimefun Labs Banner](docs/img/banner.png)
-
-# 🔬 Drakes Slimefun Labs
-### *The Next Evolution of Slimefun Addons for Minecraft 1.21.11*
+# Drakes Slimefun Labs
 
 [![Java Version](https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=openjdk)](https://adoptium.net/)
 [![Paper Version](https://img.shields.io/badge/Paper-1.21.11-blue?style=for-the-badge&logo=minecraft)](https://papermc.io/)
 [![Slimefun Version](https://img.shields.io/badge/Slimefun-6.0--Drake-green?style=for-the-badge)](https://github.com/Slimefun/Slimefun4)
 [![License](https://img.shields.io/badge/License-GPL%20v3-red?style=for-the-badge)](LICENSE)
 
----
+Repositorio de trabajo para la migración del ecosistema Slimefun hacia `Paper 1.21.11`, `Java 21`, `Slimefun 6` y el stack `Drake Framework`.
 
-**Drakes Slimefun Labs** es el centro neurálgico de la migración masiva del ecosistema Slimefun. 
-Aquí centralizamos el desarrollo de más de 35 addons, unificando dependencias y aplicando el **Drake Framework** para garantizar una estabilidad absoluta en la versión **1.21.11**.
+Este repo no representa un único plugin. Es un laboratorio de consolidación, porting, validación y documentación para un conjunto amplio de addons, librerías base y variantes de compatibilidad. El objetivo no es solo que “compile”, sino dejar una base que el equipo pueda entender, continuar y validar en runtime sin ambigüedades.
 
-[Wiki Oficial](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki) • [Arquitectura](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Arquitectura-del-Ecosistema) • [Guía de Migración](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Referencia-Técnica-(Paper-1.21.1))
+## Acceso Rápido
 
-</div>
+| Recurso | Mirror Local (`.md`) | GitHub Wiki | Uso |
+| :--- | :--- | :--- | :--- |
+| Portada de documentación | [Home](wiki_temp/Home.md) | [Home](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki) | Punto de entrada general. |
+| Checklist operativo | [Checklist de Migración](wiki_temp/Checklist-de-Migración.md) | [Checklist de Migración](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Checklist-de-Migraci%C3%B3n) | Estado resumido y prioridades. |
+| Módulos faltantes | [Módulos Pendientes](wiki_temp/Módulos-Pendientes.md) | [Módulos Pendientes](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/M%C3%B3dulos-Pendientes) | Qué sigue fuera del reactor o con bloqueo activo. |
+| Roadmap | [Roadmap de Estabilización](wiki_temp/Roadmap-de-Estabilización.md) | [Roadmap de Estabilización](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Roadmap-de-Estabilizaci%C3%B3n) | Orden sugerido de cierre. |
+| Handoff diario | [Tomorrow-Handoff](wiki_temp/Tomorrow-Handoff.md) | [Tomorrow-Handoff](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Tomorrow-Handoff) | Continuidad entre sesiones. |
+| Arquitectura | [Arquitectura del Ecosistema](wiki_temp/Arquitectura-del-Ecosistema.md) | [Arquitectura del Ecosistema](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Arquitectura-del-Ecosistema) | Explica el stack Drake y la organización del workspace. |
+| Referencia técnica 1.21.1 | [Referencia Técnica (Paper 1.21.1)](wiki_temp/Referencia-Técnica-(Paper-1.21.1).md) | [Referencia Técnica (Paper 1.21.1)](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Referencia-T%C3%A9cnica-(Paper-1.21.1)) | Hallazgos de API, compatibilidad y criterios de port. |
+| Smoke test | [Guía de Smoke Test](wiki_temp/Guía-de-Smoke-Test.md) | [Guía de Smoke Test](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Gu%C3%ADa-de-Smoke-Test) | Validación de runtime básica. |
+| Dev setup | [Dev-Setup](wiki_temp/Dev-Setup.md) | [Dev-Setup](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Dev-Setup) | Preparación del entorno de trabajo. |
+| Estándares de desarrollo | [Estándares de Desarrollo](wiki_temp/Estándares-de-Desarrollo.md) | [Estándares de Desarrollo](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Est%C3%A1ndares-de-Desarrollo) | Convenciones y criterios de calidad. |
+| Guía para IA | [Instrucciones para la IA](wiki_temp/Instrucciones-para-la-IA.md) | [Instrucciones para la IA](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Instrucciones-para-la-IA) | Contexto y reglas para sesiones asistidas. |
+| Plantilla de addon | [New-Addon-Template](wiki_temp/New-Addon-Template.md) | [New-Addon-Template](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/New-Addon-Template) | Explicación de la plantilla estándar. |
+| Template real | [Template README](templates/slimefun-addon/README.md) | No aplica | Base local para crear nuevos addons del stack. |
 
-## 📊 Estado del Proyecto
+## Estado Ejecutivo
+
 > [!IMPORTANT]
-> **Versión Actual**: `1.21.11` | **Estado**: 🧪 En Fase de Pruebas (Beta) | **Framework**: Drake 1.0
+> Rama de trabajo principal: `1.21-latin`
 
-Actualmente, el laboratorio trabaja sobre un universo de **87 addons** más `dough-core` y `Slimefun4-src`.
-De ese total, el **reactor activo** cubre **59 módulos** (`57 addons + 2 módulos base`).
-
-**Progreso de Migración:**
-`[=============================>----] 89%`
+El laboratorio cubre actualmente un universo de `87 addons` más `2 módulos base`.
+El `pom.xml` raíz funciona como reactor unificado y hoy declara `59 módulos` activos (`57 addons + 2 base`).
 
 | Métrica | Valor |
 | :--- | :--- |
-| 🚀 **Módulos Listos en Reactor** | `57` |
-| ⛔ **Módulos Activos con Fallo Confirmado** | `2` |
-| 🧩 **Addons Fuera del Reactor** | `30` |
-| 📚 **Pendiente Bruto del Repo** | `32 addons` |
-| 📦 **Librería Core** | `dough-core:1.3.1-DRAKE` |
+| Módulos listos en reactor | `57` |
+| Módulos activos con fallo confirmado | `2` |
+| Addons fuera del reactor | `30` |
+| Backlog operativo real | `32 addons` |
+| Base unificada | `dev.drake.dough:dough-core:1.3.1-DRAKE` |
+| Core | `dev.drake:Slimefun:6.0-Drake-1.21.11` |
 
-**Cómo leer este tablero**
-- `57 listos` significa módulos que hoy compilan para `1.21.11` dentro del stack Drake.
-- `2 activos con fallo` significa módulos ya integrados al `pom.xml` raíz, pero todavía no cerrados.
-- `30 fuera del reactor` significa addons presentes en el repo que aún no están incorporados al build unificado.
-- El backlog operativo real hoy es `32 addons`, no `2`.
+### Cómo interpretar este estado
 
-**Últimos cierres validados**
-- `DyeBench`: integrado al reactor y alineado a dependencias Drake.
-- `MapJammers`: integrado al reactor con `DynmapCoreAPI` resuelto y imports `dev.drake.dough.*`.
-- `HeadLimiter`: integrado al reactor y limpiado de dependencia muerta a `ExtraUtils`.
-- `MiniBlocks`: integrado al reactor, alineado con `InfinityLib` local y `Java 21`.
-- `FoxyMachines`: eliminados usos de utilidades legacy de `commons-lang`.
-- `FlowerPower`: ajustado al API moderno de atributos de Bukkit/Paper.
-- `MissileWarfare`: vuelve a compilar en el reactor actual.
-- `Element-Manipulation`: alineado a `dev.drake.dough.*`, serializers Adventure actuales e `InfinityLib` moderno.
+- `Listo en reactor` significa que el módulo compila hoy dentro del build unificado para `1.21.11`.
+- `Activo con fallo confirmado` significa que el addon ya está integrado al `pom.xml` raíz, pero todavía no se puede marcar como listo.
+- `Fuera del reactor` significa que el addon está presente en el repo, pero todavía no fue incorporado al build unificado.
+- `Backlog operativo real` es la suma de lo que sigue roto dentro del reactor y lo que aún no se integró.
 
-## 📦 Inventario Explícito 1.21.11
-Esta sección es la fuente de verdad humana del repo. Si un conteo viejo contradice esta lista, manda esta lista.
+## Qué Es Este Repo y Qué No Es
 
-### ✅ Base/Core listo para 1.21.11
+Este repositorio:
+- centraliza versiones, dependencias y módulos Maven
+- contiene el port del core y de `dough-core`
+- sirve como laboratorio de migración para addons de procedencias distintas
+- documenta el estado real del ecosistema en una sola rama operativa
+
+Este repositorio no:
+- representa un único plugin listo para distribución pública
+- garantiza por sí solo que todos los addons “listos” ya estén smoke-testeados en runtime real
+- implica que todos los addons presentes en `sources/*` formen parte del reactor actual
+
+## Estructura del Workspace
+
+| Ruta | Propósito |
+| :--- | :--- |
+| `sources/dough-core` | Librería base unificada y relocalizada a `dev.drake.dough`. |
+| `sources/slimefun-core/Slimefun4-src` | Core Slimefun adaptado al stack actual. |
+| `sources/repos-to-port` | Batch 1: addons históricamente prioritarios para portar. |
+| `sources/batch-2-expansion` | Librerías, expansiones y variantes de compatibilidad. |
+| `sources/community-addons` | Archivo comunitario integrado progresivamente al reactor. |
+| `templates/slimefun-addon` | Plantilla base para nuevos addons del ecosistema. |
+| `wiki_temp` | Espejo local editable de la wiki pública del repo. |
+
+## Flujo de Trabajo Recomendado
+
+### Compilación aislada
+
+No se debe compilar el reactor completo salvo necesidad estricta. El patrón recomendado es:
+
+```powershell
+mvn -pl ruta/del/modulo -am -DskipTests package
+```
+
+Ejemplos:
+
+```powershell
+mvn -pl sources/repos-to-port/SimpleUtils -am -DskipTests package
+mvn -pl sources/repos-to-port/DynaTech -am -DskipTests package
+mvn -pl sources/community-addons/MapJammers -am -DskipTests compile
+```
+
+### Significado de las flags
+
+- `-pl`: selecciona el módulo objetivo
+- `-am`: compila también sus dependencias dentro del reactor
+- `-DskipTests`: evita tests para acelerar ciclos de validación
+
+### Smoke test de servidor
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\slimefun\smoke-test.ps1
+```
+
+### Criterio operativo antes de tocar código
+
+1. determinar si el fallo es de `pom.xml`/dependencias o de API/código
+2. si el addon ya usa `dev.drake.dough.*` pero falla por imports, revisar primero el `pom.xml`
+3. preferir cambios pequeños con validación real
+4. si cambia el estado del tablero, sincronizar `README` y wiki
+
+## Inventario Explícito 1.21.11
+
+Esta sección es la fuente de verdad humana del repositorio. Si un conteo viejo o un comentario histórico contradice esta lista, manda esta lista.
+
+### Base/Core listo para 1.21.11
 
 | Componente | Estado | Observación |
 | :--- | :--- | :--- |
-| `sources/dough-core` | `Listo` | `dev.drake.dough:dough-core:1.3.1-DRAKE` unificado para el stack actual. |
+| `sources/dough-core` | `Listo` | Núcleo unificado `1.3.1-DRAKE`, usado por el stack completo. |
 | `sources/slimefun-core/Slimefun4-src` | `Listo` | Core estabilizado con puentes de compatibilidad para addons legacy. |
 
-### ✅ Batch 1 `sources/repos-to-port` listo para 1.21.11
-Los `26/26` módulos de esta carpeta están considerados listos en esta rama.
+### Batch 1 `sources/repos-to-port` listo para 1.21.11
+
+Los `26/26` módulos de esta carpeta se consideran listos dentro de esta rama.
 
 | Addon | Estado | Observación |
 | :--- | :--- | :--- |
 | `ColoredEnderChests` | `Listo` | Sin observación especial actual. |
 | `DyedBackpacks` | `Listo` | Sin observación especial actual. |
-| `DynaTech` | `Listo` | Se alineó el `pom.xml` al reactor Drake y dependencias actuales. |
-| `EcoPower` | `Listo` | Se corrigió herencia del parent y dependencia a `dough-core`. |
+| `DynaTech` | `Listo` | Alineado al reactor Drake y dependencias actuales. |
+| `EcoPower` | `Listo` | Corregida herencia del parent y dependencia a `dough-core`. |
 | `ElectricSpawners` | `Listo` | Sin observación especial actual. |
 | `ExoticGarden` | `Listo` | Ya trabajado para este stack; revisar runtime si se usan integraciones externas no incluidas. |
 | `ExtraGear` | `Listo` | Sin observación especial actual. |
-| `ExtraHeads` | `Listo` | Convertido/integrado al reactor Maven unificado. |
-| `ExtraUtils` | `Listo` | Referencia útil para dependencias comunitarias que antes apuntaban a JitPack. |
+| `ExtraHeads` | `Listo` | Convertido e integrado al reactor Maven unificado. |
+| `ExtraUtils` | `Listo` | Referencia útil para dependencias comunitarias antiguas. |
 | `FluffyMachines` | `Listo` | Sin observación especial actual. |
 | `GlobalWarming` | `Listo` | Sin observación especial actual. |
 | `HardcoreSlimefun` | `Listo` | Sin observación especial actual. |
-| `HotbarPets` | `Listo` | Se corrigieron errores de API en el port a 1.21.11. |
+| `HotbarPets` | `Listo` | Corregidos errores de API en el port a 1.21.11. |
 | `InfinityExpansion` | `Listo` | Depende del `InfinityLib` local del reactor. |
 | `luckyblocks-sf` | `Listo` | Sin observación especial actual. |
-| `MobCapturer` | `Listo` | Convertido/integrado al reactor Maven unificado. |
-| `PrivateStorage` | `Listo` | Se corrigieron errores de API durante la migración. |
+| `MobCapturer` | `Listo` | Convertido e integrado al reactor Maven unificado. |
+| `PrivateStorage` | `Listo` | Corregidos errores de API durante la migración. |
 | `SFCalc` | `Listo` | Validado como quick win. |
 | `SFMobDrops` | `Listo` | Sin observación especial actual. |
 | `SimpleUtils` | `Listo` | Su cierre dependió de alinear `InfinityLib` al reactor actual. |
-| `SlimeChem` | `Listo` | Se corrigieron errores de API en el port. |
+| `SlimeChem` | `Listo` | Corregidos errores de API durante el port. |
 | `SlimefunOreChunks` | `Listo` | Sin observación especial actual. |
 | `SlimyRepair` | `Listo` | Validado como quick win. |
-| `SlimyTreeTaps` | `Listo` | Compila en esta rama; revisar runtime si se toca protección externa. |
+| `SlimyTreeTaps` | `Listo` | Compila en esta rama; revisar runtime si intervienen plugins de protección. |
 | `SoulJars` | `Listo` | Sin observación especial actual. |
-| `SoundMuffler` | `Listo` | Se corrigieron errores de API legacy. Recomendable smoke test porque toca eventos/sonidos. |
+| `SoundMuffler` | `Listo` | Corregidos errores de API legacy. Conviene smoke test por tratarse de sonidos/eventos. |
 
-### ✅ Batch 2 activo listo para 1.21.11
-Estas son las variantes y librerías actualmente activas dentro del stack.
+### Batch 2 activo listo para 1.21.11
+
+Estas son las librerías y variantes activas dentro del stack actual.
 
 | Componente | Estado | Observación |
 | :--- | :--- | :--- |
-| `SefiLib` | `Listo` | Librería de soporte de expansiones. |
-| `InfinityLib` | `Listo` | Alineado al parent y usado por varios addons del ecosistema. |
-| `Cultivation_Updated` | `Listo` | Esta es la variante activa adoptada; `Cultivation` original queda fuera del reactor. |
+| `SefiLib` | `Listo` | Librería de soporte para expansiones. |
+| `InfinityLib` | `Listo` | Alineado al parent y utilizado por varios addons del ecosistema. |
+| `Cultivation_Updated` | `Listo` | Variante activa adoptada. No confundir con `Cultivation` original. |
 | `LiteXpansion` | `Listo` | Sin observación especial actual. |
-| `Networks_Better_Compatibility` | `Listo` | Esta es la variante activa adoptada; `Networks` original queda fuera del reactor. |
-| `SlimeTinker` | `Listo` | Quedó alineado al parent del reactor y a `Slimefun 6.0-Drake-1.21.11`. |
-| `SMG` | `Listo` | En el reactor figura como `SimpleMaterialGenerators`. |
+| `Networks_Better_Compatibility` | `Listo` | Variante activa adoptada. No confundir con `Networks` original. |
+| `SlimeTinker` | `Listo` | Alineado al parent del reactor y a `Slimefun 6.0-Drake-1.21.11`. |
+| `SMG` | `Listo` | En el reactor figura con el nombre `SimpleMaterialGenerators`. |
 | `Supreme` | `Listo` | Sin observación especial actual. |
 | `TranscEndence` | `Listo` | Sin observación especial actual. |
 
-### ✅ Community addons activos listos para 1.21.11
+### Community addons activos listos para 1.21.11
+
 Estos módulos ya están integrados al reactor y hoy compilan en esta rama.
 
 | Addon | Estado | Observación |
@@ -119,24 +183,25 @@ Estos módulos ya están integrados al reactor y hoy compilan en esta rama.
 | `CrystamaeHistoria` | `Listo` | Sin observación especial actual. |
 | `DankTech2` | `Listo` | Sin observación especial actual. |
 | `DyeBench` | `Listo` | Integrado al reactor y migrado a `dev.drake.dough.*`. |
-| `Element-Manipulation` | `Listo` | Tuvo port real de API/serializers; conviene smoke test cuando se arme runtime. |
+| `Element-Manipulation` | `Listo` | Tuvo port real de API y serializers; conviene smoke test en runtime. |
 | `ExtraTools` | `Listo` | Verificado en build aislado. |
 | `FlowerPower` | `Listo` | Ajustado a API moderna de atributos de Bukkit/Paper. |
 | `FN-FAL-s-Amplifications` | `Listo` | Verificado en build aislado. |
 | `FoxyMachines` | `Listo` | Limpiado de usos legacy de utilidades viejas. |
-| `HeadLimiter` | `Listo` | Integrado al reactor. `Towny` es opcional y su comportamiento de protección debe probarse en runtime. |
+| `HeadLimiter` | `Listo` | Integrado al reactor. `Towny` es opcional y debe validarse en runtime si se usa. |
 | `Liquid` | `Listo` | Verificado en build aislado. |
 | `Magic-8-Ball` | `Listo` | Validado como quick win. |
-| `MapJammers` | `Listo` | Requiere `squaremap` o `dynmap` en runtime para que su funcionalidad tenga sentido. |
+| `MapJammers` | `Listo` | Requiere `squaremap` o `dynmap` en runtime para ser funcional. |
 | `MiniBlocks` | `Listo` | Integrado con `InfinityLib` local. Mantiene warnings por API deprecated de Bukkit, pero compila en Java 21. |
-| `MissileWarfare` | `Listo` | Corregidas partículas obsoletas; recomendable smoke test por tratarse de efectos/runtime. |
+| `MissileWarfare` | `Listo` | Corregidas partículas obsoletas; recomendable smoke test por tratarse de combate/efectos. |
 | `RykenSlimeCustomizer-EN` | `Listo` | Verificado en build aislado. |
 | `SfChunkInfo` | `Listo` | Validado como quick win. |
 | `Simple-Storage` | `Listo` | Verificado en build aislado. Conviene prueba de runtime por inventarios/red. |
-| `SlimeCustomizer` | `Listo` | Verificado en build aislado. Conviene prueba de runtime por ser addon muy configurable. |
+| `SlimeCustomizer` | `Listo` | Verificado en build aislado. Conviene prueba de runtime por ser muy configurable. |
 | `VillagerUtil` | `Listo` | Verificado en build aislado. |
 
-### ⚠️ Activos en reactor pero todavía NO listos
+### Activos en reactor pero todavía NO listos
+
 Estos módulos ya están dentro del build unificado, pero todavía presentan fallo confirmado o requieren port técnico adicional.
 
 | Addon | Estado | Observación |
@@ -144,7 +209,8 @@ Estos módulos ya están dentro del build unificado, pero todavía presentan fal
 | `GeneticChickengineering-Reborn` | `Pendiente` | Fallo confirmado de dependencias/anotaciones: faltan `lombok` y `bstats` en el `pom.xml`, antes de entrar al port fino. |
 | `PotionExpansion` | `Pendiente` | Fallo confirmado de API: sigue usando `SlimefunItemStack.item()` y `CustomItemStack.create(...)` con firma vieja. |
 
-### ⏳ Addons presentes en el repo pero fuera del reactor
+### Addons presentes en el repo pero fuera del reactor
+
 Estos addons todavía faltan por integrar, revisar o cerrar. Mientras estén aquí, no deben contarse como listos para `1.21.11`.
 
 | Addon | Estado | Observación |
@@ -155,11 +221,11 @@ Estos addons todavía faltan por integrar, revisar o cerrar. Mientras estén aqu
 | `Networks` | `Fuera del reactor` | Variante vieja; la activa hoy es `Networks_Better_Compatibility`. |
 | `AdvancedTech` | `Fuera del reactor` | Pendiente de triage. |
 | `Better-Nuclear-Generator` | `Fuera del reactor` | Pendiente de triage. |
-| `Bump` | `Fuera del reactor` | Sospechoso de necesitar trabajo extra de build/tooling. |
+| `Bump` | `Fuera del reactor` | Sospechoso de necesitar trabajo extra de build o tooling. |
 | `CompressionCraft` | `Fuera del reactor` | Pendiente de integración. |
-| `CustomItemGenerators` | `Fuera del reactor` | Sospechoso de requerir trabajo extra de build/tooling. |
+| `CustomItemGenerators` | `Fuera del reactor` | Sospechoso de requerir trabajo extra de build o tooling. |
 | `EMCTech` | `Fuera del reactor` | Pendiente de integración. |
-| `FastMachines` | `Fuera del reactor` | Sospechoso de requerir trabajo extra de build/tooling. |
+| `FastMachines` | `Fuera del reactor` | Sospechoso de requerir trabajo extra de build o tooling. |
 | `Gastronomicon` | `Fuera del reactor` | Candidato intermedio. |
 | `Geyser-Slimefun-Heads` | `Fuera del reactor` | Candidato intermedio. |
 | `MoreResearches` | `Fuera del reactor` | Quick win candidato. |
@@ -170,82 +236,78 @@ Estos addons todavía faltan por integrar, revisar o cerrar. Mientras estén aqu
 | `SfBetterChests` | `Fuera del reactor` | Quick win candidato. |
 | `SlimeFrame` | `Fuera del reactor` | Probable caso pesado. |
 | `SlimefunAdvancements` | `Fuera del reactor` | Probable caso pesado. |
-| `SlimefunTranslation` | `Fuera del reactor` | Sospechoso de requerir tooling/conversión extra. |
+| `SlimefunTranslation` | `Fuera del reactor` | Sospechoso de requerir tooling o conversión extra. |
 | `SlimefunWarfare` | `Fuera del reactor` | Variante histórica; triage antes de integrar. |
 | `SlimeHUD` | `Fuera del reactor` | Quick win candidato. |
 | `SmallSpace` | `Fuera del reactor` | Quick win candidato. |
 | `SpiritsUnchained` | `Fuera del reactor` | Pendiente de integración. |
-| `UltimateGenerators2` | `Fuera del reactor` | Sospechoso de requerir tooling/conversión extra. |
+| `UltimateGenerators2` | `Fuera del reactor` | Sospechoso de requerir tooling o conversión extra. |
 | `VillagerTrade` | `Fuera del reactor` | Candidato intermedio. |
 | `Wildernether` | `Fuera del reactor` | Candidato intermedio. |
 | `WorldEditSlimefun` | `Fuera del reactor` | Candidato intermedio; revisar integración con WorldEdit actual. |
 
-### 📝 Observaciones importantes por plugin/stack
+## Observaciones Operativas Importantes
 
-- `MapJammers`: compila, pero su utilidad real depende de que el servidor tenga `squaremap` o `dynmap`.
+- `MapJammers`: compila, pero su funcionalidad real depende de `squaremap` o `dynmap`.
 - `HeadLimiter`: compila y carga su lógica propia; si se usa `Towny`, conviene validar wilderness/claims en runtime.
-- `MiniBlocks`: compila en Java 21, pero mantiene warnings por API deprecated de Bukkit (`JavaPluginLoader`).
+- `MiniBlocks`: compila en Java 21, pero mantiene warnings por API deprecated de Bukkit.
 - `MissileWarfare`: compila después del ajuste de partículas obsoletas; por ser addon visual/combate, requiere smoke test real.
-- `Element-Manipulation`: ya quedó alineado a serializers y utilidades modernas; igual conviene validación runtime por efectos y mecánicas.
+- `Element-Manipulation`: ya quedó alineado a serializers y utilidades modernas; conviene validación runtime por efectos y mecánicas.
 - `Simple-Storage`: compila, pero al tocar inventarios y red conviene prueba con servidor real.
-- `SlimeCustomizer` y `RykenSlimeCustomizer-EN`: compilan, pero por ser addons altamente configurables conviene validación con configs reales.
-- `Cultivation_Updated` y `Networks_Better_Compatibility`: son las variantes activas. No mezclar con `Cultivation` y `Networks` originales al hablar de “listo”.
-- `GeneticChickengineering-Reborn`: hoy está trabado primero por `pom.xml`/dependencias, no por un port profundo de API.
-- `PotionExpansion`: hoy está trabado por cambios reales de API/código, no solo por Maven.
+- `SlimeCustomizer` y `RykenSlimeCustomizer-EN`: compilan, pero por ser altamente configurables conviene validación con configs reales.
+- `Cultivation_Updated` y `Networks_Better_Compatibility`: son las variantes activas. No deben mezclarse con sus variantes originales al hablar de “listo”.
+- `GeneticChickengineering-Reborn`: hoy está bloqueado primero por `pom.xml`/dependencias, no todavía por un port profundo de API.
+- `PotionExpansion`: hoy está bloqueado por cambios reales de API/código, no solo por Maven.
 
----
+## Arquitectura del Stack
 
-## 💎 Addons Destacados (Premium)
-Explora los pilares del laboratorio, ahora con rediseño visual y estabilización completa para 1.21.1:
+El ecosistema usa el **Drake Framework** como base de consolidación técnica:
 
-<p align="center">
-  <a href="sources/repos-to-port/InfinityExpansion/README.md"><b>Infinity Expansion</b></a> • 
-  <a href="sources/repos-to-port/DynaTech/README.md"><b>DynaTech</b></a> • 
-  <a href="sources/repos-to-port/SlimeChem/README.md"><b>SlimeChem</b></a> • 
-  <a href="sources/repos-to-port/ExtraUtils/README.md"><b>ExtraUtils</b></a> • 
-  <a href="sources/community-addons/PotionExpansion/README.md"><b>PotionExpansion</b></a>
-</p>
+- un `pom.xml` raíz que controla versiones, módulos y dependencias
+- `dough-core` relocalizado a `dev.drake.dough`
+- un core Slimefun adaptado para `1.21.11`
+- variantes activas de compatibilidad en los casos donde el original histórico no es la opción vigente
 
-<p align="center">
-  <sub>Haz clic en los nombres para ver la documentación detallada y el arte cinemático de cada addon.</sub>
-</p>
+Para contexto más profundo:
 
----
+- [Arquitectura del Ecosistema](wiki_temp/Arquitectura-del-Ecosistema.md)
+- [Arquitectura del Ecosistema en la Wiki](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Arquitectura-del-Ecosistema)
+- [Referencia Técnica (Paper 1.21.1)](wiki_temp/Referencia-Técnica-(Paper-1.21.1).md)
+- [Referencia Técnica (Paper 1.21.1) en la Wiki](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Referencia-T%C3%A9cnica-(Paper-1.21.1))
 
-## 🏗️ Arquitectura (Drake Framework)
+## Documentación Complementaria
 
-Este ecosistema utiliza el **Drake Framework**, una evolución técnica diseñada para desacoplar a Slimefun de dependencias legacy y NMS.
+| Tema | Mirror Local | GitHub Wiki |
+| :--- | :--- | :--- |
+| Estado y prioridades | [Checklist de Migración](wiki_temp/Checklist-de-Migración.md) | [Checklist de Migración](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Checklist-de-Migraci%C3%B3n) |
+| Backlog detallado | [Módulos Pendientes](wiki_temp/Módulos-Pendientes.md) | [Módulos Pendientes](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/M%C3%B3dulos-Pendientes) |
+| Roadmap operativo | [Roadmap de Estabilización](wiki_temp/Roadmap-de-Estabilización.md) | [Roadmap de Estabilización](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Roadmap-de-Estabilizaci%C3%B3n) |
+| Smoke test | [Guía de Smoke Test](wiki_temp/Guía-de-Smoke-Test.md) | [Guía de Smoke Test](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Gu%C3%ADa-de-Smoke-Test) |
+| Handoff | [Tomorrow-Handoff](wiki_temp/Tomorrow-Handoff.md) | [Tomorrow-Handoff](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Tomorrow-Handoff) |
+| Setup local | [Dev-Setup](wiki_temp/Dev-Setup.md) | [Dev-Setup](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Dev-Setup) |
+| Estándares | [Estándares de Desarrollo](wiki_temp/Estándares-de-Desarrollo.md) | [Estándares de Desarrollo](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Est%C3%A1ndares-de-Desarrollo) |
+| Guía IA | [Instrucciones para la IA](wiki_temp/Instrucciones-para-la-IA.md) | [Instrucciones para la IA](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Instrucciones-para-la-IA) |
+| Prompt inicial IA | [AI-Start-Prompt](wiki_temp/AI-Start-Prompt.md) | [AI-Start-Prompt](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/AI-Start-Prompt) |
+| Plantilla de addon | [New-Addon-Template](wiki_temp/New-Addon-Template.md) | [New-Addon-Template](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/New-Addon-Template) |
 
-*   **Modularidad Atómica**: Compila cualquier addon con `mvn -pl <path> -am package`.
-*   **Dough-Core Unificado**: 13 librerías consolidadas en un único núcleo relocalizado (`dev.drake.dough`).
-*   **Persistencia Nativa**: Optimizado para Minecraft 1.21.1 Data Components.
+## Template de Nuevo Addon
 
----
+Para crear nuevos módulos alineados al stack actual:
 
-## 📖 Documentación y Guías
-Toda la documentación técnica ha sido movida a la **[Wiki Oficial](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki)** para mantener la raíz del repositorio limpia.
+- explicación: [New-Addon-Template](wiki_temp/New-Addon-Template.md)
+- wiki pública: [New-Addon-Template](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/New-Addon-Template)
+- base local real: [templates/slimefun-addon/README.md](templates/slimefun-addon/README.md)
 
-*   🔍 **[Checklist de Migración](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Checklist-de-Migración)**: Revisa qué addons están listos.
-*   💻 **[Referencia Técnica 1.21.1](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Referencia-Técnica-(Paper-1.21.1))**: Descubrimientos de la API 1.21.
-*   🧪 **[Guía de Smoke Test](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Guía-de-Smoke-Test)**: Valida la salud de tu build.
-*   📝 **[Plantilla de Addon](templates/slimefun-addon)**: Comienza a desarrollar tu propio addon Drake.
+## Créditos
 
----
-
-## 👥 Colaboradores y Créditos
-
-Este proyecto es posible gracias al legado de grandes desarrolladores del ecosistema:
+Este proyecto existe sobre el trabajo acumulado de varios desarrolladores del ecosistema Slimefun.
 
 | Dev | Contribución |
 | :--- | :--- |
 | **TheBusyBiscuit** | Autor original de Slimefun 4. |
-| **Sefiraat** | Mentor de las librerías de expansión y addons técnicos. |
-| **Mooy1** | Creador de InfinityExpansion y arquitectura modular. |
+| **Sefiraat** | Mentor de librerías de expansión y addons técnicos. |
+| **Mooy1** | Creador de InfinityExpansion y de parte importante de la arquitectura modular asociada. |
 | **Chagui68** | Variantes de compatibilidad y lógica de transición. |
-| **[Pablo Elías](https://github.com/JackStar6677-1)** | Liderazgo del port 1.21.11 y creación del Drake Framework. |
+| **[Pablo Elías](https://github.com/JackStar6677-1)** | Liderazgo del port `1.21.11` y consolidación del Drake Framework. |
 
----
-
-<div align="center">
-  <sub>Drakes Slimefun Labs es un proyecto independiente. Todas las marcas registradas pertenecen a sus respectivos dueños.</sub>
-</div>
+Drakes Slimefun Labs es un proyecto independiente. Todas las marcas registradas pertenecen a sus respectivos dueños.
