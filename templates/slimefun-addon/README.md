@@ -1,6 +1,6 @@
 # TemplateAddon
 
-Plantilla mínima para crear addons nuevos sobre este workspace.
+Plantilla base para crear addons nuevos alineados al stack de `drakes-slimefun-labs`.
 
 ## Qué reemplazar
 
@@ -9,14 +9,22 @@ Plantilla mínima para crear addons nuevos sobre este workspace.
 - `TemplateMachine` por tu primer item o máquina
 - ids como `TEMPLATE_MACHINE` y `template_research`
 
-## Si va dentro del monorepo
+## Si el addon va dentro del monorepo
 
-- mueve esta carpeta a `sources/repos-to-port`, `sources/batch-2-expansion` o `sources/community-addons`
-- corrige `relativePath` del `pom.xml` si cambia la profundidad
-- agrega el módulo al `pom.xml` raíz
+1. mueve esta carpeta a `sources/repos-to-port`, `sources/batch-2-expansion` o `sources/community-addons`
+2. corrige `relativePath` del `pom.xml` si cambia la profundidad
+3. agrega el módulo al `pom.xml` raíz
+4. valida con build aislado
 
 ## Primer build
 
 ```powershell
 mvn -pl ruta/del/modulo -am -DskipTests package
 ```
+
+## Reglas rápidas
+
+- usa el parent del reactor cuando el módulo viva dentro de este repo
+- no fijes coordenadas viejas de `Slimefun 5`
+- si usas `dough`, apunta al stack `dev.drake.dough`
+- no marques el addon como listo solo porque compile una vez
