@@ -13,24 +13,24 @@ Este repo no representa un único plugin. Es un laboratorio de consolidación, p
 
 - README principal en español: [README.md](README.md)
 - README en inglés: [README_EN.md](README_EN.md)
-- Portada de wiki en inglés: [Home-EN](wiki_temp/Home-EN.md)
+- Portada de docs en inglés: [Home-EN](docs/en/home.md)
 
 ## Acceso Rápido
 
 | Recurso | Mirror Local (`.md`) | GitHub Wiki | Uso |
 | :--- | :--- | :--- | :--- |
-| Portada de documentación | [Home](wiki_temp/Home.md) | [Home](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki) | Punto de entrada general. |
-| Checklist operativo | [Checklist de Migración](wiki_temp/Checklist-de-Migración.md) | [Checklist de Migración](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Checklist-de-Migraci%C3%B3n) | Estado resumido y prioridades. |
-| Módulos faltantes | [Módulos Pendientes](wiki_temp/Módulos-Pendientes.md) | [Módulos Pendientes](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/M%C3%B3dulos-Pendientes) | Qué sigue fuera del reactor o con bloqueo activo. |
-| Roadmap | [Roadmap de Estabilización](wiki_temp/Roadmap-de-Estabilización.md) | [Roadmap de Estabilización](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Roadmap-de-Estabilizaci%C3%B3n) | Orden sugerido de cierre. |
-| Handoff diario | [Tomorrow-Handoff](wiki_temp/Tomorrow-Handoff.md) | [Tomorrow-Handoff](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Tomorrow-Handoff) | Continuidad entre sesiones. |
-| Arquitectura | [Arquitectura del Ecosistema](wiki_temp/Arquitectura-del-Ecosistema.md) | [Arquitectura del Ecosistema](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Arquitectura-del-Ecosistema) | Explica el stack Drake y la organización del workspace. |
-| Referencia técnica 1.21.1 | [Referencia Técnica (Paper 1.21.1)](wiki_temp/Referencia-Técnica-(Paper-1.21.1).md) | [Referencia Técnica (Paper 1.21.1)](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Referencia-T%C3%A9cnica-(Paper-1.21.1)) | Hallazgos de API, compatibilidad y criterios de port. |
-| Smoke test | [Guía de Smoke Test](wiki_temp/Guía-de-Smoke-Test.md) | [Guía de Smoke Test](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Gu%C3%ADa-de-Smoke-Test) | Validación de runtime básica. |
-| Dev setup | [Dev-Setup](wiki_temp/Dev-Setup.md) | [Dev-Setup](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Dev-Setup) | Preparación del entorno de trabajo. |
-| Estándares de desarrollo | [Estándares de Desarrollo](wiki_temp/Estándares-de-Desarrollo.md) | [Estándares de Desarrollo](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Est%C3%A1ndares-de-Desarrollo) | Convenciones y criterios de calidad. |
-| Guía para IA | [Instrucciones para la IA](wiki_temp/Instrucciones-para-la-IA.md) | [Instrucciones para la IA](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Instrucciones-para-la-IA) | Contexto y reglas para sesiones asistidas. |
-| Plantilla de addon | [New-Addon-Template](wiki_temp/New-Addon-Template.md) | [New-Addon-Template](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/New-Addon-Template) | Explicación de la plantilla estándar. |
+| Portada de documentación | [Home](docs/es/home.md) | [Home](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki) | Punto de entrada general. |
+| Checklist operativo | [Checklist de Migración](docs/es/migration-checklist.md) | [Checklist de Migración](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Checklist-de-Migraci%C3%B3n) | Estado resumido y prioridades. |
+| Módulos faltantes | [Módulos Pendientes](docs/es/pending-modules.md) | [Módulos Pendientes](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/M%C3%B3dulos-Pendientes) | Qué sigue fuera del reactor o con bloqueo activo. |
+| Roadmap | [Roadmap de Estabilización](docs/es/stabilization-roadmap.md) | [Roadmap de Estabilización](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Roadmap-de-Estabilizaci%C3%B3n) | Orden sugerido de cierre. |
+| Handoff diario | [Tomorrow-Handoff](docs/es/tomorrow-handoff.md) | [Tomorrow-Handoff](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Tomorrow-Handoff) | Continuidad entre sesiones. |
+| Arquitectura | [Arquitectura del Ecosistema](docs/es/ecosystem-architecture.md) | [Arquitectura del Ecosistema](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Arquitectura-del-Ecosistema) | Explica el stack Drake y la organización del workspace. |
+| Referencia técnica 1.21.1 | [Referencia Técnica (Paper 1.21.1)](docs/es/technical-reference-paper-1.21.1.md) | [Referencia Técnica (Paper 1.21.1)](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Referencia-T%C3%A9cnica-(Paper-1.21.1)) | Hallazgos de API, compatibilidad y criterios de port. |
+| Smoke test | [Guía de Smoke Test](docs/es/smoke-test-guide.md) | [Guía de Smoke Test](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Gu%C3%ADa-de-Smoke-Test) | Validación de runtime básica. |
+| Dev setup | [Dev-Setup](docs/es/development-setup.md) | [Dev-Setup](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Dev-Setup) | Preparación del entorno de trabajo. |
+| Estándares de desarrollo | [Estándares de Desarrollo](docs/es/development-standards.md) | [Estándares de Desarrollo](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Est%C3%A1ndares-de-Desarrollo) | Convenciones y criterios de calidad. |
+| Guía para IA | [Instrucciones para la IA](docs/es/ai-instructions.md) | [Instrucciones para la IA](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Instrucciones-para-la-IA) | Contexto y reglas para sesiones asistidas. |
+| Plantilla de addon | [New-Addon-Template](docs/es/new-addon-template.md) | [New-Addon-Template](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/New-Addon-Template) | Explicación de la plantilla estándar. |
 | Template real | [Template README](templates/slimefun-addon/README.md) | No aplica | Base local para crear nuevos addons del stack. |
 
 ## Estado Ejecutivo
@@ -276,31 +276,31 @@ El ecosistema usa el **Drake Framework** como base de consolidación técnica:
 
 Para contexto más profundo:
 
-- [Arquitectura del Ecosistema](wiki_temp/Arquitectura-del-Ecosistema.md)
+- [Arquitectura del Ecosistema](docs/es/ecosystem-architecture.md)
 - [Arquitectura del Ecosistema en la Wiki](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Arquitectura-del-Ecosistema)
-- [Referencia Técnica (Paper 1.21.1)](wiki_temp/Referencia-Técnica-(Paper-1.21.1).md)
+- [Referencia Técnica (Paper 1.21.1)](docs/es/technical-reference-paper-1.21.1.md)
 - [Referencia Técnica (Paper 1.21.1) en la Wiki](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Referencia-T%C3%A9cnica-(Paper-1.21.1))
 
 ## Documentación Complementaria
 
 | Tema | Mirror Local | GitHub Wiki |
 | :--- | :--- | :--- |
-| Estado y prioridades | [Checklist de Migración](wiki_temp/Checklist-de-Migración.md) | [Checklist de Migración](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Checklist-de-Migraci%C3%B3n) |
-| Backlog detallado | [Módulos Pendientes](wiki_temp/Módulos-Pendientes.md) | [Módulos Pendientes](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/M%C3%B3dulos-Pendientes) |
-| Roadmap operativo | [Roadmap de Estabilización](wiki_temp/Roadmap-de-Estabilización.md) | [Roadmap de Estabilización](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Roadmap-de-Estabilizaci%C3%B3n) |
-| Smoke test | [Guía de Smoke Test](wiki_temp/Guía-de-Smoke-Test.md) | [Guía de Smoke Test](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Gu%C3%ADa-de-Smoke-Test) |
-| Handoff | [Tomorrow-Handoff](wiki_temp/Tomorrow-Handoff.md) | [Tomorrow-Handoff](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Tomorrow-Handoff) |
-| Setup local | [Dev-Setup](wiki_temp/Dev-Setup.md) | [Dev-Setup](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Dev-Setup) |
-| Estándares | [Estándares de Desarrollo](wiki_temp/Estándares-de-Desarrollo.md) | [Estándares de Desarrollo](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Est%C3%A1ndares-de-Desarrollo) |
-| Guía IA | [Instrucciones para la IA](wiki_temp/Instrucciones-para-la-IA.md) | [Instrucciones para la IA](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Instrucciones-para-la-IA) |
-| Prompt inicial IA | [AI-Start-Prompt](wiki_temp/AI-Start-Prompt.md) | [AI-Start-Prompt](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/AI-Start-Prompt) |
-| Plantilla de addon | [New-Addon-Template](wiki_temp/New-Addon-Template.md) | [New-Addon-Template](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/New-Addon-Template) |
+| Estado y prioridades | [Checklist de Migración](docs/es/migration-checklist.md) | [Checklist de Migración](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Checklist-de-Migraci%C3%B3n) |
+| Backlog detallado | [Módulos Pendientes](docs/es/pending-modules.md) | [Módulos Pendientes](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/M%C3%B3dulos-Pendientes) |
+| Roadmap operativo | [Roadmap de Estabilización](docs/es/stabilization-roadmap.md) | [Roadmap de Estabilización](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Roadmap-de-Estabilizaci%C3%B3n) |
+| Smoke test | [Guía de Smoke Test](docs/es/smoke-test-guide.md) | [Guía de Smoke Test](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Gu%C3%ADa-de-Smoke-Test) |
+| Handoff | [Tomorrow-Handoff](docs/es/tomorrow-handoff.md) | [Tomorrow-Handoff](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Tomorrow-Handoff) |
+| Setup local | [Dev-Setup](docs/es/development-setup.md) | [Dev-Setup](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Dev-Setup) |
+| Estándares | [Estándares de Desarrollo](docs/es/development-standards.md) | [Estándares de Desarrollo](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Est%C3%A1ndares-de-Desarrollo) |
+| Guía IA | [Instrucciones para la IA](docs/es/ai-instructions.md) | [Instrucciones para la IA](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Instrucciones-para-la-IA) |
+| Prompt inicial IA | [AI-Start-Prompt](docs/es/ai-start-prompt.md) | [AI-Start-Prompt](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/AI-Start-Prompt) |
+| Plantilla de addon | [New-Addon-Template](docs/es/new-addon-template.md) | [New-Addon-Template](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/New-Addon-Template) |
 
 ## Template de Nuevo Addon
 
 Para crear nuevos módulos alineados al stack actual:
 
-- explicación: [New-Addon-Template](wiki_temp/New-Addon-Template.md)
+- explicación: [New-Addon-Template](docs/es/new-addon-template.md)
 - wiki pública: [New-Addon-Template](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/New-Addon-Template)
 - base local real: [templates/slimefun-addon/README.md](templates/slimefun-addon/README.md)
 
