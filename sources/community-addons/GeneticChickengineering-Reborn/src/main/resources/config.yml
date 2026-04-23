@@ -46,6 +46,14 @@ options:
   # The time for growth chamber to raise a baby chicken to an adult chicken (in seconds)
   # Default: 60, Range: 1 ~ 600
   growth-chamber-time: 60
+  # Enable particle effects (hearts, clouds, etc.). Disable if many machines are active.
+  enable-particles: true
+  # Enable sound effects for machine/chicken events. Disable if you want less noise or event overhead.
+  enable-sounds: true
+  # Recompute chicken lore aggressively on runtime mutations. Kept off by default for performance.
+  live-lore: false
+  # Emit periodic timing reports for hot methods. Useful for profiling suspected lag.
+  enable-profiler: false
 
 # The permission nodes are just here for reference. Changing them will not affect the plugin.
 commands:

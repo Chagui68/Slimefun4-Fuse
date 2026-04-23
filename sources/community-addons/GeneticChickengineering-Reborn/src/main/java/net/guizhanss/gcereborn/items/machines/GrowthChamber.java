@@ -24,6 +24,8 @@ import net.guizhanss.gcereborn.core.genetics.DNA;
 import net.guizhanss.gcereborn.items.chicken.PocketChicken;
 import net.guizhanss.gcereborn.utils.ChickenUtils;
 import net.guizhanss.gcereborn.utils.Keys;
+import net.guizhanss.gcereborn.utils.PocketChickenData;
+import net.guizhanss.gcereborn.utils.SimpleProfiler;
 
 public class GrowthChamber extends AbstractMachine {
 
@@ -40,47 +42,56 @@ public class GrowthChamber extends AbstractMachine {
     @Override
     @Nullable
     protected MachineRecipe findNextRecipe(@Nonnull BlockMenu menu) {
-        var config = GeneticChickengineering.getConfigService();
-        ItemStack chicken = null;
-        ItemStack seed = null;
-        for (int slot : getInputSlots()) {
-            ItemStack item = menu.getItemInSlot(slot);
+        long start = System.nanoTime();
+        try {
+            var config = GeneticChickengineering.getConfigService();
+            ItemStack chicken = null;
+            ItemStack seed = null;
+            for (int slot : getInputSlots()) {
+                ItemStack item = menu.getItemInSlot(slot);
 
-            if (item == null || item.getType() == Material.AIR) {
-                continue;
+                if (item == null || item.getType() == Material.AIR) {
+                    continue;
+                }
+
+                if (ChickenUtils.isPocketChicken(item) && !ChickenUtils.isAdult(item)) {
+                    chicken = item;
+                } else if (ChickenUtils.isFood(item) && item.getAmount() == item.getMaxStackSize()) {
+                    seed = item;
+                }
             }
 
-            if (ChickenUtils.isPocketChicken(item) && !ChickenUtils.isAdult(item)) {
-                chicken = item;
-            } else if (ChickenUtils.isFood(item) && item.getAmount() == item.getMaxStackSize()) {
-                seed = item;
+            if (chicken == null || seed == null) {
+                return null;
             }
-        }
 
-        if (chicken == null || seed == null) {
-            return null;
-        }
+            ItemStack output = chicken.clone();
+            output.setAmount(1);
+            PocketChickenData data = PocketChickenData.fromItem(chicken);
+            ItemMeta outputMeta = output.getItemMeta();
+            JsonObject adapter = data != null ? data.getAdapter() : PersistentDataAPI.get(outputMeta, Keys.POCKET_CHICKEN_ADAPTER, PocketChicken.ADAPTER);
+            int[] dnaState = data != null ? data.getState() : PersistentDataAPI.getIntArray(outputMeta, Keys.POCKET_CHICKEN_DNA);
+            if (adapter == null || dnaState == null) {
+                return null;
+            }
+            adapter.addProperty("baby", false);
+            adapter.addProperty("_age", 6000);
+            adapter.addProperty("_breedable", false);
+            ChickenUtils.setPocketChicken(output, adapter, new DNA(dnaState));
 
-        ItemStack output = chicken.clone();
-        output.setAmount(1);
-        ItemMeta outputMeta = output.getItemMeta();
-        JsonObject adapter = PersistentDataAPI.get(outputMeta, Keys.POCKET_CHICKEN_ADAPTER, PocketChicken.ADAPTER);
-        var dnaState = PersistentDataAPI.getIntArray(outputMeta, Keys.POCKET_CHICKEN_DNA);
-        adapter.addProperty("baby", false);
-        adapter.addProperty("_age", 6000);
-        adapter.addProperty("_breedable", false);
-        ChickenUtils.setPocketChicken(output, adapter, new DNA(dnaState));
-
-        MachineRecipe recipe = new MachineRecipe(
-            config.isTest() ? 1 : config.getGrowthChamberTime(),
-            new ItemStack[] {seed.clone(), chicken.clone()},
-            new ItemStack[] {output}
-        );
-        if (!InvUtils.fitAll(menu.toInventory(), recipe.getOutput(), getOutputSlots())) {
-            return null;
+            MachineRecipe recipe = new MachineRecipe(
+                config.isTest() ? 1 : config.getGrowthChamberTime(),
+                new ItemStack[] {seed.clone(), chicken.clone()},
+                new ItemStack[] {output}
+            );
+            if (!InvUtils.fitAll(menu.toInventory(), recipe.getOutput(), getOutputSlots())) {
+                return null;
+            }
+            ItemUtils.consumeItem(chicken, false);
+            ItemUtils.consumeItem(seed, seed.getMaxStackSize(), false);
+            return recipe;
+        } finally {
+            SimpleProfiler.record("GrowthChamber.findNextRecipe", System.nanoTime() - start);
         }
-        ItemUtils.consumeItem(chicken, false);
-        ItemUtils.consumeItem(seed, seed.getMaxStackSize(), false);
-        return recipe;
     }
 }

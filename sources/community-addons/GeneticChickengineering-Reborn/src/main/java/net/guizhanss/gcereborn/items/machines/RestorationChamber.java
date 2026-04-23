@@ -18,6 +18,8 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import net.guizhanss.gcereborn.GeneticChickengineering;
 import net.guizhanss.gcereborn.items.GCEItems;
 import net.guizhanss.gcereborn.utils.ChickenUtils;
+import net.guizhanss.gcereborn.utils.PocketChickenData;
+import net.guizhanss.gcereborn.utils.SimpleProfiler;
 
 public class RestorationChamber extends AbstractMachine {
 
@@ -34,52 +36,58 @@ public class RestorationChamber extends AbstractMachine {
     @Override
     @Nullable
     protected MachineRecipe findNextRecipe(@Nonnull BlockMenu menu) {
-        var config = GeneticChickengineering.getConfigService();
-        ItemStack chicken = null;
-        ItemStack seed = null;
-        for (int slot : getInputSlots()) {
-            ItemStack item = menu.getItemInSlot(slot);
+        long start = System.nanoTime();
+        try {
+            var config = GeneticChickengineering.getConfigService();
+            ItemStack chicken = null;
+            ItemStack seed = null;
+            for (int slot : getInputSlots()) {
+                ItemStack item = menu.getItemInSlot(slot);
 
-            if (item == null || item.getType() == Material.AIR) {
-                continue;
+                if (item == null || item.getType() == Material.AIR) {
+                    continue;
+                }
+
+                if (ChickenUtils.isPocketChicken(item)) {
+                    chicken = item;
+                } else if (ChickenUtils.isFood(item)) {
+                    seed = item;
+                }
             }
 
-            if (ChickenUtils.isPocketChicken(item)) {
-                chicken = item;
-            } else if (ChickenUtils.isFood(item)) {
-                seed = item;
+            if (chicken == null || seed == null) {
+                return null;
             }
-        }
 
-        if (chicken == null || seed == null) {
-            return null;
+            PocketChickenData data = PocketChickenData.fromItem(chicken);
+            double health = data != null ? data.getHealth() : ChickenUtils.getHealth(chicken);
+            int seedAmount = seed.getAmount();
+            int toConsume = 0;
+            while (seedAmount > 0 && health < 4D) {
+                seedAmount--;
+                toConsume++;
+                health += 0.25D;
+            }
+            if (toConsume == 0) {
+                return null;
+            }
+            ItemStack recipeSeeds = seed.clone();
+            recipeSeeds.setAmount(toConsume);
+            ItemStack recipeChick = chicken.clone();
+            ChickenUtils.heal(recipeChick, toConsume * 0.25D);
+            MachineRecipe recipe = new MachineRecipe(
+                config.isTest() ? 1 : config.getHealRate() * toConsume,
+                new ItemStack[] {recipeSeeds, chicken.clone()},
+                new ItemStack[] {recipeChick}
+            );
+            if (!InvUtils.fitAll(menu.toInventory(), recipe.getOutput(), getOutputSlots())) {
+                return null;
+            }
+            ItemUtils.consumeItem(chicken, false);
+            ItemUtils.consumeItem(seed, toConsume, false);
+            return recipe;
+        } finally {
+            SimpleProfiler.record("RestorationChamber.findNextRecipe", System.nanoTime() - start);
         }
-
-        double health = ChickenUtils.getHealth(chicken);
-        int seedAmount = seed.getAmount();
-        int toConsume = 0;
-        while (seedAmount > 0 && health < 4d) {
-            seedAmount--;
-            toConsume++;
-            health = health + 0.25;
-        }
-        if (toConsume == 0) {
-            return null;
-        }
-        ItemStack recipeSeeds = seed.clone();
-        recipeSeeds.setAmount(toConsume);
-        ItemStack recipeChick = chicken.clone();
-        ChickenUtils.heal(recipeChick, toConsume * 0.25);
-        MachineRecipe recipe = new MachineRecipe(
-            config.isTest() ? 1 : config.getHealRate() * toConsume,
-            new ItemStack[] {recipeSeeds, chicken.clone()},
-            new ItemStack[] {recipeChick}
-        );
-        if (!InvUtils.fitAll(menu.toInventory(), recipe.getOutput(), getOutputSlots())) {
-            return null;
-        }
-        ItemUtils.consumeItem(chicken, false);
-        ItemUtils.consumeItem(seed, toConsume, false);
-        return recipe;
     }
 }

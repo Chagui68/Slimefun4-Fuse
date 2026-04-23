@@ -18,6 +18,8 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import net.guizhanss.gcereborn.GeneticChickengineering;
 import net.guizhanss.gcereborn.items.GCEItems;
 import net.guizhanss.gcereborn.utils.ChickenUtils;
+import net.guizhanss.gcereborn.utils.PocketChickenData;
+import net.guizhanss.gcereborn.utils.SimpleProfiler;
 
 public class GeneticSequencer extends AbstractMachine {
 
@@ -34,42 +36,46 @@ public class GeneticSequencer extends AbstractMachine {
     @Override
     @Nullable
     protected MachineRecipe findNextRecipe(@Nonnull BlockMenu menu) {
-        var config = GeneticChickengineering.getConfigService();
-        for (int slot : getInputSlots()) {
-            ItemStack item = menu.getItemInSlot(slot);
-            if (!ChickenUtils.isPocketChicken(item) || ChickenUtils.isLearned(item)) {
-                continue;
-            }
-            ItemStack chicken = item.clone();
-            // Just in case these got stacked somehow
-            chicken.setAmount(1);
-
-            ItemStack learnedChicken = ChickenUtils.learnDNA(chicken);
-            if (config.isPainEnabled()) {
-                if (!ChickenUtils.survivesPain(learnedChicken) && !config.isPainDeathEnabled()) {
-                    // stop processing when pain kill is disabled
+        long start = System.nanoTime();
+        try {
+            var config = GeneticChickengineering.getConfigService();
+            for (int slot : getInputSlots()) {
+                ItemStack item = menu.getItemInSlot(slot);
+                PocketChickenData data = PocketChickenData.fromItem(item);
+                if (data == null || data.isKnown()) {
                     continue;
                 }
-                ChickenUtils.possiblyHarm(learnedChicken);
-            }
-            MachineRecipe recipe = new MachineRecipe(
-                config.isTest() ? 1 : 30,
-                new ItemStack[] {chicken},
-                new ItemStack[] {learnedChicken}
-            );
-            if (!InvUtils.fitAll(menu.toInventory(), recipe.getOutput(), getOutputSlots())) {
-                continue;
-            }
-            if (config.isPainEnabled() && ChickenUtils.getHealth(learnedChicken) <= 0d) {
-                ItemUtils.consumeItem(chicken, false);
-                menu.getBlock().getWorld().playSound(menu.getLocation(), Sound.ENTITY_CHICKEN_DEATH, 1f, 1f);
-                continue;
-            }
-            menu.consumeItem(slot, 1);
+                ItemStack chicken = item.clone();
+                chicken.setAmount(1);
 
-            return recipe;
+                ItemStack learnedChicken = ChickenUtils.learnDNA(chicken);
+                if (config.isPainEnabled()) {
+                    if (!ChickenUtils.survivesPain(learnedChicken) && !config.isPainDeathEnabled()) {
+                        continue;
+                    }
+                    ChickenUtils.possiblyHarm(learnedChicken);
+                }
+                MachineRecipe recipe = new MachineRecipe(
+                    config.isTest() ? 1 : 30,
+                    new ItemStack[] {chicken},
+                    new ItemStack[] {learnedChicken}
+                );
+                if (!InvUtils.fitAll(menu.toInventory(), recipe.getOutput(), getOutputSlots())) {
+                    continue;
+                }
+                if (config.isPainEnabled() && ChickenUtils.getHealth(learnedChicken) <= 0d) {
+                    ItemUtils.consumeItem(chicken, false);
+                    if (config.isSoundsEnabled()) {
+                        menu.getBlock().getWorld().playSound(menu.getLocation(), Sound.ENTITY_CHICKEN_DEATH, 1f, 1f);
+                    }
+                    continue;
+                }
+                menu.consumeItem(slot, 1);
+                return recipe;
+            }
+        } finally {
+            SimpleProfiler.record("GeneticSequencer.findNextRecipe", System.nanoTime() - start);
         }
-
         return null;
     }
 

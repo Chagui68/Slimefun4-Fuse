@@ -8,11 +8,12 @@ import javax.annotation.Nonnull;
 
 import com.google.common.base.Preconditions;
 
+import io.papermc.lib.PaperLib;
+
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.Plugin;
 
 import dev.drake.dough.updater.BlobBuildUpdater;
-import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
 
 import net.guizhanss.gcereborn.core.commands.GCECommand;
 import net.guizhanss.gcereborn.core.services.ConfigurationService;
@@ -20,6 +21,7 @@ import net.guizhanss.gcereborn.core.services.IntegrationService;
 import net.guizhanss.gcereborn.core.services.LocalizationService;
 import net.guizhanss.gcereborn.setup.Items;
 import net.guizhanss.gcereborn.setup.Researches;
+import net.guizhanss.gcereborn.utils.SimpleProfiler;
 import net.guizhanss.guizhanlib.slimefun.addon.AbstractAddon;
 import net.guizhanss.guizhanlib.updater.GuizhanBuildsUpdater;
 
@@ -120,6 +122,10 @@ public class GeneticChickengineering extends AbstractAddon {
         // integrations
         log(Level.INFO, localization.getString("console.load.integrations"));
         integrationService = new IntegrationService(this);
+
+        if (configService.isProfilerEnabled()) {
+            SimpleProfiler.startReporter(this);
+        }
 
         // metrics
         setupMetrics();
