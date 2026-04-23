@@ -8,11 +8,11 @@
 - Addons present in the repository: `87`
 - Base modules: `2`
 - Total workspace universe: `89`
-- Active modules in the reactor: `59`
-- Ready modules inside the reactor: `57`
-- Active modules with confirmed failures: `2`
-- Addons outside the reactor: `30`
-- Real raw backlog: `32 addons`
+- Active modules in the reactor: `60`
+- Ready modules inside the reactor: `60`
+- Active modules with confirmed failures: `0`
+- Addons outside the reactor: `29`
+- Real raw backlog: `29 addons`
 
 > [!TIP]
 > The full explicit inventory now lives in [README_EN.md](../README_EN.md). Use it as the public human source of truth.
@@ -39,7 +39,7 @@
 
 ## Recommended Route
 
-- First close the `2` active failures still inside the reactor.
+- First advance through quick wins outside the reactor and reserve smoke tests for the most sensitive modules.
 - Then integrate quick wins that already have a usable `pom.xml`.
 - Leave old variants and tooling-heavy cases for explicit triage later.
 

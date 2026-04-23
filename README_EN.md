@@ -41,14 +41,14 @@ This repository is not a single plugin. It is a consolidation, porting, validati
 > Main working branch: `1.21-latin`
 
 The lab currently covers a universe of `87 addons` plus `2 base modules`.
-The root `pom.xml` acts as a unified reactor and currently declares `59 active modules` (`57 addons + 2 base`).
+The root `pom.xml` acts as a unified reactor and currently declares `60 active modules` (`58 addons + 2 base`).
 
 | Metric | Value |
 | :--- | :--- |
-| Ready in reactor | `57` |
-| Active modules with confirmed failures | `2` |
-| Addons outside the reactor | `30` |
-| Real operational backlog | `32 addons` |
+| Ready in reactor | `60` |
+| Active modules with confirmed failures | `0` |
+| Addons outside the reactor | `29` |
+| Real operational backlog | `29 addons` |
 | Unified base | `dev.drake.dough:dough-core:1.3.1-DRAKE` |
 | Core | `dev.drake:Slimefun:6.0-Drake-1.21.11` |
 
@@ -204,15 +204,18 @@ These modules are already integrated into the reactor and compile today in this 
 | `FN-FAL-s-Amplifications` | `Ready` | Verified through isolated build. |
 | `FoxyMachines` | `Ready` | Cleaned from old legacy utility usage. |
 | `HeadLimiter` | `Ready` | Integrated into the reactor. `Towny` is optional and should be runtime-tested if used. |
+| `GeneticChickengineering-Reborn` | `Ready` | Compiles in the reactor with targeted optimization and dependency fixes; runtime validation is still recommended. |
 | `Liquid` | `Ready` | Verified through isolated build. |
 | `Magic-8-Ball` | `Ready` | Validated as a quick win. |
 | `MapJammers` | `Ready` | Requires `squaremap` or `dynmap` at runtime to be functionally useful. |
 | `MiniBlocks` | `Ready` | Integrated with the local `InfinityLib`. Still emits deprecated Bukkit API warnings, but compiles on Java 21. |
 | `MissileWarfare` | `Ready` | Obsolete particle usage was fixed; smoke testing is recommended because it affects combat and effects. |
+| `PotionExpansion` | `Ready` | Ported to the current potion API and now compiles in the reactor. |
 | `RykenSlimeCustomizer-EN` | `Ready` | Verified through isolated build. |
 | `SfChunkInfo` | `Ready` | Validated as a quick win. |
 | `Simple-Storage` | `Ready` | Verified through isolated build. Runtime testing is recommended because it touches inventories and networks. |
 | `SlimeCustomizer` | `Ready` | Verified through isolated build. Runtime testing is recommended because it is highly configurable. |
+| `UltimateGenerators2` | `Ready` | Converted from Gradle to Maven, aligned to `dev.drake.dough.*`, and integrated into the unified reactor. |
 | `VillagerUtil` | `Ready` | Verified through isolated build. |
 
 ### Active in reactor but still NOT ready
@@ -221,8 +224,7 @@ These modules are already part of the unified build, but still have confirmed br
 
 | Addon | Status | Note |
 | :--- | :--- | :--- |
-| `GeneticChickengineering-Reborn` | `Pending` | Confirmed dependency/annotation failure: `lombok` and `bstats` are still missing in `pom.xml`, before deeper API work begins. |
-| `PotionExpansion` | `Pending` | Confirmed API failure: it still uses `SlimefunItemStack.item()` and an old `CustomItemStack.create(...)` signature. |
+| - | - | All modules currently active in the reactor are stable at build level. |
 
 ### Addons present in the repo but still outside the reactor
 
@@ -256,7 +258,6 @@ These addons still need integration, review, or closure. As long as they remain 
 | `SlimeHUD` | `Outside reactor` | Quick win candidate. |
 | `SmallSpace` | `Outside reactor` | Quick win candidate. |
 | `SpiritsUnchained` | `Outside reactor` | Pending integration. |
-| `UltimateGenerators2` | `Outside reactor` | Suspicious of requiring extra tooling or conversion work. |
 | `VillagerTrade` | `Outside reactor` | Mid-tier candidate. |
 | `Wildernether` | `Outside reactor` | Mid-tier candidate. |
 | `WorldEditSlimefun` | `Outside reactor` | Mid-tier candidate; current WorldEdit integration should be reviewed. |
@@ -271,8 +272,9 @@ These addons still need integration, review, or closure. As long as they remain 
 - `Simple-Storage`: compiles, but because it touches inventories and network behavior, a live server test is recommended.
 - `SlimeCustomizer` and `RykenSlimeCustomizer-EN`: compile, but because they are highly configurable, they should be validated with real configs.
 - `Cultivation_Updated` and `Networks_Better_Compatibility`: these are the active variants. Do not mix them with their original variants when discussing what is "ready".
-- `GeneticChickengineering-Reborn`: currently blocked by `pom.xml`/dependency work first, not yet by a deep API port.
-- `PotionExpansion`: currently blocked by real API/code changes, not just Maven metadata.
+- `GeneticChickengineering-Reborn`: now compiles in the reactor; runtime validation is still recommended for machines, entities, and performance-sensitive behavior.
+- `PotionExpansion`: now compiles in the reactor; runtime validation is still recommended for potion behavior and gameplay compatibility.
+- `UltimateGenerators2`: now compiles in the reactor after Maven conversion; runtime validation is still recommended for generators, multiblocks, and Kotlin/GuizhanLib interactions.
 
 ## Stack Architecture
 

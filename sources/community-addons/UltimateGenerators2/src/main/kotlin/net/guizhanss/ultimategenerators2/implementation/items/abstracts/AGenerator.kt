@@ -13,7 +13,7 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.MachineProcessHolder
 import io.github.thebusybiscuit.slimefun4.core.machines.MachineProcessor
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems
 import io.github.thebusybiscuit.slimefun4.implementation.operations.FuelOperation
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack
+import dev.drake.dough.items.CustomItemStack
 import io.github.thebusybiscuit.slimefun4.utils.NumberUtils
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils
 import io.github.thebusybiscuit.slimefun4.utils.itemstack.ItemStackWrapper

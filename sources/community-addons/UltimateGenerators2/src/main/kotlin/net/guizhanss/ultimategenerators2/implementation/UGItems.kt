@@ -1,7 +1,7 @@
 package net.guizhanss.ultimategenerators2.implementation
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack
+import dev.drake.dough.items.CustomItemStack
 import net.guizhanss.ultimategenerators2.UltimateGenerators2
 import net.guizhanss.ultimategenerators2.utils.consts.Heads
 import org.bukkit.Color
@@ -244,7 +244,7 @@ object UGItems {
     )
 
     private fun glow(sfItemStack: SlimefunItemStack): SlimefunItemStack {
-        sfItemStack.addUnsafeEnchantment(Enchantment.DURABILITY, 1)
+        sfItemStack.addUnsafeEnchantment(Enchantment.UNBREAKING, 1)
         val im = sfItemStack.itemMeta
         im!!.addItemFlags(ItemFlag.HIDE_ENCHANTS)
         sfItemStack.setItemMeta(im)

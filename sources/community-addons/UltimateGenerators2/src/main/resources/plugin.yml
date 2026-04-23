@@ -1,0 +1,9 @@
+name: UltimateGenerators2
+version: ${project.version}
+main: net.guizhanss.ultimategenerators2.UltimateGenerators2
+api-version: "1.21"
+prefix: UltimateGenerators2
+authors: [ybw0014]
+description: A Slimefun Addon that adds various types of generators.
+depend: [Slimefun]
+softdepend: [GuizhanLibPlugin, SlimefunTranslation]

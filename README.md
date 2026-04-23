@@ -41,14 +41,14 @@ Este repo no representa un único plugin. Es un laboratorio de consolidación, p
 > Rama de trabajo principal: `1.21-latin`
 
 El laboratorio cubre actualmente un universo de `87 addons` más `2 módulos base`.
-El `pom.xml` raíz funciona como reactor unificado y hoy declara `59 módulos` activos (`57 addons + 2 base`).
+El `pom.xml` raíz funciona como reactor unificado y hoy declara `60 módulos` activos (`58 addons + 2 base`).
 
 | Métrica | Valor |
 | :--- | :--- |
-| Módulos listos en reactor | `59` |
+| Módulos listos en reactor | `60` |
 | Módulos activos con fallo confirmado | `0` |
-| Addons fuera del reactor | `30` |
-| Backlog operativo real | `30 addons` |
+| Addons fuera del reactor | `29` |
+| Backlog operativo real | `29 addons` |
 | Base unificada | `dev.drake.dough:dough-core:1.3.1-DRAKE` |
 | Core | `dev.drake:Slimefun:6.0-Drake-1.21.11` |
 
@@ -215,6 +215,7 @@ Estos módulos ya están integrados al reactor y hoy compilan en esta rama.
 | `SfChunkInfo` | `Listo` | Validado como quick win. |
 | `Simple-Storage` | `Listo` | Verificado en build aislado. Conviene prueba de runtime por inventarios/red. |
 | `SlimeCustomizer` | `Listo` | Verificado en build aislado. Conviene prueba de runtime por ser muy configurable. |
+| `UltimateGenerators2` | `Listo` | Convertido a Maven, alineado a `dev.drake.dough.*` e integrado al reactor unificado. |
 | `VillagerUtil` | `Listo` | Verificado en build aislado. |
 
 ### Activos en reactor pero todavía NO listos
@@ -257,7 +258,6 @@ Estos addons todavía faltan por integrar, revisar o cerrar. Mientras estén aqu
 | `SlimeHUD` | `Fuera del reactor` | Quick win candidato. |
 | `SmallSpace` | `Fuera del reactor` | Quick win candidato. |
 | `SpiritsUnchained` | `Fuera del reactor` | Pendiente de integración. |
-| `UltimateGenerators2` | `Fuera del reactor` | Sospechoso de requerir tooling o conversión extra. |
 | `VillagerTrade` | `Fuera del reactor` | Candidato intermedio. |
 | `Wildernether` | `Fuera del reactor` | Candidato intermedio. |
 | `WorldEditSlimefun` | `Fuera del reactor` | Candidato intermedio; revisar integración con WorldEdit actual. |
@@ -272,8 +272,9 @@ Estos addons todavía faltan por integrar, revisar o cerrar. Mientras estén aqu
 - `Simple-Storage`: compila, pero al tocar inventarios y red conviene prueba con servidor real.
 - `SlimeCustomizer` y `RykenSlimeCustomizer-EN`: compilan, pero por ser altamente configurables conviene validación con configs reales.
 - `Cultivation_Updated` y `Networks_Better_Compatibility`: son las variantes activas. No deben mezclarse con sus variantes originales al hablar de “listo”.
-- `GeneticChickengineering-Reborn`: hoy está bloqueado primero por `pom.xml`/dependencias, no todavía por un port profundo de API.
-- `PotionExpansion`: hoy está bloqueado por cambios reales de API/código, no solo por Maven.
+- `GeneticChickengineering-Reborn`: ya compila en el reactor; conviene smoke test por rendimiento, entidades y comportamiento de máquinas.
+- `PotionExpansion`: ya compila en el reactor; conviene smoke test por efectos, pociones y compatibilidad gameplay.
+- `UltimateGenerators2`: ya compila en el reactor tras su conversión a Maven; conviene prueba de runtime por multibloques, generación y componentes Kotlin/GuizhanLib.
 
 ## Arquitectura del Stack
 

@@ -4,15 +4,14 @@
 
 These addons are already declared in the root `pom.xml`, but they are not fully closed yet.
 
-- Real pending count inside the reactor: `2`
+- Real pending count inside the reactor: `0`
 - This number only represents the unresolved backlog of the unified build.
 - The full explicit long inventory now lives in `README_EN.md`.
 
 > [!NOTE]
 > The `README` board must stay aligned with the real state of this group. If the count changes, update the wiki too.
 
-- `GeneticChickengineering-Reborn`
-- `PotionExpansion`
+- None. The active reactor is currently stable at build level.
 
 ## Outside the Reactor
 
@@ -44,7 +43,6 @@ These addons exist in the repository but are not yet integrated into the unified
 - `SlimeHUD`
 - `SmallSpace`
 - `SpiritsUnchained`
-- `UltimateGenerators2`
 - `VillagerTrade`
 - `Wildernether`
 - `WorldEditSlimefun`
@@ -73,7 +71,6 @@ These addons exist in the repository but are not yet integrated into the unified
 - `CustomItemGenerators`
 - `FastMachines`
 - `SlimefunTranslation`
-- `UltimateGenerators2`
 - `Cultivation`
 - `Networks`
 - `EMC2`

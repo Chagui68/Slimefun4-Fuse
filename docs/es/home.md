@@ -10,11 +10,11 @@
 - Addons presentes en el repo: `87`
 - Modulos base: `2`
 - Universo total del workspace: `89`
-- Modulos activos en el reactor: `59`
-- Modulos listos dentro del reactor: `57`
-- Modulos activos con fallo confirmado: `2`
-- Addons fuera del reactor: `30`
-- Backlog bruto real: `32 addons`
+- Modulos activos en el reactor: `60`
+- Modulos listos dentro del reactor: `60`
+- Modulos activos con fallo confirmado: `0`
+- Addons fuera del reactor: `29`
+- Backlog bruto real: `29 addons`
 
 > [!TIP]
 > El `README.md` ahora contiene la lista explicita completa de addons listos, addons con observaciones y addons faltantes. Usa esa lista como fuente de verdad humana.
@@ -42,7 +42,7 @@
 
 ## Ruta Recomendada
 
-- Primero cerrar los `2` activos con fallo confirmado del reactor.
+- Primero avanzar con quick wins fuera del reactor y reservar smoke tests para los módulos más sensibles.
 - Despues incorporar quick wins con `pom.xml` ya existente desde comunidad.
 - Dejar para despues los casos con Gradle o variantes obsoletas que requieren triage.
 
