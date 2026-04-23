@@ -9,6 +9,12 @@ Repositorio de trabajo para la migración del ecosistema Slimefun hacia `Paper 1
 
 Este repo no representa un único plugin. Es un laboratorio de consolidación, porting, validación y documentación para un conjunto amplio de addons, librerías base y variantes de compatibilidad. El objetivo no es solo que “compile”, sino dejar una base que el equipo pueda entender, continuar y validar en runtime sin ambigüedades.
 
+## Idioma / Language
+
+- README principal en español: [README.md](README.md)
+- README en inglés: [README_EN.md](README_EN.md)
+- Portada de wiki en inglés: [Home-EN](wiki_temp/Home-EN.md)
+
 ## Acceso Rápido
 
 | Recurso | Mirror Local (`.md`) | GitHub Wiki | Uso |
