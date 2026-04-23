@@ -23,6 +23,7 @@
 
 - [[Checklist de Migración]]
 - [[Módulos Pendientes]]
+- [Project backlog en GitHub](https://github.com/orgs/DrakesCraft-Labs/projects/1/views/1)
 - [[Roadmap de Estabilización]]
 - [[Referencia Técnica (Paper 1.21.1)]]
 - [[Guía de Smoke Test]]

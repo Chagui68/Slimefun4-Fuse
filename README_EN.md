@@ -22,6 +22,7 @@ This repository is not a single plugin. It is a consolidation, porting, validati
 | Documentation home | [English Home](docs/en/home.md) | [English Home](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Home-EN) | General English entry point. |
 | Operational checklist | [Migration Checklist](docs/en/migration-checklist.md) | [Migration Checklist](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Migration-Checklist) | Executive status and priorities. |
 | Remaining modules | [Pending Modules](docs/en/pending-modules.md) | [Pending Modules](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Pending-Modules) | What is still outside the reactor or blocked. |
+| Project backlog | Not applicable | [Slimefun 1.21.11 Migration Backlog](https://github.com/orgs/DrakesCraft-Labs/projects/1/views/1) | Operational board for integration, technical port work, and smoke-test tracking. |
 | Roadmap | [Stabilization Roadmap](docs/en/stabilization-roadmap.md) | [Stabilization Roadmap](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Stabilization-Roadmap) | Suggested closure order. |
 | Daily handoff | [Tomorrow Handoff](docs/en/tomorrow-handoff.md) | [Tomorrow Handoff](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Tomorrow-Handoff-EN) | Session continuity. |
 | Architecture | [Ecosystem Architecture](docs/en/ecosystem-architecture.md) | [Ecosystem Architecture](https://github.com/DrakesCraft-Labs/drakes-slimefun-labs/wiki/Ecosystem-Architecture) | Explains the Drake stack and workspace layout. |
