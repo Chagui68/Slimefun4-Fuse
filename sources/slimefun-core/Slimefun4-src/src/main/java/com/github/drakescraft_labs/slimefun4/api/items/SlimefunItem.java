@@ -622,41 +622,15 @@ public class SlimefunItem implements Placeable {
      * elements.
      * 
      * If a {@link Deprecated} element was found, a warning message will be printed.
-     * 
+     *
      * @param c
-     *            The {@link Class} from which to start this operation.
+     * The {@link Class} from which to start this operation.
      */
     private void checkForDeprecations(@Nullable Class<?> c) {
-        if (Slimefun.getUpdater().getBranch() == SlimefunBranch.DEVELOPMENT) {
-            /*
-             * This method is currently way too spammy with all the restructuring going on...
-             * Since DEV builds are anyway under "development", things may be relocated.
-             * So we fire these only for stable versions, since devs should update then, so
-             * it's the perfect moment to tell them to act.
-             */
-            return;
-        }
-
         /*
-         * We do not wanna throw an Exception here since this could also mean that.
-         * We have reached the end of the Class hierarchy
+         * Deprecation checks are disabled for now.
          */
-        if (c != null) {
-            // Check if this Class is deprecated
-            if (c.isAnnotationPresent(Deprecated.class)) {
-                warn("The inherited Class \"" + c.getName() + "\" has been deprecated. Check the documentation for more details!");
-            }
-
-            for (Class<?> parent : c.getInterfaces()) {
-                // Check if this Interface is deprecated
-                if (parent.isAnnotationPresent(Deprecated.class)) {
-                    warn("The implemented Interface \"" + parent.getName() + "\" has been deprecated. Check the documentation for more details!");
-                }
-            }
-
-            // Recursively lookup the super class
-            checkForDeprecations(c.getSuperclass());
-        }
+        return;
     }
 
     /**

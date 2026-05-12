@@ -54,7 +54,6 @@ import com.github.drakescraft_labs.slimefun4.core.services.MinecraftRecipeServic
 import com.github.drakescraft_labs.slimefun4.core.services.PerWorldSettingsService;
 import com.github.drakescraft_labs.slimefun4.core.services.PermissionsService;
 import com.github.drakescraft_labs.slimefun4.core.services.ThreadService;
-import com.github.drakescraft_labs.slimefun4.core.services.UpdaterService;
 import com.github.drakescraft_labs.slimefun4.core.services.github.GitHubService;
 import com.github.drakescraft_labs.slimefun4.core.services.holograms.HologramsService;
 import com.github.drakescraft_labs.slimefun4.core.services.profiler.SlimefunProfiler;
@@ -176,7 +175,6 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     private final BlockDataService blockDataService = new BlockDataService(this, "slimefun_block");
     private final CustomTextureService textureService = new CustomTextureService(new Config(this, "item-models.yml"));
     private final GitHubService gitHubService = new GitHubService("Slimefun/Slimefun4");
-    private final UpdaterService updaterService = new UpdaterService(this, getDescription().getVersion(), getFile());
     private final MetricsService metricsService = new MetricsService(this);
     private final AutoSavingService autoSavingService = new AutoSavingService();
     private final BackupService backupService = new BackupService();
@@ -319,13 +317,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         new Thread(metricsService::start, "Slimefun Metrics").start();
         analyticsService.start();
 
-        // Starting the Auto-Updater
-        if (config.getBoolean("options.auto-update")) {
-            logger.log(Level.INFO, "Starting Auto-Updater...");
-            updaterService.start();
-        } else {
-            updaterService.disable();
-        }
+        // Auto-Updater has been removed; no action taken
 
         // Registering all GEO Resources
         logger.log(Level.INFO, "Loading GEO-Resources...");
@@ -886,16 +878,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         return getIntegrations().getProtectionManager();
     }
 
-    /**
-     * This method returns the {@link UpdaterService} of Slimefun.
-     * It is used to handle automatic updates.
-     *
-     * @return The {@link UpdaterService} for Slimefun
-     */
-    public static @Nonnull UpdaterService getUpdater() {
-        validateInstance();
-        return instance.updaterService;
-    }
+
 
     /**
      * This method returns the {@link MetricsService} of Slimefun.
