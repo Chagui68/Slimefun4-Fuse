@@ -4,7 +4,7 @@ import com.balugaq.netex.utils.Converter;
 import com.github.drakescraft_labs.slimefun4.api.SlimefunAddon;
 import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
 import com.github.drakescraft_labs.slimefun4.legacy.api.BlockStorage;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.updater.BlobBuildUpdater;
+import dev.drake.dough.updater.BlobBuildUpdater;
 import io.github.sefiraat.networks.commands.NetworksMain;
 import io.github.sefiraat.networks.integrations.HudCallbacks;
 import io.github.sefiraat.networks.integrations.NetheoPlants;
@@ -124,6 +124,30 @@ public class Networks extends JavaPlugin implements SlimefunAddon {
  controllersSet.clear();
  }, 5, 10);
  }
+
+    @Override
+    public void onDisable() {
+        if (instance == null) {
+            return;
+        }
+
+        Bukkit.getScheduler().cancelTasks(this);
+        saveData();
+        instance = null;
+    }
+
+    private void saveData() {
+        getLogger().info("Saving Networks data before shutdown...");
+
+        for (org.bukkit.World world : Bukkit.getWorlds()) {
+            final BlockStorage storage = BlockStorage.getStorage(world);
+            if (storage != null) {
+                storage.save();
+            }
+        }
+
+        BlockStorage.saveChunks();
+    }
 
     public void tryUpdate() {
         if (getConfig().getBoolean("auto-update") && getPluginMeta().getVersion().startsWith("Dev")) {

@@ -13,8 +13,8 @@ import com.github.drakescraft_labs.slimefun4.api.items.SlimefunItem;
 import com.github.drakescraft_labs.slimefun4.api.items.SlimefunItemStack;
 import com.github.drakescraft_labs.slimefun4.api.recipes.RecipeType;
 import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.blocks.BlockPosition;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.protection.Interaction;
+import dev.drake.dough.blocks.BlockPosition;
+import dev.drake.dough.protection.Interaction;
 import com.github.drakescraft_labs.slimefun4.legacy.api.BlockStorage;
 import com.github.drakescraft_labs.slimefun4.legacy.api.inventory.BlockMenu;
 import org.bukkit.*;
@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.protection.ProtectionManager;
+import dev.drake.dough.protection.ProtectionManager;
 
 public class NetworkControlX extends NetworkDirectional {
 

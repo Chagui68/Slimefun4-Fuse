@@ -15,6 +15,7 @@ import com.github.drakescraft_labs.slimefun4.api.SlimefunAddon;
 
 
 
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -61,6 +62,31 @@ public class Networks extends JavaPlugin implements SlimefunAddon {
 
         // Initialize recipes after all items are registered
         SupportedRecipes.setup();
+    }
+
+    @Override
+    public void onDisable() {
+        if (instance == null) {
+            return;
+        }
+
+        Bukkit.getScheduler().cancelTasks(this);
+        saveData();
+        instance = null;
+    }
+
+    private void saveData() {
+        getLogger().info("Saving Networks data before shutdown...");
+
+        for (org.bukkit.World world : Bukkit.getWorlds()) {
+            final com.github.drakescraft_labs.slimefun4.legacy.api.BlockStorage storage =
+                    com.github.drakescraft_labs.slimefun4.legacy.api.BlockStorage.getStorage(world);
+            if (storage != null) {
+                storage.save();
+            }
+        }
+
+        com.github.drakescraft_labs.slimefun4.legacy.api.BlockStorage.saveChunks();
     }
 
 

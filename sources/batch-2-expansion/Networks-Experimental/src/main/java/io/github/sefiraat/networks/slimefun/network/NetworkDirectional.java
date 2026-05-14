@@ -16,7 +16,7 @@ import com.github.drakescraft_labs.slimefun4.api.items.settings.IntRangeSetting;
 import com.github.drakescraft_labs.slimefun4.api.recipes.RecipeType;
 import com.github.drakescraft_labs.slimefun4.core.handlers.BlockPlaceHandler;
 import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.protection.Interaction;
+import dev.drake.dough.protection.Interaction;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ClickAction;
 import com.github.drakescraft_labs.slimefun4.legacy.Objects.handlers.BlockTicker;
 import com.github.drakescraft_labs.slimefun4.legacy.api.BlockStorage;
@@ -43,7 +43,7 @@ import javax.annotation.Nullable;
 import javax.annotation.OverridingMethodsMustInvokeSuper;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.*;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.protection.ProtectionManager;
+import dev.drake.dough.protection.ProtectionManager;
 
 @SuppressWarnings({"DuplicatedCode", "deprecation"})
 public abstract class NetworkDirectional extends NetworkObject {

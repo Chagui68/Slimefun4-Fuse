@@ -12,7 +12,7 @@ import com.github.drakescraft_labs.slimefun4.api.items.SlimefunItemStack;
 import com.github.drakescraft_labs.slimefun4.api.recipes.RecipeType;
 import com.github.drakescraft_labs.slimefun4.core.handlers.BlockBreakHandler;
 import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.protection.Interaction;
+import dev.drake.dough.protection.Interaction;
 import com.github.drakescraft_labs.slimefun4.utils.SlimefunUtils;
 import com.github.drakescraft_labs.slimefun4.legacy.api.BlockStorage;
 import com.github.drakescraft_labs.slimefun4.legacy.api.inventory.BlockMenu;
@@ -30,7 +30,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.protection.ProtectionManager;
+import dev.drake.dough.protection.ProtectionManager;
 
 public class NetworkQuantumWorkbench extends SlimefunItem {
 
@@ -149,7 +149,8 @@ public class NetworkQuantumWorkbench extends SlimefunItem {
                             oldCache.getItemStack().clone(),
                             oldCache.getAmount(),
                             newQuantum.getMaxAmount(),
-                            oldCache.isVoidExcess()
+                            oldCache.isVoidExcess(),
+                            oldCache.supportsCustomMaxAmount()
                     );
                     DataTypeMethods.setCustom(newMeta, Keys.QUANTUM_STORAGE_INSTANCE, PersistentQuantumStorageType.TYPE, newCache);
                     newCache.addMetaLore(newMeta);
