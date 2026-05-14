@@ -17,7 +17,7 @@ import com.github.drakescraft_labs.slimefun4.core.handlers.BlockPlaceHandler;
 import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
 import dev.drake.dough.data.persistent.PersistentDataAPI;
 import dev.drake.dough.items.CustomItemStack;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.protection.Interaction;
+import dev.drake.dough.protection.Interaction;
 import com.github.drakescraft_labs.slimefun4.utils.ChestMenuUtils;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import com.github.drakescraft_labs.slimefun4.legacy.Objects.handlers.BlockTicker;
@@ -179,17 +179,18 @@ public class NetworkQuantumStorage extends SlimefunItem implements DistinctiveIt
 
         if (fetched != null && fetched.getType() != Material.AIR) {
             blockMenu.pushItem(fetched, OUTPUT_SLOT);
-            syncBlock(blockMenu.getLocation(), cache);
+            syncBlock(blockMenu, cache);
         }
 
         CACHES.put(blockMenu.getLocation().clone(), cache);
+        blockMenu.markDirty();
     }
 
     private void toggleVoid(@Nonnull BlockMenu blockMenu) {
         final QuantumCache cache = CACHES.get(blockMenu.getLocation());
         cache.setVoidExcess(!cache.isVoidExcess());
         updateDisplayItem(blockMenu, cache);
-        syncBlock(blockMenu.getLocation(), cache);
+        syncBlock(blockMenu, cache);
         CACHES.put(blockMenu.getLocation(), cache);
     }
 
@@ -208,7 +209,7 @@ public class NetworkQuantumStorage extends SlimefunItem implements DistinctiveIt
         itemStack.setAmount(1);
         cache.setItemStack(itemStack);
         updateDisplayItem(blockMenu, cache);
-        syncBlock(blockMenu.getLocation(), cache);
+        syncBlock(blockMenu, cache);
         CACHES.put(blockMenu.getLocation(), cache);
     }
 
@@ -287,7 +288,8 @@ public class NetworkQuantumStorage extends SlimefunItem implements DistinctiveIt
             boolean voidExcess) {
         if (itemStack == null || itemStack.getType() == Material.AIR || isDisplayItem(itemStack)) {
             menu.addItem(ITEM_SLOT, NO_ITEM);
-            return new QuantumCache(null, 0, this.maxAmount, true);
+            menu.markDirty();
+            return new QuantumCache(null, 0, this.maxAmount, true, false);
         } else {
             final ItemStack clone = itemStack.clone();
             final ItemMeta itemMeta = clone.getItemMeta();
@@ -298,7 +300,7 @@ public class NetworkQuantumStorage extends SlimefunItem implements DistinctiveIt
             itemMeta.setLore(lore.isEmpty() ? null : lore);
             clone.setItemMeta(itemMeta);
 
-            final QuantumCache cache = new QuantumCache(clone, amount, this.maxAmount, voidExcess);
+            final QuantumCache cache = new QuantumCache(clone, amount, this.maxAmount, voidExcess, false);
 
             updateDisplayItem(menu, cache);
             return cache;
@@ -411,12 +413,13 @@ public class NetworkQuantumStorage extends SlimefunItem implements DistinctiveIt
                     fetched.setAmount(fetched.getAmount() + additional);
                 }
             }
-            syncBlock(blockMenu.getLocation(), cache);
+            syncBlock(blockMenu, cache);
             return fetched;
         } else {
             // Storage has everything we need
-            syncBlock(blockMenu.getLocation(), cache);
-            return cache.withdrawItem(amount);
+            ItemStack fetched = cache.withdrawItem(amount);
+            syncBlock(blockMenu, cache);
+            return fetched;
         }
     }
 
@@ -441,6 +444,11 @@ public class NetworkQuantumStorage extends SlimefunItem implements DistinctiveIt
     private static void syncBlock(@Nonnull Location location, @Nonnull QuantumCache cache) {
         BlockStorage.addBlockInfo(location, BS_AMOUNT, String.valueOf(cache.getAmount()));
         BlockStorage.addBlockInfo(location, BS_VOID, String.valueOf(cache.isVoidExcess()));
+    }
+
+    private static void syncBlock(@Nonnull BlockMenu blockMenu, @Nonnull QuantumCache cache) {
+        syncBlock(blockMenu.getLocation(), cache);
+        blockMenu.markDirty();
     }
 
     public static Map<Location, QuantumCache> getCaches() {

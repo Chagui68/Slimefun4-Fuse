@@ -15,7 +15,7 @@ import com.github.drakescraft_labs.slimefun4.api.items.settings.IntRangeSetting;
 import com.github.drakescraft_labs.slimefun4.api.recipes.RecipeType;
 import com.github.drakescraft_labs.slimefun4.core.handlers.BlockBreakHandler;
 import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.protection.Interaction;
+import dev.drake.dough.protection.Interaction;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import com.github.drakescraft_labs.slimefun4.legacy.Objects.handlers.BlockTicker;
 import com.github.drakescraft_labs.slimefun4.legacy.api.BlockStorage;
@@ -31,7 +31,7 @@ import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;
 import java.util.List;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.protection.ProtectionManager;
+import dev.drake.dough.protection.ProtectionManager;
 
 public class NetworkExport extends NetworkObject {
 
