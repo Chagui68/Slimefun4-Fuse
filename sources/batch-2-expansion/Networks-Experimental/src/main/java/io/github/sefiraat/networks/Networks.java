@@ -4,6 +4,7 @@ import com.balugaq.netex.utils.Converter;
 import com.github.drakescraft_labs.slimefun4.api.SlimefunAddon;
 import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
 import com.github.drakescraft_labs.slimefun4.legacy.api.BlockStorage;
+import com.github.drakescraft_labs.slimefun4.legacy.api.inventory.BlockMenu;
 import dev.drake.dough.updater.BlobBuildUpdater;
 import io.github.sefiraat.networks.commands.NetworksMain;
 import io.github.sefiraat.networks.integrations.HudCallbacks;
@@ -139,6 +140,8 @@ public class Networks extends JavaPlugin implements SlimefunAddon {
     private void saveData() {
         getLogger().info("Saving Networks data before shutdown...");
 
+        markNetworkInventoriesDirty();
+
         for (org.bukkit.World world : Bukkit.getWorlds()) {
             final BlockStorage storage = BlockStorage.getStorage(world);
             if (storage != null) {
@@ -147,6 +150,19 @@ public class Networks extends JavaPlugin implements SlimefunAddon {
         }
 
         BlockStorage.saveChunks();
+    }
+
+    private void markNetworkInventoriesDirty() {
+        for (Location location : new HashSet<>(NetworkStorage.getAllNetworkObjects().keySet())) {
+            if (location.getWorld() == null) {
+                continue;
+            }
+
+            final BlockMenu menu = BlockStorage.getInventory(location);
+            if (menu != null) {
+                menu.markDirty();
+            }
+        }
     }
 
     public void tryUpdate() {

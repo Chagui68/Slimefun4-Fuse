@@ -12,10 +12,13 @@ import io.github.sefiraat.networks.slimefun.NetworkSlimefunItems;
 import io.github.sefiraat.networks.slimefun.NetworksSlimefunItemStacks;
 import io.github.sefiraat.networks.slimefun.network.NetworkController;
 import com.github.drakescraft_labs.slimefun4.api.SlimefunAddon;
+import com.github.drakescraft_labs.slimefun4.legacy.api.BlockStorage;
+import com.github.drakescraft_labs.slimefun4.legacy.api.inventory.BlockMenu;
 
 
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -23,6 +26,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.text.MessageFormat;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 public class Networks extends JavaPlugin implements SlimefunAddon {
@@ -78,15 +82,29 @@ public class Networks extends JavaPlugin implements SlimefunAddon {
     private void saveData() {
         getLogger().info("Saving Networks data before shutdown...");
 
+        markNetworkInventoriesDirty();
+
         for (org.bukkit.World world : Bukkit.getWorlds()) {
-            final com.github.drakescraft_labs.slimefun4.legacy.api.BlockStorage storage =
-                    com.github.drakescraft_labs.slimefun4.legacy.api.BlockStorage.getStorage(world);
+            final BlockStorage storage = BlockStorage.getStorage(world);
             if (storage != null) {
                 storage.save();
             }
         }
 
-        com.github.drakescraft_labs.slimefun4.legacy.api.BlockStorage.saveChunks();
+        BlockStorage.saveChunks();
+    }
+
+    private void markNetworkInventoriesDirty() {
+        for (Location location : new HashSet<>(NetworkStorage.getAllNetworkObjects().keySet())) {
+            if (location.getWorld() == null) {
+                continue;
+            }
+
+            final BlockMenu menu = BlockStorage.getInventory(location);
+            if (menu != null) {
+                menu.markDirty();
+            }
+        }
     }
 
 
