@@ -32,6 +32,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.Particle;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -226,6 +227,7 @@ public class NetworkAutoCrafter extends NetworkObject {
             location.getWorld().spawnParticle(Particle.WAX_OFF, location, 0, 0, 4, 0);
         }
         blockMenu.pushItem(crafted, OUTPUT_SLOT);
+        blockMenu.markDirty();
         return true;
     }
 

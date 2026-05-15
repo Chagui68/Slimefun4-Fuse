@@ -29,6 +29,7 @@ import com.github.drakescraft_labs.slimefun4.legacy.api.item_transport.ItemTrans
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.Material;
 import org.bukkit.Tag;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -182,6 +183,7 @@ public class NetworkQuantumStorage extends SlimefunItem implements DistinctiveIt
         if (fetched != null && fetched.getType() != Material.AIR) {
             blockMenu.pushItem(fetched, OUTPUT_SLOT);
             syncBlock(blockMenu, cache);
+            blockMenu.markDirty();
         }
 
         CACHES.put(blockMenu.getLocation().clone(), cache);

@@ -144,6 +144,7 @@ public class NetworkVanillaGrabber extends NetworkDirectional {
         if (stack != null && stack.getType() != Material.AIR) {
             blockMenu.replaceExistingItem(OUTPUT_SLOT, stack.clone());
             stack.setAmount(0);
+            blockMenu.markDirty();
             return true;
         } else {
             return false;

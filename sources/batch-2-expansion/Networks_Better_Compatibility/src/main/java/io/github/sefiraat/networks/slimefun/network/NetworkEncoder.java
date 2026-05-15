@@ -176,6 +176,7 @@ public class NetworkEncoder extends NetworkObject {
         }
 
         blockMenu.pushItem(blueprintClone, OUTPUT_SLOT);
+        blockMenu.markDirty();
         root.removeRootPower(CHARGE_COST);
     }
 }

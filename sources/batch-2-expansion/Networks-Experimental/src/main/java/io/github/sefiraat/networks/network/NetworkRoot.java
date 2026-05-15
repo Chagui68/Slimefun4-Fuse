@@ -971,12 +971,14 @@ public class NetworkRoot extends NetworkNode {
                     // We can't take more than this stack. Level to request amount, remove items and then return
                     stackToReturn.setAmount(request.getAmount());
                     itemStack.setAmount(itemStack.getAmount() - request.getAmount());
+                    blockMenu.markDirty();
                     return stackToReturn;
                 } else {
                     // We can take more than what is here, consume before trying to take more
                     stackToReturn.setAmount(stackToReturn.getAmount() + itemStack.getAmount());
                     request.receiveAmount(itemStack.getAmount());
                     itemStack.setAmount(0);
+                    blockMenu.markDirty();
                 }
             }
         }
@@ -1004,11 +1006,13 @@ public class NetworkRoot extends NetworkNode {
                     // Netex - Reduce end
                     stackToReturn.setAmount(stackToReturn.getAmount() + request.getAmount());
                     itemStack.setAmount(itemStack.getAmount() - request.getAmount());
+                    blockMenu.markDirty();
                     return stackToReturn;
                 } else {
                     stackToReturn.setAmount(stackToReturn.getAmount() + itemStack.getAmount());
                     request.receiveAmount(itemStack.getAmount());
                     itemStack.setAmount(0); //not null
+                    blockMenu.markDirty();
                 }
             }
         }

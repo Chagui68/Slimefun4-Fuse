@@ -24,6 +24,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.Particle;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -158,6 +159,7 @@ public class NetworkWirelessTransmitter extends NetworkObject {
             if (stackToPush != null) {
                 definition.getNode().getRoot().removeRootPower(REQUIRED_POWER);
                 linkedBlockMenu.pushItem(stackToPush, NetworkWirelessReceiver.RECEIVED_SLOT);
+                linkedBlockMenu.markDirty();
                 if (definition.getNode().getRoot().isDisplayParticles()) {
                     final Location particleLocation = blockMenu.getLocation().clone().add(0.5, 1.1, 0.5);
                     final Location particleLocation2 = linkedBlockMenu.getLocation().clone().add(0.5, 2.1, 0.5);

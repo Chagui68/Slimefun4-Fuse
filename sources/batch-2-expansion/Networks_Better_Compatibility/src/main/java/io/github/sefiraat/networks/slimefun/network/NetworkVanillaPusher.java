@@ -110,6 +110,7 @@ public class NetworkVanillaPusher extends NetworkDirectional {
             holder.getInventory().addItem(stack);
             stack.setAmount(0);
         }
+        blockMenu.markDirty();
     }
 
     private boolean isWildChest(Block block) {
