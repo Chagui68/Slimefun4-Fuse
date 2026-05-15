@@ -53,6 +53,17 @@ public class DirtyChestMenu extends ChestMenu {
         return changes;
     }
 
+    @Override
+    public ItemStack getItemInSlot(int slot) {
+        /*
+         * Legacy menus expose the live ItemStack reference. A lot of old addons
+         * mutate that reference directly with setAmount(), so reading a slot is
+         * also treated as a possible write boundary.
+         */
+        markDirty();
+        return super.getItemInSlot(slot);
+    }
+
     @Nonnull
     public BlockMenuPreset getPreset() {
         return preset;
@@ -108,6 +119,7 @@ public class DirtyChestMenu extends ChestMenu {
 
         ItemStackWrapper wrapper = null;
         int amount = item.getAmount();
+        boolean changed = false;
 
         for (int slot : slots) {
             if (amount <= 0) {
@@ -118,6 +130,7 @@ public class DirtyChestMenu extends ChestMenu {
 
             if (stack == null) {
                 replaceExistingItem(slot, item);
+                markDirty();
                 return null;
             } else {
                 int maxStackSize = Math.min(stack.getMaxStackSize(), toInventory().getMaxStackSize());
@@ -130,9 +143,14 @@ public class DirtyChestMenu extends ChestMenu {
                         amount -= (maxStackSize - stack.getAmount());
                         stack.setAmount(Math.min(stack.getAmount() + item.getAmount(), maxStackSize));
                         item.setAmount(amount);
+                        changed = true;
                     }
                 }
             }
+        }
+
+        if (changed) {
+            markDirty();
         }
 
         if (amount > 0) {
