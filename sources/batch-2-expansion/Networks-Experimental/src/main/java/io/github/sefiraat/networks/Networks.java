@@ -2,9 +2,11 @@ package io.github.sefiraat.networks;
 
 import com.balugaq.netex.utils.Converter;
 import com.github.drakescraft_labs.slimefun4.api.SlimefunAddon;
+import com.github.drakescraft_labs.slimefun4.api.items.SlimefunItem;
 import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
 import com.github.drakescraft_labs.slimefun4.legacy.api.BlockStorage;
 import com.github.drakescraft_labs.slimefun4.legacy.api.inventory.BlockMenu;
+import com.github.drakescraft_labs.slimefun4.legacy.api.inventory.BlockMenuPreset;
 import dev.drake.dough.updater.BlobBuildUpdater;
 import io.github.sefiraat.networks.commands.NetworksMain;
 import io.github.sefiraat.networks.integrations.HudCallbacks;
@@ -154,14 +156,34 @@ public class Networks extends JavaPlugin implements SlimefunAddon {
 
     private void markNetworkInventoriesDirty() {
         for (Location location : new HashSet<>(NetworkStorage.getAllNetworkObjects().keySet())) {
-            if (location.getWorld() == null) {
+            markNetworkInventoryDirty(location);
+        }
+
+        for (org.bukkit.World world : Bukkit.getWorlds()) {
+            final BlockStorage storage = BlockStorage.getStorage(world);
+            if (storage == null) {
                 continue;
             }
 
-            final BlockMenu menu = BlockStorage.getInventory(location);
-            if (menu != null) {
-                menu.markDirty();
+            for (Location location : storage.getRawStorage().keySet()) {
+                markNetworkInventoryDirty(location);
             }
+        }
+    }
+
+    private void markNetworkInventoryDirty(Location location) {
+        if (location == null || location.getWorld() == null) {
+            return;
+        }
+
+        final SlimefunItem item = BlockStorage.check(location);
+        if (item == null || !item.getId().startsWith("NTW_") || !BlockMenuPreset.isInventory(item.getId())) {
+            return;
+        }
+
+        final BlockMenu menu = BlockStorage.getInventory(location);
+        if (menu != null) {
+            menu.markDirty();
         }
     }
 
