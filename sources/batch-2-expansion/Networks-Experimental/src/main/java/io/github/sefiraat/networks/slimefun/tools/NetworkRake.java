@@ -14,7 +14,9 @@ import com.github.drakescraft_labs.slimefun4.core.handlers.ItemUseHandler;
 import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
 import com.github.drakescraft_labs.slimefun4.implementation.items.LimitedUseItem;
 import dev.drake.dough.protection.Interaction;
+import dev.drake.dough.protection.ProtectionManager;
 import com.github.drakescraft_labs.slimefun4.legacy.api.BlockStorage;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.OfflinePlayer;
@@ -27,7 +29,6 @@ import javax.annotation.Nonnull;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
-import dev.drake.dough.protection.ProtectionManager;
 
 public class NetworkRake extends LimitedUseItem {
 
@@ -73,10 +74,10 @@ public class NetworkRake extends LimitedUseItem {
             final Block block = optional.get();
             final Player player = e.getPlayer();
             final SlimefunItem slimefunItem = BlockStorage.check(block);
-            if (slimefunItem != null
-                    && viableObjects.contains(slimefunItem.getClass())
-        && Slimefun.getProtectionManager().hasPermission(player, block.getLocation(), Interaction.BREAK_BLOCK)
-    ) {
+               if (slimefunItem != null
+                       && viableObjects.contains(slimefunItem.getClass())
+           && Slimefun.getProtectionManager().hasPermission(Bukkit.getOfflinePlayer(player.getUniqueId()), block, Interaction.BREAK_BLOCK)
+     ) {
                 final BlockBreakEvent event = new BlockBreakEvent(block, player);
                 Networks.getPluginManager().callEvent(event);
                 if (event.isCancelled()) {

@@ -6,10 +6,13 @@ import com.github.drakescraft_labs.slimefun4.api.items.SlimefunItemStack;
 import com.github.drakescraft_labs.slimefun4.api.recipes.RecipeType;
 import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
 import dev.drake.dough.protection.Interaction;
+import dev.drake.dough.protection.ProtectionManager;
 import com.github.drakescraft_labs.slimefun4.legacy.api.inventory.BlockMenu;
 import com.github.drakescraft_labs.slimefun4.legacy.api.inventory.BlockMenuPreset;
 import com.github.drakescraft_labs.slimefun4.legacy.api.item_transport.ItemTransportFlow;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -17,7 +20,6 @@ import org.bukkit.inventory.ItemStack;
 import javax.annotation.Nonnull;
 import java.util.HashMap;
 import java.util.Map;
-import dev.drake.dough.protection.ProtectionManager;
 
 public class NetworkGrid extends AbstractGrid {
 
@@ -59,11 +61,11 @@ public class NetworkGrid extends AbstractGrid {
                 setSize(54);
             }
 
-    @Override
-    public boolean canOpen(@Nonnull Block block, @Nonnull Player player) {
-        return NetworkSlimefunItems.NETWORK_GRID.canUse(player, false)
-            && Slimefun.getProtectionManager().hasPermission(player, block.getLocation(), Interaction.INTERACT_BLOCK);
-    }
+              @Override
+              public boolean canOpen(@Nonnull Block block, @Nonnull Player player) {
+                  return NetworkSlimefunItems.NETWORK_GRID.canUse(player, false)
+                      && Slimefun.getProtectionManager().hasPermission(Bukkit.getOfflinePlayer(player.getUniqueId()), block, Interaction.INTERACT_BLOCK);
+              }
 
             @Override
             public int[] getSlotsAccessedByItemTransport(ItemTransportFlow flow) {

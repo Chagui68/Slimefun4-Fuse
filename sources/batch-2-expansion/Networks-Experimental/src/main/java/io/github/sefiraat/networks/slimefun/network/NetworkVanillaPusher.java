@@ -12,6 +12,7 @@ import com.github.drakescraft_labs.slimefun4.api.recipes.RecipeType;
 import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
 import dev.drake.dough.inventory.InvUtils;
 import dev.drake.dough.protection.Interaction;
+import dev.drake.dough.protection.ProtectionManager;
 import com.github.drakescraft_labs.slimefun4.legacy.api.BlockStorage;
 import com.github.drakescraft_labs.slimefun4.legacy.api.inventory.BlockMenu;
 import org.bukkit.*;
@@ -23,7 +24,6 @@ import org.bukkit.inventory.*;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.UUID;
-import dev.drake.dough.protection.ProtectionManager;
 
 public class NetworkVanillaPusher extends NetworkDirectional {
 
@@ -68,7 +68,7 @@ public class NetworkVanillaPusher extends NetworkDirectional {
         final UUID uuid = UUID.fromString(BlockStorage.getLocationInfo(block.getLocation(), OWNER_KEY));
         final OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(uuid);
 
-        if (!Slimefun.getProtectionManager().hasPermission(offlinePlayer, targetBlock.getLocation(), Interaction.INTERACT_BLOCK)) {
+        if (!Slimefun.getProtectionManager().hasPermission(offlinePlayer, targetBlock, Interaction.INTERACT_BLOCK)) {
             return;
         }
 

@@ -14,6 +14,7 @@ import com.github.drakescraft_labs.slimefun4.api.items.settings.IntRangeSetting;
 import com.github.drakescraft_labs.slimefun4.api.recipes.RecipeType;
 import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
 import dev.drake.dough.protection.Interaction;
+import dev.drake.dough.protection.ProtectionManager;
 import com.github.drakescraft_labs.slimefun4.utils.SlimefunUtils;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import com.github.drakescraft_labs.slimefun4.legacy.Objects.handlers.BlockTicker;
@@ -31,7 +32,6 @@ import org.bukkit.inventory.ItemStack;
 import javax.annotation.Nonnull;
 import java.util.Collection;
 import java.util.Optional;
-import dev.drake.dough.protection.ProtectionManager;
 
 public class NetworkVacuum extends NetworkObject {
 
@@ -131,7 +131,7 @@ public class NetworkVacuum extends NetworkObject {
     @Override
     public boolean canOpen(@Nonnull Block block, @Nonnull Player player) {
         return NetworkSlimefunItems.NETWORK_VACUUM.canUse(player, false)
-            && Slimefun.getProtectionManager().hasPermission(player, block.getLocation(), Interaction.INTERACT_BLOCK);
+            && Slimefun.getProtectionManager().hasPermission(Bukkit.getOfflinePlayer(player.getUniqueId()), block, Interaction.INTERACT_BLOCK);
     }
 
             @Override

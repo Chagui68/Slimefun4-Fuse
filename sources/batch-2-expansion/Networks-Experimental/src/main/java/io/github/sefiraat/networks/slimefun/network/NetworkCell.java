@@ -7,15 +7,17 @@ import com.github.drakescraft_labs.slimefun4.api.items.SlimefunItemStack;
 import com.github.drakescraft_labs.slimefun4.api.recipes.RecipeType;
 import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
 import dev.drake.dough.protection.Interaction;
+import dev.drake.dough.protection.ProtectionManager;
 import com.github.drakescraft_labs.slimefun4.legacy.api.inventory.BlockMenuPreset;
 import com.github.drakescraft_labs.slimefun4.legacy.api.item_transport.ItemTransportFlow;
+import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;
 import java.util.stream.IntStream;
-import dev.drake.dough.protection.ProtectionManager;
 
 public class NetworkCell extends NetworkObject {
 
@@ -43,9 +45,9 @@ public class NetworkCell extends NetworkObject {
 
     @Override
     public boolean canOpen(@Nonnull Block block, @Nonnull Player player) {
-        return player.hasPermission("slimefun.inventory.bypass")
-            || (NetworkSlimefunItems.NETWORK_CELL.canUse(player, false)
-                && Slimefun.getProtectionManager().hasPermission(player, block.getLocation(), Interaction.INTERACT_BLOCK));
+         return player.hasPermission("slimefun.inventory.bypass")
+             || (NetworkSlimefunItems.NETWORK_CELL.canUse(player, false)
+                  && Slimefun.getProtectionManager().hasPermission(Bukkit.getOfflinePlayer(player.getUniqueId()), block, Interaction.INTERACT_BLOCK));
     }
 
             @Override

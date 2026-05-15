@@ -200,6 +200,9 @@
                         <relocation>
                             <pattern>dev.drake.dough</pattern>
                             <shadedPattern>com.github.drakescraft_labs.slimefun4.libraries.dough</shadedPattern>
+                            <excludes>
+                                <exclude>dev.drake.dough.protection.**</exclude>
+                            </excludes>
                         </relocation>
                     </relocations>
 

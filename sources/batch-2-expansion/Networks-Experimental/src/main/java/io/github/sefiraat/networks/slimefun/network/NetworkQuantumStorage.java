@@ -18,6 +18,7 @@ import com.github.drakescraft_labs.slimefun4.utils.ChatUtils;
 import com.github.drakescraft_labs.slimefun4.utils.ChestMenuUtils;
 import dev.drake.dough.data.persistent.PersistentDataAPI;
 import dev.drake.dough.protection.Interaction;
+import dev.drake.dough.protection.ProtectionManager;
 import io.github.sefiraat.networks.network.stackcaches.ItemStackCache;
 import io.github.sefiraat.networks.network.stackcaches.QuantumCache;
 import io.github.sefiraat.networks.utils.*;
@@ -26,6 +27,7 @@ import io.github.sefiraat.networks.utils.datatypes.PersistentQuantumStorageType;
 import lombok.Getter;
 import lombok.Setter;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ClickAction;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
@@ -96,7 +98,8 @@ public class NetworkQuantumStorage extends SlimefunItem implements DistinctiveIt
             Theme.SUCCESS + "Set up",
             Theme.PASSIVE + "Pick up the item and click here to set the item",
             Theme.CLICK_INFO + "Click here to set change capacity",
-            Theme.CLICK_INFO + "Shift+left click" + Theme.PASSIVE + " Toggle Void input");
+            Theme.CLICK_INFO + "Shift+left click" + Theme.PASSIVE + " Toggle Void input"
+    );
 
     private static final ItemStack BACK_OUTPUT = ItemCreator.create(
             Material.ORANGE_STAINED_GLASS_PANE,
@@ -405,7 +408,7 @@ public class NetworkQuantumStorage extends SlimefunItem implements DistinctiveIt
 
             @Override
             public boolean canOpen(@Nonnull Block block, @Nonnull Player player) {
-                return Slimefun.getProtectionManager().hasPermission(player, block.getLocation(), Interaction.INTERACT_BLOCK);
+                return Slimefun.getProtectionManager().hasPermission(Bukkit.getOfflinePlayer(player.getUniqueId()), block, Interaction.INTERACT_BLOCK);
             }
 
             @Override
@@ -503,7 +506,6 @@ public class NetworkQuantumStorage extends SlimefunItem implements DistinctiveIt
             if (item == null || item.getType() == Material.AIR) continue;
 
             ItemStackCache storedItemCache = new ItemStackCache(storedItem);
-
 
             if (StackUtils.itemsMatch(storedItemCache, item, true)) {
                 int toAdd = Math.toIntExact(Math.min(item.getAmount(), capacity - cache.getAmount()));
@@ -669,13 +671,3 @@ public class NetworkQuantumStorage extends SlimefunItem implements DistinctiveIt
         return sfItemMeta.getPersistentDataContainer().equals(itemMeta.getPersistentDataContainer());
     }
 }
-
-
-
-
-
-
-
-
-
-

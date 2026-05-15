@@ -17,6 +17,7 @@ import com.github.drakescraft_labs.slimefun4.api.recipes.RecipeType;
 import com.github.drakescraft_labs.slimefun4.core.handlers.BlockPlaceHandler;
 import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
 import dev.drake.dough.protection.Interaction;
+import dev.drake.dough.protection.ProtectionManager;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ClickAction;
 import com.github.drakescraft_labs.slimefun4.legacy.Objects.handlers.BlockTicker;
 import com.github.drakescraft_labs.slimefun4.legacy.api.BlockStorage;
@@ -25,6 +26,7 @@ import com.github.drakescraft_labs.slimefun4.legacy.api.inventory.BlockMenuPrese
 import com.github.drakescraft_labs.slimefun4.legacy.api.item_transport.ItemTransportFlow;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Color;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
@@ -43,7 +45,6 @@ import javax.annotation.Nullable;
 import javax.annotation.OverridingMethodsMustInvokeSuper;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.*;
-import dev.drake.dough.protection.ProtectionManager;
 
 @SuppressWarnings({"DuplicatedCode", "deprecation"})
 public abstract class NetworkDirectional extends NetworkObject {
@@ -277,45 +278,45 @@ public abstract class NetworkDirectional extends NetworkObject {
                         directionClick(player, clickAction, blockMenu, BlockFace.DOWN));
             }
 
-    @Override
-    public boolean canOpen(@Nonnull Block block, @Nonnull Player player) {
-        // Check whether the player can use this item and has protection permission.
-        return NetworkDirectional.this.canUse(player, false)
-            && Slimefun.getProtectionManager().hasPermission(player, block.getLocation(), Interaction.INTERACT_BLOCK);
-    }
+              @Override
+              public boolean canOpen(@Nonnull Block block, @Nonnull Player player) {
+                  // Check whether the player can use this item and has protection permission.
+                  return NetworkDirectional.this.canUse(player, false)
+                      && Slimefun.getProtectionManager().hasPermission(Bukkit.getOfflinePlayer(player.getUniqueId()), block, Interaction.INTERACT_BLOCK);
+               }
 
-            @Override
-            public int[] getSlotsAccessedByItemTransport(ItemTransportFlow flow) {
-                if (flow == ItemTransportFlow.INSERT) {
-                    return getInputSlots();
-                } else {
-                    return getOutputSlots();
-                }
-            }
-        };
-    }
+             @Override
+             public int[] getSlotsAccessedByItemTransport(ItemTransportFlow flow) {
+                 if (flow == ItemTransportFlow.INSERT) {
+                     return getInputSlots();
+                 } else {
+                     return getOutputSlots();
+                 }
+             }
+         };
+     }
 
-    @ParametersAreNonnullByDefault
-    public boolean directionClick(Player player, ClickAction action, BlockMenu blockMenu, BlockFace blockFace) {
-        if (action.isShiftClicked()) {
-            openDirection(player, blockMenu, blockFace);
-        } else {
-            setDirection(blockMenu, blockFace);
-        }
-        return false;
-    }
+     @ParametersAreNonnullByDefault
+     public boolean directionClick(Player player, ClickAction action, BlockMenu blockMenu, BlockFace blockFace) {
+         if (action.isShiftClicked()) {
+             openDirection(player, blockMenu, blockFace);
+         } else {
+             setDirection(blockMenu, blockFace);
+         }
+         return false;
+     }
 
-    @ParametersAreNonnullByDefault
-    public void openDirection(Player player, BlockMenu blockMenu, BlockFace blockFace) {
-        final BlockMenu targetMenu = BlockStorage.getInventory(blockMenu.getBlock().getRelative(blockFace));
-        if (targetMenu != null) {
-            final Location location = targetMenu.getLocation();
-            final SlimefunItem item = BlockStorage.check(location);
+     @ParametersAreNonnullByDefault
+     public void openDirection(Player player, BlockMenu blockMenu, BlockFace blockFace) {
+         final BlockMenu targetMenu = BlockStorage.getInventory(blockMenu.getBlock().getRelative(blockFace));
+         if (targetMenu != null) {
+             final Location location = targetMenu.getLocation();
+             final SlimefunItem item = BlockStorage.check(location);
 
-    if (item != null
-        && item.canUse(player, true)
-        && Slimefun.getProtectionManager().hasPermission(player, blockMenu.getLocation(), Interaction.INTERACT_BLOCK)
-    ) {
+       if (item != null
+           && item.canUse(player, true)
+            && Slimefun.getProtectionManager().hasPermission(Bukkit.getOfflinePlayer(player.getUniqueId()), blockMenu.getBlock(), Interaction.INTERACT_BLOCK)
+       ) {
         targetMenu.open(player);
     }
         }

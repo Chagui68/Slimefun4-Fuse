@@ -1,6 +1,6 @@
 name: Networks
-authors: [Sefiraat, mmmjjkx]
-description: Edited by mmmjjkx. Thank you Slimefun.
+authors: [Sefiraat, mmmjjkx,Chagu68]
+description: Edited by Chagui68. Thank you Slimefun.
 main: io.github.sefiraat.networks.Networks
 website: https://github.com/lijinhong11/Networks-Exp
 version: ${project.version}

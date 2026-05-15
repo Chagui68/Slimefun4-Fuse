@@ -13,8 +13,10 @@ import com.github.drakescraft_labs.slimefun4.api.recipes.RecipeType;
 import com.github.drakescraft_labs.slimefun4.core.handlers.ItemUseHandler;
 import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
 import dev.drake.dough.protection.Interaction;
+import dev.drake.dough.protection.ProtectionManager;
 import com.github.drakescraft_labs.slimefun4.legacy.api.BlockStorage;
 import com.github.drakescraft_labs.slimefun4.legacy.api.inventory.BlockMenu;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.NamespacedKey;
 import org.bukkit.OfflinePlayer;
@@ -25,7 +27,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
-import dev.drake.dough.protection.ProtectionManager;
 
 public class NetworkRemote extends SlimefunItem {
 
@@ -50,11 +51,11 @@ public class NetworkRemote extends SlimefunItem {
                         if (player.isSneaking()) {
                             final Optional<Block> optional = e.getClickedBlock();
                             if (optional.isPresent()) {
-                                final Block block = optional.get();
-                                final SlimefunItem slimefunItem = BlockStorage.check(block);
-    if (Slimefun.getProtectionManager().hasPermission(player, block.getLocation(), Interaction.INTERACT_BLOCK)
-        && slimefunItem instanceof NetworkGrid
-    ) {
+                                  final Block block = optional.get();
+                                  final SlimefunItem slimefunItem = BlockStorage.check(block);
+      if (Slimefun.getProtectionManager().hasPermission(Bukkit.getOfflinePlayer(player.getUniqueId()), block, Interaction.INTERACT_BLOCK)
+          && slimefunItem instanceof NetworkGrid
+     ) {
                                     setGrid(e.getItem(), block, player);
                                 } else {
                                     player.sendMessage(Theme.ERROR + "Must be set to a Network Grid (not crafting grid).");
@@ -105,9 +106,9 @@ public class NetworkRemote extends SlimefunItem {
     public static void openGrid(@Nonnull Location location, @Nonnull Player player) {
         BlockMenu blockMenu = BlockStorage.getInventory(location);
         SlimefunItem slimefunItem = BlockStorage.check(location);
-    if (slimefunItem instanceof NetworkGrid
-        && Slimefun.getProtectionManager().hasPermission(player, location, Interaction.INTERACT_BLOCK)
-    ) {
+       if (slimefunItem instanceof NetworkGrid
+           && Slimefun.getProtectionManager().hasPermission(Bukkit.getOfflinePlayer(player.getUniqueId()), location.getBlock(), Interaction.INTERACT_BLOCK)
+     ) {
             blockMenu.open(player);
         } else {
             player.sendMessage(Theme.ERROR + "The bound grid can no longer be found.");
