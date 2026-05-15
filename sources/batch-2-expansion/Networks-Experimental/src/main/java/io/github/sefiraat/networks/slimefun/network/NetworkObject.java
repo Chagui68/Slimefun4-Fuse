@@ -19,6 +19,7 @@ import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
 import lombok.Getter;
 import com.github.drakescraft_labs.slimefun4.legacy.Objects.handlers.BlockTicker;
 import com.github.drakescraft_labs.slimefun4.legacy.api.inventory.BlockMenu;
+import com.github.drakescraft_labs.slimefun4.legacy.api.inventory.BlockMenuPreset;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
@@ -91,6 +92,16 @@ public abstract class NetworkObject extends SlimefunItem implements AdminDebugga
             final NodeDefinition nodeDefinition = new NodeDefinition(nodeType);
             NetworkStorage.getAllNetworkObjects().put(block.getLocation(), nodeDefinition);
         }
+
+        ensureBlockMenuLoaded(block);
+    }
+
+    private void ensureBlockMenuLoaded(@Nonnull Block block) {
+        if (BlockMenuPreset.isInventory(getId())
+                && BlockStorage.check(block.getLocation(), getId())
+                && !BlockStorage.hasInventory(block)) {
+            BlockStorage.getInventory(block);
+        }
     }
 
     protected void preBreak(@Nonnull BlockBreakEvent event) {
@@ -152,7 +163,7 @@ public abstract class NetworkObject extends SlimefunItem implements AdminDebugga
     }
 
     public boolean runSync() {
-        return false;
+        return true;
     }
 }
 

@@ -94,7 +94,7 @@ public abstract class AbstractGrid extends NetworkObject {
 
                     @Override
                     public boolean isSynchronized() {
-                        return false;
+                        return runSync();
                     }
 
                     @Override

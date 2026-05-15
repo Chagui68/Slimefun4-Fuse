@@ -58,7 +58,7 @@ public class NetworkVacuum extends NetworkObject {
 
                     @Override
                     public boolean isSynchronized() {
-                        return false;
+                        return runSync();
                     }
 
                     @Override

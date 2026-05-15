@@ -271,7 +271,7 @@ public class NetworkQuantumStorage extends SlimefunItem implements DistinctiveIt
                 new BlockTicker() {
                     @Override
                     public boolean isSynchronized() {
-                        return false;
+                        return true;
                     }
 
                     @Override
