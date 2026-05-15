@@ -43,6 +43,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class NetworkAutoCrafter extends NetworkObject {
 
@@ -64,7 +65,7 @@ public class NetworkAutoCrafter extends NetworkObject {
     private final int chargePerCraft;
     private final boolean withholding;
 
-    private static final Map<Location, BlueprintInstance> INSTANCE_MAP = new HashMap<>();
+    private static final Map<Location, BlueprintInstance> INSTANCE_MAP = new ConcurrentHashMap<>();
 
     public NetworkAutoCrafter(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe,
             int chargePerCraft, boolean withholding) {

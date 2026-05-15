@@ -45,6 +45,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class NetworkAutoCrafter extends NetworkObject {
 
@@ -61,7 +62,7 @@ public class NetworkAutoCrafter extends NetworkObject {
     private static final int[] OUTPUT_BACKGROUND = new int[]{6, 7, 8, 15, 17, 24, 25, 26};
     private static final int BLUEPRINT_SLOT = 10;
     private static final int OUTPUT_SLOT = 16;
-    private static final Map<Location, BlueprintInstance> INSTANCE_MAP = new HashMap<>();
+    private static final Map<Location, BlueprintInstance> INSTANCE_MAP = new ConcurrentHashMap<>();
     private final int chargePerCraft;
     private final boolean withholding;
 
@@ -78,7 +79,7 @@ public class NetworkAutoCrafter extends NetworkObject {
                 new BlockTicker() {
                     @Override
                     public boolean isSynchronized() {
-                        return false;
+                        return true;
                     }
 
                     @Override
@@ -245,6 +246,11 @@ public class NetworkAutoCrafter extends NetworkObject {
         if (!blockMenu.hasViewer()) {
             INSTANCE_MAP.putIfAbsent(blockMenu.getLocation().clone(), blueprintInstance);
         }
+    }
+
+    @Override
+    public boolean runSync() {
+        return true;
     }
 
 
