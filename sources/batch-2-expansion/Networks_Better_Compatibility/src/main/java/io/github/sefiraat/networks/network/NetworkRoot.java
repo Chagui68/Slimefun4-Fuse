@@ -539,6 +539,7 @@ public class NetworkRoot extends NetworkNode {
                     stackToReturn.setAmount(1);
                     request.receiveAmount(1);
                     itemStack.setAmount(itemStack.getAmount() - 1);
+                    blockMenu.markDirty();
                 }
 
                 // Escape if fulfilled request
