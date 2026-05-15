@@ -334,6 +334,7 @@ public class NetworkQuantumStorage extends SlimefunItem implements DistinctiveIt
         if (fetched != null && fetched.getType() != Material.AIR) {
             blockMenu.pushItem(fetched, OUTPUT_SLOT);
             syncBlock(blockMenu, cache);
+            blockMenu.markDirty();
         }
 
         CACHES.put(blockMenu.getLocation().clone(), cache);

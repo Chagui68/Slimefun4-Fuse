@@ -121,6 +121,7 @@ public class NetworkVanillaPusher extends NetworkDirectional {
             holder.getInventory().addItem(stack);
             stack.setAmount(0);
         }
+        blockMenu.markDirty();
     }
 
     private void handleFurnace(@Nonnull ItemStack stack, @Nonnull FurnaceInventory furnace) {

@@ -231,6 +231,7 @@ public class NetworkCraftingGrid extends AbstractGrid {
 
         // Push item
         menu.pushItem(crafted, CRAFT_OUTPUT_SLOT);
+        menu.markDirty();
 
         // Let's clear down all the items
         for (int recipeSlot : CRAFT_ITEMS) {
