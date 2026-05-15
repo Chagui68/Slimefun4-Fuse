@@ -121,6 +121,7 @@ public class NetworkVanillaGrabber extends NetworkDirectional {
             if (item != null) {
                 blockMenu.replaceExistingItem(INPUT_SLOT, item.clone());
                 item.setAmount(item.getAmount() - 1);
+                blockMenu.markDirty();
             }
         }
     }
